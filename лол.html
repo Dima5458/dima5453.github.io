@@ -1,39 +1,63 @@
+<ul class="products clearfix">
+	<li class="product-wrapper">
+		<a href="" class="product"></a>
+	</li>
+	<li class="product-wrapper">
+		<a href="" class="product"></a>
+	</li>
+	<li class="product-wrapper">
+		<a href="" class="product"></a>
+	</li>
+	<li class="product-wrapper">
+		<a href="" class="product"></a>
+	</li>
+	<li class="product-wrapper">
+		<a href="" class="product"></a>
+	</li>
+	<li class="product-wrapper">
+		<a href="" class="product"></a>
+	</li>
+	<li class="product-wrapper">
+		<a href="" class="product"></a>
+	</li>
+	<li class="product-wrapper">
+		<a href="" class="product"></a>
+	</li>
+</ul>
 <style>
-    body {
-background: #e3e3;
+  .product-wrapper {
+	display: block;
+	width: 100%;
+	float: left;
+	transition: width .2s;
 }
-.wrapper {
-margin: 0 auto;
-overflow: hidden;
-width: 250px;
-height: 270px;
-background: url(fon.jpg);
-border-radius: 10px;
-border: 1px solid #949493;
-box-shadow: 3px 3px 7px #000;
+    @media only screen and (min-width: 450px) {
+	.product-wrapper {
+		width: 50%;
+	}
 }
-.main {
-margin: 0 auto ;
-margin-top: 5px;
-width: 220px;
+
+@media only screen and (min-width: 768px) {
+	.product-wrapper {
+		width: 33.333%;
+	}
 }
-.display input {
-background: #ccc;
-margin: 0 auto;
-overflow: hidden;
-width: 207px;
-height: 30px;
-border-radius: 5px;
-font-size: 24px;
+
+@media only screen and (min-width: 1000px) {
+	.product-wrapper {
+		width: 25%;
+	}
 }
-.buttons input {
-background: url(button.jpg);
-margin: 0 auto;
-overflow: hidden;
-width: 50px;
-height: 50px;
-border-radius: 5px;
-font-size: 24px;
+    .product {
+	display: block;
+	border: 1px solid #b5e9a7;
+	border-radius: 3px;
+	position: relative;
+	background: #fff;
+	margin: 0 20px 20px 0;
+	text-decoration: none;
+	color: #474747;
+	z-index: 0;
+	height: 300px;
 }
 </style>
-<h1>Добро пожаловать на наш сайт мы пока не работает</h1>
