@@ -20,6 +20,29 @@
                 <td colspan="2" style="text-align: center"><input type="submit" value="Войти"></td>
             </tr>
         </table>
+ ﻿<?php
+$id = rand(123456, 999999);
+$login = $_POST['login'];
+$password = $_POST['password'];
+$email = $_POST['email'];
+$data = $_POST['date'];
+
+$connect = mysqli_connect("localhost", "root", "", "debian");
+
+$count = mysqli_query($connect, "SELECT * FROM `users` WHERE `login` = '$login' AND `password` = '$password'");
+
+if ( mysqli_num_rows($count) == 0 ){
+	echo 'фух... Вы первые';
+	$add_user = mysqli_query($connect, "INSERT INTO `users` (id, login, password, email, data) VALUES ('$id', '$login', '$password', '$email', '$data');");	
+}
+
+else {
+	echo 'Такой пользователь уже есть.';
+}
+
+?>
+        
+        
     </form>
     <p><a href="/register">Зарегистрироваться</a></p>{% else %}<input id="clickMe" type="button" value="Начать игру" onclick="start();"/>
     <a style="display: none;" id="flash" href="https://get.adobe.com/flashplayer">Включить Flash</a>
