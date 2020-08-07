@@ -5,29 +5,7 @@
 <style>
 
 <script>
-function myFunction() {
-  var input, filter, ul, li, a, i;
-  input = document.getElementById("mySearch");
-  filter = input.value.toUpperCase();
-  ul = document.getElementById("myMenu");
-  li = ul.getElementsByTagName("li");
-  for (i = 0; i < li.length; i++) {
-    a = li[i].getElementsByTagName("a")[0];
-    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-      li[i].style.display = "";
-    } else {
-      li[i].style.display = "none";
-    }
-  }
-}
-</script>
-
-</body>
-
-<!-- Mirrored from www.w3schools.com/howto/tryit.asp?filename=tryhow_js_search_menu by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 22 Sep 2019 08:50:26 GMT -->
-</html>
-
-     body {
+body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -81,6 +59,30 @@ function myFunction() {
 #myMenu li a:hover {
   background-color: #eee;
 }
+</style>
+</head>
+<body>
+
+<h2>Добро пожаловать на наш сайт</h2>
+<p>Спасибо что зашли сюда</p>
+
+<div class="row">
+  <div class="left" style="background-color:#bbb;">
+    <h2>Поиск</h2>
+    <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Напишите что вам нужно найти или штрих код" title="Type in a category">
+    <ul id="myMenu">
+      <li><a href="Калькулятор.html">Калькулятор</a></li>
+      <li><a href="4690388108045.html">4690388108045</a></li>
+       </ul>
+  </div>
+  
+  <div class="right" style="background-color:#ddd;">
+    <h2>Добро пожаловать</h2>
+    <p>тут поиск напишите что вам нужно и мы вам найдем :-)</p>
+    <p>мы можем найти только то что есть у нас на сайте</p>
+     </div>
+</div>
+
 </style>
 </head>
 <body>
