@@ -1,57 +1,15 @@
-{% extends "base.html" %}
+<html><head></head><body><a class="header-links__link" href="" target="_blank">Яна Курарарь!</a>
+<h1 class="page_name">Яна Курарарь! ИНФОРМАЦИЯ!</h1>
+<title>ИНФОРМАЦИЯ О ЯНЕ!</title>
+<div class="im-mess--text wall_module _im_log_body">Яне-14 лет</div>
+<div class="im-mess--text wall_module _im_log_body">Год рождения-05.08.2005</div>
+<div class="im-mess--text wall_module _im_log_body">Вк - 
+ <a href="https://vk.com/id577347598" target="_blank">https://vk.com/id577347598</a> </div>
+<div class="im-mess--text wall_module _im_log_body">В 2020 году ей будет 15 лет!</div>
+<h1 class="page_name">ФОТО:</h1>
+<img style="width: 600px; height: 600px; margin-top: 0px;" src="https://sun1-84.userapi.com/c857636/v857636300/16eb94/gKI9TJGRqTI.jpg">
 
-{% set title = "Main page" %}
 
-{% block content %}
-<h3>{{ title }}</h3>
 
-{% if current_user %}
-    <p>Hi, {{ current_user.first_name }} {{ current_user.last_name }}!</p>
-    <br>
-    {% if current_user.avatar_url %}
-        <div>
-            <figure class="image is-128x128">
-                <img src="{{ url('static', filename=current_user.avatar_url) }}">
-            </figure>
-        </div>
-    {% endif %}
-    <br><br><br><br>
-
-    <form action="{{ url('save_avatar') }}" method="post" accept-charset="utf-8" enctype="multipart/form-data">
-        <label for="avatar">Avatar</label>
-        <input id="avatar" name="avatar" type="file" value=""/>
-        <input type="submit" value="submit"/>
-    </form>
-
-    <br>
-    <br>
-    <form action="{{ url('add_post') }}" method="post" accept-charset="utf-8" enctype="multipart/form-data">
-        <label for="message">Add New Post</label>
-        <input id="message" name="message" type="text" value=""/>
-        <input type="submit" value="Send"/>
-    </form>
-
-    <ul>
-    {% for post in posts %}
-        <li>{{ post.message }} | {{ post.date_created.strftime('%Y-%m-%d %H:%M:%S') }}</li>
-    {% endfor %}
-    </ul>
-    <br>
-    <br>
-    <p>My friends</p>
-    <ul>
-        {% for friend in friends %}
-            <li>{{ friend.first_name }} {{ friend.last_name }}</li>
-            <form action="{{ url('send_message') }}" method="post">
-                <label for="message_text">Send message</label>
-                <input id="message_text" name="message_text" type="text" value=""/>
-                <input type="hidden" name="to_user" value="{{ friend._id }}">
-                <button type="submit">Send...</button>
-            </form>
-            <br>
-        {% endfor %}
-    </ul>
-
-{% endif %}
-
-{% endblock %}
+<div id="result"><div class="photo"><a href="https://vk.com/id577347598" target="_blank"></a><br></div><div class="info"><table>
+<tbody><tr><td><h3>Яна Швец ВК</h3></td></tr><tr><td>Дата регистрации: 6 января 2020 года<br></td></tr><tr><td>Прошло времени:  1 месяц 3 дня </td></tr><tr><td>Адрес страницы: <a href="https://vk.com/id577347598" target="_blank">https://vk.com/id577347598</a> <br></td></tr></tbody></table></div></div></body></html>
