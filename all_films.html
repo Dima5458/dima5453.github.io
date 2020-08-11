@@ -1,58 +1,60 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Ava.City 2.0</title>
-</head>
-<body>
-    {% if not token %}
-    <form method="post" action="/login">
-        <table>
-            <tr>
-                <td><label for="loginField">Логин</label></td>
-                <td><input id="loginField" type="text" name="login" required></td>
-            </tr>
-            <tr>
-                <td><label for="passwordField">Пароль</label></td>
-                <td><input id="passwordField" type="password" name="password" required></td>
-            </tr>
-            <tr>
-                <td colspan="2" style="text-align: center"><input type="submit" value="Войти"></td>
-            </tr>
-        </table>
-    </form>
-    <p><a href="/register">Зарегистрироваться</a></p>{% else %}<input id="clickMe" type="button" value="Начать игру" onclick="start();"/>
-    <a style="display: none;" id="flash" href="https://get.adobe.com/flashplayer">Включить Flash</a>
-    <div id="flashContent"></div>
-    <br>
-    <a href="/logout">Выйти</a>
-    <script>
-        function start(){
-            document.getElementById('clickMe').style.display = "none";
-            if (swfobject.getFlashPlayerVersion().major == 0){
-                document.getElementById('flash').style.display = "block";
-                return;
-            }
-            var vars = {};
-            vars['config'] = '/appconfig.xml';
-            vars['versions'] = '/files/versions.json?{{ update_time }}';
-            vars['appSwf'] = '/files/pnz-city.swf?{{ update_time }}';
-            var flashVars = [];
-            for (var variable in vars) {
-                flashVars.push(variable + '=' + vars[variable]);
-            }
-            var params = {
-                flashvars: flashVars.join("&"),
-                allowfullscreen: "true",
-                allowscriptaccess: "always",
-                allowFullScreenInteractive: "true",
-                allownetworking: "all",
-                wmode: "transparent"
-            };
-            var el = document.getElementById("flashContent");
-            swfobject.embedSWF("/files/pnz-city-container.swf", el, 1280, 720, 10, null, null, params, {name: "flashContent"});
-        }
-    </script>
-    <script type="text/javascript" src="/files/swfobject.js"></script>{% endif %}
-</body>
-</html>
+  <link rel="stylesheet" href="https://www.kostino.com/cache/sacy/style-700aa59b5e168f3b44b7291dd3318478.css" type="text/css" />
+   <link rel="stylesheet" href="http://counter.rambler.ru/top100.jcn?2855347" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/cache/sacy/style-700aa59b5e168f3b44b7291dd3318478.css" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/cache/sacy/style-700aa59b5e168f3b44b7291dd3318478.css" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/libs/bootstrap/css/bootstrap.min.css" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/cache/sacy/style-700aa59b5e168f3b44b7291dd3318478.css" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/js/ModalApp.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/js/ticketManager.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/css/arcticmodal.css" type="text/css" />
+   <link rel="stylesheet" href="https://vk.com/js/api/openapi.js?157" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/libs/bootstrap/css/bootstrap.min.css" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/js/ModalApp.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/libs/bootstrap/js/bootstrap.min.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/cache/sacy/shadowbox-skitter-jquery-ui-303097007d60bd1a6c6a526c3b3eb21b.css" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/cache/sacy/shadowbox-skitter-jquery-ui-303097007d60bd1a6c6a526c3b3eb21b.css" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/js/ModalApp.js" type="text/css" />
+   <link rel="stylesheet" href="http://counter.rambler.ru/top100.jcn?2855347" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/css/arcticmodal.css" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/cache/sacy/many-files-f9c2c4c78b7473aa68919e2c4f63a999-5f5ae256ab86f7faa0f75071a110c36f.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/cache/sacy/style-700aa59b5e168f3b44b7291dd3318478.css" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/js/ticketManager.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/js/ModalApp.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/cache/sacy/shadowbox-skitter-jquery-ui-303097007d60bd1a6c6a526c3b3eb21b.css" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/libs/bootstrap/js/bootstrap.min.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/cache/sacy/many-files-f9c2c4c78b7473aa68919e2c4f63a999-5f5ae256ab86f7faa0f75071a110c36f.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/js/ticketManager.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/cache/sacy/shadowbox-skitter-jquery-ui-303097007d60bd1a6c6a526c3b3eb21b.css" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/libs/bootstrap/js/bootstrap.min.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/js/ModalApp.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/cache/sacy/many-files-f9c2c4c78b7473aa68919e2c4f63a999-5f5ae256ab86f7faa0f75071a110c36f.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/cache/sacy/shadowbox-skitter-jquery-ui-303097007d60bd1a6c6a526c3b3eb21b.css" type="text/css" />
+   <link rel="stylesheet" href="https://mc.yandex.ru/metrika/watch.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/cache/sacy/shadowbox-skitter-jquery-ui-303097007d60bd1a6c6a526c3b3eb21b.css" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/libs/bootstrap/js/bootstrap.min.js" type="text/css" />
+   <link rel="stylesheet" href="https://connect.facebook.net/ru_RU/sdk.js?hash=ea3de97797f06218cfb5bf8e5f8f26d5&ua=modern_es6" type="text/css" />
+   <link rel="stylesheet" href="https://connect.facebook.net/ru_RU/sdk.js" type="text/css" />
+   <link rel="stylesheet" href="https://mc.yandex.ru/metrika/watch.js" type="text/css" />
+   <link rel="stylesheet" href="https://vk.com/js/api/openapi.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.youtube.com/s/player/0a90460f/player_ias.vflset/ru_RU/base.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.youtube.com/s/player/0a90460f/player_ias.vflset/ru_RU/embed.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.youtube.com/s/player/0a90460f/www-embed-player.vflset/www-embed-player.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.youtube.com/s/player/0a90460f/player_ias.vflset/ru_RU/remote.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.youtube.com/s/player/0a90460f/www-player-webp.css" type="text/css" />
+   <link rel="stylesheet" href="https://www.youtube.com/yts/jsbin/fetch-polyfill-vfl6MZH8P/fetch-polyfill.js" type="text/css" />
+   <link rel="stylesheet" href="chrome-extension://pkedcjkdefgpdelpbcmbmeomcjbeemfm/cast_sender.js" type="text/css" />
+   <link rel="stylesheet" href="https://static.doubleclick.net/instream/ad_status.js" type="text/css" />
+   <link rel="stylesheet" href="https://www.youtube.com/s/player/0a90460f/www-player-webp.css" type="text/css" />
+   <link rel="stylesheet" href="https://www.youtube.com/s/player/0a90460f/www-player-webp.css" type="text/css" />
+   <link rel="stylesheet" href="https://vk.com/css/al/base.css?128664740900" type="text/css" />
+   <link rel="stylesheet" href="https://vk.com/css/al/fonts_cnt.css?7802460376" type="text/css" />
+   <link rel="stylesheet" href="https://vk.com/css/al/lite.css?61905413115" type="text/css" />
+   <link rel="stylesheet" href="https://vk.com/css/al/ui_common.css?19951403675" type="text/css" />
+   <link rel="stylesheet" href="https://vk.com/css/al/widget_community.css?29018357345" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/cache/sacy/style-700aa59b5e168f3b44b7291dd3318478.css" type="text/css" />
+   <link rel="stylesheet" href="https://www.kostino.com/cache/sacy/many-files-f9c2c4c78b7473aa68919e2c4f63a999-5f5ae256ab86f7faa0f75071a110c36f.js" type="text/css" />
+   <link rel="stylesheet" href="" type="text/css" />
+   <link rel="stylesheet" href="" type="text/css" />
+   <link rel="stylesheet" href="" type="text/css" />
+   <link rel="stylesheet" href="" type="text/css" />
+   <link rel="stylesheet" href="" type="text/css" />
