@@ -1,56 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang = "ru">
 <head>
-    {% block head %}
-        <meta charset="UTF-8">
-        <title>{{title}}</title>
-        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.css" />
-        <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
-    {% endblock %}
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Форма регистрации</title>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <div class="container mt-4">
+    <?php
+     if ($_COOKIE['user']==''):
+      ?>
+      <div class="row">
+         <div class="col">
+           <h1>Форма регистрации</h1>
+           <form  action="php/check.php" method="post">
+             <input type="text" class="form-control" name="login" value="login" id="login" placeholder="Введите ваш логин"><br>
 
-{% block nav %}
-<nav class="navbar is-light" role="navigation" aria-label="main navigation">
+             <input type="text" class="form-control" name="name" value="name" id="name" placeholder="Введите ваше имя"><br>
 
-    <div class="navbar-brand">
-        <a class="navbar-item" href="{{ url('index') }}">
-            <img style="height: 60px; width: 200px; max-height: 60px"
-                 src="{{ url('static', filename='python_logo.png') }}"
-                 alt="Social network">
-        </a>
-    </div>
+             <input type="password" class="form-control" name="pass" value="pass" id="pass" placeholder="Введите ваш пароль"><br>
 
-    <div class="navbar-menu">
+             <button class="btn btn-success"  type ="submit" >Регистрация</button>
+           </form>
+         </div>
 
-        <div class="navbar-start">
-            <a class="navbar-item" href="{{ url('index') }}">Home</a>
-            {% if current_user %}
-                <a class="navbar-item" href="{{ url('friends') }}">Find friends</a>
-                <a class="navbar-item" href="{{ url('messages', type='inbox') }}">My messages</a>
-            {% endif %}
-        </div>
 
-        <div class="navbar-end">
-            {% if is_anonymous %}
-                <a class="navbar-item" href="{{ url('login') }}">Login</a>
-                <a class="navbar-item" href="{{ url('signup') }}">Signup</a>
-            {% endif %}
+         <div class="col">
+           <h1>Форма авторизации</h1>
+           <form  action="php/auth.php" method="post">
+             <input type="text" class="form-control" name="login" value="login" id="login" placeholder="Введите ваш логин"><br>
 
-            {% if current_user %}
-                <a class="navbar-item" href="{{ url('logout') }}">Logout</a>
-            {% endif %}
-        </div>
+             <input type="password" class="form-control" name="pass" value="pass" id="pass" placeholder="Введите ваш пароль"><br>
 
-    </div>
-</nav>
-{% endblock %}
+             <button class="btn btn-success"  type ="submit" >Авторизация</button>
+           </form>
+         </div>
+           <?php else:?>
+             <p>Привет  <?php $_COOKIE['user'] ?>.Чтобы выйти нажмите  <a href="php/exit.php">здесь</a> </p>
+         <?php endif; ?>
 
-<section class="section">
-    <div class="container">
-        {% block content %}{% endblock %}
-    </div>
-</section>
+      </div>
+  </div>
 
 </body>
 </html>
