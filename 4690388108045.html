@@ -1,71 +1,77 @@
-   <link rel="stylesheet" href="шк.css" type="text/css">
-{% extends "install/install-base.html" %}
-
-{% block head %}
-  {% parent %}
-  {% block headjavascript %}
-    {% parent %}
-    <script type="text/javascript" src="../js/jquery.form.js"></script>
-	<script type="text/javascript" src="../js/jquery.validate.js"></script>
-	<script type="text/javascript" src="../js/i18n/jquery.validate-ru.js"></script>
-  {% endblock headjavascript %}
-{% endblock head %}
-
-{% block content %}
 <script type="text/javascript">
 $(document).ready(function() { 
-	$('.ValidatedForm').validate();
+	$('#addClassForm').validate({
+		messages: {
+			teacher_id: "Укажите классного руководителя"
+		}
+	});
+
+	// bind form using ajaxForm 
+    $('#addClassForm').ajaxForm({ 
+        // dataType identifies the expected content type of the server response 
+        dataType:  'json', 
+         // success identifies the function to invoke when the server response 
+        // has been received 
+        success:   processJson 
+    }); 
 });
+function processJson(data) { 
+    // 'data' is the json object returned from the server
+    if (data.isError) {
+    	//alert(data.errorText);
+    	$('#resultError').text(data.errorText);
+    } else {
+    	$('#resultError').empty();
+    	if (($dialog != undefined) && ($dialog.dialog != undefined)) {
+    		$dialog.dialog("close");
+    	}
+    	if (typeof(updateClassList) == 'function') {
+    		updateClassList();
+    	}
+    }
+}
 </script>
-<form action="index.php" method="post" class="ValidatedForm">
-<input type="hidden" name="step" value="1" />
-<input type="hidden" name="action" value="save" />
-<table align="center">
+
+<form id="addClassForm" action="add_class.php" method="post">
+<input type="hidden" name="action" value="add" />
+<input type="hidden" name="school_year_id" value="{{school_year_id}}" class="required" />
+<span id="resultError" class="error"></span>
+<table>
   <tr>
-    <td colspan="2" class="title">Соединение с БД</td>
-  </tr>
-    <td>Сервер</td>
-    <td><input type="text" name="db_server" value="{{conf_db_host}}" class="required" /></td>
-  </tr>
-  <tr>
-    <td>Логин</td>
-    <td><input type="text" name="db_login" value="{{conf_db_user}}" class="required" /></td>
-  </tr>
-  <tr>
-    <td>Пароль</td>
-    <td><input type="text" name="db_passwd" value="{{conf_db_passwd}}" class="required" /></td>
-  </tr>
-  <tr>
-    <td>База данных</td>
-    <td><input type="text" name="db_name" value="{{conf_db_base}}" class="required" /></td>
+    <td>Номер класса</td>
+    <td>:</td>
+    <td>
+<select name="class">
+{% for class_number in class_numbers %}
+  <option value="{{class_number}}">{{class_number}}</option>
+{% endfor %}
+</select>
+	</td>
   </tr>
   <tr>
-    <td colspan="2">&nbsp;</td>
-  </tr>
-  <tr>
-    <td colspan="2" class="title">ePochta SMS</td>
-  </tr>
-  <tr>
-    <td>ePochta SMS - Логин</td>
-    <td><input type="text" name="epochtasms_login" value="{{conf_epochtasms_login}}"/></td>
-  </tr>
-  <tr>
-    <td>ePochta SMS - Пароль</td>
-    <td><input type="text" name="epochtasms_passwd" value="{{conf_epochtasms_passwd}}"/></td>
-  </tr>
-  <tr>
-    <td>ePochta SMS - Отправитель</td>
-    <td><input type="text" name="epochtasms_from" value="{{conf_epochtasms_from}}"/></td>
-  </tr>
-  <tr>
-    <td colspan="2">&nbsp;</td>
+    <td>Литерал класса</td>
+    <td>:</td>
+    <td>
+<select name="letter">
+{% for class_letter in class_letters %}
+  <option value="{{class_letter}}">{{class_letter}}</option>
+{% endfor %}
+</select>
+    </td>
   </tr>
 
   <tr>
-    <td colspan="2" align="center">
-      <input type="submit" value="Сохранить" />
+    <td>Классный руководитель<font color="red">*</font></td>
+    <td>:</td>
+    <td>
+<select name="teacher_id" id="teacher_id_id" class="required">
+  <option value="">&nbsp;-</option>
+{% for teacher in teachers %}
+<option value="{{teacher['teacher_id']}}">{{ "%s %s %s"|format(teacher['last_name'],teacher['first_name'],teacher['middle_name']) }}</option>
+{% endfor %} 
+</select>
     </td>
   </tr>
 </table>
+<br />
 </form>
-{% endblock content %}
