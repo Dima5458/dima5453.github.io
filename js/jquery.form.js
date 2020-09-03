@@ -1,3 +1,6 @@
+<?php
+include './header.php';
+?>
 {% extends "teachers/teachers-base.html" %}
 
 {% block headcss %}
