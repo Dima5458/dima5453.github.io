@@ -1,8 +1,3 @@
-<?php
-include './header.php';
-?>
-{% extends "teachers/teachers-base.html" %}
-
 {% block headcss %}
 {% parent %}
 {% endblock headcss %}
@@ -52,6 +47,17 @@ $(document).ready(function(){
 	$('#dateRangeForm').submit();
 
 });
+</script>
+{% endblock headjavascript %}
+{% block content %}
+<br />
+	
+ <select name="lesson_type_id" id="$lesson_type_id">
+{% for lesson_type in lesson_types %}
+<option value="{{lesson_type['lesson_type_id']}}">{{lesson_type['lesson_type_name']}}</option>
+{% endfor %} 
+</select>
+ 
 {% endblock %}
 {% block footer %}
 {% parent %}
