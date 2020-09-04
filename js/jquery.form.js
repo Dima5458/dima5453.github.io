@@ -1,4 +1,77 @@
 <?php
+
+  if ($mode == 'success_update') {
+  	echo '<center>Информация об учителе успешно обновлена.<br /><br />';
+  	echo '<input type="button" value="&nbsp;&nbsp;Закрыть&nbsp;&nbsp;" onclick="self.parent.tb_remove();self.parent.location.reload();" /></center>';
+  } elseif ($mode == 'success_add') {
+  	echo '<center>Новый учитель успешно добавлен.<br /><br />';
+  	echo '<input type="button" value="&nbsp;&nbsp;Закрыть&nbsp;&nbsp;" onclick="self.parent.tb_remove();self.parent.location.reload();" />
+  	&nbsp;&nbsp;<input type="button" value="&nbsp;&nbsp;Продолжить&nbsp;&nbsp;" onclick="document.location=\'teacher.php\'" /></center>';
+  } elseif ($mode == 'update') {
+    $teacher  = db_get_first_row('SELECT * FROM teachers WHERE teacher_id='.$teacher_id);
+    outTeacherForm($teacher);
+  } elseif ($mode == 'add') {
+    outTeacherForm();
+  }
+
+function outTeacherForm($teacher = null)
+{
+	global $teacher_id;
+	echo '
+<form action="teacher.php" method="post">';
+if (isset($teacher)) {
+  echo '<input type="hidden" name="action" value="update" />';
+  echo '<input type="hidden" name="teacher_id" value="'.$teacher_id.'" />';
+} else {
+  echo '<input type="hidden" name="action" value="add" />';
+}
+echo '
+<table width="100%" id="edit_in">
+<tbody>
+  <tr>
+    <td>Фамилия<font color="red">*</font></td>
+    <td><input type="text" name="last_name" id="last_name_id" value="'.(isset($teacher)?$teacher['last_name']:'').'" /></td>
+  </tr>
+  <tr>
+    <td>Имя<font color="red">*</font></td>
+    <td><input type="text" name="first_name" id="first_name_id" value="'.(isset($teacher)?$teacher['first_name']:'').'" /></td>
+  </tr>
+  <tr>
+    <td>Отчество<font color="red">*</font></td>
+    <td><input type="text" name="middle_name" id="middle_name_id" value="'.(isset($teacher)?$teacher['middle_name']:'').'" /></td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Логин<font color="red">*</font></td>
+    <td><input type="text" name="login" id="login_id" value="'.(isset($teacher)?$teacher['login']:'').'" /></td>
+  </tr>
+  <tr>
+    <td>Пароль</td>
+    <td><input type="password" name="passwd" value="" /></td>
+  </tr>
+  <tr>
+    <td>Пароль</td>
+    <td><input type="password" name="passwd2" value="" /></td>
+  </tr>
+  <tr>
+    <td colspan="2">&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">';
+if (isset($teacher)) {
+	echo '<input type="button" class="button" value="Сохранить" onClick="javascript: if (checkValidForm()) this.form.submit();">';
+} else {
+  echo '<input type="button" class="button" value="Добавить" onClick="javascript: if (checkValidForm()) this.form.submit();">';
+}
+echo '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="button" class="button" value="&nbsp;&nbsp;Закрыть&nbsp;&nbsp;" onclick="self.parent.tb_remove();self.parent.location.reload();" /></td>
+</tr></tbody></table></form>';
+}
+
+?>
+<?php
 /*****************************************************************************\
 +-----------------------------------------------------------------------------+
 | SchoolReg                                                                   |
