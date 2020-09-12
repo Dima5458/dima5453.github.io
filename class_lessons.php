@@ -1,1 +1,1 @@
-SELECT * FROM `Registro` ORDER BY `Registro`.`Nombre` ASC
+SELECT * FROM `Registro` WHERE 1
