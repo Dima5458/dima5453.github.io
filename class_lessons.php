@@ -1,6 +1,1 @@
-SELECT
-    *
-FROM
-    `Оценки7б`
-WHERE
-    1
+SELECT    *FROM    `Оценки7б`WHERE    1 LIMIT 0, 25
