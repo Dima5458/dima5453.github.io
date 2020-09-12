@@ -1,1 +1,6 @@
-$sql = "SELECT * FROM `Оценки7б`";
+SELECT
+    *
+FROM
+    `Оценки7б`
+WHERE
+    1
