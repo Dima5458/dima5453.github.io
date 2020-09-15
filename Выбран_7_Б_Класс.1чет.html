@@ -1,58 +1,8 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Ava.City 2.0</title>
-</head>
-<body>
-    {% if not token %}
-    <form method="post" action="/login">
-        <table>
-            <tr>
-                <td><label for="loginField">Логин</label></td>
-                <td><input id="loginField" type="text" name="login" required></td>
-            </tr>
-            <tr>
-                <td><label for="passwordField">Пароль</label></td>
-                <td><input id="passwordField" type="password" name="password" required></td>
-            </tr>
-            <tr>
-                <td colspan="2" style="text-align: center"><input type="submit" value="Войти"></td>
-            </tr>
-        </table>
-    </form>
-    <p><a href="/register">Зарегистрироваться</a></p>{% else %}<input id="clickMe" type="button" value="Начать игру" onclick="start();"/>
-    <a style="display: none;" id="flash" href="https://get.adobe.com/flashplayer">Включить Flash</a>
-    <div id="flashContent"></div>
-    <br>
-    <a href="/logout">Выйти</a>
-    <script>
-        function start(){
-            document.getElementById('clickMe').style.display = "none";
-            if (swfobject.getFlashPlayerVersion().major == 0){
-                document.getElementById('flash').style.display = "block";
-                return;
-            }
-            var vars = {};
-            vars['config'] = '/appconfig.xml';
-            vars['versions'] = '/files/versions.json?{{ update_time }}';
-            vars['appSwf'] = '/files/pnz-city.swf?{{ update_time }}';
-            var flashVars = [];
-            for (var variable in vars) {
-                flashVars.push(variable + '=' + vars[variable]);
-            }
-            var params = {
-                flashvars: flashVars.join("&"),
-                allowfullscreen: "true",
-                allowscriptaccess: "always",
-                allowFullScreenInteractive: "true",
-                allownetworking: "all",
-                wmode: "transparent"
-            };
-            var el = document.getElementById("flashContent");
-            swfobject.embedSWF("/files/pnz-city-container.swf", el, 1280, 720, 10, null, null, params, {name: "flashContent"});
-        }
-    </script>
-    <script type="text/javascript" src="/files/swfobject.js"></script>{% endif %}
-</body>
-</html>
+<div class="page-header ">
+        <div class="page-header__panel-wrapper">
+            
+        </div> 
+        <div class="clear">
+            <ul class="header-menu"><li class="header-menu__item header-menu__item_active header-menu__item_current"><a class="header-menu__link" href="" target="_self" title="Образование">Образование</a><ul class="header-submenu header-submenu_active" style="z-index: 0; top: 44px;"><li class="header-submenu__item"><a class="header-submenu__link" href="https://dima5453.github.io/7%D0%91.%D0%BA%D0%BB%D0%B0%D1%81%D1%81.%D0%B6%D1%83%D1%80.html" title="Моя школа">Журнал</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://dima5453.github.io/%D1%81%D1%82%D0%B0%D1%82%D0%B8%D1%81%D1%82%D0%B8%D0%BA%D0%B0.html" title="Мой класс">Статистика</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://dima5453.github.io/%D1%80%D0%B0%D1%81%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B5.html" title="Мой класс">Расписание</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://dima5453.github.io/пароли.html" title="Мой класс">Пароли</a></li><ul class="header-submenu__item header-submenu__more-item" style="display: none;"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li></ul>
+        </div>
+    </div>
