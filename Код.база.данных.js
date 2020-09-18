@@ -1,58 +1,58 @@
-<? php
-/ **
+<?php
+/**
  * CodeIgniter
  *
- * Фреймворк для разработки приложений с открытым исходным кодом для PHP
+ * An open source application development framework for PHP
  *
- * Этот контент выпущен под лицензией MIT (MIT)
+ * This content is released under the MIT License (MIT)
  *
- * Авторские права (c) 2014-2015, Технологический институт Британской Колумбии
+ * Copyright (c) 2014 - 2015, British Columbia Institute of Technology
  *
- * Разрешение предоставляется бесплатно любому лицу, получившему копию
- * этого программного обеспечения и связанных файлов документации («Программное обеспечение») для работы
- * в Программном обеспечении без ограничений, включая, помимо прочего, права
- * использовать, копировать, изменять, объединять, публиковать, распространять, сублицензировать и / или продавать
- * копии Программного обеспечения и разрешить лицам, которым Программное обеспечение
- * предоставлено для этого при соблюдении следующих условий:
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
  *
- * Приведенное выше уведомление об авторских правах и это уведомление о разрешении должны быть включены в
- * все копии или существенные части Программного обеспечения.
+ * The above copyright notice and this permission notice shall be included in
+ * all copies or substantial portions of the Software.
  *
- * ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ ПРЕДОСТАВЛЯЕТСЯ «КАК ЕСТЬ», БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ, ЯВНЫХ ИЛИ
- * ПОДРАЗУМЕВАЕТСЯ, ВКЛЮЧАЯ, НО НЕ ОГРАНИЧИВАясь, ГАРАНТИИ КОММЕРЧЕСКОЙ ЦЕННОСТИ,
- * ПРИГОДНОСТЬ ДЛЯ КОНКРЕТНОЙ ЦЕЛИ И ЗАЩИТА ОТ ИНФОРМАЦИИ. НИ В КОЕМ СЛУЧАЕ
- * АВТОРЫ ИЛИ ДЕРЖАТЕЛИ АВТОРСКИХ ПРАВ НЕСУТ ОТВЕТСТВЕННОСТЬ ЗА ЛЮБЫЕ ПРЕТЕНЗИИ, УБЫТКИ ИЛИ ДРУГИЕ
- * ОТВЕТСТВЕННОСТЬ, ВЫЯВЛЯЮЩАЯСЯ ЛИ В РЕЗУЛЬТАТЕ ДОГОВОРА, ИЛИ ИНОСТРАННЫМ ПЕРЕДАЧОМ
- * ВНЕ ИЛИ В СВЯЗИ С ПРОГРАММНЫМ ОБЕСПЕЧЕНИЕМ ИЛИ ИСПОЛЬЗОВАНИЕМ ИЛИ ДРУГИМИ ДЕЯМИ В
- * ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ.
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ * THE SOFTWARE.
  *
- * @ пакет CodeIgniter
- * @author Команда разработчиков EllisLab
- * @copyright Copyright (c) 2008-2014, EllisLab, Inc. (http://ellislab.com/)
- * @copyright Copyright (c) 2014-2015, Технологический институт Британской Колумбии (http://bcit.ca/)
- * @license http://opensource.org/licenses/MIT Лицензия MIT
- * @ ссылка http://codeigniter.com
- * @since версии 1.0.0
+ * @package	CodeIgniter
+ * @author	EllisLab Dev Team
+ * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright	Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license	http://opensource.org/licenses/MIT	MIT License
+ * @link	http://codeigniter.com
+ * @since	Version 1.0.0
  * @filesource
- * /
-определено ('BASEPATH') ИЛИ exit ('Прямой доступ к сценарию не разрешен');
+ */
+defined('BASEPATH') OR exit('No direct script access allowed');
 
-$ lang ['ut_test_name'] = 'Имя теста';
-$ lang ['ut_test_datatype'] = 'Тип тестовых данных';
-$ lang ['ut_res_datatype'] = 'Ожидаемый тип данных';
-$ lang ['ut_result'] = 'Результат';
-$ lang ['ut_undefined'] = 'Неопределенное имя теста';
-$ lang ['ut_file'] = 'Имя файла';
-$ lang ['ut_line'] = 'Номер строки';
-$ lang ['ut_passed'] = 'Пройден';
-$ lang ['ut_failed'] = 'Ошибка';
-$ lang ['ut_boolean'] = 'Логическое';
-$ lang ['ut_integer'] = 'Целое число';
-$ lang ['ut_float'] = 'Плавающий';
-$ lang ['ut_double'] = 'Плавающий'; // может быть таким же, как float
-$ lang ['ut_string'] = 'Строка';
-$ lang ['ut_array'] = 'Массив';
-$ lang ['ut_object'] = 'Объект';
-$ lang ['ut_resource'] = 'Ресурс';
-$ lang ['ut_null'] = 'Ноль';
-$ lang ['ut_notes'] = 'Примечания';
+$lang['ut_test_name'] = 'Test Name';
+$lang['ut_test_datatype'] = 'Test Datatype';
+$lang['ut_res_datatype'] = 'Expected Datatype';
+$lang['ut_result'] = 'Result';
+$lang['ut_undefined'] = 'Undefined Test Name';
+$lang['ut_file'] = 'File Name';
+$lang['ut_line'] = 'Line Number';
+$lang['ut_passed'] = 'Passed';
+$lang['ut_failed'] = 'Failed';
+$lang['ut_boolean'] = 'Boolean';
+$lang['ut_integer'] = 'Integer';
+$lang['ut_float'] = 'Float';
+$lang['ut_double'] = 'Float'; // can be the same as float
+$lang['ut_string'] = 'String';
+$lang['ut_array'] = 'Array';
+$lang['ut_object'] = 'Object';
+$lang['ut_resource'] = 'Resource';
+$lang['ut_null'] = 'Null';
+$lang['ut_notes'] = 'Notes';
