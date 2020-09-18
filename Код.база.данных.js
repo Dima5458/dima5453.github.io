@@ -7,7 +7,7 @@
   $text_comment = htmlspecialchars($text_comment);// Преобразуем спецсимволы в HTML-сущности
   $mysqli = new mysqli("localhost", "root", "", "db");// Подключается к базе данных
   $mysqli->query("INSERT INTO `comments` (`name`, `page_id`, `text_comment`) VALUES ('$name', '$page_id', '$text_comment')");// Добавляем комментарий в таблицу
-  header("Location: ".$_SERVER["HTTP_REFERER"]);// Делаем реридект обратно
+  header("Location: ".$_SERVER["HTTP_REFERER"]);// Делаем редирект обратно
 ?>
 	<?php
   $page_id = 150;// Уникальный идентификатор страницы (статьи или поста)
@@ -18,3 +18,4 @@
     echo "<br />";
   }
 ?>
+	
