@@ -1,47 +1,58 @@
--- phpMyAdmin SQL Dump
--- version 5.1.0-dev
--- https://www.phpmyadmin.net/
---
--- Хост: 192.168.30.23
--- Время создания: Сен 12 2020 г., 22:36
--- Версия сервера: 8.0.18
--- Версия PHP: 7.4.8
+<? php
+/ **
+ * CodeIgniter
+ *
+ * Фреймворк для разработки приложений с открытым исходным кодом для PHP
+ *
+ * Этот контент выпущен под лицензией MIT (MIT)
+ *
+ * Авторские права (c) 2014-2015, Технологический институт Британской Колумбии
+ *
+ * Разрешение предоставляется бесплатно любому лицу, получившему копию
+ * этого программного обеспечения и связанных файлов документации («Программное обеспечение») для работы
+ * в Программном обеспечении без ограничений, включая, помимо прочего, права
+ * использовать, копировать, изменять, объединять, публиковать, распространять, сублицензировать и / или продавать
+ * копии Программного обеспечения и разрешить лицам, которым Программное обеспечение
+ * предоставлено для этого при соблюдении следующих условий:
+ *
+ * Приведенное выше уведомление об авторских правах и это уведомление о разрешении должны быть включены в
+ * все копии или существенные части Программного обеспечения.
+ *
+ * ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ ПРЕДОСТАВЛЯЕТСЯ «КАК ЕСТЬ», БЕЗ КАКИХ-ЛИБО ГАРАНТИЙ, ЯВНЫХ ИЛИ
+ * ПОДРАЗУМЕВАЕТСЯ, ВКЛЮЧАЯ, НО НЕ ОГРАНИЧИВАясь, ГАРАНТИИ КОММЕРЧЕСКОЙ ЦЕННОСТИ,
+ * ПРИГОДНОСТЬ ДЛЯ КОНКРЕТНОЙ ЦЕЛИ И ЗАЩИТА ОТ ИНФОРМАЦИИ. НИ В КОЕМ СЛУЧАЕ
+ * АВТОРЫ ИЛИ ДЕРЖАТЕЛИ АВТОРСКИХ ПРАВ НЕСУТ ОТВЕТСТВЕННОСТЬ ЗА ЛЮБЫЕ ПРЕТЕНЗИИ, УБЫТКИ ИЛИ ДРУГИЕ
+ * ОТВЕТСТВЕННОСТЬ, ВЫЯВЛЯЮЩАЯСЯ ЛИ В РЕЗУЛЬТАТЕ ДОГОВОРА, ИЛИ ИНОСТРАННЫМ ПЕРЕДАЧОМ
+ * ВНЕ ИЛИ В СВЯЗИ С ПРОГРАММНЫМ ОБЕСПЕЧЕНИЕМ ИЛИ ИСПОЛЬЗОВАНИЕМ ИЛИ ДРУГИМИ ДЕЯМИ В
+ * ПРОГРАММНОЕ ОБЕСПЕЧЕНИЕ.
+ *
+ * @ пакет CodeIgniter
+ * @author Команда разработчиков EllisLab
+ * @copyright Copyright (c) 2008-2014, EllisLab, Inc. (http://ellislab.com/)
+ * @copyright Copyright (c) 2014-2015, Технологический институт Британской Колумбии (http://bcit.ca/)
+ * @license http://opensource.org/licenses/MIT Лицензия MIT
+ * @ ссылка http://codeigniter.com
+ * @since версии 1.0.0
+ * @filesource
+ * /
+определено ('BASEPATH') ИЛИ exit ('Прямой доступ к сценарию не разрешен');
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- База данных: `TlapaleriaMalfoy`
---
-
--- --------------------------------------------------------
-
---
--- Структура таблицы `Registro`
---
-
-CREATE TABLE `Registro` (
-  `Nombre` varchar(20) NOT NULL,
-  `Direccion` varchar(25) NOT NULL,
-  `Telefono` bigint(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- Дамп данных таблицы `Registro`
---
-
-INSERT INTO `Registro` (`Nombre`, `Direccion`, `Telefono`) VALUES
-('Isaac Ramos Lopez', 'Tepotzotlan', 5548590361),
-('Isaac Ramos Lopez', 'Tepotzotlan', 5548590361);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+$ lang ['ut_test_name'] = 'Имя теста';
+$ lang ['ut_test_datatype'] = 'Тип тестовых данных';
+$ lang ['ut_res_datatype'] = 'Ожидаемый тип данных';
+$ lang ['ut_result'] = 'Результат';
+$ lang ['ut_undefined'] = 'Неопределенное имя теста';
+$ lang ['ut_file'] = 'Имя файла';
+$ lang ['ut_line'] = 'Номер строки';
+$ lang ['ut_passed'] = 'Пройден';
+$ lang ['ut_failed'] = 'Ошибка';
+$ lang ['ut_boolean'] = 'Логическое';
+$ lang ['ut_integer'] = 'Целое число';
+$ lang ['ut_float'] = 'Плавающий';
+$ lang ['ut_double'] = 'Плавающий'; // может быть таким же, как float
+$ lang ['ut_string'] = 'Строка';
+$ lang ['ut_array'] = 'Массив';
+$ lang ['ut_object'] = 'Объект';
+$ lang ['ut_resource'] = 'Ресурс';
+$ lang ['ut_null'] = 'Ноль';
+$ lang ['ut_notes'] = 'Примечания';
