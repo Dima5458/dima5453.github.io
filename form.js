@@ -1,4 +1,4 @@
-$(function(){
+в$(function(){
     //original field values
     var field_values = {
             //id        :  value
