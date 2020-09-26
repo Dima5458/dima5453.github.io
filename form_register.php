@@ -1,93 +1,135 @@
-<?php
-    //Подключение шапки
-    require_once("header.php");
-?>
-<!-- Блок для вывода сообщений -->
-<div class="block_for_messages">
-    <?php
-        //Если в сессии существуют сообщения об ошибках, то выводим их
-        if(isset($_SESSION["error_messages"]) && !empty($_SESSION["error_messages"])){
-            echo $_SESSION["error_messages"];
- 
-            //Уничтожаем чтобы не выводились заново при обновлении страницы
-            unset($_SESSION["error_messages"]);
-        }
- 
-        //Если в сессии существуют радостные сообщения, то выводим их
-        if(isset($_SESSION["success_messages"]) && !empty($_SESSION["success_messages"])){
-            echo $_SESSION["success_messages"];
-             
-            //Уничтожаем чтобы не выводились заново при обновлении страницы
-            unset($_SESSION["success_messages"]);
-        }
-    ?>
-</div>
- 
-<?php
-    //Проверяем, если пользователь не авторизован, то выводим форму регистрации, 
-    //иначе выводим сообщение о том, что он уже зарегистрирован
-    if(!isset($_SESSION["email"]) && !isset($_SESSION["password"])){
-?>
-        <div id="form_register">
-            <h2>Форма регистрации</h2>
- 
-            <form action="register.php" method="post" name="form_register">
-                <table>
-                    <tbody><tr>
-                        <td> Имя: </td>
-                        <td>
-                            <input type="text" name="first_name" required="required">
-                        </td>
-                    </tr>
- 
-                    <tr>
-                        <td> Фамилия: </td>
-                        <td>
-                            <input type="text" name="last_name" required="required">
-                        </td>
-                    </tr>
-              
-                    <tr>
-                        <td> Email: </td>
-                        <td>
-                            <input type="email" name="email" required="required"><br>
-                            <span id="valid_email_message" class="mesage_error"></span>
-                        </td>
-                    </tr>
-              
-                    <tr>
-                        <td> Пароль: </td>
-                        <td>
-                            <input type="password" name="password" placeholder="минимум 6 символов" required="required"><br>
-                            <span id="valid_password_message" class="mesage_error"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> Введите капчу: </td>
-                        <td>
-                            <p>
-                                <img src="captcha.php" alt="Капча" /> <br><br>
-                                <input type="text" name="captcha" placeholder="Проверочный код" required="required">
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="submit" name="btn_submit_register" value="Зарегистрироватся!">
-                        </td>
-                    </tr>
-                </tbody></table>
-            </form>
-        </div>
-<?php
-    }else{
-?>
-        <div id="authorized">
-            <h2>Вы уже зарегистрированы</h2>
-        </div>
-<?php
-    }
-     
-    //Подключение подвала
-    require_once("footer.php");
-?>
+$(function(){
+    //original field values
+    var field_values = {
+            //id        :  value
+            'username'  : 'Логин',
+            'password'  : 'Пароль',
+            'cpassword' : 'Пароль',
+            'firstname'  : 'Имя',
+            'lastname'  : 'Фамилия',
+            'email'  : 'email'
+    };
+
+
+    //inputfocus
+    $('input#username').inputfocus({ value: field_values['username'] });
+    $('input#password').inputfocus({ value: field_values['password'] });
+    $('input#cpassword').inputfocus({ value: field_values['cpassword'] }); 
+    $('input#lastname').inputfocus({ value: field_values['lastname'] });
+    $('input#firstname').inputfocus({ value: field_values['firstname'] });
+    $('input#email').inputfocus({ value: field_values['email'] }); 
+
+
+
+
+    //reset progress bar
+    $('#progress').css('width','0');
+    $('#progress_text').html('0% Выполнено');
+
+    //first_step
+    $('form').submit(function(){ return false; });
+    $('#submit_first').click(function(){
+        //remove classes
+        $('#first_step input').removeClass('error').removeClass('valid');
+
+        //ckeck if inputs aren't empty
+        var fields = $('#first_step input[type=text], #first_step input[type=password]');
+        var error = 0;
+        fields.each(function(){
+            var value = $(this).val();
+            if( value.length<4 || value==field_values[$(this).attr('id')] ) {
+                $(this).addClass('error');
+                $(this).effect("shake", { times:3 }, 50);
+                
+                error++;
+            } else {
+                $(this).addClass('valid');
+            }
+        });        
+        
+        if(!error) {
+            if( $('#password').val() != $('#cpassword').val() ) {
+                    $('#first_step input[type=password]').each(function(){
+                        $(this).removeClass('valid').addClass('error');
+                        $(this).effect("shake", { times:3 }, 50);
+                    });
+                    
+                    return false;
+            } else {   
+                //update progress bar
+                $('#progress_text').html('33% Выполнено');
+                $('#progress').css('width','113px');
+                
+                //slide steps
+                $('#first_step').slideUp();
+                $('#second_step').slideDown();     
+            }               
+        } else return false;
+    });
+
+
+    $('#submit_second').click(function(){
+        //remove classes
+        $('#second_step input').removeClass('error').removeClass('valid');
+
+        var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;  
+        var fields = $('#second_step input[type=text]');
+        var error = 0;
+        fields.each(function(){
+            var value = $(this).val();
+            if( value.length<1 || value==field_values[$(this).attr('id')] || ( $(this).attr('id')=='email' && !emailPattern.test(value) ) ) {
+                $(this).addClass('error');
+                $(this).effect("shake", { times:3 }, 50);
+                
+                error++;
+            } else {
+                $(this).addClass('valid');
+            }
+        });
+
+        if(!error) {
+                //update progress bar
+                $('#progress_text').html('66% Выполнено');
+                $('#progress').css('width','226px');
+                
+                //slide steps
+                $('#second_step').slideUp();
+                $('#third_step').slideDown();     
+        } else return false;
+
+    });
+
+
+    $('#submit_third').click(function(){
+        //update progress bar
+        $('#progress_text').html('100% Выполнено');
+        $('#progress').css('width','339px');
+
+        //prepare the fourth step
+        var fields = new Array(
+            $('#username').val(),
+            $('#password').val(),
+            $('#email').val(),
+            $('#firstname').val() + ' ' + $('#lastname').val(),
+            $('#age').val(),
+            $('#gender').val(),
+            $('#country').val()                       
+        );
+        var tr = $('#fourth_step tr');
+        tr.each(function(){
+            //alert( fields[$(this).index()] )
+            $(this).children('td:nth-child(2)').html(fields[$(this).index()]);
+        });
+                
+        //slide steps
+        $('#third_step').slideUp();
+        $('#fourth_step').slideDown();            
+    });
+
+
+    $('#submit_fourth').click(function(){
+        //send information to server
+        alert('Данные отправлены');
+    });
+
+});
