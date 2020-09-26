@@ -1,58 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Ava.City 2.0</title>
-</head>
-<body>
-    {% if not token %}
-    <form method="post" action="/login">
-        <table>
-            <tr>
-                <td><label for="loginField">Логин</label></td>
-                <td><input id="loginField" type="text" name="login" required></td>
-            </tr>
-            <tr>
-                <td><label for="passwordField">Пароль</label></td>
-                <td><input id="passwordField" type="password" name="password" required></td>
-            </tr>
-            <tr>
-                <td colspan="2" style="text-align: center"><input type="submit" value="Войти"></td>
-            </tr>
-        </table>
-    </form>
-    <p><a href="/register">Зарегистрироваться</a></p>{% else %}<input id="clickMe" type="button" value="Начать игру" onclick="start();"/>
-    <a style="display: none;" id="flash" href="https://get.adobe.com/flashplayer">Включить Flash</a>
-    <div id="flashContent"></div>
-    <br>
-    <a href="/logout">Выйти</a>
-    <script>
-        function start(){
-            document.getElementById('clickMe').style.display = "none";
-            if (swfobject.getFlashPlayerVersion().major == 0){
-                document.getElementById('flash').style.display = "block";
-                return;
-            }
-            var vars = {};
-            vars['config'] = '/appconfig.xml';
-            vars['versions'] = '/files/versions.json?{{ update_time }}';
-            vars['appSwf'] = '/files/pnz-city.swf?{{ update_time }}';
-            var flashVars = [];
-            for (var variable in vars) {
-                flashVars.push(variable + '=' + vars[variable]);
-            }
-            var params = {
-                flashvars: flashVars.join("&"),
-                allowfullscreen: "true",
-                allowscriptaccess: "always",
-                allowFullScreenInteractive: "true",
-                allownetworking: "all",
-                wmode: "transparent"
-            };
-            var el = document.getElementById("flashContent");
-            swfobject.embedSWF("/files/pnz-city-container.swf", el, 1280, 720, 10, null, null, params, {name: "flashContent"});
-        }
-    </script>
-    <script type="text/javascript" src="/files/swfobject.js"></script>{% endif %}
-</body>
-</html>
+<?php
+    // Указываем кодировку
+    header('Content-Type: text/html; charset=utf-8');
+ 
+    $server = "localhost"; // имя хоста (уточняется у провайдера), если работаем на локальном сервере, то указываем localhost
+    $username = "имя_пользователя_бд"; // Имя пользователя БД
+    $password = "пароль_пользователя_бд"; // Пароль пользователя. Если у пользователя нету пароля то, оставляем пустое значение ""
+    $database = "имя_базы_данных"; // Имя базы данных, которую создали
+     
+    // Подключение к базе данных через MySQLi
+    $mysqli = new mysqli($server, $username, $password, $database);
+ 
+    // Проверяем, успешность соединения. 
+    if ($mysqli->connect_errno) { 
+        die("<p><strong>Ошибка подключения к БД</strong></p><p><strong>Код ошибки: </strong> ". $mysqli->connect_errno ." </p><p><strong>Описание ошибки:</strong> ".$mysqli->connect_error."</p>"); 
+    }
+ 
+    // Устанавливаем кодировку подключения
+    $mysqli->set_charset('utf8');
+ 
+    //Для удобства, добавим здесь переменную, которая будет содержать адрес (URL) нашего сайта
+    $address_site = "http://testsite.local";
+?>
