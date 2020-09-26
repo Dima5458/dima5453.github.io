@@ -1,93 +1,23 @@
 <?php
-    //Подключение шапки
-    require_once("header.php");
-?>
-<!-- Блок для вывода сообщений -->
-<div class="block_for_messages">
-    <?php
-        //Если в сессии существуют сообщения об ошибках, то выводим их
-        if(isset($_SESSION["error_messages"]) && !empty($_SESSION["error_messages"])){
-            echo $_SESSION["error_messages"];
+    // Указываем кодировку
+    header('Content-Type: text/html; charset=utf-8');
  
-            //Уничтожаем чтобы не выводились заново при обновлении страницы
-            unset($_SESSION["error_messages"]);
-        }
- 
-        //Если в сессии существуют радостные сообщения, то выводим их
-        if(isset($_SESSION["success_messages"]) && !empty($_SESSION["success_messages"])){
-            echo $_SESSION["success_messages"];
-             
-            //Уничтожаем чтобы не выводились заново при обновлении страницы
-            unset($_SESSION["success_messages"]);
-        }
-    ?>
-</div>
- 
-<?php
-    //Проверяем, если пользователь не авторизован, то выводим форму регистрации, 
-    //иначе выводим сообщение о том, что он уже зарегистрирован
-    if(!isset($_SESSION["email"]) && !isset($_SESSION["password"])){
-?>
-        <div id="form_register">
-            <h2>Форма регистрации</h2>
- 
-            <form action="register.php" method="post" name="form_register">
-                <table>
-                    <tbody><tr>
-                        <td> Имя: </td>
-                        <td>
-                            <input type="text" name="first_name" required="required">
-                        </td>
-                    </tr>
- 
-                    <tr>
-                        <td> Фамилия: </td>
-                        <td>
-                            <input type="text" name="last_name" required="required">
-                        </td>
-                    </tr>
-              
-                    <tr>
-                        <td> Email: </td>
-                        <td>
-                            <input type="email" name="email" required="required"><br>
-                            <span id="valid_email_message" class="mesage_error"></span>
-                        </td>
-                    </tr>
-              
-                    <tr>
-                        <td> Пароль: </td>
-                        <td>
-                            <input type="password" name="password" placeholder="минимум 6 символов" required="required"><br>
-                            <span id="valid_password_message" class="mesage_error"></span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td> Введите капчу: </td>
-                        <td>
-                            <p>
-                                <img src="captcha.php" alt="Капча" /> <br><br>
-                                <input type="text" name="captcha" placeholder="Проверочный код" required="required">
-                            </p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <input type="submit" name="btn_submit_register" value="Зарегистрироватся!">
-                        </td>
-                    </tr>
-                </tbody></table>
-            </form>
-        </div>
-<?php
-    }else{
-?>
-        <div id="authorized">
-            <h2>Вы уже зарегистрированы</h2>
-        </div>
-<?php
-    }
+    $server = "localhost"; // имя хоста (уточняется у провайдера), если работаем на локальном сервере, то указываем localhost
+    $username = "имя_пользователя_бд"; // Имя пользователя БД
+    $password = "пароль_пользователя_бд"; // Пароль пользователя. Если у пользователя нету пароля то, оставляем пустое значение ""
+    $database = "имя_базы_данных"; // Имя базы данных, которую создали
      
-    //Подключение подвала
-    require_once("footer.php");
+    // Подключение к базе данных через MySQLi
+    $mysqli = new mysqli($server, $username, $password, $database);
+ 
+    // Проверяем, успешность соединения. 
+    if ($mysqli->connect_errno) { 
+        die("<p><strong>Ошибка подключения к БД</strong></p><p><strong>Код ошибки: </strong> ". $mysqli->connect_errno ." </p><p><strong>Описание ошибки:</strong> ".$mysqli->connect_error."</p>"); 
+    }
+ 
+    // Устанавливаем кодировку подключения
+    $mysqli->set_charset('utf8');
+ 
+    //Для удобства, добавим здесь переменную, которая будет содержать адрес (URL) нашего сайта
+    $address_site = "http://testsite.local";
 ?>
