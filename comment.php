@@ -1,37 +1,21 @@
 <?php
-    //Подключение шапки
-    require_once("header.php");
+  /* Принимаем данные из формы */
+  $name = $_POST["name"];
+  $page_id = $_POST["page_id"];
+  $text_comment = $_POST["text_comment"];
+  $name = htmlspecialchars($name);// Преобразуем спецсимволы в HTML-сущности
+  $text_comment = htmlspecialchars($text_comment);// Преобразуем спецсимволы в HTML-сущности
+  $mysqli = new mysqli("localhost", "root", "", "db");// Подключается к базе данных
+  $mysqli->query("INSERT INTO `comments` (`name`, `page_id`, `text_comment`) VALUES ('$name', '$page_id', '$text_comment')");// Добавляем комментарий в таблицу
+  header("Location: ".$_SERVER["HTTP_REFERER"]);// Делаем реридект обратно
 ?>
- 
-<div id="content">
-    <h2>Контент главной страницы</h2>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-</div>
- 
+
 <?php
-    //Подключение подвала
-    require_once("footer.php");
+  $page_id = 150;// Уникальный идентификатор страницы (статьи или поста)
+  $mysqli = new mysqli("localhost", "root", "", "db");// Подключается к базе данных
+  $result_set = $mysqli->query("SELECT * FROM `comments` WHERE `page_id`='$page_id'"); //Вытаскиваем все комментарии для данной страницы
+  while ($row = $result_set->fetch_assoc()) {
+    print_r($row); //Вывод комментариев
+    echo "<br />";
+  }
 ?>
