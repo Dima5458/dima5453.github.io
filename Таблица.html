@@ -1,58 +1,943 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Ava.City 2.0</title>
+<html lang="ru" dir="ltr"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="referrer" content="no-referrer">
+  <meta name="robots" content="noindex,nofollow">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+      <link rel="stylesheet" type="text/css" href="./themes/pmahomme/jquery/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="js/vendor/codemirror/lib/codemirror.css?v=5.1.0-dev">
+    <link rel="stylesheet" type="text/css" href="js/vendor/codemirror/addon/hint/show-hint.css?v=5.1.0-dev">
+    <link rel="stylesheet" type="text/css" href="js/vendor/codemirror/addon/lint/lint.css?v=5.1.0-dev">
+    <link rel="stylesheet" type="text/css" href="./themes/pmahomme/css/theme.css?v=5.1.0-dev&amp;nocache=6368843637ltr&amp;server=2">
+    <link rel="stylesheet" type="text/css" href="./themes/pmahomme/css/printview.css?v=5.1.0-dev" media="print" id="printcss">
+    <title>demo.phpmyadmin.net / phpMyAdmin demo - MySQL / performance_schema / accounts | phpMyAdmin 5.1.0-dev</title>
+    <script async="" src="//www.google-analytics.com/analytics.js"></script><script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery.min.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery-migrate.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/sprintf.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/ajax.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/keyhandler.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/bootstrap/bootstrap.bundle.min.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery-ui.min.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/js.cookie.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery.mousewheel.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery.event.drag-2.2.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery.validate.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery-ui-timepicker-addon.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery.ba-hashchange-2.0.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery.debounce-1.0.6.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/menu_resizer.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/cross_framing_protection.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/rte.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/tracekit.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/error_report.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/messages.php?l=ru&amp;v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/config.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/doclinks.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/functions.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/navigation.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/indexes.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/common.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/page_settings.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/drag_drop_import.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/shortcuts_handler.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/jquery/jquery.uitablefilter.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/table/change.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/stickyfill.min.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/gis_data_editor.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/multi_column_sort.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/makegrid.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/sql.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/codemirror/lib/codemirror.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/codemirror/mode/sql/sql.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/codemirror/addon/runmode/runmode.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/codemirror/addon/hint/show-hint.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/codemirror/addon/hint/sql-hint.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/vendor/codemirror/addon/lint/lint.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/codemirror/addon/lint/sql-lint.js?v=5.1.0-dev"></script>
+  <script data-cfasync="false" type="text/javascript" src="js/dist/console.js?v=5.1.0-dev"></script>
+
+<script data-cfasync="false" type="text/javascript">
+// <![CDATA[
+var firstDayOfCalendar = '0';
+var themeImagePath = '.\/themes\/pmahomme\/img\/';
+var mysqlDocTemplate = '.\/url.php\u003Furl\u003Dhttps\u00253A\u00252F\u00252Fdev.mysql.com\u00252Fdoc\u00252Frefman\u00252F8.0\u00252Fen\u00252F\u002525s.html';
+var maxInputVars = 1000;
+
+if ($.datepicker) {
+  $.datepicker.regional[''].closeText = '\u0413\u043E\u0442\u043E\u0432\u043E';
+  $.datepicker.regional[''].prevText = 'Prev';
+  $.datepicker.regional[''].nextText = '\u0421\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439';
+  $.datepicker.regional[''].currentText = '\u0421\u0435\u0433\u043E\u0434\u043D\u044F';
+  $.datepicker.regional[''].monthNames = [
+    '\u042F\u043D\u0432\u0430\u0440\u044C',
+    '\u0424\u0435\u0432\u0440\u0430\u043B\u044C',
+    '\u041C\u0430\u0440\u0442',
+    '\u0410\u043F\u0440\u0435\u043B\u044C',
+    '\u041C\u0430\u0439',
+    '\u0418\u044E\u043D\u044C',
+    '\u0418\u044E\u043B\u044C',
+    '\u0410\u0432\u0433\u0443\u0441\u0442',
+    '\u0421\u0435\u043D\u0442\u044F\u0431\u0440\u044C',
+    '\u041E\u043A\u0442\u044F\u0431\u0440\u044C',
+    '\u041D\u043E\u044F\u0431\u0440\u044C',
+    '\u0414\u0435\u043A\u0430\u0431\u0440\u044C',
+  ];
+  $.datepicker.regional[''].monthNamesShort = [
+    '\u042F\u043D\u0432',
+    '\u0424\u0435\u0432',
+    '\u041C\u0430\u0440',
+    '\u0410\u043F\u0440',
+    '\u041C\u0430\u0439',
+    '\u0418\u044E\u043D',
+    '\u0418\u044E\u043B',
+    '\u0410\u0432\u0433',
+    '\u0421\u0435\u043D',
+    '\u041E\u043A\u0442',
+    '\u041D\u043E\u044F',
+    '\u0414\u0435\u043A',
+  ];
+  $.datepicker.regional[''].dayNames = [
+    '\u0412\u043E\u0441\u043A\u0440\u0435\u0441\u0435\u043D\u044C\u0435',
+    '\u041F\u043E\u043D\u0435\u0434\u0435\u043B\u044C\u043D\u0438\u043A',
+    '\u0412\u0442\u043E\u0440\u043D\u0438\u043A',
+    '\u0421\u0440\u0435\u0434\u0430',
+    '\u0427\u0435\u0442\u0432\u0435\u0440\u0433',
+    '\u041F\u044F\u0442\u043D\u0438\u0446\u0430',
+    '\u0421\u0443\u0431\u0431\u043E\u0442\u0430',
+  ];
+  $.datepicker.regional[''].dayNamesShort = [
+    '\u0412\u0441',
+    '\u041F\u043D',
+    '\u0412\u0442',
+    '\u0421\u0440',
+    '\u0427\u0442',
+    '\u041F\u0442',
+    '\u0421\u0431',
+  ];
+  $.datepicker.regional[''].dayNamesMin = [
+    '\u0412\u0441',
+    '\u041F\u043D',
+    '\u0412\u0442',
+    '\u0421\u0440',
+    '\u0427\u0442',
+    '\u041F\u0442',
+    '\u0421\u0431',
+  ];
+  $.datepicker.regional[''].weekHeader = '\u041D\u0435\u0434.';
+  $.datepicker.regional[''].showMonthAfterYear = true;
+  $.datepicker.regional[''].yearSuffix = '';
+  $.extend($.datepicker._defaults, $.datepicker.regional['']);
+}
+
+if ($.timepicker) {
+  $.timepicker.regional[''].timeText = '\u0412\u0440\u0435\u043C\u044F';
+  $.timepicker.regional[''].hourText = '\u0427\u0430\u0441';
+  $.timepicker.regional[''].minuteText = '\u041C\u0438\u043D\u0443\u0442\u0430';
+  $.timepicker.regional[''].secondText = '\u0421\u0435\u043A\u0443\u043D\u0434\u0430';
+  $.extend($.timepicker._defaults, $.timepicker.regional['']);
+}
+
+function extendingValidatorMessages () {
+  $.extend($.validator.messages, {
+    required: '\u042D\u0442\u043E\u0020\u043F\u043E\u043B\u0435\u0020\u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u043E',
+    remote: '\u0418\u0441\u043F\u0440\u0430\u0432\u044C\u0442\u0435\u0020\u044D\u0442\u043E\u0020\u043F\u043E\u043B\u0435',
+    email: '\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439\u0020\u0430\u0434\u0440\u0435\u0441\u0020\u044D\u002D\u043F\u043E\u0447\u0442\u044B',
+    url: '\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439\u0020URL',
+    date: '\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u0443\u044E\u0020\u0434\u0430\u0442\u0443',
+    dateISO: '\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u0443\u044E\u0020\u0434\u0430\u0442\u0443\u0020\u0028ISO\u0029',
+    number: '\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0435\u0020\u0447\u0438\u0441\u043B\u043E\u0432\u043E\u0435\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435',
+    creditcard: '\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439\u0020\u043D\u043E\u043C\u0435\u0440\u0020\u043A\u0440\u0435\u0434\u0438\u0442\u043D\u043E\u0439\u0020\u043A\u0430\u0440\u0442\u044B',
+    digits: '\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u0442\u043E\u043B\u044C\u043A\u043E\u0020\u0446\u0438\u0444\u0440\u044B',
+    equalTo: '\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u0442\u043E\u0020\u0436\u0435\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435\u0020\u0435\u0449\u0435\u0020\u0440\u0430\u0437',
+    maxlength: $.validator.format('\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043D\u0435\u0020\u0431\u043E\u043B\u0435\u0435\u0020\u007B0\u007D\u0020\u0441\u0438\u043C\u0432\u043E\u043B\u0028\u0430\/\u043E\u0432\u0029'),
+    minlength: $.validator.format('\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043D\u0435\u0020\u043C\u0435\u043D\u0435\u0435\u0020\u007B0\u007D\u0020\u0441\u0438\u043C\u0432\u043E\u043B\u0028\u0430\/\u043E\u0432\u0029'),
+    rangelength: $.validator.format('\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435\u0020\u043C\u0435\u0436\u0434\u0443\u0020\u007B0\u007D\u0020\u0438\u0020\u007B1\u007D\u0020\u0441\u0438\u043C\u0432\u043E\u043B\u0430\u043C\u0438\u0020\u0434\u043B\u0438\u043D\u043E\u0439'),
+    range: $.validator.format('\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435\u0020\u043C\u0435\u0436\u0434\u0443\u0020\u007B0\u007D\u0020\u0438\u0020\u007B1\u007D\u0020\u0441\u0438\u043C\u0432\u043E\u043B\u0430\u043C\u0438'),
+    max: $.validator.format('\u0412\u0432\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435\u0020\u043C\u0435\u043D\u044C\u0448\u0435\u0435\u0020\u0438\u043B\u0438\u0020\u0440\u0430\u0432\u043D\u043E\u0435\u0020\u007B0\u007D'),
+    min: $.validator.format('\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435,\u0020\u0431\u043E\u043B\u044C\u0448\u0435\u0435\u0020\u0438\u043B\u0438\u0020\u0440\u0430\u0432\u043D\u043E\u0435\u0020\u007B0\u007D'),
+    validationFunctionForDateTime: $.validator.format('\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u0443\u044E\u0020\u0434\u0430\u0442\u0443\u0020\u0438\u043B\u0438\u0020\u0432\u0440\u0435\u043C\u044F'),
+    validationFunctionForHex: $.validator.format('\u0412\u0432\u0435\u0434\u0438\u0442\u0435\u0020\u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u043E\u0435\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435\u0020HEX'),
+    validationFunctionForFuns: $.validator.format('\u041E\u0448\u0438\u0431\u043A\u0430')
+  });
+}
+
+CommonParams.setAll({common_query:"",opendb_url:"index.php?route=/database/structure",lang:"ru",server:"2",table:"events_stages_summary_by_host_by_event_name",db:"performance_schema",token:"5b31476b3d4b215e33382a7147352121",text_dir:"ltr",show_databases_navigation_as_tree:true,pma_text_default_tab:"Обзор",pma_text_left_default_tab:"Структура",pma_text_left_default_tab2:false,LimitChars:"50",pftext:"P",confirm:true,LoginCookieValidity:"1440",session_gc_maxlifetime:"1440",logged_in:true,is_https:true,rootPath:"/master-config/",arg_separator:"&",PMA_VERSION:"5.1.0-dev",auth_type:"config",user:"root"});
+ConsoleEnterExecutes=false
+
+AJAX.scriptHandler
+  .add('vendor/jquery/jquery.min.js', 0)
+  .add('vendor/jquery/jquery-migrate.js', 0)
+  .add('vendor/sprintf.js', 1)
+  .add('ajax.js', 0)
+  .add('keyhandler.js', 1)
+  .add('vendor/bootstrap/bootstrap.bundle.min.js', 1)
+  .add('vendor/jquery/jquery-ui.min.js', 0)
+  .add('vendor/js.cookie.js', 1)
+  .add('vendor/jquery/jquery.mousewheel.js', 0)
+  .add('vendor/jquery/jquery.event.drag-2.2.js', 0)
+  .add('vendor/jquery/jquery.validate.js', 0)
+  .add('vendor/jquery/jquery-ui-timepicker-addon.js', 0)
+  .add('vendor/jquery/jquery.ba-hashchange-2.0.js', 0)
+  .add('vendor/jquery/jquery.debounce-1.0.6.js', 0)
+  .add('menu_resizer.js', 1)
+  .add('cross_framing_protection.js', 0)
+  .add('rte.js', 1)
+  .add('vendor/tracekit.js', 1)
+  .add('error_report.js', 1)
+  .add('messages.php', 0)
+  .add('config.js', 1)
+  .add('doclinks.js', 1)
+  .add('functions.js', 1)
+  .add('navigation.js', 1)
+  .add('indexes.js', 1)
+  .add('common.js', 1)
+  .add('page_settings.js', 1)
+  .add('drag_drop_import.js', 1)
+  .add('shortcuts_handler.js', 1)
+  .add('vendor/jquery/jquery.uitablefilter.js', 0)
+  .add('table/change.js', 1)
+  .add('vendor/stickyfill.min.js', 1)
+  .add('gis_data_editor.js', 1)
+  .add('multi_column_sort.js', 1)
+  .add('makegrid.js', 1)
+  .add('sql.js', 1)
+  .add('vendor/codemirror/lib/codemirror.js', 0)
+  .add('vendor/codemirror/mode/sql/sql.js', 0)
+  .add('vendor/codemirror/addon/runmode/runmode.js', 0)
+  .add('vendor/codemirror/addon/hint/show-hint.js', 0)
+  .add('vendor/codemirror/addon/hint/sql-hint.js', 0)
+  .add('vendor/codemirror/addon/lint/lint.js', 0)
+  .add('codemirror/addon/lint/sql-lint.js', 0)
+  .add('console.js', 1)
+;
+$(function() {
+        AJAX.fireOnload('vendor/sprintf.js');
+        AJAX.fireOnload('keyhandler.js');
+      AJAX.fireOnload('vendor/bootstrap/bootstrap.bundle.min.js');
+        AJAX.fireOnload('vendor/js.cookie.js');
+                  AJAX.fireOnload('menu_resizer.js');
+        AJAX.fireOnload('rte.js');
+      AJAX.fireOnload('vendor/tracekit.js');
+      AJAX.fireOnload('error_report.js');
+        AJAX.fireOnload('config.js');
+      AJAX.fireOnload('doclinks.js');
+      AJAX.fireOnload('functions.js');
+      AJAX.fireOnload('navigation.js');
+      AJAX.fireOnload('indexes.js');
+      AJAX.fireOnload('common.js');
+      AJAX.fireOnload('page_settings.js');
+      AJAX.fireOnload('drag_drop_import.js');
+      AJAX.fireOnload('shortcuts_handler.js');
+        AJAX.fireOnload('table/change.js');
+      AJAX.fireOnload('vendor/stickyfill.min.js');
+      AJAX.fireOnload('gis_data_editor.js');
+      AJAX.fireOnload('multi_column_sort.js');
+      AJAX.fireOnload('makegrid.js');
+      AJAX.fireOnload('sql.js');
+                    AJAX.fireOnload('console.js');
+  });
+// ]]>
+</script>
+
+  <noscript><style>html{display:block}</style></noscript>
 </head>
-<body>
-    {% if not token %}
-    <form method="post" action="/login">
-        <table>
-            <tr>
-                <td><label for="loginField">Логин</label></td>
-                <td><input id="loginField" type="text" name="login" required></td>
-            </tr>
-            <tr>
-                <td><label for="passwordField">Пароль</label></td>
-                <td><input id="passwordField" type="password" name="password" required></td>
-            </tr>
-            <tr>
-                <td colspan="2" style="text-align: center"><input type="submit" value="Войти"></td>
-            </tr>
-        </table>
-    </form>
-    <p><a href="/register">Зарегистрироваться</a></p>{% else %}<input id="clickMe" type="button" value="Начать игру" onclick="start();"/>
-    <a style="display: none;" id="flash" href="https://get.adobe.com/flashplayer">Включить Flash</a>
-    <div id="flashContent"></div>
-    <br>
-    <a href="/logout">Выйти</a>
-    <script>
-        function start(){
-            document.getElementById('clickMe').style.display = "none";
-            if (swfobject.getFlashPlayerVersion().major == 0){
-                document.getElementById('flash').style.display = "block";
-                return;
-            }
-            var vars = {};
-            vars['config'] = '/appconfig.xml';
-            vars['versions'] = '/files/versions.json?{{ update_time }}';
-            vars['appSwf'] = '/files/pnz-city.swf?{{ update_time }}';
-            var flashVars = [];
-            for (var variable in vars) {
-                flashVars.push(variable + '=' + vars[variable]);
-            }
-            var params = {
-                flashvars: flashVars.join("&"),
-                allowfullscreen: "true",
-                allowscriptaccess: "always",
-                allowFullScreenInteractive: "true",
-                allownetworking: "all",
-                wmode: "transparent"
-            };
-            var el = document.getElementById("flashContent");
-            swfobject.embedSWF("/files/pnz-city-container.swf", el, 1280, 720, 10, null, null, params, {name: "flashContent"});
-        }
-    </script>
-    <script type="text/javascript" src="/files/swfobject.js"></script>{% endif %}
-</body>
-</html>
+<body style="margin-left: 240px; margin-bottom: 21.0938px; padding-top: 58.0556px; cursor: inherit;">
+    
+
+  <div id="pma_header"></div>
+  
+
+  
+      
+  
+      <div id="floating_menubar" style="margin-left: 242.986px; left: 0px; position: fixed; top: 0px; width: 100%; z-index: 99;">
+<nav id="server-breadcrumb" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <img src="themes/dot.gif" title="" alt="" class="icon ic_s_host">
+      <a href="index.php?route=/">
+        Сервер:        phpMyAdmin demo - MySQL
+      </a>
+    </li>
+
+          <li class="breadcrumb-item">
+        <img src="themes/dot.gif" title="" alt="" class="icon ic_s_db">
+        <a href="index.php?route=/database/structure&amp;db=performance_schema">
+          База данных:          performance_schema
+        </a>
+      </li>
+
+              <li class="breadcrumb-item">
+          <img src="themes/dot.gif" title="" alt="" class="icon ic_s_tbl">
+          <a href="index.php?route=/sql&amp;db=performance_schema&amp;table=accounts">
+                                          Таблица:                                      accounts
+          </a>
+        </li>
+
+                    </ol>
+</nav>
+<div id="topmenucontainer" class="menucontainer">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-label="Toggle navigation" aria-controls="navbarNav" aria-expanded="false">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav" style="width: auto; overflow: visible;">
+      <ul id="topmenu" class="navbar-nav">
+                  <li class="nav-item active">
+            <a class="nav-link text-nowrap" href="index.php?route=/sql&amp;db=performance_schema&amp;table=accounts&amp;pos=0">
+              <img src="themes/dot.gif" title="Обзор" alt="Обзор" class="icon ic_b_browse">&nbsp;Обзор
+                              <span class="sr-only">(current)</span>
+                          </a>
+          </li>
+                  <li class="nav-item">
+            <a class="nav-link text-nowrap" href="index.php?route=/table/structure&amp;db=performance_schema&amp;table=accounts">
+              <img src="themes/dot.gif" title="Структура" alt="Структура" class="icon ic_b_props">&nbsp;Структура
+                          </a>
+          </li>
+                  <li class="nav-item">
+            <a class="nav-link text-nowrap" href="index.php?route=/table/sql&amp;db=performance_schema&amp;table=accounts">
+              <img src="themes/dot.gif" title="SQL" alt="SQL" class="icon ic_b_sql">&nbsp;SQL
+                          </a>
+          </li>
+                  <li class="nav-item">
+            <a class="nav-link text-nowrap" href="index.php?route=/table/search&amp;db=performance_schema&amp;table=accounts">
+              <img src="themes/dot.gif" title="Поиск" alt="Поиск" class="icon ic_b_search">&nbsp;Поиск
+                          </a>
+          </li>
+                  <li class="nav-item">
+            <a class="nav-link text-nowrap" href="index.php?route=/table/export&amp;db=performance_schema&amp;table=accounts&amp;single_table=true">
+              <img src="themes/dot.gif" title="Экспорт" alt="Экспорт" class="icon ic_b_tblexport">&nbsp;Экспорт
+                          </a>
+          </li>
+              <li class="nav-item dropdown d-none" style=""><a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img alt="" title="" src="themes/dot.gif" class="icon ic_b_more">Ещё</a><ul class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown"></ul></li></ul>
+    </div>
+  </nav>
+</div>
+</div>
+
+
+
+    <span id="page_nav_icons">
+      <span id="lock_page_icon"></span>
+      <span id="page_settings_icon" style="display: inline;">
+        <img src="themes/dot.gif" title="Настройки, касающиеся страницы" alt="Настройки, касающиеся страницы" class="icon ic_s_cog">
+      </span>
+      <a id="goto_pagetop" href="#"><img src="themes/dot.gif" title="Кликните на строку, чтобы перейти вверх страницы" alt="Кликните на строку, чтобы перейти вверх страницы" class="icon ic_s_top"></a>
+    </span>
+  
+  <div id="pma_console_container">
+    <div id="pma_console" style="margin-left: 242.986px;">
+                <div class="toolbar collapsed">
+                    <div class="switch_button console_switch">
+            <img src="themes/dot.gif" title="Консоль SQL запроса" alt="Консоль SQL запроса" class="icon ic_console">
+            <span>Консоль</span>
+        </div>
+                            <div class="button clear">
+            
+            <span>Очистить</span>
+        </div>
+                            <div class="button history">
+            
+            <span>История</span>
+        </div>
+                            <div class="button options">
+            
+            <span>Параметры</span>
+        </div>
+                            <div class="button bookmarks">
+            
+            <span>Закладки</span>
+        </div>
+                            <div class="button debug hide">
+            
+            <span>Отладка SQL</span>
+        </div>
+            </div>
+                <div class="content" style="height: 98.3591px; margin-bottom: -98.3507px; display: none;">
+            <div class="console_message_container">
+                <div class="message welcome binded">
+                    <span id="instructions-0">
+                        Нажмите Ctrl+Enter для выполнения запроса                    </span>
+                    <span class="hide" id="instructions-1">
+                        Нажмите Enter для выполнения запроса                    </span>
+                </div>
+                            <div class="message collapsed binded select successed" msgid="133548635394" targetdb="performance_schema" targettable="events_errors_summary_by_thread_by_error"><div class="action_content">
+                    <span class="action collapse">
+            Свернуть
+                    </span>
+                            <span class="action expand">
+            Развернуть
+                    </span>
+                            <span class="action requery">
+            Повторный запрос
+                    </span>
+                            <span class="action edit">
+            Изменить
+                    </span>
+                            <span class="action explain">
+            Анализировать
+                    </span>
+                            <span class="action profiling">
+            Профилирование
+                    </span>
+                            <span class="action bookmark">
+            Закладка
+                    </span>
+                            <span class="text failed">
+            Сбой выполнения запроса
+                    </span>
+                            <span class="text targetdb">
+            База данных
+                            : <span>performance_schema</span>
+                    </span>
+                            <span class="text query_time" title="Sat Oct 03 2020 02:34:04 GMT+0300 (Москва, стандартное время)">
+            Запрошенное время
+                            : <span>2:34:4</span>
+                    </span>
+            </div><div class="query highlighted"><span class="cm-keyword">SELECT</span> <span class="cm-operator">*</span> <span class="cm-keyword">FROM</span> `events_errors_summary_by_thread_by_error`</div></div><div class="message collapsed binded select successed" msgid="127578597792" targetdb="performance_schema" targettable="accounts"><div class="action_content">
+                    <span class="action collapse">
+            Свернуть
+                    </span>
+                            <span class="action expand">
+            Развернуть
+                    </span>
+                            <span class="action requery">
+            Повторный запрос
+                    </span>
+                            <span class="action edit">
+            Изменить
+                    </span>
+                            <span class="action explain">
+            Анализировать
+                    </span>
+                            <span class="action profiling">
+            Профилирование
+                    </span>
+                            <span class="action bookmark">
+            Закладка
+                    </span>
+                            <span class="text failed">
+            Сбой выполнения запроса
+                    </span>
+                            <span class="text targetdb">
+            База данных
+                            : <span>performance_schema</span>
+                    </span>
+                            <span class="text query_time" title="Sat Oct 03 2020 02:34:19 GMT+0300 (Москва, стандартное время)">
+            Запрошенное время
+                            : <span>2:34:19</span>
+                    </span>
+            </div><div class="query highlighted"><span class="cm-keyword">SELECT</span> <span class="cm-operator">*</span> <span class="cm-keyword">FROM</span> `accounts`</div></div></div><!-- console_message_container -->
+            <div class="query_input">
+                <span class="console_query_input"><div class="CodeMirror cm-s-pma CodeMirror-wrap"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 0px; left: 15.9896px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-vscrollbar" tabindex="-1" cm-not-content="true"><div style="min-width: 1px; height: 0px;"></div></div><div class="CodeMirror-hscrollbar" tabindex="-1" cm-not-content="true"><div style="height: 100%; min-height: 1px; width: 0px;"></div></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 16px; margin-bottom: -19px; border-right-width: 31px; min-height: 19px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><span><span>​</span>x</span></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-cursors"><div class="CodeMirror-cursor" style="left: 0px; top: 0px; height: 18.8889px;">&nbsp;</div></div><div class="CodeMirror-code" role="presentation"><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span cm-text="">​</span></span></pre></div></div></div></div></div><div style="position: absolute; height: 31px; width: 1px; border-bottom: 0px solid transparent; top: 19px;"></div><div class="CodeMirror-gutters" style="height: 50px;"><div class="CodeMirror-gutter CodeMirror-lint-markers"></div></div></div></div></span>
+            </div>
+        </div><!-- message end -->
+                <div class="mid_layer"></div>
+                <div class="card ungrouped" id="debug_console">
+            <div class="toolbar ">
+                    <div class="button order order_asc active">
+            
+            <span>по возрастанию</span>
+        </div>
+                            <div class="button order order_desc">
+            
+            <span>по убыванию</span>
+        </div>
+                            <div class="text">
+            
+            <span>Порядок сортировки:</span>
+        </div>
+                            <div class="switch_button">
+            
+            <span>Отладка SQL</span>
+        </div>
+                            <div class="button order_by sort_count">
+            
+            <span>Количество</span>
+        </div>
+                            <div class="button order_by sort_exec active">
+            
+            <span>Порядок выполнения</span>
+        </div>
+                            <div class="button order_by sort_time">
+            
+            <span>Занято времени</span>
+        </div>
+                            <div class="text">
+            
+            <span>Сортировки по:</span>
+        </div>
+                            <div class="button group_queries">
+            
+            <span>Группировать запросы</span>
+        </div>
+                            <div class="button ungroup_queries">
+            
+            <span>Разгруппировать запросы</span>
+        </div>
+            </div>
+            <div class="content debug" style="height: 98.3591px;">
+                <div class="message welcome binded">В процессе получения информации по отладке SQL произошла ошибка.</div>
+                <div class="debugLog"></div>
+            </div> <!-- Content -->
+            <div class="templates">
+                <div class="debug_query action_content">
+                    <span class="action collapse">
+            Свернуть
+                    </span>
+                            <span class="action expand">
+            Развернуть
+                    </span>
+                            <span class="action dbg_show_trace">
+            Показать трассировку
+                    </span>
+                            <span class="action dbg_hide_trace">
+            Скрыть трассировку
+                    </span>
+                            <span class="text count hide">
+            Количество
+                    </span>
+                            <span class="text time">
+            Занято времени
+                    </span>
+            </div>
+            </div> <!-- Template -->
+        </div> <!-- Debug SQL card -->
+                        <div class="card" id="pma_console_options">
+            <div class="toolbar ">
+                    <div class="switch_button">
+            
+            <span>Параметры</span>
+        </div>
+                            <div class="button default">
+            
+            <span>Сбросить настройки</span>
+        </div>
+            </div>
+            <div class="content" style="height: 101.111px;">
+                <label>
+                    <input type="checkbox" name="always_expand">Всегда разворачивать сообщения запроса                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="start_history">Показать историю запросов                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="current_query">Показать текущий запрос на просмотр                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="enter_executes">
+                        Выполнить запрос по нажатию Enter и вставить новую строку по нажатию Shift + Enter. Чтобы сделать эту опцию постоянной, смотрите настройки.                </label>
+                <br>
+                <label>
+                    <input type="checkbox" name="dark_theme">Переключиться на темную тему                </label>
+                <br>
+            </div>
+        </div> <!-- Options card -->
+        <div class="templates">
+                        <div class="query_actions">
+                    <span class="action collapse">
+            Свернуть
+                    </span>
+                            <span class="action expand">
+            Развернуть
+                    </span>
+                            <span class="action requery">
+            Повторный запрос
+                    </span>
+                            <span class="action edit">
+            Изменить
+                    </span>
+                            <span class="action explain">
+            Анализировать
+                    </span>
+                            <span class="action profiling">
+            Профилирование
+                    </span>
+                            <span class="action bookmark">
+            Закладка
+                    </span>
+                            <span class="text failed">
+            Сбой выполнения запроса
+                    </span>
+                            <span class="text targetdb">
+            База данных
+                            : <span></span>
+                    </span>
+                            <span class="text query_time">
+            Запрошенное время
+                            : <span></span>
+                    </span>
+            </div>
+        </div>
+    </div> <!-- #console end -->
+</div> <!-- #console_container end -->
+
+
+  <div id="page_content"><a class="hide" id="update_recent_tables" href="index.php?route=/recent-table&amp;ajax_request=1&amp;recent_table=1"></a><div id="page_settings_modal"><div class="page_settings"><form method="post" action="index.php?route=%2Fsql&amp;db=performance_schema&amp;table=accounts&amp;server=2" class="config-form disableAjax">
+  <input type="hidden" name="tab_hash" value="">
+      <input type="hidden" name="check_page_refresh" id="check_page_refresh" value="">
+    <input type="hidden" name="token" value="5b31476b3d4b215e33382a7147352121">
+  <input type="hidden" name="submit_save" value="Browse">
+<ul class="tabs responsivetable row">
+      <li class="active"><a href="#Browse">Обзор</a></li>
+  </ul>
+<div class="tabs_contents col">
+<fieldset class="optbox" id="Browse" style="">
+<legend>Обзор</legend>
+    <p>Настройка режима просмотра данных.</p>
+<table width="100%" cellspacing="0">
+<tbody><tr><th><label for="TableNavigationLinksMode">Строка навигации по таблице</label><span class="doc"><a href="./url.php?url=https%3A%2F%2Fdocs.phpmyadmin.net%2Fen%2Flatest%2Fconfig.html%23cfg_TableNavigationLinksMode" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Использовать только иконки, только текст, или всё вместе.</small></th><td><select class="w-75" name="TableNavigationLinksMode" id="TableNavigationLinksMode"><option value="icons" selected="selected">Значки</option><option value="text">Текст</option><option value="both">Оба</option></select><a class="restore-default hide" href="#TableNavigationLinksMode" title="Восстановить изначальное значение" style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="ActionLinksMode">Как отображать ссылки на различные действия</label><span class="doc"><a href="./url.php?url=https%3A%2F%2Fdocs.phpmyadmin.net%2Fen%2Flatest%2Fconfig.html%23cfg_ActionLinksMode" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Использовать только иконки, только текст, или всё вместе.</small></th><td><select class="w-75" name="ActionLinksMode" id="ActionLinksMode"><option value="icons">Значки</option><option value="text">Текст</option><option value="both" selected="selected">Оба</option></select><a class="restore-default hide" href="#ActionLinksMode" title="Восстановить изначальное значение" style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="ShowAll">Разрешать вывод всех строк</label><span class="doc"><a href="./url.php?url=https%3A%2F%2Fdocs.phpmyadmin.net%2Fen%2Flatest%2Fconfig.html%23cfg_ShowAll" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Позволяет вывести пользователю кнопку "показать все (записи)".</small></th><td><span class="checkbox"><input type="checkbox" name="ShowAll" id="ShowAll"></span><a class="restore-default hide" href="#ShowAll" title="Восстановить изначальное значение" style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="MaxRows">Максимальное количество строк</label><span class="doc"><a href="./url.php?url=https%3A%2F%2Fdocs.phpmyadmin.net%2Fen%2Flatest%2Fconfig.html%23cfg_MaxRows" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Количество строк при выводе результата запроса. Если строк больше, то будут выведены ссылки перелистывания страниц.</small></th><td><select class="w-75" name="MaxRows" id="MaxRows"><option value="25" selected="selected">25</option><option value="50">50</option><option value="100">100</option><option value="250">250</option><option value="500">500</option></select><a class="restore-default hide" href="#MaxRows" title="Восстановить изначальное значение" style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="Order">Порядок сортировки</label><span class="doc"><a href="./url.php?url=https%3A%2F%2Fdocs.phpmyadmin.net%2Fen%2Flatest%2Fconfig.html%23cfg_Order" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small><kbd>SMART</kbd> - означает обратный порядок сортировки для полей типа TIME, DATE, DATETIME и TIMESTAMP; в ином случае порядок будет прямой.</small></th><td><select class="w-75" name="Order" id="Order"><option value="ASC">ASC</option><option value="DESC">DESC</option><option value="SMART" selected="selected">SMART</option></select><a class="restore-default hide" href="#Order" title="Восстановить изначальное значение" style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="BrowsePointerEnable">Подсветить наведение</label><span class="doc"><a href="./url.php?url=https%3A%2F%2Fdocs.phpmyadmin.net%2Fen%2Flatest%2Fconfig.html%23cfg_BrowsePointerEnable" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Подсветить строку при наведении курсора.</small></th><td><span class="checkbox"><input type="checkbox" name="BrowsePointerEnable" id="BrowsePointerEnable" checked="checked"></span><a class="restore-default hide" href="#BrowsePointerEnable" title="Восстановить изначальное значение" style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="BrowseMarkerEnable">Выделение строки</label><span class="doc"><a href="./url.php?url=https%3A%2F%2Fdocs.phpmyadmin.net%2Fen%2Flatest%2Fconfig.html%23cfg_BrowseMarkerEnable" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Подсвечивать выбранные строки.</small></th><td><span class="checkbox"><input type="checkbox" name="BrowseMarkerEnable" id="BrowseMarkerEnable" checked="checked"></span><a class="restore-default hide" href="#BrowseMarkerEnable" title="Восстановить изначальное значение" style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="GridEditing">Редактирование сетки: действие триггера</label><span class="doc"><a href="./url.php?url=https%3A%2F%2Fdocs.phpmyadmin.net%2Fen%2Flatest%2Fconfig.html%23cfg_GridEditing" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span></th><td><select class="w-75" name="GridEditing" id="GridEditing"><option value="click">Клик</option><option value="double-click" selected="selected">Двойное нажатие</option><option value="disabled">Недоступно</option></select><a class="restore-default hide" href="#GridEditing" title="Восстановить изначальное значение" style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="SaveCellsAtOnce">Редактирование сетки: сохранить все отредактированные ячейки сразу</label><span class="doc"><a href="./url.php?url=https%3A%2F%2Fdocs.phpmyadmin.net%2Fen%2Flatest%2Fconfig.html%23cfg_SaveCellsAtOnce" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span></th><td><span class="checkbox"><input type="checkbox" name="SaveCellsAtOnce" id="SaveCellsAtOnce"></span><a class="restore-default hide" href="#SaveCellsAtOnce" title="Восстановить изначальное значение" style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="RepeatCells">Повтор заголовков</label><span class="doc"><a href="./url.php?url=https%3A%2F%2Fdocs.phpmyadmin.net%2Fen%2Flatest%2Fconfig.html%23cfg_RepeatCells" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Повторять заголовки через каждые X ячеек, <kbd>0</kbd> отключает данную функцию.</small></th><td><input type="number" name="RepeatCells" id="RepeatCells" value="100"><a class="restore-default hide" href="#RepeatCells" title="Восстановить изначальное значение" style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="LimitChars">Ограничить по количеству символов в поле</label><span class="doc"><a href="./url.php?url=https%3A%2F%2Fdocs.phpmyadmin.net%2Fen%2Flatest%2Fconfig.html%23cfg_LimitChars" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Максимальное количество символов, отображаемых в любом нечисловом столбце в режиме просмотра.</small></th><td><input type="number" name="LimitChars" id="LimitChars" value="50"><a class="restore-default hide" href="#LimitChars" title="Восстановить изначальное значение" style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="RowActionLinks">Где вывести ссылки строки таблицы</label><span class="doc"><a href="./url.php?url=https%3A%2F%2Fdocs.phpmyadmin.net%2Fen%2Flatest%2Fconfig.html%23cfg_RowActionLinks" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Ссылки редактирования, копирования и удаления.</small></th><td><select class="w-75" name="RowActionLinks" id="RowActionLinks"><option value="none">Нигде</option><option value="left" selected="selected">Налево</option><option value="right">Направо</option><option value="both">Оба</option></select><a class="restore-default hide" href="#RowActionLinks" title="Восстановить изначальное значение" style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="RowActionLinksWithoutUnique">Показывать ссылки строк</label><span class="doc"><a href="./url.php?url=https%3A%2F%2Fdocs.phpmyadmin.net%2Fen%2Flatest%2Fconfig.html%23cfg_RowActionLinksWithoutUnique" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Нужно ли показывать строки ссылок даже в отсутствие уникального ключа.</small></th><td><span class="checkbox"><input type="checkbox" name="RowActionLinksWithoutUnique" id="RowActionLinksWithoutUnique"></span><a class="restore-default hide" href="#RowActionLinksWithoutUnique" title="Восстановить изначальное значение" style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="TablePrimaryKeyOrder">Порядок сортировки первичного ключа по-умолчанию</label><span class="doc"><a href="./url.php?url=https%3A%2F%2Fdocs.phpmyadmin.net%2Fen%2Flatest%2Fconfig.html%23cfg_TablePrimaryKeyOrder" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Порядок сортировки по-умолчанию для таблиц с первичным ключом.</small></th><td><select class="w-75" name="TablePrimaryKeyOrder" id="TablePrimaryKeyOrder"><option value="NONE" selected="selected">Ниодного</option><option value="ASC">По возрастанию</option><option value="DESC">По убыванию</option></select><a class="restore-default hide" href="#TablePrimaryKeyOrder" title="Восстановить изначальное значение" style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="RememberSorting">Запоминать сортировку таблиц</label><span class="doc"><a href="./url.php?url=https%3A%2F%2Fdocs.phpmyadmin.net%2Fen%2Flatest%2Fconfig.html%23cfg_RememberSorting" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>При просмотре таблиц запоминается сортировка каждой таблицы.</small></th><td><span class="checkbox"><input type="checkbox" name="RememberSorting" id="RememberSorting" checked="checked"></span><a class="restore-default hide" href="#RememberSorting" title="Восстановить изначальное значение" style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr><tr><th><label for="RelationalDisplay">Отображение ссылок</label><span class="doc"><a href="./url.php?url=https%3A%2F%2Fdocs.phpmyadmin.net%2Fen%2Flatest%2Fconfig.html%23cfg_RelationalDisplay" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</span><small>Для параметров отображения</small></th><td><select class="w-75" name="RelationalDisplay" id="RelationalDisplay"><option value="K" selected="selected">ключ</option><option value="D">отобразить колонку</option></select><a class="restore-default hide" href="#RelationalDisplay" title="Восстановить изначальное значение" style="display: inline-block; opacity: 0.25;"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_reload" style="display: none;"></a></td></tr></tbody></table>
+</fieldset>
+</div>
+</form>
+<script type="text/javascript">
+    if (typeof configInlineParams === 'undefined' || !Array.isArray(configInlineParams)) {
+        configInlineParams = [];
+    }
+    configInlineParams.push(function () {
+        registerFieldValidator('MaxRows', 'validatePositiveNumber', true);
+registerFieldValidator('RepeatCells', 'validateNonNegativeNumber', true);
+registerFieldValidator('LimitChars', 'validatePositiveNumber', true);
+$.extend(Messages, {
+	'error_nan_p': 'Значение должно быть положительным числом!',
+	'error_nan_nneg': 'Значение должно быть отрицательным числом!',
+	'error_incorrect_port': 'Некорректный номер порта!',
+	'error_invalid_value': 'Некорректное значение!',
+	'error_value_lte': 'Значение должно быть меньше или равно %s!'});
+$.extend(defaultValues, {
+	'TableNavigationLinksMode': ['icons'],
+	'ActionLinksMode': ['both'],
+	'ShowAll': false,
+	'MaxRows': ['25'],
+	'Order': ['SMART'],
+	'BrowsePointerEnable': true,
+	'BrowseMarkerEnable': true,
+	'GridEditing': ['double-click'],
+	'SaveCellsAtOnce': false,
+	'RepeatCells': '100',
+	'LimitChars': '50',
+	'RowActionLinks': ['left'],
+	'RowActionLinksWithoutUnique': false,
+	'TablePrimaryKeyOrder': ['NONE'],
+	'RememberSorting': true,
+	'RelationalDisplay': ['K']});
+    });
+    if (typeof configScriptLoaded !== 'undefined' && configInlineParams) {
+        loadInlineConfig();
+    }
+</script>
+</div></div><div class="sqlqueryresults ajax">
+    
+    
+    <div class="alert alert-primary" role="alert">
+  <img src="themes/dot.gif" title="" alt="" class="icon ic_s_notice"> Данное выделение не содержит уникального столбца. Изменение сетки, выставление галочки, редактирование, копирование и удаление невозможно. <a href="./url.php?url=https%3A%2F%2Fdocs.phpmyadmin.net%2Fen%2Flatest%2Fconfig.html%23cfg_RowActionLinksWithoutUnique" target="documentation"><img src="themes/dot.gif" title="Документация" alt="Документация" class="icon ic_b_help"></a>
+</div>
+
+    
+    
+<div class="result_query">
+<div class="alert alert-success" role="alert">
+  <img src="themes/dot.gif" title="" alt="" class="icon ic_s_success"> Отображение строк 0 -  2 (3 всего, Запрос занял 0.0018 сек.)
+</div>
+<div class="sqlOuter"><code class="sql"><pre style="display: none;">SELECT * FROM `accounts`
+</pre><div class="sql-highlight cm-s-default"><span class="cm-keyword"><a target="mysql_doc" class="cm-sql-doc" href="./url.php?url=https://dev.mysql.com/doc/refman/8.0/en/select.html">SELECT</a></span> <span class="cm-operator">*</span> <span class="cm-keyword">FROM</span> <span class="cm-variable-2">`accounts`</span>
+</div></code></div><div class="tools print_ignore"><form action="index.php?route=/sql" method="post"><input type="hidden" name="db" value="performance_schema"><input type="hidden" name="table" value="accounts"><input type="hidden" name="token" value="5b31476b3d4b215e33382a7147352121"><input type="hidden" name="sql_query" value="SELECT * FROM `accounts`"><input type="hidden" name="profiling_form" value="1"><input type="checkbox" name="profiling" id="profilingCheckbox" class="autosubmit"> <label for="profilingCheckbox">Профилирование</label></form> [&nbsp;<a href="#" class="inline_edit_sql">Построчное редактирование</a>&nbsp;] [&nbsp;<a href="index.php" data-post="route=/table/sql&amp;db=performance_schema&amp;table=accounts&amp;sql_query=SELECT+%2A+FROM+%60accounts%60&amp;show_query=1">Изменить</a>&nbsp;] [&nbsp;<a href="index.php" data-post="route=/import&amp;db=performance_schema&amp;table=accounts&amp;sql_query=EXPLAIN+SELECT+%2A+FROM+%60accounts%60">Анализ SQL запроса</a>&nbsp;] [&nbsp;<a href="index.php" data-post="route=/import&amp;db=performance_schema&amp;table=accounts&amp;sql_query=SELECT+%2A+FROM+%60accounts%60&amp;show_query=1&amp;show_as_php=1">Создать PHP-код</a>&nbsp;] [&nbsp;<a href="index.php" data-post="route=/sql&amp;db=performance_schema&amp;table=accounts&amp;sql_query=SELECT+%2A+FROM+%60accounts%60&amp;show_query=1">Обновить</a>&nbsp;]</div></div>
+
+      <table class="navigation nospacing nopadding print_ignore">
+      <tbody><tr>
+        <td class="navigation_separator"></td>
+
+        
+        
+        
+
+        
+                  <td>
+            <form action="index.php?route=/sql" method="post">
+              <input type="hidden" name="db" value="performance_schema"><input type="hidden" name="table" value="accounts"><input type="hidden" name="server" value="2"><input type="hidden" name="sql_query" value="SELECT * FROM `accounts`"><input type="hidden" name="is_browse_distinct" value=""><input type="hidden" name="goto" value=""><input type="hidden" name="session_max_rows" value="all"><input type="hidden" name="pos" value="0"><input type="hidden" name="token" value="5b31476b3d4b215e33382a7147352121">
+              <input type="checkbox" name="navig" id="showAll_1088361520" class="showAllRows" value="all">
+              <label for="showAll_1088361520">Показать все</label>
+            </form>
+          </td>
+          <td><div class="navigation_separator">|</div></td>
+        
+        <td>
+          <div class="save_edited hide">
+            <input class="btn btn-link" type="submit" value="Сохранить отредактированные данные">
+            <div class="navigation_separator">|</div>
+          </div>
+        </td>
+        <td>
+          <div class="restore_column hide" style="display: none;">
+            <input class="btn btn-link" type="submit" value="Восстановить порядок столбцов">
+            <div class="navigation_separator">|</div>
+          </div>
+        </td>
+        <td class="navigation_goto">
+          <form action="index.php?route=/sql" method="post" id="maxRowsForm">
+            <input type="hidden" name="db" value="performance_schema"><input type="hidden" name="table" value="accounts"><input type="hidden" name="server" value="2"><input type="hidden" name="sql_query" value="SELECT * FROM `accounts`"><input type="hidden" name="is_browse_distinct" value=""><input type="hidden" name="goto" value=""><input type="hidden" name="pos" value="0"><input type="hidden" name="unlim_num_rows" value="3"><input type="hidden" name="token" value="5b31476b3d4b215e33382a7147352121">
+
+            <label for="sessionMaxRowsSelect">Количество строк:</label>
+            <select class="autosubmit" name="session_max_rows" id="sessionMaxRowsSelect">
+                                            <option value="25" selected="">25</option>
+                              <option value="50">50</option>
+                              <option value="100">100</option>
+                              <option value="250">250</option>
+                              <option value="500">500</option>
+                          </select>
+          </form>
+        </td>
+        <td class="navigation_separator"></td>
+        <td class="largescreenonly">
+          <span>Фильтровать строки:</span>
+          <input type="text" class="filter_rows" placeholder="Поиск в таблице" data-for="1088361520">
+        </td>
+        <td class="largescreenonly">
+          <form action="index.php?route=/sql" method="post" class="print_ignore">
+  <input type="hidden" name="db" value="performance_schema"><input type="hidden" name="table" value="accounts"><input type="hidden" name="server" value="2"><input type="hidden" name="sort_by_key" value="1"><input type="hidden" name="token" value="5b31476b3d4b215e33382a7147352121">
+  Сортировать по ключу:  <select name="sql_query" class="autosubmit">
+          <option value="SELECT * FROM `accounts`   ORDER BY `USER` ASC, `HOST` ASC">ACCOUNT (ASC)</option>
+          <option value="SELECT * FROM `accounts`   ORDER BY `USER` DESC, `HOST` DESC">ACCOUNT (DESC)</option>
+          <option value="SELECT * FROM `accounts`  " selected="">Ниодного</option>
+      </select>
+</form>
+
+        </td>
+        <td class="navigation_separator"></td>
+      </tr>
+    </tbody></table>
+  
+
+<input class="save_cells_at_once" type="hidden" value="">
+<div class="common_hidden_inputs">
+  <input type="hidden" name="db" value="performance_schema"><input type="hidden" name="table" value="accounts"><input type="hidden" name="token" value="5b31476b3d4b215e33382a7147352121">
+</div>
+
+          <input class="table_create_time" type="hidden" value="">
+  
+  <form method="post" action="index.php?route=/sql" name="displayOptionsForm" class="ajax print_ignore">
+    <input type="hidden" name="db" value="performance_schema"><input type="hidden" name="table" value="accounts"><input type="hidden" name="sql_query" value="SELECT * FROM `accounts`"><input type="hidden" name="goto" value=""><input type="hidden" name="display_options_form" value="1"><input type="hidden" name="token" value="5b31476b3d4b215e33382a7147352121">
+
+    <a href="#" class="ajax"><span>+ </span>Параметры</a><div class="slide-wrapper" style="display: none;"><div style="display: none; overflow:auto;" class="pma_auto_slider">
+
+      <fieldset>
+        <div class="formelement">
+          <div>
+            <input type="radio" name="pftext" id="partialFulltextRadioP1088361520" value="P" checked="">
+            <label for="partialFulltextRadioP1088361520">Сокращенные тексты</label>
+          </div>
+          <div>
+            <input type="radio" name="pftext" id="partialFulltextRadioF1088361520" value="F">
+            <label for="partialFulltextRadioF1088361520">Полные тексты</label>
+          </div>
+        </div>
+
+        
+        <div class="formelement">
+          <input type="checkbox" name="display_binary" id="display_binary_1088361520" checked="">
+          <label for="display_binary_1088361520">Показать бинарные данные</label>
+
+          <input type="checkbox" name="display_blob" id="display_blob_1088361520">
+          <label for="display_blob_1088361520">Показать BLOB содержимое</label>
+        </div>
+
+                <div class="formelement">
+          <input type="checkbox" name="hide_transformation" id="hide_transformation_1088361520">
+          <label for="hide_transformation_1088361520">Скрыть преобразование</label>
+        </div>
+
+        <div class="formelement">
+                      <div>
+              <input type="radio" name="geoOption" id="geoOptionRadioGeom1088361520" value="GEOM" checked="">
+              <label for="geoOptionRadioGeom1088361520">Геометрия</label>
+            </div>
+                    <div>
+            <input type="radio" name="geoOption" id="geoOptionRadioWkt1088361520" value="WKT">
+            <label for="geoOptionRadioWkt1088361520">Текст (WKT)</label>
+          </div>
+          <div>
+            <input type="radio" name="geoOption" id="geoOptionRadioWkb1088361520" value="WKB">
+            <label for="geoOptionRadioWkb1088361520">Бинарный (WKB)</label>
+          </div>
+        </div>
+        <div class="clearfloat"></div>
+      </fieldset>
+
+      <fieldset class="tblFooters">
+        <input class="btn btn-primary" type="submit" value="Вперёд">
+      </fieldset>
+    </div></div>
+  </form>
+
+
+  <div class="responsivetable">
+    <div class="data" style="position: relative;"><div class="cRsz" style="height: 84.4445px;"><div class="colborder" style="left: 53.1324px;"></div><div class="colborder" style="left: 145.355px;"></div><div class="colborder" style="left: 332.022px;"></div><div class="colborder" style="left: 497.577px;"></div></div><table class="table_results ajax pma_table" data-uniqueid="1088361520">
+
+      <thead><tr>
+
+      <th class="draggable column_heading sticky pointer marker" data-column="USER"><span><a href="index.php?route=/sql&amp;db=performance_schema&amp;table=accounts&amp;sql_query=SELECT+%2A+FROM+%60accounts%60++%0AORDER+BY+%60accounts%60.%60USER%60+ASC&amp;sql_signature=47f672e6f8261b476946fecec117f2b2cb57412aae9e9a6a69164375ce909462&amp;session_max_rows=25&amp;is_browse_distinct=0" class="sortlink">USER<input type="hidden" value="index.php?route=/sql&amp;db=performance_schema&amp;table=accounts&amp;sql_query=SELECT+%2A+FROM+%60accounts%60++%0AORDER+BY+%60accounts%60.%60USER%60+ASC&amp;sql_signature=47f672e6f8261b476946fecec117f2b2cb57412aae9e9a6a69164375ce909462&amp;session_max_rows=25&amp;is_browse_distinct=0"></a></span></th><th class="draggable column_heading sticky pointer marker" data-column="HOST"><span><a href="index.php?route=/sql&amp;db=performance_schema&amp;table=accounts&amp;sql_query=SELECT+%2A+FROM+%60accounts%60++%0AORDER+BY+%60accounts%60.%60HOST%60+ASC&amp;sql_signature=1b2a8cb2ee0589bee1083fea841f03b69d886a0facd38fab334bcca8c0a8afe9&amp;session_max_rows=25&amp;is_browse_distinct=0" class="sortlink">HOST<input type="hidden" value="index.php?route=/sql&amp;db=performance_schema&amp;table=accounts&amp;sql_query=SELECT+%2A+FROM+%60accounts%60++%0AORDER+BY+%60accounts%60.%60HOST%60+ASC&amp;sql_signature=1b2a8cb2ee0589bee1083fea841f03b69d886a0facd38fab334bcca8c0a8afe9&amp;session_max_rows=25&amp;is_browse_distinct=0"></a></span></th><th class="draggable right column_heading sticky pointer marker" data-column="CURRENT_CONNECTIONS"><span><a href="index.php?route=/sql&amp;db=performance_schema&amp;table=accounts&amp;sql_query=SELECT+%2A+FROM+%60accounts%60++%0AORDER+BY+%60accounts%60.%60CURRENT_CONNECTIONS%60+ASC&amp;sql_signature=a525acb86d81ec425f26a3b0ade82d65fab7db935bc5fd8cddd84ffa582fb15c&amp;session_max_rows=25&amp;is_browse_distinct=0" class="sortlink">CURRENT_CONNECTIONS<input type="hidden" value="index.php?route=/sql&amp;db=performance_schema&amp;table=accounts&amp;sql_query=SELECT+%2A+FROM+%60accounts%60++%0AORDER+BY+%60accounts%60.%60CURRENT_CONNECTIONS%60+ASC&amp;sql_signature=a525acb86d81ec425f26a3b0ade82d65fab7db935bc5fd8cddd84ffa582fb15c&amp;session_max_rows=25&amp;is_browse_distinct=0"></a></span></th><th class="draggable right column_heading sticky pointer marker" data-column="TOTAL_CONNECTIONS"><span><a href="index.php?route=/sql&amp;db=performance_schema&amp;table=accounts&amp;sql_query=SELECT+%2A+FROM+%60accounts%60++%0AORDER+BY+%60accounts%60.%60TOTAL_CONNECTIONS%60+ASC&amp;sql_signature=cea5e8077b24d31540d5da85df682d047727f50a9a5e15b1ad29f444845ea73c&amp;session_max_rows=25&amp;is_browse_distinct=0" class="sortlink">TOTAL_CONNECTIONS<input type="hidden" value="index.php?route=/sql&amp;db=performance_schema&amp;table=accounts&amp;sql_query=SELECT+%2A+FROM+%60accounts%60++%0AORDER+BY+%60accounts%60.%60TOTAL_CONNECTIONS%60+ASC&amp;sql_signature=cea5e8077b24d31540d5da85df682d047727f50a9a5e15b1ad29f444845ea73c&amp;session_max_rows=25&amp;is_browse_distinct=0"></a></span></th>
+      
+<td class="print_ignore"><span></span></td>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr><td data-decimals="0" data-type="string" class="data grid_edit click2    text  null"><span>
+    <em>NULL</em>
+</span></td>
+<td data-decimals="0" data-type="string" class="data grid_edit click2    text  null"><span>
+    <em>NULL</em>
+</span></td>
+<td data-decimals="0" data-type="int" class="right data grid_edit click2 not_null     nowrap"><span>42</span></td>
+<td data-decimals="0" data-type="int" class="right data grid_edit click2 not_null     nowrap"><span>108</span></td>
+</tr>
+<tr><td data-decimals="0" data-type="string" data-originallength="3" class="data grid_edit click2    text "><span>pma</span></td>
+<td data-decimals="0" data-type="string" data-originallength="13" class="data grid_edit click2    text "><span>192.168.30.20</span></td>
+<td data-decimals="0" data-type="int" class="right data grid_edit click2 not_null     nowrap"><span>1</span></td>
+<td data-decimals="0" data-type="int" class="right data grid_edit click2 not_null     nowrap"><span>67</span></td>
+</tr>
+<tr><td data-decimals="0" data-type="string" data-originallength="4" class="data grid_edit click2    text "><span>root</span></td>
+<td data-decimals="0" data-type="string" data-originallength="13" class="data grid_edit click2    text "><span>192.168.30.20</span></td>
+<td data-decimals="0" data-type="int" class="right data grid_edit click2 not_null     nowrap"><span>1</span></td>
+<td data-decimals="0" data-type="int" class="right data grid_edit click2 not_null     nowrap"><span>67</span></td>
+</tr>
+
+      </tbody>
+    </table><div class="cPointer" style="visibility: hidden;"></div><div class="cCpy" style="display: none;"></div><div class="cDrop"></div><div class="cList" style="display: none;"><div class="lDiv"><div><input type="checkbox" checked="checked">USER</div><div><input type="checkbox" checked="checked">HOST</div><div><input type="checkbox" checked="checked">CURRENT_CONNECTIONS</div><div><input type="checkbox" checked="checked">TOTAL_CONNECTIONS</div></div><div class="showAllColBtn">Показать все</div></div><div class="cEdit" style="top: 63.3333px; left: 333.333px; display: none;"><input class="edit_box" rows="1" style="width: 165.556px; height: 21.1111px;"><div class="edit_area" style="display: none; top: 0px;"></div></div><div class="cEdit" style="top: 42.2222px; left: 54.4444px; display: none;"><textarea class="edit_box" rows="1" style="width: 92.2222px; height: 21.1111px;"></textarea><div class="edit_area" style="top: 0px;"><div class="null_div"><label>Null:<input type="checkbox"></label></div><div class="cell_edit_hint">Для отмены редактирования нажмите Esc.</div></div></div></div>
+  </div>
+
+
+      <table class="navigation nospacing nopadding print_ignore">
+      <tbody><tr>
+        <td class="navigation_separator"></td>
+
+        
+        
+        
+
+        
+                  <td>
+            <form action="index.php?route=/sql" method="post">
+              <input type="hidden" name="db" value="performance_schema"><input type="hidden" name="table" value="accounts"><input type="hidden" name="server" value="2"><input type="hidden" name="sql_query" value="SELECT * FROM `accounts`"><input type="hidden" name="is_browse_distinct" value=""><input type="hidden" name="goto" value=""><input type="hidden" name="session_max_rows" value="all"><input type="hidden" name="pos" value="0"><input type="hidden" name="token" value="5b31476b3d4b215e33382a7147352121">
+              <input type="checkbox" name="navig" id="showAll_1088361520" class="showAllRows" value="all">
+              <label for="showAll_1088361520">Показать все</label>
+            </form>
+          </td>
+          <td><div class="navigation_separator">|</div></td>
+        
+        <td>
+          <div class="save_edited hide">
+            <input class="btn btn-link" type="submit" value="Сохранить отредактированные данные">
+            <div class="navigation_separator">|</div>
+          </div>
+        </td>
+        <td>
+          <div class="restore_column hide" style="display: none;">
+            <input class="btn btn-link" type="submit" value="Восстановить порядок столбцов">
+            <div class="navigation_separator">|</div>
+          </div>
+        </td>
+        <td class="navigation_goto">
+          <form action="index.php?route=/sql" method="post" id="maxRowsForm">
+            <input type="hidden" name="db" value="performance_schema"><input type="hidden" name="table" value="accounts"><input type="hidden" name="server" value="2"><input type="hidden" name="sql_query" value="SELECT * FROM `accounts`"><input type="hidden" name="is_browse_distinct" value=""><input type="hidden" name="goto" value=""><input type="hidden" name="pos" value="0"><input type="hidden" name="unlim_num_rows" value="3"><input type="hidden" name="token" value="5b31476b3d4b215e33382a7147352121">
+
+            <label for="sessionMaxRowsSelect">Количество строк:</label>
+            <select class="autosubmit" name="session_max_rows" id="sessionMaxRowsSelect">
+                                            <option value="25" selected="">25</option>
+                              <option value="50">50</option>
+                              <option value="100">100</option>
+                              <option value="250">250</option>
+                              <option value="500">500</option>
+                          </select>
+          </form>
+        </td>
+        <td class="navigation_separator"></td>
+        <td class="largescreenonly">
+          <span>Фильтровать строки:</span>
+          <input type="text" class="filter_rows" placeholder="Поиск в таблице" data-for="1088361520">
+        </td>
+        <td class="largescreenonly">
+          <form action="index.php?route=/sql" method="post" class="print_ignore">
+  <input type="hidden" name="db" value="performance_schema"><input type="hidden" name="table" value="accounts"><input type="hidden" name="server" value="2"><input type="hidden" name="sort_by_key" value="1"><input type="hidden" name="token" value="5b31476b3d4b215e33382a7147352121">
+  Сортировать по ключу:  <select name="sql_query" class="autosubmit">
+          <option value="SELECT * FROM `accounts`   ORDER BY `USER` ASC, `HOST` ASC">ACCOUNT (ASC)</option>
+          <option value="SELECT * FROM `accounts`   ORDER BY `USER` DESC, `HOST` DESC">ACCOUNT (DESC)</option>
+          <option value="SELECT * FROM `accounts`  " selected="">Ниодного</option>
+      </select>
+</form>
+
+        </td>
+        <td class="navigation_separator"></td>
+      </tr>
+    </tbody></table>
+  
+
+  <fieldset class="print_ignore">
+    <legend>Использование результатов запроса</legend>
+
+          <a href="#" id="printView" class="btn" target="print_view"><span class="nowrap"><img src="themes/dot.gif" title="Печать" alt="Печать" class="icon ic_b_print">&nbsp;Печать</span></a>
+
+      <a href="#" id="copyToClipBoard" class="btn"><span class="nowrap"><img src="themes/dot.gif" title="В буфер обмена" alt="В буфер обмена" class="icon ic_b_insrow">&nbsp;В буфер обмена</span></a>
+    
+                  <a href="index.php" data-post="route=/table/export&amp;db=performance_schema&amp;table=accounts&amp;printview=1&amp;sql_query=SELECT+%2A+FROM+%60accounts%60&amp;single_table=true&amp;unlim_num_rows=3" class="btn"><span class="nowrap"><img src="themes/dot.gif" title="Экспорт" alt="Экспорт" class="icon ic_b_tblexport">&nbsp;Экспорт</span></a>
+
+        <a href="index.php" data-post="route=/table/chart&amp;db=performance_schema&amp;table=accounts&amp;printview=1&amp;sql_query=SELECT+%2A+FROM+%60accounts%60&amp;single_table=true&amp;unlim_num_rows=3" class="btn"><span class="nowrap"><img src="themes/dot.gif" title="Отобразить график" alt="Отобразить график" class="icon ic_b_chart">&nbsp;Отобразить график</span></a>
+
+              
+      <span>
+        <a href="index.php?route=/view/create" data-post="route=/view/create&amp;db=performance_schema&amp;table=accounts&amp;sql_query=SELECT+%2A+FROM+%60accounts%60&amp;printview=1" class="btn create_view ajax"><span class="nowrap"><img src="themes/dot.gif" title="Создать представление" alt="Создать представление" class="icon ic_b_view_add">&nbsp;Создать представление</span></a>
+      </span>
+      </fieldset>
+
+    
+</div>
+</div>
+  <div id="selflink" class="print_ignore"><a href="index.php?route=%2Fsql&amp;db=performance_schema&amp;table=accounts&amp;server=2" title="Открыть phpMyAdmin в новом окне" target="_blank" rel="noopener noreferrer"><img src="themes/dot.gif" title="Открыть phpMyAdmin в новом окне" alt="Открыть phpMyAdmin в новом окне" class="icon ic_window-new"></a></div>
+
+  
+
+  
+
+
+
+      <div id="pma_demo">
+      <div class="alert alert-primary" role="alert">
+  <img src="themes/dot.gif" title="" alt="" class="icon ic_s_notice"> <a href="/">Демо-сервер phpMyAdmin</a>: Запущена Git ревизия <a target="_blank" rel="noopener noreferrer" href="https://github.com/phpmyadmin/phpmyadmin/commit/cbaa67ea6c45b4a967104bd5ccd3c10f43151c9b">RELEASE_5_0_2-2613-gcbaa67ea6c</a> из ветки <a target="_blank" rel="noopener noreferrer" href="https://github.com/phpmyadmin/phpmyadmin/tree/master">master</a>.
+</div>
+
+    </div>
+  
+  <div id="pma_footer"><script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2718724-5', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+  
+
+<div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div role="log" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div></body></html>
