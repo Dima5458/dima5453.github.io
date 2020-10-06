@@ -2,7 +2,7 @@
   font-family: 'MobiriseIcons';
   src:  url('mobirise-icons.eot');
   src:  url('mobirise-icons.eot') format('embedded-opentype'),
-    url('mobirise-icons.bin') format('truetype'),
+    url('mobirise-icons.ttf') format('truetype'),
     url('mobirise-icons.woff') format('woff'),
     url('mobirise-icons.svg') format('svg');
   font-weight: normal;
