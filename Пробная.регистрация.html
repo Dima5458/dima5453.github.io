@@ -1,11 +1,25 @@
-<h1>Войти</h1>
-<script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
-<script type="text/javascript">
-  VK.init({apiId: 7625376});
-</script>
+<form name="comment" action="comment.php" method="post">
+  <p>
+    <label>Ваше имя:</label>
+    <input type="text" name="name" />
+  </p>
+  <p>
+    <label>Ваш комментарий:</label>
+    <br />
+    <textarea name="text_comment" cols="30" rows="50"></textarea>
+  </p>
+  <p>
+    <input type="hidden" name="page_id" value="150" />
+    <input type="submit" value="Отправить комментарий" />
+  </p>
+</form>
 
-<!-- VK Widget -->
-<div id="vk_auth"></div>
-<script type="text/javascript">
-  VK.Widgets.Auth("vk_auth", {"authUrl":"/7б.html"});
-</script>
+<?php
+  $page_id = 150;// Уникальный идентификатор страницы (статьи или поста)
+  $mysqli = new mysqli("localhost", "root", "", "db");// Подключается к базе данных
+  $result_set = $mysqli->query("SELECT * FROM `comments` WHERE `page_id`='$page_id'"); //Вытаскиваем все комментарии для данной страницы
+  while ($row = $result_set->fetch_assoc()) {
+    print_r($row); //Вывод комментариев
+    echo "<br />";
+  }
+?>
