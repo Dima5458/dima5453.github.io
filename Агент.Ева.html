@@ -73,7 +73,18 @@ VK.Widgets.Like("vk_like", {type: "button"});
 <iframe width="560" height="315" src="https://api1598340443.multikland.net/embed/movie/35134" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe><h1>Агент Ева русский трейлер</h1>
 <p>Она умна, красива и чрезвычайно опасна. Перемещаясь по миру словно тень, наёмная убийца Ева убирает людей по заданию руководства, но с очередным объектом всё проходит не так гладко. Когда Ева решает наладить отношения с семьёй - сестрой и матерью, которых она не видела 8 лет, - на неё вдруг совершается покушение.</p><iframe width="560" height="315" src="https://www.youtube.com/embed/MvMtRFuta3c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 
+<!-- Put this script tag to the <head> of your page -->
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
 
+<script type="text/javascript">
+  VK.init({apiId: 7625376, onlyWidgets: true});
+</script>
+
+<!-- Put this div tag to the place, where the Like block will be -->
+<div id="vk_recommended"></div>
+<script type="text/javascript">
+VK.Widgets.Recommended("vk_recommended", {limit: 10, period: 'month'});
+</script>
 
 
 
