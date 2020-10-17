@@ -27,4 +27,18 @@
         <td></td>
     </tr>
 </table>
-<script></script>
+<script>
+    var div = document.getElementById("div");
+div.addEventListener("click", changeValue);
+div.addEventListener("blur", changeEnd);
+
+function changeValue(event){
+  var target = event.target;
+  target.setAttribute("contenteditable", true);
+}
+
+function changeEnd(){
+  div.removeAttribute("contenteditable");
+  console.log(div.innerText)
+}
+</script>
