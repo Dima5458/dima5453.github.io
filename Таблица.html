@@ -1,78 +1,115 @@
-<!DOCTYPE HTML>
-<html>
+<script>
+function insertRow(id) {
+  var tbody = document.getElementById(id),
+    row = document.createElement("tr"),
+    cellCounter = document.getElementById("myTable").rows.length;
+
+  var checkbox = document.createElement("input");
+  checkbox.type = 'checkbox';
+  checkbox.className = 'checkbox_done';
+  checkbox.setAttribute('onclick', 'deleteRow(event)');
+
+  var btnEdit = document.createElement("input");
+  btnEdit.type = 'image';
+  btnEdit.className = 'btn';
+  btnEdit.src = 'icons/edit.png';
+  btnEdit.addEventListener('click', function() {
+    editButton();
+    return false;
+  });
+
+  var btnDelete = document.createElement("input");
+  btnDelete.type = 'image';
+  btnDelete.className = 'btn';
+  btnDelete.src = 'icons/delete.png';
+  btnDelete.setAttribute('onclick', 'delButton(event)');
+
+  var tdNum = document.createElement("td");
+  tdNum.setAttribute('id', 'td1_id');
+  tdNum.className = 'td_num';
+  tdNum.appendChild(document.createTextNode(cellCounter));
+
+  var tdDone = document.createElement("td");
+  tdDone.appendChild(checkbox);
+
+  var tdItem = document.createElement("td");
+  tdItem.appendChild(document.createTextNode(document.getElementById("add_id").value));
+
+  var tdQuant = document.createElement("td");
+  tdQuant.appendChild(document.createTextNode(document.getElementById("quant_id").value));
+
+  var tdPrice = document.createElement("td");
+  tdPrice.appendChild(document.createTextNode(document.getElementById("price_id").value));
+
+  var tdAction = document.createElement("td");
+  tdAction.setAttribute('colspan', '2');
+  tdAction.className = 'td_action';
+  tdAction.appendChild(btnEdit);
+  tdAction.appendChild(btnDelete);
+
+  row.appendChild(tdNum);
+  row.appendChild(tdDone);
+  row.appendChild(tdItem);
+  row.appendChild(tdQuant);
+  row.appendChild(tdPrice);
+  row.appendChild(tdAction);
+
+  tbody.appendChild(row);
+
+}
+
+function editButton() {
+  //обработка редактирования строки...
+
+  localStorage.setItem('DoneList', document.getElementById("tbody").innerHTML);
+}
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <link href="css/style.css" rel="stylesheet">
+  <title>Cart - Shopping List</title>
+  <link rel="shortcut icon" type="image/png" href="icons/shortcut_add.ico" />
 </head>
 
-<body>
-  <link rel="stylesheet" href="bagua.css">
-  <link rel="stylesheet" href="my.css">
+<body class="body">
+  <div class="menu">
+    <ul class="list">
+      <li class="li_index"><a class="link_index" href="index.html">Shopping list</a></li>
+      <li class="li"><a class="link" href="done.html">Done</a></li>
+      <li class="li"><a class="link" href="deleted.html">Deleted</a></li>
+    </ul>
+  </div>
+  <div class="main">
+    <h1 class="h1">Shopping List</h1>
+    <hr class="hr">
+    <div class="inputs">
+      <input class="input_add" type="text" id="add_id" placeholder="Add items to you Shopping List">
+      <input class="input_quant" type="text" id="quant_id" placeholder="Quant.">
+      <input class="input_price" type="text" id="price_id" placeholder="Price">
+      <button class="input_button" type="button" onclick="insertRow('myTable');return false;">Add</button>
+    </div>
+  </div>
 
-
-  <p>Кликните на ячейку таблицы, чтобы редактировать её. Нажмите ОК или ОТМЕНА, когда закончите.</p>
-
-  <table id="bagua-table">
-    <tr>
-      <th colspan="3">Квадрат <em>Bagua</em>: Направление, Элемент, Цвет, Значение</th>
-    </tr>
-    <tr>
-      <td class="nw"><strong>Северо-Запад</strong>
-        <br>Металл
-        <br>Серебро
-        <br>Старейшины
-      </td>
-      <td class="n"><strong>Север</strong>
-        <br>Вода
-        <br>Синий
-        <br>Перемены
-      </td>
-      <td class="ne"><strong>Северо-Восток</strong>
-        <br>Земля
-        <br>Жёлтый
-        <br>Направление
-      </td>
-    </tr>
-    <tr>
-      <td class="w"><strong>Запад</strong>
-        <br>Металл
-        <br>Золото
-        <br>Молодость
-      </td>
-      <td class="c"><strong>Центр</strong>
-        <br>Всё
-        <br>Пурпурный
-        <br>Гармония
-      </td>
-      <td class="e"><strong>Восток</strong>
-        <br>Дерево
-        <br>Синий
-        <br>Будущее
-      </td>
-    </tr>
-    <tr>
-      <td class="sw"><strong>Юго-Запад</strong>
-        <br>Земля
-        <br>Коричневый
-        <br>Спокойствие
-      </td>
-      <td class="s"><strong>Юг</strong>
-        <br>Огонь
-        <br>Оранжевый
-        <br>Слава
-      </td>
-      <td class="se"><strong>Юго-Восток</strong>
-        <br>Дерево
-        <br>Зеленый
-        <br>Роман
-      </td>
-    </tr>
-
-</table>
-
-
-  <script src="script.js"></script>
+  <div class="table">
+    <table cellpadding="0" cellspacing="0" border="0" class="mytable" id="myTable" cellspacing="0" border="1">
+      <tbody id="tbody">
+        <tr id="tr_id" class="tr">
+          <td class='td'>#</td>
+          <td>Done</td>
+          <td>Item</td>
+          <td>Quantity</td>
+          <td>Price $</td>
+          <td colspan="2" width="100">Action</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
 </body>
+<script src="js/main.js"></script>
 
 </html>
