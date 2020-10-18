@@ -1,142 +1,60 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
-
 <head>
-  <meta charset="utf-8">
+<title>Chat</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script>
+window.addEventListener("load", function(){
+	document.getElementById("mTab").addEventListener("click", function(e){
+		var elem = e.target || e.srcElement, field = document.createElement("textarea");
+if(elem.nodeName != "TD") return;
+		field.value = elem.innerHTML;
+		elem.innerHTML = "";
+		elem.appendChild(field);
+		field.focus();
+		field.addEventListener("blur",function(){
+			elem.innerHTML = this.value;
+			this.parentNode.removeChild(this);	
+		});
+	});
+});
+</script>
+<style>
+*{padding:0px; margin:0px; box-sizing:border-box;}
+#mTab{
+	border:solid 1px #666666;
+	border-collapse:collapse;
+}
+#mTab td{
+	border:solid 1px #666666;
+	width:60px;
+	height:60px;
+	max-height:60px;
+	text-align:center;
+	overflow:hidden;
+}
+#mTab td textarea{
+	display:block;
+	outline:0px;
+	border:0px;
+	width:100%;
+	height:100%;
+}
+</style>
+<script>
+</script>
 </head>
-
 <body>
-  <link rel="stylesheet" href="bagua.css">
-  <link rel="stylesheet" href="my.css">
-
-
-  <p>Кликните на ячейку таблицы, чтобы отредактировать её. Нажмите ОК или ОТМЕНА, когда закончите.</p>
-
-  <table id="bagua-table">
-    <tr>
-      <th colspan="3">Квадрат <em>Bagua</em>: Направление, Элемент, Цвет, Значение</th>
+<table id="mTab">
+	<tr>
+    	<td>1</td><td>2</td><td>3</td>
     </tr>
-    <tr>
-      <td class="nw"><strong>Северо-Запад</strong>
-        <br>Металл
-        <br>Серебро
-        <br>Старейшины
-      </td>
-      <td class="n"><strong>Север</strong>
-        <br>Вода
-        <br>Синий
-        <br>Перемены
-      </td>
-      <td class="ne"><strong>Северо-Восток</strong>
-        <br>Земля
-        <br>Жёлтый
-        <br>Направление
-      </td>
+	<tr>
+    	<td>1</td><td>2</td><td>3</td>
     </tr>
-    <tr>
-      <td class="w"><strong>Запад</strong>
-        <br>Металл
-        <br>Золото
-        <br>Молодость
-      </td>
-      <td class="c"><strong>Центр</strong>
-        <br>Всё
-        <br>Пурпурный
-        <br>Гармония
-      </td>
-      <td class="e"><strong>Восток</strong>
-        <br>Дерево
-        <br>Синий
-        <br>Будущее
-      </td>
+	<tr>
+    	<td>1</td><td>2</td><td>3</td>
     </tr>
-    <tr>
-      <td class="sw"><strong>Юго-Запад</strong>
-        <br>Земля
-        <br>Коричневый
-        <br>Спокойствие
-      </td>
-      <td class="s"><strong>Юг</strong>
-        <br>Огонь
-        <br>Оранжевый
-        <br>Слава
-      </td>
-      <td class="se"><strong>Юго-Восток</strong>
-        <br>Дерево
-        <br>Зеленый
-        <br>Роман
-      </td>
-    </tr>
-
 </table>
-
-
-  <script src="script.js"></script>
-
 </body>
-
 </html>
-<script>
-/* общие стили для таблицы, изменять их не нужно */
-
-th {
-  text-align: center;
-  font-weight: bold;
-}
-
-td {
-  width: 150px;
-  white-space: nowrap;
-  text-align: center;
-  vertical-align: middle;
-  padding: 10px;
-}
-
-.nw {
-  background-color: #999;
-}
-
-.n {
-  background-color: #03f;
-  color: #fff;
-}
-
-.ne {
-  background-color: #ff6;
-}
-
-.w {
-  background-color: #ff0;
-}
-
-.c {
-  background-color: #60c;
-  color: #fff;
-}
-
-.e {
-  background-color: #09f;
-  color: #fff;
-}
-
-.sw {
-  background-color: #963;
-  color: #fff;
-}
-
-.s {
-  background-color: #f60;
-  color: #fff;
-}
-
-.se {
-  background-color: #0c3;
-  color: #fff;
-}
-  /* ваши стили */
-</script>
-<script>
-let table = document.getElementById('bagua-table');
-
-/* ваш код */
-</script>
