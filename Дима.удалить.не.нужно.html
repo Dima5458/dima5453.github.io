@@ -1,1 +1,117 @@
+Здесь представлены разные таблицы и ситуации. Но функция для фиксирования заголовков/столбцов универсальная. <button onclick="FixAction(this)">Зафиксировать</button>
 
+<p>Простой случай. Зафиксирована 1 строка и 1 столбец. Объединенных ячеек нет.</p>
+<table id="t1" style="width:520px;">
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+
+<p>Здесь зафиксировано 2 строки и 1 столбец. Простое объединение ячеек</p>
+<table id="t2" style="width:640px;">
+  <tr><td rowspan=2 class="cntr">ФИО</td> <td colspan=4 class="cntr">2015 год</td> <td colspan=4 class="cntr">2016</td> </tr>
+  <tr><td class="cntr">1-й квартал</td><td class="cntr">2-й квартал</td><td class="cntr">3-й квартал</td><td class="cntr">4-й квартал</td>
+    <td class="cntr">1-й квартал</td><td class="cntr">2-й квартал</td><td class="cntr">3-й квартал</td><td class="cntr">4-й квартал</td></tr>
+  <tr><td>Оливер Куин</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Лорел Лэнс</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Фелисити Смоук</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Тея Куин</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Малкольм Мерлин</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Слейд Уилсон</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Рой Харпер</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Квентин Лэнс</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Рас Аль Гул</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Нисса</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Рэй Палмер</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Барри Аллен</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Джон Дигл</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Сара Лэнс</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Мойра Куин</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Изабель Рошев</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>?</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>!</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>.</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>,</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+
+<p>Фиксировано 10 строк и 6 столбцов. Сложное объединение ячеек, особенно где 2014 год, cells.length везде дает разную величину</p>
+<table id="t3" style="width:1380px;">
+  <tr>
+    <td colspan=2 rowspan=2></td> <td colspan=4 class="cntr">2012</td> <td colspan=4 class="cntr">2013</td>
+    <td colspan=4 class="cntr">2014</td><td colspan=4 class="cntr">2015</td>
+  </tr>
+  <tr>
+    <td>1-й квартал</td><td>2-й квартал</td><td colspan=2>3-й квартал</td> <td>1-й квартал</td><td>2-й квартал</td><td>3-й квартал</td><td>4-й квартал</td>
+    <td>1-й квартал</td><td colspan=3 style="font-weight:700">2-й квартал</td> <td>1-й квартал</td><td>2-й квартал</td><td>3-й квартал</td><td>4-й квартал</td>
+  </tr>
+  <tr><td rowspan=4>Производственная выручка</td> <td>Базовый план</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Актуальный план</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Факт</td><td></td> <td></td> <td></td> <td></td><td></td> <td></td> <td></td><td></td><td colspan=4 style="font-weight:700"></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Отклонение от баз.плана</td> <td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td rowspan=4>Актированная выручка</td> <td>Базовый план</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Актуальный план</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Факт</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Отклонение от баз.плана</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td rowspan=4>Внешние затраты</td> <td>Базовый план</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Актуальный план</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Факт</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Отклонение от баз.плана</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td rowspan=4>ПО и лицензии</td> <td>Базовый план</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Актуальный план</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Факт</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Отклонение от баз.плана</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td rowspan=4>Услуги подрядчиков</td> <td>Базовый план</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Актуальный план</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Факт</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Отклонение от баз.плана</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td rowspan=4>Оборудование и пр.</td> <td>Базовый план</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Актуальный план</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Факт</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Отклонение от баз.плана</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td rowspan=4>Функциональные затраты</td> <td>Базовый план</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Актуальный план</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Факт</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+  <tr><td>Отклонение от баз.плана</td><td></td> <td></td> <td></td> <td></td> <td></td> <td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+
+
+<p>Здесь зафиксирован только заголовок</p>
+<table id="t4" style="width:324px;">
+  <tr><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td></tr>
+</table>
+
+
+<p>А здесь первые 2 столбца</p>
+<table id="t5" style="width:520px;">
+  <tr><td></td><td></td><td></td><td></td>
+  <td></td><td></td><td></td></tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td> </tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td> </tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td> </tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td> </tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td> </tr>
+  <tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td> </tr>
+</table>
+
+<br><br>
