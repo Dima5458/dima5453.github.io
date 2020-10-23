@@ -4,8 +4,8 @@ document.getElementById('entry').onclick = function () {
 	let out = document.getElementById('out');
 
 	if (login === 'Дима' && password === 'Дима' 
-		|| login === 'alex' && password === '777' 
-		|| login === 'petr' && password === 'b5678') {
+		|| login === 'Дима' && password === '777' 
+		|| login === 'Чер' && password === 'b5678') {
 		out.innerHTML = 'Добро пожаловать перейдите к журналу <a class="header-submenu__link" href="/рабочий.стол.html" title="Моя школа">Рабочий стол</a> ';
 	}
 	
@@ -20,8 +20,8 @@ document.getElementById('entry').onclick = function () {
 	let out = document.getElementById('out');
 
 	if (login === 'Дима4' && password === 'Дима' 
-		|| login === 'alex' && password === '1' 
-		|| login === 'petr' && password === '2') {
+		|| login === 'Яна' && password === '1' 
+		|| login === 'Кур' && password === '2') {
 		out.innerHTML = 'Добро пожаловать перейдите к журналу <a class="header-submenu__link" href="/рабочий.стол.html" title="Моя школа">Рабочий стол</a> ';
 	}
 	
