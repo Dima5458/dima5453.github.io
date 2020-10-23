@@ -3,7 +3,7 @@ document.getElementById('entry').onclick = function () {
 	let password = document.getElementById('password').value;
 	let out = document.getElementById('out');
 
-	if (login === 'ivan' && password === '334455' 
+	if (login === 'Дима' && password === 'Дима' 
 		|| login === 'alex' && password === '777' 
 		|| login === 'petr' && password === 'b5678') {
 		out.innerHTML = 'Добро пожаловать';
