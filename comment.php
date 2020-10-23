@@ -6,7 +6,7 @@ document.getElementById('entry').onclick = function () {
 	if (login === 'Дима' && password === 'Дима' 
 		|| login === 'Дима' && password === '777' 
 		|| login === 'Чер' && password === 'b5678') {
-		out.innerHTML = 'Добрый день вы зашли на профиль "Черненков Дмитрий Игоревич " нажмите на эту кнопку ---> Что-бы попасть в журнал <a class="header-submenu__link" href="/рабочий.стол.html" title="Моя школа">Рабочий стол</a> ';
+		out.innerHTML = 'Добрый день вы зашли на профиль "Черненков Дмитрий Игоревич " организация "ТАКОЙ ШКОЛЫ НЕТ №4" нажмите на эту кнопку ---> Что-бы попасть в журнал <a class="header-submenu__link" href="/рабочий.стол.html" title="Моя школа">Рабочий стол</a> ';
 	}
 	
 	else {
