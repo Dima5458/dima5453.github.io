@@ -10,6 +10,6 @@ document.getElementById('entry').onclick = function () {
 	}
 	
 	else {
-		out.innerHTML = 'Ошибка';
+		out.innerHTML = 'Пользователя нет в этой системе "спросите у администратора"';
 	}
 }
