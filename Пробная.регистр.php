@@ -1,4 +1,3 @@
-//элемент с классом row, который находится внутри элемента с id wrap
-let parent = element.closest('#wrap .row');
-//или div, у которого есть атрибут data-description
-let div = element.closest('div[data-description]');
+ document.getElementById('inp_1').value
+document.getElementById('inp_2').value
+ document.getElementById('inp_1').value*document.getElementById('inp_2').value
