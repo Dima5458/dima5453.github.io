@@ -1,60 +1,9 @@
 <html><head><script src="/Пробная.регистр.php" crossorigin="anonymous"></script>
-<table id="basket">
- <thead>
-   <tr>
-   	<th>Наименование</th>
-   	<th>Количество</th>
-   	<th>Цена, грн</th>
-   	<th>Удалить</th>
-   </tr>
- </thead>
- <tbody>
-   <tr>
-	<td>Рюкзак школьный Rainbow Girl</td>
-	<td>1</td>
-	<td>1</td>
-	<td><span class="trash"></span></td>
-   </tr>
-   <tr>
-	<td>Пенал Smart Power 4x4 </td>
-	<td>1</td>
-	<td>1</td>
-	<td><span class="trash"></span></td>
-   </tr>
-   <tr>
-	<td>Фломастеры BIC Visa 12 цветов</td>
-	<td>1</td>
-	<td>1</td>
-	<td><span class="trash"></span></td>
-   </tr>
-   <tr>
-	<td>Набор шариковых ручек 4 шт BIC</td>
-	<td>1</td>
-	<td>1</td>
-	<td><span class="trash"></span></td>
-	</tr>
-   <tr>
-	<td>Итого</td>
-	<td colspan="2" id="itogo"></td>
-	<th>&nbsp;</th>
-   </tr>
-  </tbody>
-</table>
-
-<script>
- let trash = document.querySelectorAll('#basket .trash'),
-     basket = document.getElementById('basket');;
- trash.forEach(del => del.onclick = function() {
-   if (confirm("Вы уверены?")) this.closest('tr').remove();
-   showPrice();
-});
-
- function showPrice() {
-   let priceTd = basket.querySelectorAll('td:nth-child(3)');
-   priceTd = Array.from(priceTd);
-   let summa = 0;
-   summa = priceTd.reduce((res, el) => summa += +el.textContent, 0);
-   itogo.textContent = summa;
- }
-showPrice();
-</script>
+ <div class="form-group">
+<h3>Умножение чисел</h3>
+<label for="inp_1">Введите число 1:</label>
+  <input type="text" class="form-control" id="inp_1">
+<label for="inp_2">Введите число 2:</label>
+  <input type="text" class="form-control" id="inp_2">
+</div>
+<button onclick="multi()"  class="btn btn-primary" >Умножить</button>
