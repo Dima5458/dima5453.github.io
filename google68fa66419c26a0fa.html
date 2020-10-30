@@ -1,28 +1,77 @@
 <script>
+.chat {
+	border:1px solid #333;
+	margin:15px;
+	width:40%;
+	height:70%;
+	background:#555;
+	color:#fff;
+}
 
+.chat-messages {
+	min-height:93%;
+	max-height:93%;
+	overflow:auto;
+}
+
+.chat-messages__content {
+	padding:1px;
+}
+
+.chat__message {
+	border-left:3px solid #333;
+	margin-top:2px;
+	padding:2px;
+}
+
+.chat__message_black {
+	border-color:#000;
+}
+
+.chat__message_blue {
+	border-color:blue;
+}
+
+.chat__message_green {
+	border-color:green;
+}
+
+.chat__message_red {
+	border-color:red;
+}
+
+.chat-input {
+	min-height:6%;
+}
+input {
+	font-family:arial;
+	font-size:16px;
+	vertical-align:middle;
+	background:#333;
+	color:#fff;
+	border:0;
+	display:inline-block;
+	margin:1px;
+	height:30px;
+}
+
+.chat-form__input {
+	width:79%;
+}
+
+.chat-form__submit {
+	width:18%;
+}
 </script>
-<!DOCTYPE HTML>
-<html>
- <head>
-  <meta charset="utf-8">
-  <title>Тег INPUT</title>
- </head>
- <body>
-
- <form name="test" method="post" action="input1.php">
-  <p><b>Ваше имя:</b><br>
-   <input type="text" size="40">
-  </p>
-  <p><b>Каким браузером в основном пользуетесь:</b><Br>
-   <input type="radio" name="browser" value="ie"> Internet Explorer<Br>
-   <input type="radio" name="browser" value="opera"> Opera<Br>
-   <input type="radio" name="browser" value="firefox"> Firefox<Br>
-  </p>
-  <p>Комментарий<Br>
-   <textarea name="comment" cols="40" rows="3"></textarea></p>
-  <p><input type="submit" value="Отправить">
-   <input type="reset" value="Очистить"></p>
- </form>
-
- </body>
-</html>
+<div class='chat'>
+	<div class='chat-messages'>
+		<div class='chat-messages__content' id='messages'>
+			Загрузка...
+		</div>
+	</div>
+	<div class='chat-input'>
+		<form method='post' id='chat-form'>
+			<input type='text' id='message-text' class='chat-form__input' placeholder='Введите сообщение'> <input type='submit' class='chat-form__submit' value='=>'>
+		</form>
+	</div>
+</div>
