@@ -1,4 +1,16 @@
 <script>
+	sendForm.onsubmit = function () {
+	send_request('send');
+	return false; //Возвращаем ложь, чтобы остановить классическую отправку формы
+};
+</script>
+<script>
+	function update() {
+	send_request('load');
+}
+interval = setInterval(update,500);
+</script>
+<script>
 	function send_request(act, login = null, password = null) {//Основная функция
 	//Переменные, которые будут отправляться
 	var var1 = null;
