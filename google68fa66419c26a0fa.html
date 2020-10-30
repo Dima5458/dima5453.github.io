@@ -1,20 +1,15 @@
 <script>
 <?php
-if($_POST['submit']) { // если кнопка была нажата, просто могут перейти вручную на set.php :)
-$conn = mysqli_connect('host', 'user', 'password', 'name_db');
-$city = $_POST['city'];
-$street = $_POST['street'];
-$return = mysqli_query($conn, "INSERT INTO `таблица` (`city`, `street`) VALUES ('$city', '$street')");
-if($return == 1) {
-echo 'Данные успешно сохранены! ';
-} else {
-echo 'Не удалось сохранить данные';
-}
-}
+ 
+if ($_POST['name']!="")
+    echo "Здравствуйте, ".$_POST['name'].". Добро пожаловать на мой сайт<BR/>";
+ 
 ?>
 </script>
-< form action='set.php' method='POST' >
-< input type='text' name='city' placeholder='Город' >
-< input type='text' name='street' placeholder='Улица' >
-< input type='submit' name='submit' >
-< /form >
+<form method="post">
+ 
+    Ваше имя: <input type="text" name="name" value="Звать то как лол?"/><BR/>
+ 
+    <input type="submit" value="Поздороваться"/>
+ 
+</form>
