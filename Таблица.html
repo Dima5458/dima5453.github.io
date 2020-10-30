@@ -1,16 +1,79 @@
-<html><head><script src="/Пробная.регистр.php" crossorigin="anonymous"></script>
- <div class="date">
-
-<p class="blok-date1" title="animate hang d1">Январь</p>
-<p class="blok-date1" title="animate hang d2">Январь</p>
-<p class="blok-date1" title="animate hang d3">Январь</p>
-<p class="blok-date1" title="animate hang d4">Январь</p>
-<p class="blok-date1" title="animate hang d5">Февраль</p>
-
-<p class="blok-date2" title="animate hang d1">4</p>
-<p class="blok-date2" title="animate hang d2">11</p>
-<p class="blok-date2" title="animate hang d3">18</p>
-<p class="blok-date2" title="animate hang d4">25</p>
-<p class="blok-date2" title="animate hang d5">1</p>
-
+<div style="text-align:center;">
+  <h2>A Table</h2>
+  <h5>Click "New Row" to add a row to table</h5>
+  <table id="myTable">
+    <tr>
+      <th>Sl. No.</th>
+      <th>Input</th>
+    </tr>
+    <tr>
+      <td>1.</td>
+      <td>
+        <input type="text" />
+      </td>
+    </tr>
+  </table>
+  <br>
+  <input type="button" value="New Row" onclick="addRow()">
+  <template id="rowTemplate">
+    <tr>
+      <td></td>
+      <td>
+        <input type="text" />
+      </td>
+    </tr>
+  </template>
 </div>
+<script>
+ function addRow() {
+
+  var template = document.querySelector('#rowTemplate'),
+    tbl = document.querySelector('#myTable'),
+    td_slNo = template.content.querySelectorAll("td")[0],
+    tr_count = tbl.rows.length;
+
+  td_slNo.textContent = tr_count;
+  var clone = document.importNode(template.content, true);
+  tbl.appendChild(clone);
+
+}
+</script>
+<script>
+ body,
+input[type="button"] {
+  font-family: bookman old style;
+  font-size: 12pt;
+}
+
+table {
+  border-collapse: collapse;
+  margin: auto;
+}
+
+th,
+input[type="button"],
+h2 {
+  color: indianred;
+}
+
+th,
+td {
+  border: 1px solid indianred;
+  padding: 6px;
+}
+
+input[type="text"] {
+  border: 1px dashed indianred;
+}
+
+input[type="button"] {
+  border: 2px solid indianred;
+  background: antiquewhite;
+  cursor: pointer;
+}
+
+input[type="button"]:hover {
+  background: indianred;
+  color: antiquewhite;
+}
+</script>
