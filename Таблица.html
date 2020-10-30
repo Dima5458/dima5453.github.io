@@ -1,79 +1,10 @@
-<div style="text-align:center;">
-  <h2>A Table</h2>
-  <h5>Click "New Row" to add a row to table</h5>
-  <table id="myTable">
-    <tr>
-      <th>Sl. No.</th>
-      <th>Input</th>
-    </tr>
-    <tr>
-      <td>1.</td>
-      <td>
-        <input type="text" />
-      </td>
-    </tr>
-  </table>
-  <br>
-  <input type="button" value="New Row" onclick="addRow()">
-  <template id="rowTemplate">
-    <tr>
-      <td></td>
-      <td>
-        <input type="text" />
-      </td>
-    </tr>
-  </template>
+<div class="example">
+    <div id="current_date_time_block2">31.10.2020 00:18:29</div>
+    <script type="text/javascript">// <![CDATA[
+    /* каждую секунду получаем текущую дату и время */
+    /* и вставляем значение в блок с id "current_date_time_block2" */
+    setInterval(function () {
+        document.getElementById('current_date_time_block2').innerHTML = date_time();
+    }, 1000);
+    // ]]></script>
 </div>
-<script>
- function addRow() {
-
-  var template = document.querySelector('#rowTemplate'),
-    tbl = document.querySelector('#myTable'),
-    td_slNo = template.content.querySelectorAll("td")[0],
-    tr_count = tbl.rows.length;
-
-  td_slNo.textContent = tr_count;
-  var clone = document.importNode(template.content, true);
-  tbl.appendChild(clone);
-
-}
-</script>
-<script>
- body,
-input[type="button"] {
-  font-family: bookman old style;
-  font-size: 12pt;
-}
-
-table {
-  border-collapse: collapse;
-  margin: auto;
-}
-
-th,
-input[type="button"],
-h2 {
-  color: indianred;
-}
-
-th,
-td {
-  border: 1px solid indianred;
-  padding: 6px;
-}
-
-input[type="text"] {
-  border: 1px dashed indianred;
-}
-
-input[type="button"] {
-  border: 2px solid indianred;
-  background: antiquewhite;
-  cursor: pointer;
-}
-
-input[type="button"]:hover {
-  background: indianred;
-  color: antiquewhite;
-}
-</script>
