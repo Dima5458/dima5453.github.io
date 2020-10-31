@@ -14,3 +14,13 @@ else if(mb_strlen($name) < 5){
 ?>
 	$pass = md5($pass."thisisforhabr"); // Создаем хэш из пароля
 $mysql = new mysqli('', 'root', '', 'lessons_php');
+$result1 = $mysql->query("SELECT * FROM `users` WHERE `login` = '$login'");
+$user1 = $result1->fetch_assoc(); // Конвертируем в массив
+if(!empty($user1)){
+	echo "Данный логин уже используется!";
+	exit();
+}
+	$mysql->query("INSERT INTO `users` (`login`, `pass`, `name`)
+	VALUES('$login', '$pass', '$name')");
+$mysql->close();
+	
