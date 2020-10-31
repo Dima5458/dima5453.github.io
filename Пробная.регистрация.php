@@ -12,7 +12,7 @@ if (isset($_POST['subRegBtn'])) {
 	} elseif ($_POST['password'] == '') {
 		echo "Введите пароль!";
 	} else {
-		INSERT INTO `Регистрация.Дима` (`login`, `password`) VALUES ('Dima', 'Dima');
+		//INSERT INTO `Регистрация.Дима` (`login`, `password`) VALUES ('Dima', 'Dima');
 
 		echo '<h1 style="color: green;">Вы успешно зарегистрировались!</h1>';
 	}
