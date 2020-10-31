@@ -1,1 +1,1 @@
-$sql = "EXPLAIN SELECT * FROM `Регистрация`";
+SELECT * FROM `Регистрация` WHERE 1
