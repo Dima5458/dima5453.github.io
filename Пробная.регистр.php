@@ -1,9 +1,3 @@
-var D = new Date(),
-r = 5 - D.getDay();
-if (r == -1) r = 6;
-D.setDate(D.getDate() + r);
-document.write(D + '<br>');
-for (var i=0; i<4; i++) {
-D.setDate(D.getDate() + 7);
-document.write(D + '<br>');
-}
+login1       password1       e-mail1      city1
+login2       password2       e-mail2      city2
+login3       password3       e-mail3      city3
