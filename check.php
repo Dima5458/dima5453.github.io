@@ -1,24 +1,16 @@
-<?php
+<?php 
 
-$connect = mysqli_connect("127.0.0.1", "root", "", "lessons_php");
-
-
-
-if (isset($_POST['subRegBtn'])) {
-	if ($_POST['login'] == '') 		
-		echo "Введите email!";
-	} elseif ($_POST['password'] == '') {
-		echo "Введите пароль!";
-	} else {
-				//INSERT INTO `Регистрация.Дима` (`login`, `password`) VALUES ('Dima', 'Dima');
-		$login = $_POST['login'];
-		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-		mysqli_query($connect, "INSERT INTO `users` (`id`, `login`, `email`, `password`) VALUES (NULL, '$login', '$email', '$password');");
-		echo '<h1 style="color: green;">Вы успешно зарегистрировались!</h1>';
-	}
+$login = filter_var(trim($_POST['login']), FILTER_SANITIZE_STRING); // Удаляет все лишнее и записываем значение в переменную //$login
+$name = filter_var(trim($_POST['name']), FILTER_SANITIZE_STRING);
+$pass = filter_var(trim($_POST['pass']), FILTER_SANITIZE_STRING); ?>
+if(mb_strlen($login) < 5 || mb_strlen($login) > 90){
+	echo "Недопустимая длина логина";
+	exit();
 }
-
-
-
-
+else if(mb_strlen($name) < 5){
+	echo "Недопустимая длина имени.";
+	exit();
+} // Проверяем длину имени 
 ?>
+	$pass = md5($pass."thisisforhabr"); // Создаем хэш из пароля
+$mysql = new mysqli('', 'root', '', 'lessons_php');
