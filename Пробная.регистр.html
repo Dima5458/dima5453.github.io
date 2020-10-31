@@ -36,7 +36,7 @@ if (isset($_POST['subRegBtn'])) {
 		$login = $_POST['login'];
 		$email = $_POST['email'];
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-		mysqli_query($connect, "INSERT INTO `users` (`id`, `login`, `email`, `password`) VALUES (NULL, '$login', '$email', '$password');");
+INSERT INTO `Регистрация.Дима` (`login`, `password`) VALUES ('Dima', 'Dima');
 		echo '<h1 style="color: green;">Вы успешно зарегистрировались!</h1>';
 	}
 }
