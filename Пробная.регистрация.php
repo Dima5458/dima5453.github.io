@@ -12,6 +12,7 @@ if (isset($_POST['subRegBtn'])) {
 	} elseif ($_POST['password'] == '') {
 		echo "Введите пароль!";
 	} else {
+		//INSERT INTO `uыers` (`id`, `login`, `email`, `password`) VALUES ('54', '54', '54', '54');
 		$login = $_POST['login'];
 		$email = $_POST['email'];
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
