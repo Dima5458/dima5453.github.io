@@ -1,6 +1,124 @@
 <script>
-login1       password1       e-mail1      city1
-login2       password2       e-mail2      city2
-login3       password3       e-mail3      city3
+<?php
+// файл db.php
+error_reporting(E_ALL);
+
+$connect_info = "mysql:host=localhost; dbname=users; charset=utf8";
+
+$connect_opt = array(
+PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,
+PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC
+);
+try {
+$db = new PDO($connect_info, 'mysql', 'mysql', $connect_opt); // username, passwd подставляешь свои значения
+}
+catch (PDOException $e)
+{
+die($e->getMessage());
+}
+<script>
+<html lang="ru">
+<head>
+<title>Регистрация</title>
+</head>
+<body>
+<h2>Регистрация</h2>
+<form action="save_user.php" method="post">
+<!--**** save_user.php - это адрес обработчика. То есть, после нажатия на кнопку "Зарегистрироваться", данные из полей отправятся на страничку save_user.php методом "post" ***** -->
+<p>
+<label>Ваш логин:<br></label>
+<label>
+<input name="login" type="text" size="30" maxlength="20">
+</label>
+</p>
+<!--**** В текстовое поле (name="login" type="text") пользователь вводит свой логин ***** -->
+<p>
+<label>Ваш email:<br></label>
+<label>
+<input name="email" type="text" size="30" maxlength="30">
+</label>
+</p>
+<!--**** В текстовое поле (name="email" type="text") пользователь вводит свой email ***** -->
+<p>
+<label>Ваш пароль:<br></label>
+<label>
+<input name="password" type="password" size="30" maxlength="20">
+</label>
+</p>
+<!--**** В поле для паролей (name="password" type="password") пользователь вводит свой пароль ***** -->
+<p>
+<input type="submit" name="submit" value="Зарегистрироваться">
+<!--**** Кнопочка (type="submit") отправляет данные на страничку save_user.php ***** -->
+
+<br><a href="index.php">Авторизироватся</a>
+</p>
+</form>
+</body>
+</html>
+</script>
+
+<script>
+  <?php
+if (isset($_POST['login'])) {
+$login = $_POST['login'];
+if ($login == '') {
+unset($login);
+}
+} //заносим введенный пользователем логин в переменную $login, если он пустой, то уничтожаем переменную
+if (isset($_POST['email'])) {
+$email = $_POST['email'];
+if ($email == '') {
+unset($email);
+}
+} //занесение логина и проверка на пустое значение
+if (isset($_POST['password'])) {
+$password=$_POST['password'];
+if ($password =='') {
+unset($password);
+}
+}
+//заносим введенный пользователем пароль в переменную $password, если он пустой, то уничтожаем переменную
+if (empty($login) or empty($password) or empty($email)) //если пользователь не ввел логин или пароль, то выдаем ошибку и останавливаем скрипт
+{
+exit ("Вы ввели не всю информацию, вернитесь назад и заполните все поля!");
+}
+//если логин и пароль введены, то обрабатываем их, чтобы теги и скрипты не работали, мало ли что люди могут ввести
+$login = stripslashes($login);
+$login = htmlspecialchars($login);
+$email = stripslashes($email);
+$email = htmlspecialchars($email);
+$password = stripslashes($password);
+$password = htmlspecialchars($password);
+//удаляем лишние пробелы
+$login = trim($login);
+$email = trim($email);
+$password = trim($password);
+// подключаемся к базе
+include ("db.php");// файл db.php должен быть в той же папке, что и все остальные, если это не так, то просто измените путь
+// проверка на существование пользователя с таким же логином
+
+
+$query = $db->prepare("SELECT * FROM users WHERE login=?");
+$query ->execute([$login]);
+$result = $query->fetch(PDO::FETCH_ASSOC);
+
+if ($result) {
+exit ("Извините, введённый вами логин уже зарегистрирован. Введите другой логин. <a href='reg.php'>Вернутся к регистрации</a>");
+}
+// если такого нет, то сохраняем данные
+$query2 = ("INSERT INTO users (login, email, password) VALUES(:login, :email, :password)");
+$result2 = $db->prepare($query2);
+$pdo_res = $result2->execute(array('login'=>$login, 'email'=>$email, 'password'=>$password));
+
+
+// Проверяем, есть ли ошибки
+
+if ($pdo_res=='TRUE')
+{
+echo "Вы успешно зарегистрированы! Теперь вы можете зайти на сайт. <a href='index.php'>Главная страница</a>"; // ссылка
+}
+else {
+echo "Ошибка! Вы не зарегистрированы.";
+}
 </script>
 <p>Введите логин: <input type="text" id="login"></p> <p>Введите пароль: <input type="password" id="password"></p> <button id="entry"">Войти</button> <hr> <p id="out"></p>
