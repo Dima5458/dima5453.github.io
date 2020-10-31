@@ -1,3 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<?php echo "<title>Уроки PHP</title>"; ?>
+</head>
+<body>
+	
+
+
+<form method="post" action="/">
+	<input type="text" name="login" placeholder="Введите логин">
+	<br>
+	<input type="email" name="email" placeholder="Введите email">
+	<br>
+	<input type="password" name="password" placeholder="Введите пароль">
+	<br>
+	<button name="subRegBtn">Зарегистрироватся</button>
+</form>
+
+
+
 <?php
 
 $connect = mysqli_connect("127.0.0.1", "root", "", "lessons_php");
@@ -12,7 +34,6 @@ if (isset($_POST['subRegBtn'])) {
 	} elseif ($_POST['password'] == '') {
 		echo "Введите пароль!";
 	} else {
-		//INSERT INTO `uыers` (`id`, `login`, `email`, `password`) VALUES ('54', '54', '54', '54');
 		$login = $_POST['login'];
 		$email = $_POST['email'];
 		$password = password_hash($_POST['password'], PASSWORD_DEFAULT);
@@ -25,3 +46,10 @@ if (isset($_POST['subRegBtn'])) {
 
 
 ?>
+
+
+
+
+
+</body>
+</html>
