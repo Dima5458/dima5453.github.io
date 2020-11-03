@@ -258,4 +258,245 @@ window.onclick = function(event) {
 
 
 
-</body></html>
+</body></html><html><head><script>
+h1 {
+
+font-size: italic;
+
+text-transform: uppercase;
+
+}
+</script>
+
+</head><body><input name="guruweba_example_checkbox" type="checkbox">
+<input name="guruweba_example_color" type="color" value="#55cc77">
+<input name="guruweba_example_file" type="file">
+<input name="guruweba_example_reset" type="reset" value="Очистить поля">
+<input name="guruweba_example_time" type="time">
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* Модальный (фон) */
+.modal {
+  display: none; /* Скрыто по умолчанию */
+  position: fixed; /* Оставаться на месте */
+  z-index: 1; /* Сидеть на вершине */
+  padding-top: 100px; /* Расположение коробки */
+  left: 0;
+  top: 0;
+  width: 100%; /* Полная ширина */
+  height: 100%; /* Полная высота */
+  overflow: auto; /* Включите прокрутку, если это необходимо */
+  background-color: rgb(0,0,0); /* Цвет запасной вариант  */
+  background-color: rgba(0,0,0,0.4); /*Черный с непрозрачностью */
+}
+
+/* Модальное содержание */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* Кнопка закрытия */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+
+
+<h1>Модальном окно</h1>
+
+<!-- Триггер / Открыть Модальный -->
+<button id="myBtn">Открыть модальном окно</button>
+
+<!-- Модальном окно -->
+<div id="myModal" class="modal" style="display: none;">
+
+  <!-- Модальное содержание -->
+  <div class="modal-content">
+    <span class="close">×</span>
+<div class="wrapper" style="display: block;">
+
+
+
+<div id="errors" class="errors" style="display: none; left: 650px; position: fixed; top: 40px; z-index: 9999;"><div class="rounded"><div class="c1"><div class="c2"></div></div><div class="cc">
+</div><div class="c3"><div class="c4"></div></div></div></div>
+
+<div id="divStep2" style="display: none;">
+<h2>Загрузка файлов</h2>
+<iframe target="_top" id="targetFrame" name="targetFrame" style="display: none">
+</iframe>
+
+<form id="form" action="https://content.school.mosreg.ru/uploadst?ownerID=1000005085825&amp;ownerType=User&amp;type=messenger" method="post" enctype="multipart/form-data" target="targetFrame">
+
+
+   
+
+    
+    <div id="divAttachFiles" class="col24 first" style="width:450px; margin-left:10px">
+    
+		<h3>Файлы</h3>
+		
+		<div class="panel"><div class="rounded"><div class="c1"><div class="c2"></div></div><div class="cc" style="overflow:auto;height:210px">
+		
+			
+					<div class="row2">
+						<div class="div_flex"><p class="file_input_num_label">1.</p><div id="multifile1_file_input_block" class="file_input_block "><div><label for="multifile1" class="file_input_label">Выберите файл</label><input type="file" id="multifile1" name="multifile1" class="file_input"></div><div class="file_input_preview" id="multifile1_preview">Файл не выбран</div></div></div>
+						<div class="div_flex margin-top-10"><p class="file_input_num_label">2.</p><div id="multifile2_file_input_block" class="file_input_block "><div><label for="multifile2" class="file_input_label">Выберите файл</label><input type="file" id="multifile2" name="multifile2" class="file_input"></div><div class="file_input_preview" id="multifile2_preview">Файл не выбран</div></div></div>
+						<div class="div_flex margin-top-10"><p class="file_input_num_label">3.</p><div id="multifile3_file_input_block" class="file_input_block "><div><label for="multifile3" class="file_input_label">Выберите файл</label><input type="file" id="multifile3" name="multifile3" class="file_input"></div><div class="file_input_preview" id="multifile3_preview">Файл не выбран</div></div></div>
+					</div>
+
+                    
+                    
+				
+			
+			<div class="help">
+			    <ul><li>разрешены только <strong id="sTypes" class="dotted">определенные типы файлов</strong><ul id="fTypes" style="display:none;"><li><strong>Картинки</strong>: JPG (JPEG), GIF, PNG</li><li><strong>Видео</strong>: MP4, FLV, AVI, WMV, MPG, MOV, MKV, 3GP, OGV</li><li><strong>Аудио</strong>: MP3</li><li><strong>Документы</strong>: DOC (DOCX), XLS (XLSX), PPT (PPTX), TXT, RTF, PDF, ODT, ODF, ODP, ODS, ODG</li><li><strong>Архивы</strong>: ZIP, RAR, TAR, GZ, BZ2</li><li><strong>Электронные книги</strong>: EPUB, MOBI, FB2</li></ul></li><li>общий объём загружаемых файлов не должен превышать <strong>2 Гб</strong></li><li>загрузка файлов, нарушающих <a href="https://school.mosreg.ru/terms"><strong>Пользовательское соглашение</strong></a> и <a href="https://school.mosreg.ru/moderation_concept"><strong>Положения о модерации</strong></a>, приведет к блокированию вашего аккаунта</li></ul>
+                
+                
+			</div>
+			
+		<div class="clear"></div></div><div class="c3"><div class="c4"></div></div></div></div>
+		
+		<div class="row upload-btn-container">
+			<input type="submit" id="upload" name="upload" rel="#netProgress" value="Загрузить" class="button">
+			или <a href="https://school.mosreg.ru/user/user.aspx?user=1000005085825&amp;view=files">вернуться к файлам</a>
+		    
+        </div>
+
+        
+	</div>
+	
+	<div class="col24" id="divToFolder" style="height:250px; width:250px; margin-left: 10px;">
+		<h3>В папку</h3>
+		<div class="panel"><div class="rounded"><div class="c1"><div class="c2"></div></div><div class="cc" style="overflow:auto;height:210px">
+			<div class="panel" style="height:auto">
+				<ul class="filetree treeview"><li class="closed expandable"><input type="radio" id="f5545413" name="folder" value="5545413"><span for="f5545413" class="folder strong">Биология</span></li><li class="closed expandable"><input type="radio" id="f5541928" name="folder" value="5541928"><span for="f5541928" class="folder strong">География</span></li><li class="closed expandable"><input type="radio" id="f5531690" name="folder" value="5531690"><span for="f5531690" class="folder strong">Информатика </span></li><li class="closed expandable"><input type="radio" id="f5744197" name="folder" value="5744197"><span for="f5744197" class="folder strong">История</span></li><li class="closed expandable"><input type="radio" id="f5644451" name="folder" value="5644451"><span for="f5644451" class="folder strong">ОБЖ</span></li><li class="closed expandable"><input type="radio" id="f5651280" name="folder" value="5651280"><span for="f5651280" class="folder strong">ОБЖ_</span></li><li class="closed expandable"><input type="radio" id="f5540088" name="folder" value="5540088"><span for="f5540088" class="folder strong">Обществознание</span></li><li class="last closed expandable"><input type="radio" id="f6222858" name="folder" value="6222858"><span for="f6222858" class="folder strong">Технология </span></li></ul>
+			</div>
+			
+			<div class="clear">
+			    <label for="folderName">Новая папка</label>
+				<input type="text" id="folderName" name="folderName" value="" maxlength="50" class="t w2">
+			</div>
+            
+		<div class="clear"></div></div><div class="c3"><div class="c4"></div></div></div></div>
+        
+        <div class="row upload-btn-container" style="float: left; clear: both;"> </div> 	
+	</div>
+	
+
+
+</form>
+
+</div>
+
+<div id="divStep1" style="display: block;">
+
+   <h2 style="margin-bottom: 5px;">АЛГЕБРА</h2>
+   <div>
+   <form>
+		<div class="col24" id="divTreeFiles" style="height:250px; width:250px; margin-left: 10px;">
+    
+    <div class="panel"><div class="rounded"><div class="c1"><div class="c2"></div></div><div class="cc" style="overflow:auto;height:210px">
+			<div class="panel" id="divFiles">
+        <div id="calendar" class="" style="display: block;"><a href="" class="previous">&lt;</a><div class="current"><a href="">Сентябрь, 2020</a></div><a href="" class="next">&gt;</a><div style="height: px; overflow: hidden;"><div class="content"><div class="decade" id="decade_currentscreen" style="display: none;"><ul class="years"><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li></ul></div><div class="year" id="year_currentscreen" style="display: none;"><ul class="months"><li><a href="" rel="1">янв</a></li><li><a href="" rel="2">фев</a></li><li><a href="" rel="3">мар</a></li><li><a href="" rel="4">апр</a></li><li><a href="" rel="5">май</a></li><li><a href="" rel="6">июн</a></li><li><a href="" rel="7">июл</a></li><li><a href="" rel="8">авг</a></li><li><a href="" rel="9">сен</a></li><li><a href="" rel="10">окт</a></li><li><a href="" rel="11">ноя</a></li><li><a href="" rel="12">дек</a></li></ul></div><div class="month" id="month_currentscreen" style="display: block; margin-top: 0px;"><ul class="week"><li>Пн</li><li>Вт</li><li>Ср</li><li>Чт</li><li>Пт</li><li class="weekend">Сб</li><li class="weekend">Вс</li></ul><ul class="days"><li><a href="" class="notnow">31</a></li><li><a href="" class="">1</a></li><li><a href="" class="">2</a></li><li><a href="" class="">3</a></li><li><a href="" class="">4</a></li><li class="weekend"><a href="" class="">5</a></li><li class="weekend"><a href="" class="">6</a></li><li><a href="" class="">7</a></li><li><a href="" class="">8</a></li><li><a href="" class="">9</a></li><li><a href="" class="">10</a></li><li><a href="" class="">11</a></li><li class="weekend"><a href="" class="">12</a></li><li class="weekend"><a href="" class="">13</a></li><li><a href="" class="">14</a></li><li><a href="" class="">15</a></li><li><a href="" class="">16</a></li><li><a href="" class="">17</a></li><li><a href="" class="">18</a></li><li class="weekend"><a href="" class="">19</a></li><li class="weekend"><a href="" class="">20</a></li><li><a href="" class="">21</a></li><li><a href="" class="selected">22</a></li><li><a href="" class="">23</a></li><li><a href="" class="">24</a></li><li><a href="" class="">25</a></li><li class="weekend"><a href="" class="">26</a></li><li class="weekend"><a href="" class="">27</a></li><li><a href="" class="">28</a></li><li><a href="" class="">29</a></li><li><a href="" class="">30</a></li><li><a href="" class="notnow">1</a></li><li><a href="" class="notnow">2</a></li><li class="weekend"><a href="" class="notnow">3</a></li><li class="weekend"><a href="" class="notnow">4</a></li><li><a href="" class="notnow">5</a></li><li><a href="" class="notnow">6</a></li><li><a href="" class="notnow">7</a></li><li><a href="" class="notnow">8</a></li><li><a href="" class="notnow">9</a></li><li class="weekend"><a href="" class="notnow">10</a></li><li class="weekend"><a href="" class="notnow">11</a></li></ul></div></div><div class="today"><a href="">Сегодня: 22 Сентябрь 2020 г.</a></div></div></div>
+        </div>
+    <div class="clear"></div></div><div class="c3"><div class="c4"></div></div></div></div>
+            
+    </div>
+    
+    </form>	
+    </div>
+   <div class="help" style="margin-top: 10px; float: left; width: 45%; margin-left: 10px;">
+   <p>Учитель:<a href="https://dima5453.github.io/%D0%94%D0%B8%D0%BC%D0%B0_%D0%A7%D0%B5%D1%80%D0%BD%D0%B5%D0%BD%D0%BA%D0%BE%D0%B2.%D0%BF%D1%80%D0%BE%D1%84%D0%B8%D0%BB%D1%8C.html" class="u" title="Страница этого пользователя"> Дмитрий</a></p><p>Урок: Алгебра</p><p></p><p></p><p></p><p></p><p>Алгебра <a class="link" href="https://dima5453.github.io/%D0%92%D1%8B%D0%B1%D1%80%D0%B0%D0%BD_7_%D0%91_%D0%9A%D0%BB%D0%B0%D1%81%D1%81.html" target="_blank" rel="noopener" data-log-node="cmdg" data-clickable="">Журнал</a></p><p>История <a class="link" href="https://dima5453.github.io/%D0%B8%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F.1.%D1%87%D0%B5%D1%82.html" target="_blank" rel="noopener" data-log-node="cmdg" data-clickable="">Журнал</a></p>
+</div>
+    	
+        
+</div>	
+
+<div id="divStep3" style="display: none;">
+     <h2 style="margin-bottom: 5px;">Список Прикрепленных файлов</h2>
+    
+     <div id="divSummaryFiles" class="row2 netUpload tree">
+                <ul id="upDivFiles"></ul>
+                </div>
+</div>
+
+<div id="divNavigator" style="clear: both;text-align: right; padding-right:20px">
+    
+</div>
+
+<div id="netProgress" class="modal" style="height:100px;width:500px;"><div class="cc">
+	<div id="loading" class="loading loadingLabel"><h4>Загрузка файлов. Не закрывайте браузер!</h4></div>
+	<div id="netProgressBar" class="bar"><div></div><span></span></div>
+	<div class="clear">
+		<div class="r"><a id="netCancel" href="#" class="button">Отмена</a></div>
+		<div class="netStatus"></div>
+	</div>
+</div></div>
+
+
+
+
+
+</div>  </div>
+
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+
+
+
+<table id="journal" class="grid gridLines vam marks">
+					<tbody><tr>
+						<th style="width:1%" rowspan="2">№</th>
+						<th style="width:3%" rowspan="2">Ученик</th></tr><tr><th style="width:5%">пароль</th><th style="width:5%">логин</th></tr><tr><td class="tac">1</td><td class="s2"><a href="" title="Смотреть оценки по этому предмету"><strong class="u">Яна Курарарь</strong></a></td><td style="text-align:left;" class="tac">85241</td><td style="text-align:left;" class="tac">Yana2540as</td>
+                                
+                                
+                                </tr><tr><td class="tac">2</td><td class="s2"><a href="" title="Смотреть оценки по этому предмету"><strong class="u">Дима Черненков</strong></a></td><td style="text-align:left;" class="tac">8227aaa</td><td style="text-align:left;" class="tac">Dima8227sss</td></tr></tbody></table></body></html>
