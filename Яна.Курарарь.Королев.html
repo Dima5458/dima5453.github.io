@@ -1,1 +1,118 @@
-Поиск Яны
+<html m_init="2384887-511202009161212"><head>
+	<meta charset="utf-8">
+	<title>Просмотр шаблона</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+		}
+		.preview__header {
+		    font-size: 12px;
+		    height: 55px;
+		    background-color: #262626;
+		    z-index: 100;
+		    line-height: 54px;
+		}
+		.preview__market-logo {
+		    float: left;
+		    padding: 0 20px;
+		}
+		.preview__market-logo a {
+		    display: inline-block;
+		    position: absolute;
+		    top: 0px;
+		    text-indent: -9999px;
+		    height: 48px;
+		    width: 182px;
+		    background: url(logo.png);
+		    background-size: 182px 48px;
+		}
+		.preview__actions {
+		    float: right;
+		}
+		.preview__action--buy, .preview__action--close {
+		    display: inline-block;
+		    padding: 0 20px;
+		}
+		.e-btn--3d {
+		    -webkit-font-smoothing: antialiased;
+		    -moz-osx-font-smoothing: grayscale;
+		    -webkit-box-sizing: border-box;
+		    box-sizing: border-box;
+		    display: inline-block;
+		    margin: 0;
+		    border: none;
+		    border-radius: 4px;
+		    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		    text-align: center;
+		    text-decoration: none;
+		    cursor: pointer;
+		    color: white;
+		    font-size: 14px;
+		    padding: 5px 20px;
+		    line-height: 1.5;
+		    background-color: #8BC34A;
+		    -webkit-box-shadow: 0 2px 0 #6f9a37;
+		    box-shadow: 0 2px 0 #6f9a37;
+		    position: relative;
+		}
+		.color-constructor {
+			background: #8560A8;
+			margin-left: 10px;
+			-webkit-box-shadow: 0 2px 0 #684b84;
+    		box-shadow: 0 2px 0 #684b84;
+		}
+		.e-btn--3d:hover {
+		    background-color: #7aa93c;
+		}
+		.color-constructor:hover {
+			background: #684b84;
+		}
+		.preview__action--close {
+		    border-left: 1px solid #333333;
+		}
+		.preview__action--close a {
+		    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		    color: #999999;
+		    text-decoration: none;
+		    font-size: 15px;
+		}
+		.preview__action--close a span {
+		    color: white;
+		    font-size: 15px;
+		    margin-right: 10px;
+		}
+		.preview__action--close a:hover {
+		    color: white;
+		}
+		.full-screen-preview__frame {
+		    width: 100%;
+		    background-color: white;
+		    border: 0;
+		    height: calc(100vh - 55px);
+		    outline: none;
+		    display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="preview__header" data-view="ctaHeader">
+	  	<div class="preview__market-logo">
+	    	<a href="https://html6.com.ru/index.php?productID=123">html6.com.ru</a>
+	  	</div>
+
+	  	<div class="preview__actions">
+		  	<div class="preview__action--buy">
+		    	<a class="e-btn--3d color-primary" href="https://html6.com.ru/index.php?productID=123">Получить сейчас</a>
+		    			  	</div>
+
+		  	<div class="preview__action--close">
+		    	<a href="https://html6.com.ru/demo/voiz/index.html">
+		      		<span>×</span>Убрать фрейм
+				</a>
+			</div>
+		</div>
+	</div>
+	<iframe class="full-screen-preview__frame" src="https://html6.com.ru/demo/voiz/index.html"></iframe>
+
+</body></html>
