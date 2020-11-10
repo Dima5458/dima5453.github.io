@@ -1,25 +1,87 @@
 <script>
-            nextMove(el1, el2){
-document.getElementById(el2).innerHTML=document.getElementById(el1).innerHTML;
+                (function($){
+	$.fn.checkboxTable = function() {
+	target = this;
  
-}
+	// Клик по checkbox в шапке таблицы.
+	$(target).on('click', 'thead :checkbox', function() {
+		var check = this;
+		$(this).parents('table').find('tbody :checkbox').each(function(){
+			if ($(check).is(':checked')) {
+				$(this).prop('checked', true);
+				$(this).parents('tr').addClass('selected');
+			} else {
+				$(this).prop('checked', false);
+				$(this).parents('tr').removeClass('selected');
+			}
+		});
+	});
+ 
+	// Клик по checkbox в строке таблицы.
+	$(target).on('click', 'tbody :checkbox', function() {
+		var parents = $(this).parents('table');
+			if ($(this).is(':checked')) {
+				$(this).parents('tr').addClass('selected');
+				$(parents).find('thead :checkbox').prop('checked', true);
+			} else {
+				$(this).parents('tr').removeClass('selected');
+				if ($(parents).find('tbody :checkbox:checked').length == 0) {
+					$(parents).find('thead :checkbox').prop('checked', false);
+				}
+			}
+		});
+ 
+		// Клик по строке таблицы
+		$(target).on('click', 'tbody tr', function(event) {
+			if (event.target.tagName == 'TH' || event.target.tagName == 'TD'){
+				$(this).find(':checkbox').trigger('click');
+			}
+		});
+	};
+})(jQuery);
 </script>
-<table>
-            <tbody>  
-            <tr>
-                <td id="s1" class="Square" onclick="nextMove(this);"></td>
-                <td id="s2" class="Square" onclick="nextMove(this);"></td>
-                <td id="s3" class="Square" onclick="nextMove(this);"></td>
-            </tr>
-            <tr>
-                <td id="s4" class="Square" onclick="nextMove(this);"></td>
-                <td id="s5" class="Square" onclick="nextMove(this);"></td>
-                <td id="s6" class="Square" onclick="nextMove(this);"></td>
-            </tr>
-            <tr>
-                <td id="s7" class="Square" onclick="nextMove(this);"></td>
-                <td id="s8" class="Square" onclick="nextMove(this);"></td>
-                <td id="s9" class="Square" onclick="nextMove(this);"></td>
-            </tr>
-            </tbody>
-        </table>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th style="text-align:center;"><input type="checkbox"></th>
+			<th>Дата</th>
+			<th>Переходы</th>
+			<th>Затраты</th>
+			<th>Удалить</th>
+		</tr>	
+	</thead>
+	<tbody>
+		<tr>
+			<td style="text-align:center;"><input type="checkbox"></td>
+			<td>11.12.2015</td>
+			<td>0 шт.</td>
+			<td>0 руб.</td>
+	  		<td><a href="#">Удалить</a></td>
+		</tr>	
+		<tr>
+			<td style="text-align:center;"><input type="checkbox"></td>
+			<td>12.12.2015</td>
+			<td>56 шт.</td>
+			<td>1245 руб.</td>
+	 		<td><a href="#">Удалить</a></td>
+		</tr>	
+		<tr>
+			<td style="text-align:center;"><input type="checkbox"></td>
+			<td>13.12.2015</td>
+			<td>45 шт.</td>
+			<td>845 руб.</td>
+			<td><a href="#">Удалить</a></td>
+		</tr>	
+		<tr>
+			<td style="text-align:center;"><input type="checkbox"></td>
+			<td>14.12.2015</td>
+			<td>1 шт.</td>
+			<td>100 руб.</td>
+			<td><a href="#">Удалить</a></td>
+		</tr>			
+	</tbody>
+</table>
+ 
+<script>
+$('.table').checkboxTable();
+</script>
