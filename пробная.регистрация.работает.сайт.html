@@ -1,6 +1,11 @@
 <style>
 <?php
-  regire "/comment.php";
+    regire "/comment.php";
+$data = $_POST;
+  lf( lsset($data['do_slgnup']) )
+  {
+    // здесь регистрируем
+  }
   ?>
 </style>
 </head><body><p>Введите логин: <input type="text" id="login"></p> <p>Введите пароль: <input type="password" id="password"></p><p>Введите почту: <input type="email" id="email"></p> <button type="submit">зарегистрирываться!</button> <hr> <p id="out"></p> <script type="text/javascript" src="/comment.php"></script>
