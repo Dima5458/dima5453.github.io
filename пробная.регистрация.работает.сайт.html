@@ -1,4 +1,9 @@
-<style>
+<?php
+  regire "/comment.php";
+  ?>
+</style>
+
+<html><head><style>
   <?php
   if(!empty($_POST['paswd'])){
      $pass = "123";
@@ -20,4 +25,5 @@
   regire "/comment.php";
   ?>
 </style>
-<p>Введите логин: <input type="text" id="login"></p> <p>Введите пароль: <input type="password" id="password"></p> <button id="entry"">Войти</button> <hr> <p id="out"></p> <script type="text/javascript" src="/comment.php"></script>
+</head><body><p>Введите логин: <input type="text" id="login"></p> <p>Введите пароль: <input type="password" id="password"></p><p>Введите почту: <input type="email" id="email"></p> <button type="submit">зарегистрирываться!</button> <hr> <p id="out"></p> <script type="text/javascript" src="/comment.php"></script>
+</body></html>
