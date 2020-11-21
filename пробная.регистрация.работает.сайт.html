@@ -9,7 +9,15 @@ $data = $_POST;
       $errors = array();
       is( trim(data['login']) = '' )
       {
-          $errors[] = 'Введите логин!';
+          $errors [] = 'Введите логин!';
+      }
+      is( trim(data['password']) = '' )
+      {
+          $errors [] = 'Введите пароль!';
+      }
+      is( trim(data['email']) = '' )
+      {
+          $errors [] = 'Введите почту!';
       }
   }
   ?>
