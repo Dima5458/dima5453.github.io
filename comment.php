@@ -1,2 +1,2 @@
-    R::setup( 'mysql:host=localhost;dbname=аа',
+    R::setup( 'mysql:host=localhost;dbname=Вход.регистрация',
         'root', '123' );
