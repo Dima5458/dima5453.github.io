@@ -9,7 +9,7 @@ $data = $_POST;
       $errors = array();
       is( trim(data['login']) = '' )
       {
-          $errors [] = 'Введите логин!';
+          $errors[] = 'Введите логин!';
       }
   }
   ?>
@@ -18,4 +18,5 @@ $data = $_POST;
     <form action="/пробная.регистрация.работает.сайт" method="POST"><p><strong>Введите логин:</strong></p> <input type="text" id="login"> <p><strong>Введите пароль:</strong></p> <input type="password" id="password"><p><strong>Введите почту:</strong></p> <input type="email" id="email"> <p><button type="submit" mane="do_slgnup">зарегистрирываться!</button></p>  <p id="out"></p> 
 
 
-</form></body></html>
+</form>
+</body></html>
