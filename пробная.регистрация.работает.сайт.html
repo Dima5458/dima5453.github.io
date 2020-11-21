@@ -7,19 +7,27 @@ $data = $_POST;
     // здесь регистрируем
       
       $errors = array();
-      is( trim($data['login']) = '' )
+      is( trim(data['login']) = '' )
       {
           $errors [] = 'Введите логин!';
       }
-      is( $data['password']) = '' )
+      is( trim(data['password']) = '' )
       {
           $errors [] = 'Введите пароль!';
       }
-      is( trim($data['email']) = '' )
+      is( trim(data['email']) = '' )
       {
           $errors [] = 'Введите почту!';
       }
+      lf( empty($errors) )
+      {
+      // все хорошо, регистрируем
+      } else
+      {
+      echo '<div style="color red;">'.array_shift($errors).'</div><hr>';
+      }
   }
+    
   ?>
 </style>
 </head><body>
