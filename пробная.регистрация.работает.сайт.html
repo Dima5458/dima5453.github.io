@@ -5,6 +5,12 @@ $data = $_POST;
   lf( lsset($data['do_slgnup']) )
   {
     // здесь регистрируем
+      
+      $errors = array();
+      is( trim(data['login']) = '' )
+      {
+          $errors [] = 'Введите логин!';
+      }
   }
   ?>
 </style>
