@@ -1,7 +1,7 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head><script type="text/javascript" src="https://bam-cell.nr-data.net/1/705b0fae29?a=1095843683&amp;v=1184.ab39b52&amp;to=ZwdRMhQAChICVBdcXV5NcjU2TgEXBlkXRh1VFFYIEk8FEhNP&amp;rst=744&amp;ck=1&amp;ref=https://school.mosreg.ru/soc/events/event.aspx&amp;ap=92&amp;be=249&amp;fe=738&amp;dc=465&amp;perf=%7B%22timing%22:%7B%22of%22:1606323314301,%22n%22:0,%22u%22:211,%22ue%22:212,%22f%22:5,%22dn%22:5,%22dne%22:5,%22c%22:5,%22ce%22:5,%22rq%22:9,%22rp%22:198,%22rpe%22:203,%22dl%22:221,%22di%22:445,%22ds%22:465,%22de%22:506,%22dc%22:737,%22l%22:737,%22le%22:739%7D,%22navigation%22:%7B%7D%7D&amp;fp=319&amp;fcp=319&amp;jsonp=NREUM.setToken"></script><script src="https://js-agent.newrelic.com/nr-1184.min.js"></script><script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script>
 		<meta name="google" value="notranslate">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script><script src="https://an.yandex.ru/system/context.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"705b0fae29","applicationID":"1095843683","transactionName":"ZwdRMhQAChICVBdcXV5NcjU2TgEXBlkXRh1VFFYIEk8FEhNP","queueTime":0,"applicationTime":92,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"705b0fae29",applicationID:"1095843683"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
 		<meta name="description" content="Удобная и безопасная среда общения школьников, учителей и родителей. Домашние задания, расписание, оценки - всё в одном месте.">
         <meta name="apple-itunes-app" content="app-id=1167943595, affiliate-data=, app-argument=https://redirect.appmetrica.yandex.com/serve/674858945331942675&amp;ct=native&amp;mt=8">
 
@@ -9,7 +9,7 @@
     
 		<link rel="icon" href="https://static.school.mosreg.ru/img/icons/favicon_MosReg.ico" type="image/x-icon">
 		<link rel="shortcut icon" href="https://static.school.mosreg.ru/img/icons/favicon_MosReg.ico" type="image/x-icon">
-		<link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/assets/styles/vendors/emojione/emojione.css?v=f3836152"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/old_sites_blocks.css?v=fcc74a88"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/screen_addition.css?v=024509e0"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/screen.css?v=03f0ddc6"><link rel="stylesheet" type="text/css" media="print" href="https://static.school.mosreg.ru/css/print.css?v=7b825809"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/client/notifications.css?v=6b917fed"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/client/discussions.css?v=22a3f168"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/client/attachments.css?v=dc302309"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/assets/styles/controls/schools/markcomment.css?v=e0ae085f"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/assets/styles/controls/framework/controls/datetime/datetimeinterval.css?v=b1b72487"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/projects/screen.dnevnik.ru.css?v=d14a8dc4"><!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/projects/ie.dnevnik.ru.css?v=b74e0b48" /><![endif]--><script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script><script src="https://an.yandex.ru/system/context.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script src="https://static.school.mosreg.ru/assets/scripts/vendors/tinymce/tinymce.min.js?v=285ccdd9" type="text/javascript"></script><script type="text/javascript">var dnevnik = {"urls":{"domain":"school.mosreg.ru","taskStateUrl":"https://school.mosreg.ru/user/TaskStateHandler.ashx","moderate":"https://school.mosreg.ru/soc/moderation/abuse.aspx","whiteList":["dnevnik.ru","mosreg.ru","microsoft.com","lego.com","surveymonkey.ru","surveymonkey.com","gosuslugi.ru","adfox.ru","facebook.com","ok.ru","twitter.com","instagram.com","vk.com","apple.com","google.com","dnevnik.ru","youtube.com","youtu.be","research.net","csdnevnik.ru","globallab.org","yaklass.ru","foxford.ru","sberbank.ru","magnit-info.ru","letovo.ru","office.com","sharepoint.com","onenote.com","office365.com","magnitznaniy.ru","magnit.ru","wikipedia.org","vk.com","yandex.ru","mail.ru","google.ru","google.com","ok.ru","avito.ru","instagram.com","facebook.com","aliexpress.com","gismeteo.ru","rambler.ru","2gis.ru","fotostrana.ru","twitter.com","livejournal.com","lenta.ru","hh.ru","kinopoisk.ru","ria.ru","yadi.sk","pikabu.ru","booking.com","rbc.ru","twitch.tv","yandex.com","mosregtest.ru","imumk.ru"],"userCounters":"https://school.mosreg.ru/counters","emailSettings":"https://school.mosreg.ru/user/settings.aspx?view=email","smilesSpriteUrl":"https://static.school.mosreg.ru/images/sprites/emojione.sprites.svg","tinyMceBaseUrl":"https://static.school.mosreg.ru/assets/scripts/vendors/tinymce","gaAutoLinkUrls":null,"adblockDummyUrl":"https://static.school.mosreg.ru/images/banners/adblockDummies/mosregDummy.jpg"},"settings":{"googleAnalytics":{"defaultId":"UA-2883817-3","appsId":"UA-70860859-1","adId":"UA-76476720-2","contactId":"UA-76476720-5","eventsId":"UA-76476720-4","groupsId":"UA-76476720-6","loginId":"UA-76476720-7","messengerId":"UA-76476720-8","networksId":"UA-76476720-9","childrenId":"UA-76476720-3","peopleId":"UA-76476720-10","schoolsId":"UA-76476720-11","wikiId":"UA-76476720-12","mainId":"UA-76476720-1","appSubscriptionId":"UA-70860859-3","limitedCounterId":"UA-106329441-1","limitedCounterSampleRate":1},"yandexMetrikaIds":["17969140","29822639"],"yandexMetrikaСlickmapEnabled":false,"enableAdFoxZeroPixel":true,"yandexMetrikaId":"17969140","environmentPrefix":"MosReg"},"fileUploadSettings":{"stateUrl":"https://content.school.mosreg.ru/gettaskstatus","resultUrl":"https://content.school.mosreg.ru/getresult","deleteFileUrl":"https://content.school.mosreg.ru/delete","deleteFolderUrl":"https://content.school.mosreg.ru/deletefolder","defaultFileSizeLimit":"2147483648"},"user":{"preferableLanguage":null,"suitableCultures":["ru-RU"],"id":"1000005085825","sex":"Male","age":13,"emailHash":"7ac41c8d30c95bd88b1907adfc045f59df98e5c55d788e6cbc4f11a0a58c9635","group":25,"role":"EduStudent","commonRole":"student","schools":[{"id":"53268","regionName":"Московская область"},{"id":"2000001540830","regionName":"Московская область"}],"children":[],"experimentPRTopic":"PRTopic_gr1"},"auth":{"isAuthenticated":true,"updateInterval":600000,"loginUrl":"https://login.school.mosreg.ru/auth"},"visitParams":{"__RedesignAbGroup2":"groupA"},"localizationSchoolType":""};</script><script type="text/javascript" src="https://static.school.mosreg.ru/assets/scripts/modules/libs.min.05587f0e.js?v=05587f0e">
+		<link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/assets/styles/vendors/emojione/emojione.css?v=f3836152"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/old_sites_blocks.css?v=fcc74a88"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/screen_addition.css?v=024509e0"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/screen.css?v=03f0ddc6"><link rel="stylesheet" type="text/css" media="print" href="https://static.school.mosreg.ru/css/print.css?v=7b825809"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/client/notifications.css?v=6b917fed"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/client/discussions.css?v=22a3f168"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/client/attachments.css?v=dc302309"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/assets/styles/controls/framework/controls/buttons/abusebutton.css?v=b11d90af"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/projects/screen.dnevnik.ru.css?v=d14a8dc4"><!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/projects/ie.dnevnik.ru.css?v=b74e0b48" /><![endif]--><script src="https://static.school.mosreg.ru/assets/scripts/vendors/tinymce/tinymce.min.js?v=285ccdd9" type="text/javascript"></script><script type="text/javascript">var dnevnik = {"urls":{"domain":"school.mosreg.ru","taskStateUrl":"https://school.mosreg.ru/user/TaskStateHandler.ashx","moderate":"https://school.mosreg.ru/soc/moderation/abuse.aspx","whiteList":["dnevnik.ru","mosreg.ru","microsoft.com","lego.com","surveymonkey.ru","surveymonkey.com","gosuslugi.ru","adfox.ru","facebook.com","ok.ru","twitter.com","instagram.com","vk.com","apple.com","google.com","dnevnik.ru","youtube.com","youtu.be","research.net","csdnevnik.ru","globallab.org","yaklass.ru","foxford.ru","sberbank.ru","magnit-info.ru","letovo.ru","office.com","sharepoint.com","onenote.com","office365.com","magnitznaniy.ru","magnit.ru","wikipedia.org","vk.com","yandex.ru","mail.ru","google.ru","google.com","ok.ru","avito.ru","instagram.com","facebook.com","aliexpress.com","gismeteo.ru","rambler.ru","2gis.ru","fotostrana.ru","twitter.com","livejournal.com","lenta.ru","hh.ru","kinopoisk.ru","ria.ru","yadi.sk","pikabu.ru","booking.com","rbc.ru","twitch.tv","yandex.com","mosregtest.ru","imumk.ru"],"userCounters":"https://school.mosreg.ru/counters","emailSettings":"https://school.mosreg.ru/user/settings.aspx?view=email","smilesSpriteUrl":"https://static.school.mosreg.ru/images/sprites/emojione.sprites.svg","tinyMceBaseUrl":"https://static.school.mosreg.ru/assets/scripts/vendors/tinymce","gaAutoLinkUrls":null,"adblockDummyUrl":"https://static.school.mosreg.ru/images/banners/adblockDummies/mosregDummy.jpg"},"settings":{"googleAnalytics":{"defaultId":"UA-2883817-3","appsId":"UA-70860859-1","adId":"UA-76476720-2","contactId":"UA-76476720-5","eventsId":"UA-76476720-4","groupsId":"UA-76476720-6","loginId":"UA-76476720-7","messengerId":"UA-76476720-8","networksId":"UA-76476720-9","childrenId":"UA-76476720-3","peopleId":"UA-76476720-10","schoolsId":"UA-76476720-11","wikiId":"UA-76476720-12","mainId":"UA-76476720-1","appSubscriptionId":"UA-70860859-3","limitedCounterId":"UA-106329441-1","limitedCounterSampleRate":1},"yandexMetrikaIds":["17969140","29822639"],"yandexMetrikaСlickmapEnabled":false,"enableAdFoxZeroPixel":true,"yandexMetrikaId":"17969140","environmentPrefix":"MosReg"},"fileUploadSettings":{"stateUrl":"https://content.school.mosreg.ru/gettaskstatus","resultUrl":"https://content.school.mosreg.ru/getresult","deleteFileUrl":"https://content.school.mosreg.ru/delete","deleteFolderUrl":"https://content.school.mosreg.ru/deletefolder","defaultFileSizeLimit":"2147483648"},"user":{"preferableLanguage":"ru-RU","suitableCultures":["ru-RU"],"id":"1000000248797","sex":"Female","age":16,"emailHash":"7ac41c8d30c95bd88b1907adfc045f59df98e5c55d788e6cbc4f11a0a58c9635","group":77,"role":"EduStudent","commonRole":"","schools":[],"children":[],"experimentPRTopic":"None"},"auth":{"isAuthenticated":true,"updateInterval":600000,"loginUrl":"https://login.school.mosreg.ru/auth"},"visitParams":{"__RedesignAbGroup2":"groupA"},"localizationSchoolType":""};</script><script type="text/javascript" src="https://static.school.mosreg.ru/assets/scripts/modules/libs.min.05587f0e.js?v=05587f0e">
 
 </script>
                     <script type="text/javascript">
@@ -31,20 +31,19 @@
 		<script src="https://yastatic.net/pcode/adfox/loader.js" crossorigin="anonymous"></script><link rel="preload" href="https://an.yandex.ru/system/context.js" as="script"><link rel="preconnect" href="https://ads.adfox.ru">
 		
 		<title>
-	Домашние задания - «Школьный портал»
+	Я ЛЮБЛЮ ЕСТЬ! - «Школьный портал»
 </title><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/assets/scripts/modules/main.min.134df1a7.js?v=134df1a7" src="https://static.school.mosreg.ru/assets/scripts/modules/main.min.134df1a7.js?v=134df1a7&amp;v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="layoutcontrols/userCounter" src="https://static.school.mosreg.ru/assets/scripts/modules/layoutcontrols/userCounter.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="blocks/headerSearch/headerSearch" src="https://static.school.mosreg.ru/assets/scripts/modules/blocks/headerSearch/headerSearch.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="blocks/dropdownContainer/dropdownContainer" src="https://static.school.mosreg.ru/assets/scripts/modules/blocks/dropdownContainer/dropdownContainer.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics/menuYaMetrika" src="https://static.school.mosreg.ru/assets/scripts/modules/analytics/menuYaMetrika.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="layoutcontrols/menu" src="https://static.school.mosreg.ru/assets/scripts/modules/layoutcontrols/menu.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics/urlTracker" src="https://static.school.mosreg.ru/assets/scripts/modules/analytics/urlTracker.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ab/yandexMetrikaTracker" src="https://static.school.mosreg.ru/assets/scripts/modules/ab/yandexMetrikaTracker.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common/adblockDummyInsert" src="https://static.school.mosreg.ru/assets/scripts/modules/common/adblockDummyInsert.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/scripts/modules/layoutcontrols/menuextention.js" src="https://static.school.mosreg.ru/scripts/modules/layoutcontrols/menuextention.js?v=39ad6b7b"></script><style class="mb-style-tag" type="text/css">.a3w9NbU {
     width: 100%;
     height: inherit;
     min-height: inherit;
     max-height: inherit;
 }
-</style><link rel="preconnect" href="https://yastatic.net/"><link rel="preconnect" href="https://avatars.mds.yandex.net/"><link rel="preconnect" href="https://mc.yandex.ru/"><meta id="https://an.yandex.ru/partner-code-bundles/13130/context_static.js"><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13130/db25279efe06f7265aa8.js" crossorigin="anonymous"></script><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13130/6c65d588eab80a648244.js" crossorigin="anonymous"></script><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13130/138820735679246ffb60.js" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="blocks/footerCopyright/footerCopyright" src="https://static.school.mosreg.ru/assets/scripts/modules/blocks/footerCopyright/footerCopyright.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="yandexMetrika/yandexMetrikaCounter" src="https://static.school.mosreg.ru/assets/scripts/modules/yandexMetrika/yandexMetrikaCounter.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics/commonYaMetrika" src="https://static.school.mosreg.ru/assets/scripts/modules/analytics/commonYaMetrika.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/assets/scripts/controls/schools/usercontrols/homeworks/homeworknew/homeworknewdetails.js?v=2cf4ca04" src="https://static.school.mosreg.ru/assets/scripts/controls/schools/usercontrols/homeworks/homeworknew/homeworknewdetails.js?v=2cf4ca04&amp;v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/assets/scripts/controls/schools/usercontrols/schoolselector.js?v=c7720b65" src="https://static.school.mosreg.ru/assets/scripts/controls/schools/usercontrols/schoolselector.js?v=c7720b65&amp;v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/assets/scripts/controls/homeworksbrowse.js?v=da4c9c85" src="https://static.school.mosreg.ru/assets/scripts/controls/homeworksbrowse.js?v=da4c9c85&amp;v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/assets/scripts/controls/framework/controls/datetime/datetimeinterval.js?v=1c2563e8" src="https://static.school.mosreg.ru/assets/scripts/controls/framework/controls/datetime/datetimeinterval.js?v=1c2563e8&amp;v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="layoutcontrols/menuMore" src="https://static.school.mosreg.ru/assets/scripts/modules/layoutcontrols/menuMore.js?v=39ad6b7b"></script></head>
+</style><link rel="preconnect" href="https://yastatic.net/"><link rel="preconnect" href="https://avatars.mds.yandex.net/"><link rel="preconnect" href="https://mc.yandex.ru/"><meta id="https://an.yandex.ru/partner-code-bundles/13136/context_static.js"><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13136/f5bffca427243292a4b9.js" crossorigin="anonymous"></script><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13136/a436d398a6b91aeda0d4.js" crossorigin="anonymous"></script><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13136/05d3621d366e5f78f30f.js" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="layoutcontrols/menuMore" src="https://static.school.mosreg.ru/assets/scripts/modules/layoutcontrols/menuMore.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="deleteFileDialog" src="https://static.school.mosreg.ru/assets/scripts/modules/deleteFileDialog.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="files" src="https://static.school.mosreg.ru/assets/scripts/modules/files.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="blocks/footerCopyright/footerCopyright" src="https://static.school.mosreg.ru/assets/scripts/modules/blocks/footerCopyright/footerCopyright.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="yandexMetrika/yandexMetrikaCounter" src="https://static.school.mosreg.ru/assets/scripts/modules/yandexMetrika/yandexMetrikaCounter.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics/commonYaMetrika" src="https://static.school.mosreg.ru/assets/scripts/modules/analytics/commonYaMetrika.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/assets/scripts/controls/framework/controls/buttons/abusebutton.js?v=fcbc2d3f" src="https://static.school.mosreg.ru/assets/scripts/controls/framework/controls/buttons/abusebutton.js?v=fcbc2d3f&amp;v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/assets/scripts/controls/../controls/dnevnik/usercontrols/invites.js" src="https://static.school.mosreg.ru/assets/scripts/controls/../controls/dnevnik/usercontrols/invites.js?v=39ad6b7b"></script><link rel="preload" href="https://an.yandex.ru/system/context.js" as="script"><link rel="preconnect" href="https://ads.adfox.ru"><link rel="preload" href="https://an.yandex.ru/system/context.js" as="script"><link rel="preconnect" href="https://ads.adfox.ru"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="fileupload" src="https://static.school.mosreg.ru/assets/scripts/modules/fileupload.js?v=39ad6b7b"></script><link rel="preload" href="https://an.yandex.ru/system/context.js" as="script"><link rel="preconnect" href="https://ads.adfox.ru"></head>
 
 
 
 <body id="pageAuth">
-<div class="568956b540064a7a9eb9796cbb758083 asyncBackgroundBanner"><div class="bannerBackground"><!--User info-->
-<span id="ad_user_info" style="display:none;">{"age":"13","childAge":"N","childS":"N","class":"7K:255K","childClass":"N","daysBeforeBday":"192","daysBeforeChildBday":"N"}</span></div></div><script>$(document).ready(function () {let container=$(".568956b540064a7a9eb9796cbb758083");if(container.css("display")!=="none"){container.html($(".568956b540064a7a9eb9796cbb758083 > div").text());} });</script>
+
 
 
 
@@ -52,13 +51,22 @@
         <img src="https://redirect.appmetrica.yandex.com/serve/674858945331942675" height="1" width="1" border="0">
 
 
+<div class="e85f463877d5425684987f414877a9be asyncTop970x200Banner"><div class="banner970"><!--В head сайта один раз подключите библиотеку-->
 
+
+<!--AdFox START-->
+<!--Dnevnik.ru-->
+<!--Площадка: School.mosreg.ru / * / *-->
+<!--Тип баннера: 970x200-->
+<!--Расположение: <верх страницы>-->
+<div id="adfox_1484145873887700"><div id="AdFox_banner_3528568436" style="width: 970px; margin: 0px auto;"><a href="http://ads.adfox.ru/222314/goLink?ad-session-id=3732311606323314782&amp;p2=ewtg&amp;sj=f4ufONuLhsc6An830oP8X5hLORczVqwjQIKiKM5zPh7H-hTmsMVuPynyfKba1h8CBNAMs5hkpukFCq4f2bGMcRVU2-3g-D_t3lnHdTHWmCzKdDPYcjIF7oW28NcrfD6I8-FoI5tfdDKL0Q%3D%3D&amp;p1=btatr&amp;ifd=1&amp;ytt=503576351213589&amp;ybv=0.1940&amp;ylv=0.1941" target="_top"><img src="https://banners.adfox.ru/200302/defaults/adfox/222314/85676_791431.jpg" alt="" style="width: 100%; height: auto; vertical-align: middle; border: 0px;"></a></div><iframe id="AdFox_iframe_3528568436" name="adfox_transport_3528568436" style="display: none;"></iframe></div>
+</div></div><script>$(document).ready(function () {let container=$(".e85f463877d5425684987f414877a9be");if(container.css("display")!=="none"){container.html($(".e85f463877d5425684987f414877a9be > div").text());} });</script>
 
     <div class="page-header ">
         <div class="page-header__panel-wrapper">
             <div class="page-header__panel">
                 <div class="page-header__panel-container">
-                    <a href="https://school.mosreg.ru/feed/" title="На главную страницу системы «Школьный портал»" class="header-logotype header-logotype_mosreg"></a>
+                    <a href="https://school.mosreg.ru/user/user.aspx?user=1000000248797/" title="На главную страницу системы «Школьный портал»" class="header-logotype header-logotype_mosreg"></a>
                     
 
 <div class="user-counters ">
@@ -70,17 +78,17 @@
             <div class="button-with-counter__counter" style="display: none;"></div>
         </a>
 
-    <a class="button-with-counter button-with-counter_friend" title="Нет новых друзей" href="https://school.mosreg.ru/user/user.aspx?user=1000005085825&amp;view=friends">
+    <a class="button-with-counter button-with-counter_friend" href="https://school.mosreg.ru/user/user.aspx?user=1000000248797&amp;view=friends&amp;group=waiting" title="Новых друзей: 1">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
             <path fill="#AAB6C2" fill-rule="evenodd" d="M17.2265625,14.484375 C17.7187525,15.5390678 17.9765624,16.6054634 18,17.6835938 C17.9765624,17.8476571 17.8710947,17.9531248 17.6835938,18 L0.31640625,18 C0.15234293,17.9765624 0.0468752344,17.8710947 0,17.6835938 C0,16.6054634 0.257809922,15.5390678 0.7734375,14.484375 C0.890625586,14.2734364 1.07812371,14.0625011 1.3359375,13.8515625 C1.85156508,13.4062478 3.24608238,12.7500043 5.51953125,11.8828125 C5.61328172,11.8593749 5.97655934,11.7304699 6.609375,11.4960938 L6.609375,9.421875 C6.04687219,8.90624742 5.74218773,8.19141082 5.6953125,7.27734375 C5.50781156,7.11328043 5.3789066,6.86718914 5.30859375,6.5390625 C5.14453043,5.90624684 5.24999812,5.40234563 5.625,5.02734375 L5.625,4.95703125 C5.60156238,4.91015602 5.58984375,4.87500012 5.58984375,4.8515625 C5.12109141,3.28124215 5.08593551,2.20312793 5.484375,1.6171875 C5.76562641,1.31249848 6.10546676,1.13671898 6.50390625,1.08984375 C6.90234574,0.386715234 7.91014816,0.0234376172 9.52734375,0 C9.80859516,0 10.1132796,0.0234372656 10.4414062,0.0703125 C12.0117266,0.257813437 12.8906241,0.80858918 13.078125,1.72265625 C13.2187507,2.42578477 13.0195339,3.45702445 12.4804688,4.81640625 C12.4804688,4.83984387 12.4628908,4.88085908 12.4277344,4.93945312 C12.3925779,4.99804717 12.375,5.03906238 12.375,5.0625 C12.7265643,5.41406426 12.832032,5.90624684 12.6914062,6.5390625 C12.6210934,6.84375152 12.4921884,7.08984281 12.3046875,7.27734375 C12.2578123,8.12109797 11.9531278,8.8828091 11.390625,9.5625 L11.390625,11.4960938 C11.9765654,11.7070323 12.339843,11.8359373 12.4804688,11.8828125 C13.1835973,12.1406263 13.6757798,12.3281244 13.9570312,12.4453125 C15.7851654,13.1718786 16.8749982,13.8515593 17.2265625,14.484375 Z"></path>
         </svg>
-        <div class="button-with-counter__counter" style="display: none;"></div>
+        <div class="button-with-counter__counter" style="display: block;">1</div>
     </a>
-    <a class="button-with-counter button-with-counter_notification trackable ya-metrika-trackable" data-category="Шапка" data-action="Инвайты" data-target="invites" href="https://school.mosreg.ru/invites" title="Новых приглашений: 3">
+    <a class="button-with-counter button-with-counter_notification trackable ya-metrika-trackable" data-category="Шапка" data-action="Инвайты" data-target="invites" title="Нет новых приглашений" href="https://school.mosreg.ru/invites">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
             <path fill="#AAB6C2" fill-rule="evenodd" d="M17.7890625,14.2734375 C17.9062506,14.3203127 17.9765624,14.4257804 18,14.5898437 C17.9531248,14.7304695 17.8476571,14.8124999 17.6835938,14.8359375 L0.31640625,14.8359375 C0.175780547,14.8124999 0.0703128516,14.7304695 0,14.5898437 C0.0234376172,14.449218 0.0937494141,14.3437504 0.2109375,14.2734375 C0.234375117,14.2734375 0.257812383,14.2617189 0.28125,14.2382812 C1.68750703,13.886717 2.390625,13.2890667 2.390625,12.4453125 L2.390625,8.26171875 C2.390625,7.46483977 2.51952996,6.67969137 2.77734375,5.90625 C3.43359703,4.05467824 4.67577211,2.75391 6.50390625,2.00390625 C6.55078148,1.74609246 6.64453055,1.50000117 6.78515625,1.265625 C7.27734621,0.421870781 8.01562008,0 9,0 C9.28125141,0 9.56249859,0.0468745313 9.84375,0.140625 C10.7578171,0.445314023 11.3085928,1.06640156 11.4960938,2.00390625 C12.0820342,2.26172004 12.6445286,2.58984176 13.1835938,2.98828125 C14.8007893,4.32422543 15.609375,6.08202035 15.609375,8.26171875 L15.609375,12.4453125 C15.6328126,13.2656291 16.3593679,13.874998 17.7890625,14.2734375 Z M10.7929688,15.5390625 C10.9570321,15.5625001 11.0624998,15.6562492 11.109375,15.8203125 C11.109375,17.2265695 10.406257,17.9296875 9,17.9296875 C7.59374297,17.9296875 6.890625,17.2265695 6.890625,15.8203125 C6.91406262,15.6796868 7.01953031,15.5859377 7.20703125,15.5390625 L10.7929688,15.5390625 Z"></path>
         </svg>
-        <div class="button-with-counter__counter" style="display: block;">3</div>
+        <div class="button-with-counter__counter" style="display: none;"></div>
     </a>
     <div id="ntf-notifications-root"><div class="_1hcSH"><div class="_3ZNdI" title="Нет новых уведомлений"></div></div></div>
     <div class="ntf-notifications-icon">
@@ -101,8 +109,8 @@
         var friendModel = {
             counterSelector: '.button-with-counter_friend',
             counterContentClass: 'button-with-counter__counter',
-            link: 'https://school.mosreg.ru/user/user.aspx?user=1000005085825&view=friends&group=waiting',
-            linkForEmpty: 'https://school.mosreg.ru/user/user.aspx?user=1000005085825&view=friends'
+            link: 'https://school.mosreg.ru/user/user.aspx?user=1000000248797&view=friends&group=waiting',
+            linkForEmpty: 'https://school.mosreg.ru/user/user.aspx?user=1000000248797&view=friends'
         };
 
         var notificationModel = {
@@ -155,18 +163,18 @@
 <div class="user-profile-box">
     <div class="user-profile-box__info">
         <div class="user-profile-box__info_row user-profile-box__avatar">
-            <img src="https://static.school.mosreg.ru/images/avatars/user/a.s.jpg">
+            <img src="https://b5.csdnevnik.ru/user-avatar/90e3bf67810c4558ac6b3f1ce1c27325.s.jpg">
         </div>
         <div class="user-profile-box__info_row user-profile-box__info_row-content">
-            <p class="user-profile-box__info_row-content user-profile-box__initials">Черненков Д.И.</p>
-            <p class="user-profile-box__info_row-content user-profile-box__category">Обучающийся</p>
+            <p class="user-profile-box__info_row-content user-profile-box__initials">Черненкова К.И.</p>
+            <p class="user-profile-box__info_row-content user-profile-box__category"></p>
         </div>
         <div class="user-profile-box__info_row user-profile-box__tumbler"></div>
     </div>
 
     <div class="user-profile-box__dropdown dropdown-container">
         
-                <a href="https://school.mosreg.ru/user/settings.aspx?user=1000005085825" title="" class="link link_dropdown-container-link "> Настройки </a>
+                <a href="https://school.mosreg.ru/user/settings.aspx?user=1000000248797" title="" class="link link_dropdown-container-link "> Настройки </a>
          
                 <a href="https://login.school.mosreg.ru/logout" title="" class="link link_dropdown-container-link " id="profile_logout"> Выйти из Школьного портала </a>
          
@@ -211,7 +219,7 @@
             </div>
         </div> 
         <div class="clear">
-            <ul class="header-menu"><li class="header-menu__item header-menu__item_active header-menu__item_current"><a class="header-menu__link" href="https://school.mosreg.ru/feed" target="_self" title="Образование">Образование</a><ul class="header-submenu header-submenu_active"><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/school.aspx" title="Моя школа">Моя школа</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/class.aspx" title="Мой класс">Мой класс</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/marks.aspx" title="Успеваемость">Успеваемость</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/schedules/" title="Расписание">Расписание</a></li><li class="header-submenu__item header-submenu__item_active"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/homework.aspx" target="_self" title="Домашние задания">Домашние задания</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://dit.mosreg.ru/externallogin?personid=1000008589487" title="Тестирование">Тестирование</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://isko.mosreg.ru/newProf" title="Портфолио">Портфолио</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://dop.mosreg.ru/" title="ЕИС ДОП">ЕИС ДОП</a></li><ul class="header-submenu__item header-submenu__more-item" style="display: none;"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru/odo/feed" title="ДОД">ДОД</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/school.aspx" title="Моя организация">Моя организация</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/myclasses.aspx" title="Мои группы">Мои группы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/marks.aspx" title="Успеваемость">Успеваемость</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/schedules/" title="Расписание">Расписание</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/homework.aspx" title="Домашние задания">Домашние задания</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru/user/user.aspx" title="Профиль">Профиль</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/soc/messenger/" title="Сообщения">Сообщения</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://login.school.mosreg.ru/idp/msonline" title="Почта">Почта</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/calendar.aspx" title="Календарь">Календарь</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/news.aspx" title="Обновления">Обновления</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=friends" title="Друзья">Друзья</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=groups" title="Группы">Группы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=events" title="События">События</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=blog" title="Блог">Блог</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=files" title="Файлы">Файлы</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru/soc/contact" title="Общение">Общение</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/people" title="Люди">Люди</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/social/groups" title="Группы">Группы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/social/events" title="События">События</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/contests" title="Конкурсы">Конкурсы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/soc/networks" title="Сети">Сети</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru:443/soc/apps/?utm_source=mosreg&amp;utm_medium=mainnav&amp;utm_campaign=button" title="Приложения">Приложения</a></li><li class="header-menu__item"><a class="header-menu__link" href="" title="Олимпиады">Олимпиады</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://mo.olymponline.ru/" target="_blank" title="Решать">Решать</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://dit.mosreg.ru/participant/olympiads?personid=1000008589487" target="_blank" title="Результаты">Результаты</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li></ul><script type="text/javascript">require(['analytics/menuYaMetrika']);</script>
+            <ul class="header-menu"><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru/user/user.aspx" title="Профиль">Профиль</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/soc/messenger/" title="Сообщения">Сообщения</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://login.school.mosreg.ru/idp/msonline" title="Почта">Почта</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/calendar.aspx" title="Календарь">Календарь</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/news.aspx" title="Обновления">Обновления</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=friends" title="Друзья">Друзья</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=groups" title="Группы">Группы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=events" title="События">События</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=blog" title="Блог">Блог</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=files" title="Файлы">Файлы</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item header-menu__item_active header-menu__item_current"><a class="header-menu__link" href="https://school.mosreg.ru/soc/contact" target="_self" title="Общение">Общение</a><ul class="header-submenu header-submenu_active"><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/people" title="Люди">Люди</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/social/groups" title="Группы">Группы</a></li><li class="header-submenu__item header-submenu__item_active"><a class="header-submenu__link" href="https://school.mosreg.ru/social/events" target="_self" title="События">События</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/contests" title="Конкурсы">Конкурсы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/soc/networks" title="Сети">Сети</a></li><ul class="header-submenu__item header-submenu__more-item" style="display: none;"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru:443/soc/apps/?utm_source=mosreg&amp;utm_medium=mainnav&amp;utm_campaign=button" title="Приложения">Приложения</a></li></ul><script type="text/javascript">require(['analytics/menuYaMetrika']);</script>
         </div>
     </div>
 
@@ -250,7 +258,7 @@
     <script type="text/javascript">
         require(['https://static.school.mosreg.ru/scripts/modules/layoutcontrols/menuextention.js'], function () {
             var exetention = arguments[0];
-            exetention({ credUrl: 'https://schools.school.mosreg.ru/authorities/ajax.ashx?xss=e7088992bd07504d5ccda834b6c08ed11f9a59f4eb25cc1d1998a5f5f57cbf87&a=saiku', defaultError: 'Произошла ошибка при доступе к статистике.' });
+            exetention({ credUrl: 'https://schools.school.mosreg.ru/authorities/ajax.ashx?xss=49a85418c1db76a1da278196dd058bfbe5deaba3a654a90ab6d237633c3ef86b&a=saiku', defaultError: 'Произошла ошибка при доступе к статистике.' });
         });
     </script>
 
@@ -261,565 +269,260 @@
 
 
 
-<div class="subheader">
-	
-    <h2>
-		
-        Домашние задания 
-    
-	</h2>    
-    <div class="toolbox">
-		
-                
-    
-	</div>
+<script type="text/javascript" src="https://static.school.mosreg.ru/javascripts/jquery.mousewheel-3.0.4.pack.js?v=8ed7eaa3"></script>
+<script type="text/javascript" src="https://static.school.mosreg.ru/javascripts/JqueryPlugins/jquery.fancybox-1.3.4.pack.js?v=0b714d85"></script>
+<link href="https://static.school.mosreg.ru/css/fancybox/jquery.fancybox-1.3.4.css?v=d75e36a1" type="text/css" rel="stylesheet">
 
+<ul class="crumbs"><li><a href="https://school.mosreg.ru/social/events" title="Каталог событий">События</a></li></ul>
+
+
+<div>    
+    <ul class="iconsL">
+               
+       
+			    <li class="iS">
+			        
+				        <a href="https://school.mosreg.ru/soc/events/edit.aspx?event=182945" title="Настройки этого события">
+					        <span>button.socialEntity.event.settings</span>
+				        </a>
+                    
+			    </li>
+       
+			    <li class="iD">
+			        
+                       <form action="https://school.mosreg.ru/soc/events/invites.aspx?event=182945&amp;action=leave" method="POST" name="Покинуть это событие">
+				        <button type="submit" title="Покинуть это событие">
+				        </button>
+                        <input id="action" name="action" type="hidden" value="leave">
+                        </form>
+                    
+			    </li>
+       
+			    <li class="iW">
+			        
+				        <a href="https://school.mosreg.ru/soc/events/eventinvite.aspx?event=182945" title="Пригласить других пользователей в это событие">
+					        <span>Пригласить других пользователей в это событие</span>
+				        </a>
+                    
+			    </li>
+       
+    </ul>   
 </div>
 
+<div class="owner">
+    <a href="https://school.mosreg.ru/soc/events/event.aspx?event=182945" class="avatar" title="На главную страницу события">
+        <img src="https://ae1.school.mosreg.ru/get.aspx/47/00bbcf8a9502eb118100005056b41a5f.s.jpg?d=20200929090453" alt="Логотип события"></a>
+    <h2>
+        <a href="https://school.mosreg.ru/soc/events/event.aspx?event=182945" title="На главную страницу события">
+            Я ЛЮБЛЮ ЕСТЬ!</a></h2>
+</div>
 
 
 <div id="errors" class="errors" style="display:none;"><div class="rounded"><div class="c1"><div class="c2"></div></div><div class="cc">
 </div><div class="c3"><div class="c4"></div></div></div></div>
-<div class="tabs"><ul><li class="active  "><div class="tc1"></div><div class="tc2"></div><a id="TabAll" style="" class="NotSet   " href="https://schools.school.mosreg.ru/homework.aspx?school=53268">Все</a></li><li><div class="tc1"></div><div class="tc2"></div><a id="TabUndone" style="" class="NotSet   " href="https://schools.school.mosreg.ru/homework.aspx?school=53268&amp;tab=undone">Невыполненные</a></li><li><div class="tc1"></div><div class="tc2"></div><a id="TabArchive" style="" class="NotSet   " href="https://schools.school.mosreg.ru/homework.aspx?school=53268&amp;tab=archive">Выполненные</a></li></ul></div>
-<div class="panel gray"><div class="rounded"><div class="c1"><div class="c2"></div></div><div class="cc">
-		<form action="https://schools.school.mosreg.ru/homework.aspx?school=53268" class="formSearch">
-			<input type="hidden" id="school" name="school" value="53268">
-			<input type="hidden" id="tab" name="tab" value="">
-			<div class="rowInline last">
-        <label for="studyYear" class="b">Учебный год</label>
-                
-                        <select id="studyYear" name="studyYear" class="w1">
-                    
-                        <option value="2011">
-                            2011/2012
-                        </option>
-                    
-                        <option value="2012">
-                            2012/2013
-                        </option>
-                    
-                        <option value="2013">
-                            2013/2014
-                        </option>
-                    
-                        <option value="2014">
-                            2014/2015
-                        </option>
-                    
-                        <option value="2015">
-                            2015/2016
-                        </option>
-                    
-                        <option value="2016">
-                            2016/2017
-                        </option>
-                    
-                        <option value="2017">
-                            2017/2018
-                        </option>
-                    
-                        <option value="2018">
-                            2018/2019
-                        </option>
-                    
-                        <option value="2019">
-                            2019/2020
-                        </option>
-                    
-                        <option value="2020" selected="selected">
-                            2020/2021
-                        </option>
-                    
-                        <option value="2021">
-                            2021/2022
-                        </option>
-                    
-                        <option value="2022">
-                            2022/2023
-                        </option>
-                    
-                        </select>
-                    
-            </div>
-      
-      <div class="rowInline last">
-                <label for="subject" class="b">Предмет</label>
-                
-                        <select id="subject" name="subject" class="w2">
-                      <option value="">Все</option>
-                    
-                        <option value="2414988439681293">
-                            Алгебра
-                        </option>
-                    
-                        <option value="2415009914517778">
-                            Биология
-                        </option>
-                    
-                        <option value="2415001324583184">
-                            География
-                        </option>
-                    
-                        <option value="1444191434752459168">
-                            Геометрия_
-                        </option>
-                    
-                        <option value="2415027094386966">
-                            ИЗО
-                        </option>
-                    
-                        <option value="3591925442902323">
-                            Иностранный язык
-                        </option>
-                    
-                        <option value="1444191907198861729">
-                            Информатика
-                        </option>
-                    
-                        <option value="2415005619550481">
-                            История
-                        </option>
-                    
-                        <option value="3061913593674026">
-                            Классный час
-                        </option>
-                    
-                        <option value="2414975554779404">
-                            Литература
-                        </option>
-                    
-                        <option value="2415022799419669">
-                            Музыка
-                        </option>
-                    
-                        <option value="2415039979288857">
-                            ОБЖ
-                        </option>
-                    
-                        <option value="1444194540013814179">
-                            Обществознание
-                        </option>
-                    
-                        <option value="1722480855694524391">
-                            Подвижные игры
-                        </option>
-                    
-                        <option value="1594674547499805243">
-                            Русская родная литер
-                        </option>
-                    
-                        <option value="1585849832815535188">
-                            Русский родной язык
-                        </option>
-                    
-                        <option value="2414971259812107">
-                            Русский язык
-                        </option>
-                    
-                        <option value="2451899388623138">
-                            Технология
-                        </option>
-                    
-                        <option value="2415014209485075">
-                            Физика
-                        </option>
-                    
-                        <option value="2415031389354263">
-                            Физкультура
-                        </option>
-                    
-                        </select>
-                    
-            </div>
+<div class="tabs"><ul><li><div class="tc1"></div><div class="tc2"></div><a id="TabProfile" style="" class="NotSet   " href="https://school.mosreg.ru/soc/events/event.aspx?event=182945">Профиль</a></li><li><div class="tc1"></div><div class="tc2"></div><a id="TabMembers" style="" class="NotSet   " href="https://school.mosreg.ru/soc/events/event.aspx?event=182945&amp;view=members">Участники</a></li><li class="active  "><div class="tc1"></div><div class="tc2"></div><a id="TabFiles" style="" class="NotSet  " href="https://school.mosreg.ru/soc/events/event.aspx?event=182945&amp;view=files">Файлы</a></li><li><div class="tc1"></div><div class="tc2"></div><a id="TabForum" style="" class="NotSet   " href="https://school.mosreg.ru/soc/events/event.aspx?event=182945&amp;view=forum">Форум</a></li></ul></div>
+		
+		<script src="https://static.school.mosreg.ru/javascripts/jquery-ui.js?v=92b8b6ef" type="text/javascript"></script>
 
-			<div class="rowInline last">
-			    <div class="row last">
-				  <label class="b">Срок выполнения</label>
-				    <div>
-                        <div id="DateTimeInterval" class="datetimeinterval">
-	<label for="datefrom">с</label><div>
-		<input type="text" id="datefrom" name="datefrom" value="23.11.2020" size="13" maxlength="13" class="t icon iCal">
-                    <script type="text/javascript">
-                    $(function()
-                    {
-                        $("#datefrom").calendar({ months: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',''],months_long: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',''],months_short: ['янв','фев','мар','апр','май','июн','июл','авг','сен','окт','ноя','дек',''],isHebrew: false,isArabic: false,weekdays_short: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],showTodayButton: true,todayLabel: 'Сегодня',dateFormat:'dd.mm.yyyy',firstDayOfWeek:1, todayDate:'25 ноября 2020 г.',fromDate:'01.08.2011',toDate:'31.07.2023',
-                        onDateSelected:  function() {
-                var dateInput = document.querySelector("#datefrom");
-                var event = document.createEvent("CustomEvent");
-                event.initCustomEvent("DateSelected", true, true, {});
-                dateInput.dispatchEvent(event);
-            } });
-	                    
+
+        
+        <div class="col14 first">
+            <div class="panel blue2"><div class="rounded"><div class="c1"><div class="c2"></div></div><div class="cc"><ul class="folders"><div class="folderButton"><a href="https://school.mosreg.ru/soc/files/foldernew.aspx?event=182945" title="Создать новую папку"><img src="https://static.school.mosreg.ru/images/icons/add.gif"><span>Создать папку</span></a></div><li class="ui-draggable ui-droppable"><a href="https://school.mosreg.ru/soc/events/event.aspx?event=182945&amp;view=files" class="selected" title="Посмотреть все файлы"><img src="https://static.school.mosreg.ru/images/icons/find.png"><span>Все файлы</span></a> <em>3</em></li><li id="f6543329" class="ui-draggable ui-droppable"><div><a href="https://school.mosreg.ru/soc/events/event.aspx?event=182945&amp;view=files&amp;folder=6543329" title="Нет"><img src="https://static.school.mosreg.ru/images/icons/folder.png" title="Папка"><span title="Нет">Нет</span></a> <em>3</em> <a href="https://school.mosreg.ru/soc/files/folderedit.aspx?folder=6543329" class="fE" title="Редактировать эту папку"><img src="https://static.school.mosreg.ru/images/icons/pencil.png"></a></div></li></ul><div class="clear"></div></div><div class="c3"><div class="c4"></div></div></div></div>
+            <div class="6912f3a082974608b1815a95ab7040e5 asyncLeft240x400Banner"><div class="bannerWrapper"><div class="bannerInnerLeftWrapper"><!--В head сайта один раз подключите библиотеку-->
+
+
+<!--AdFox START-->
+<!--Dnevnik.ru-->
+<!--Площадка: School.mosreg.ru / * / *-->
+<!--Тип баннера: 240x400-->
+<!--Расположение: <верх страницы>-->
+<div id="adfox_1484145795168518"><div id="AdFox_banner_3944166367" style="width: 240px; margin: 0px auto;"><a href="http://ads.adfox.ru/222314/goLink?ad-session-id=3732311606323314782&amp;p2=ewth&amp;sj=XGzN006uHMBq4F-0fzVd_cPCkjjVTQwty_KrD8kiJAZALvruQ8P3pLGzcO3GboNMzPPpS7xaZN16phVaO-zUTDG3eonYPtiXMgurcial8rAnFYnwhONcJBQHD8Y87Z30_USNJwQttmlidA%3D%3D&amp;p1=btato&amp;ifd=1&amp;ytt=503576351213589&amp;ybv=0.1940&amp;ylv=0.1941" target="_top"><img src="//banners.adfox.ru/200302/defaults/adfox/222314/85677_791428.jpg" alt="" style="width: 100%; height: auto; vertical-align: middle; border: 0px;"></a></div><iframe id="AdFox_iframe_3944166367" name="adfox_transport_3944166367" style="display: none;"></iframe></div>
+</div></div></div><script>$(document).ready(function () {let container=$(".6912f3a082974608b1815a95ab7040e5");if(container.css("display")!=="none"){container.html($(".6912f3a082974608b1815a95ab7040e5 > div").text());} });</script>
+        </div>
+        <div class="col34">
+            <div class="toolbarWrapper"><ul class="toolbar"><li class="active first"><a title="Загрузить с компьютера" href="https://school.mosreg.ru/user/upload.aspx?event=182945"><img src="https://static.school.mosreg.ru/images/icons/add.gif">Загрузить с компьютера</a></li></ul></div>
+            <div class="panel blue2"><div class="rounded"><div class="c1"><div class="c2"></div></div><div class="cc">
+                <ul class="switch l">
+	<li class="active first"><a href="https://school.mosreg.ru/soc/events/event.aspx?event=182945&amp;view=files" innerhtml="Все типы" title="Показать файлы всех типов">Все типы</a></li><li><a href="https://school.mosreg.ru/soc/events/event.aspx?event=182945&amp;view=files&amp;filter=image" innerhtml="Картинки" title="Показать файлы только этого типа">Картинки</a></li><li><a href="https://school.mosreg.ru/soc/events/event.aspx?event=182945&amp;view=files&amp;filter=audio" innerhtml="Аудио" title="Показать файлы только этого типа">Аудио</a></li><li><a href="https://school.mosreg.ru/soc/events/event.aspx?event=182945&amp;view=files&amp;filter=video" innerhtml="Видео" title="Показать файлы только этого типа">Видео</a></li><li><a href="https://school.mosreg.ru/soc/events/event.aspx?event=182945&amp;view=files&amp;filter=document" innerhtml="Документы" title="Показать файлы только этого типа">Документы</a></li><li><a href="https://school.mosreg.ru/soc/events/event.aspx?event=182945&amp;view=files&amp;filter=archive" innerhtml="Архивы" title="Показать файлы только этого типа">Архивы</a></li>
+</ul>
+                <input type="text" id="keywords" name="keywords" value="" maxlength="100" class="t w2 r">
+                <script>
+                    $(function () {
+                        $('#keywords').keydown(function(event) {
+                            if (event.keyCode == '13')
+                                document.location.href = "https://school.mosreg.ru/soc/events/event.aspx?event=182945&view=files" + "&keywords=" + $("#keywords").val();
+                        });
                     });
-                    </script>
-				
-	</div><label for="dateto">по</label><div>
-		<input type="text" id="dateto" name="dateto" value="29.11.2020" size="13" maxlength="13" class="t icon iCal">
-                    <script type="text/javascript">
-                    $(function()
-                    {
-                        $("#dateto").calendar({ months: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',''],months_long: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',''],months_short: ['янв','фев','мар','апр','май','июн','июл','авг','сен','окт','ноя','дек',''],isHebrew: false,isArabic: false,weekdays_short: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],showTodayButton: true,todayLabel: 'Сегодня',dateFormat:'dd.mm.yyyy',firstDayOfWeek:1, todayDate:'25 ноября 2020 г.',fromDate:'01.08.2011',toDate:'31.07.2023',
-                        onDateSelected:  function() {
-                var dateInput = document.querySelector("#dateto");
-                var event = document.createEvent("CustomEvent");
-                event.initCustomEvent("DateSelected", true, true, {});
-                dateInput.dispatchEvent(event);
-            } });
-	                    
-                    });
-                    </script>
-				
-	</div>
-</div>
-				    </div>
-			    </div>
-			</div>
+                </script>
+            <div class="clear"></div></div><div class="c3"><div class="c4"></div></div></div></div>
             
-      <div class="rowInline last">
-				<div class="fakeLabel"></div>
-			  <input id="choose" name="choose" type="submit" value="Показать" class="button">
-			</div>
 
-		</form>
-	<div class="clear"></div></div><div class="c3"><div class="c4"></div></div></div></div>
-			<p class="found">Всего домашних заданий: 35</p>
-			<table class="grid gridLines vam hmw">
-				<tbody><tr>
-				  
-					<th style="width:30%">&nbsp;</th>
-						  <th style="width:15%">Школа</th>
-                  
-					<th style="width:15%">Предмет</th>
-					<th style="width:15%">Урок</th>
-					<th style="width:15%">Обновлено</th>
-					<th style="width:10%">Статус</th>
-				</tr>
+<div style="height:32px;">
+                                
+<ul class="viewMode"><li class="vG"><a href="https://school.mosreg.ru:443/soc/events/event.aspx?event=182945&amp;view=files&amp;mode=thumbnails" title="Просмотр в виде значков" class="active"><span>Значки</span></a></li><li class="vL"><a href="https://school.mosreg.ru:443/soc/events/event.aspx?event=182945&amp;view=files&amp;mode=list" title="Просмотр в виде списка"><span>Список</span></a></li></ul>
+<ul class="fileMenu"><li id="delButton"><span>Удалить</span></li>
+            </ul></div>
 		
-			<tr>
-			  
-				<td class="breakword">
-				    <a href="https://schools.school.mosreg.ru/homework.aspx?school=53268&amp;work=1746186850375416840">
-                        ВПР 4 вариант
-                    </a>
-				    
-				</td>
+			
+				
+						<ul id="files" class="fileThumbs">
+					
+                        <li id="f6543329_80019920"><div class="thumb canEdit"><a href="https://f1.school.mosreg.ru/get.aspx/50/621874e3a40f4a79938eba7d2acfec2f.jpg" title="гепр" rel="group1" class="i">
+<img src="https://f1.school.mosreg.ru/get.aspx/50/621874e3a40f4a79938eba7d2acfec2f.ss.jpg" alt="">
+</a>
 
-				<td class="tac">
-				    <a href="https://schools.school.mosreg.ru/school.aspx?school=53268" title="МБОУ ПСОШ № 2 им. М.Ф. Тихонова">
-				        МБОУ ПСОШ № 2 им. М.Ф. Тихонова
-				    </a>
-				</td>
-          
-        <td class="tac light">Иностранный язык</td>
-				<td class="tac nowrap">
-				    <a href="https://schools.school.mosreg.ru/lesson.aspx?school=53268&amp;lesson=1741653581113925022" title="На страницу урока">
-				        <strong>23&nbsp;ноября&nbsp;2020</strong><br>
-        			  1&nbsp;урок
-                
-				    </a>
-				</td>
-				<td class="tac light">&nbsp;</td>
-				<td class="tac bgR">Выдано</td>
-			</tr>
+            <script type="text/javascript">
+
+            
+            $(document).ready(function() {
+
+            window.$('a[rel=group1]').fancybox({
+                    'transitionIn': 'none',
+                    'transitionOut': 'none',
+                    'titlePosition': 'over',
+                    'onStart': function() {$('iframe').hide();},
+                    'onClosed': function() {$('iframe').show();}
+});
+            });
+            </script>
+            
+</div><div class="bar"><a href="https://school.mosreg.ru/soc/files/edit.aspx?f=80019920" class="siE" title="Редактировать этот файл"><img src="https://static.school.mosreg.ru/images/icons/pencil.png"></a><a href="#" class="siD" title="Удалить этот файл"><img src="https://static.school.mosreg.ru/images/icons/remove.png"></a></div><div class="name"><a href="https://school.mosreg.ru/soc/files/file.aspx?event=182945&amp;file=80019920" title="На страницу файла">гепр</a></div></li>
+					
+                        <li id="f6543329_80019918"><div class="thumb canEdit"><a href="https://f1.school.mosreg.ru/get.aspx/50/40474a28805c4dc688873548f3df4236.jpg" title="D_D9P1CCxZ8" rel="group1" class="i">
+<img src="https://f1.school.mosreg.ru/get.aspx/50/40474a28805c4dc688873548f3df4236.ss.jpg" alt="">
+</a>
+
+            <script type="text/javascript">
+
+            
+            $(document).ready(function() {
+
+            window.$('a[rel=group1]').fancybox({
+                    'transitionIn': 'none',
+                    'transitionOut': 'none',
+                    'titlePosition': 'over',
+                    'onStart': function() {$('iframe').hide();},
+                    'onClosed': function() {$('iframe').show();}
+});
+            });
+            </script>
+            
+</div><div class="bar"><a href="https://school.mosreg.ru/soc/files/edit.aspx?f=80019918" class="siE" title="Редактировать этот файл"><img src="https://static.school.mosreg.ru/images/icons/pencil.png"></a><a href="#" class="siD" title="Удалить этот файл"><img src="https://static.school.mosreg.ru/images/icons/remove.png"></a></div><div class="name"><a href="https://school.mosreg.ru/soc/files/file.aspx?event=182945&amp;file=80019918" title="На страницу файла">D_D9P1CCxZ8</a></div></li>
+					
+                        <li id="f6543329_80019919"><div class="thumb canEdit"><a href="https://f1.school.mosreg.ru/get.aspx/50/f8ca59fd00a84835b34c20793c99d0bc.jpg" title="D_D9P1CCxZ8" rel="group1" class="i">
+<img src="https://f1.school.mosreg.ru/get.aspx/50/f8ca59fd00a84835b34c20793c99d0bc.ss.jpg" alt="">
+</a>
+
+            <script type="text/javascript">
+
+            
+            $(document).ready(function() {
+
+            window.$('a[rel=group1]').fancybox({
+                    'transitionIn': 'none',
+                    'transitionOut': 'none',
+                    'titlePosition': 'over',
+                    'onStart': function() {$('iframe').hide();},
+                    'onClosed': function() {$('iframe').show();}
+});
+            });
+            </script>
+            
+</div><div class="bar"><a href="https://school.mosreg.ru/soc/files/edit.aspx?f=80019919" class="siE" title="Редактировать этот файл"><img src="https://static.school.mosreg.ru/images/icons/pencil.png"></a><a href="#" class="siD" title="Удалить этот файл"><img src="https://static.school.mosreg.ru/images/icons/remove.png"></a></div><div class="name"><a href="https://school.mosreg.ru/soc/files/file.aspx?event=182945&amp;file=80019919" title="На страницу файла">D_D9P1CCxZ8</a></div></li>
+					
+						</ul>
+					
+				<script type="text/javascript">
+				    require(['deleteFileDialog'], function (deleteFileDialog) {
+				        deleteFileDialog.initialize({
+				            message: '\nВы собираетесь удалить файл.\nВы уверены, что хотите сделать это?',
+				            ok: 'Да, удалить!',
+				            cancel: 'Нет',
+				            success: 'Файл успешно удален.',
+				            error: 'Ошибка!',
+				            ownertype: 'Event',
+				            ownerid: 182945
+				        });
+				    });
+				</script>
+			
 		
-			<tr>
-			  
-				<td class="breakword">
-				    <a href="https://schools.school.mosreg.ru/homework.aspx?school=53268&amp;work=1745475659625788935">
-                        п.26
-                    </a>
-				    
-				</td>
-
-				<td class="tac">
-				    <a href="https://schools.school.mosreg.ru/school.aspx?school=53268" title="МБОУ ПСОШ № 2 им. М.Ф. Тихонова">
-				        МБОУ ПСОШ № 2 им. М.Ф. Тихонова
-				    </a>
-				</td>
-          
-        <td class="tac light">Физика</td>
-				<td class="tac nowrap">
-				    <a href="https://schools.school.mosreg.ru/lesson.aspx?school=53268&amp;lesson=1741653581113924902" title="На страницу урока">
-				        <strong>23&nbsp;ноября&nbsp;2020</strong><br>
-        			  2&nbsp;урок
-                
-				    </a>
-				</td>
-				<td class="tac light">23&nbsp;ноября&nbsp;2020&nbsp;в&nbsp;0:02</td>
-				<td class="tac bgY">В работе</td>
-			</tr>
 		
-			<tr>
-			  
-				<td class="breakword">
-				    <a href="https://schools.school.mosreg.ru/homework.aspx?school=53268&amp;work=1746234305469030122">
-                        Сила 
-                    </a>
-				    
-				</td>
+        
+        
 
-				<td class="tac">
-				    <a href="https://schools.school.mosreg.ru/school.aspx?school=53268" title="МБОУ ПСОШ № 2 им. М.Ф. Тихонова">
-				        МБОУ ПСОШ № 2 им. М.Ф. Тихонова
-				    </a>
-				</td>
-          
-        <td class="tac light">Физика</td>
-				<td class="tac nowrap">
-				    <a href="https://schools.school.mosreg.ru/lesson.aspx?school=53268&amp;lesson=1741653581113924902" title="На страницу урока">
-				        <strong>23&nbsp;ноября&nbsp;2020</strong><br>
-        			  2&nbsp;урок
-                
-				    </a>
-				</td>
-				<td class="tac light">&nbsp;</td>
-				<td class="tac bgR">Выдано</td>
-			</tr>
-		
-			<tr>
-			  
-				<td class="breakword">
-				    <a href="https://schools.school.mosreg.ru/homework.aspx?school=53268&amp;work=1746176280460893259">
-                        комплекс №2 спорт.форма на улицу
-                    </a>
-				    
-				</td>
-
-				<td class="tac">
-				    <a href="https://schools.school.mosreg.ru/school.aspx?school=53268" title="МБОУ ПСОШ № 2 им. М.Ф. Тихонова">
-				        МБОУ ПСОШ № 2 им. М.Ф. Тихонова
-				    </a>
-				</td>
-          
-        <td class="tac light">Физкультура</td>
-				<td class="tac nowrap">
-				    <a href="https://schools.school.mosreg.ru/lesson.aspx?school=53268&amp;lesson=1741653581113924884" title="На страницу урока">
-				        <strong>23&nbsp;ноября&nbsp;2020</strong><br>
-        			  3&nbsp;урок
-                
-				    </a>
-				</td>
-				<td class="tac light">&nbsp;</td>
-				<td class="tac bgR">Выдано</td>
-			</tr>
-		
-			<tr>
-			  
-				<td class="breakword">
-				    <a href="https://schools.school.mosreg.ru/homework.aspx?school=53268&amp;work=1746835454861638227">
-                        п.29, упр.187
-                    </a>
-				    
-				</td>
-
-				<td class="tac">
-				    <a href="https://schools.school.mosreg.ru/school.aspx?school=53268" title="МБОУ ПСОШ № 2 им. М.Ф. Тихонова">
-				        МБОУ ПСОШ № 2 им. М.Ф. Тихонова
-				    </a>
-				</td>
-          
-        <td class="tac light">Русский язык</td>
-				<td class="tac nowrap">
-				    <a href="https://schools.school.mosreg.ru/lesson.aspx?school=53268&amp;lesson=1741653581113924980" title="На страницу урока">
-				        <strong>23&nbsp;ноября&nbsp;2020</strong><br>
-        			  4&nbsp;урок
-                
-				    </a>
-				</td>
-				<td class="tac light">&nbsp;</td>
-				<td class="tac bgR">Выдано</td>
-			</tr>
-		
-			<tr>
-			  
-				<td class="breakword">
-				    <a href="https://schools.school.mosreg.ru/homework.aspx?school=53268&amp;work=1747009426806898597">
-                        п. 21, пересказ
-                    </a>
-				    
-				</td>
-
-				<td class="tac">
-				    <a href="https://schools.school.mosreg.ru/school.aspx?school=53268" title="МБОУ ПСОШ № 2 им. М.Ф. Тихонова">
-				        МБОУ ПСОШ № 2 им. М.Ф. Тихонова
-				    </a>
-				</td>
-          
-        <td class="tac light">География</td>
-				<td class="tac nowrap">
-				    <a href="https://schools.school.mosreg.ru/lesson.aspx?school=53268&amp;lesson=1741653581113925046" title="На страницу урока">
-				        <strong>23&nbsp;ноября&nbsp;2020</strong><br>
-        			  5&nbsp;урок
-                
-				    </a>
-				</td>
-				<td class="tac light">&nbsp;</td>
-				<td class="tac bgR">Выдано</td>
-			</tr>
-		
-			<tr>
-			  
-				<td class="breakword">
-				    <a href="https://schools.school.mosreg.ru/homework.aspx?school=53268&amp;work=1745466945137140092">
-                        Повторить все записи в тетради.
-                    </a>
-				    
-				</td>
-
-				<td class="tac">
-				    <a href="https://schools.school.mosreg.ru/school.aspx?school=53268" title="МБОУ ПСОШ № 2 им. М.Ф. Тихонова">
-				        МБОУ ПСОШ № 2 им. М.Ф. Тихонова
-				    </a>
-				</td>
-          
-        <td class="tac light">Музыка</td>
-				<td class="tac nowrap">
-				    <a href="https://schools.school.mosreg.ru/lesson.aspx?school=53268&amp;lesson=1741653581113924818" title="На страницу урока">
-				        <strong>23&nbsp;ноября&nbsp;2020</strong><br>
-        			  6&nbsp;урок
-                
-				    </a>
-				</td>
-				<td class="tac light">&nbsp;</td>
-				<td class="tac bgR">Выдано</td>
-			</tr>
-		
-			<tr>
-			  
-				<td class="breakword">
-				    <a href="https://schools.school.mosreg.ru/homework.aspx?school=53268&amp;work=1746831516376626228">
-                        Пересказ 1-3 гл. повести "Тарас Бульба"
-                    </a>
-				    
-				</td>
-
-				<td class="tac">
-				    <a href="https://schools.school.mosreg.ru/school.aspx?school=53268" title="МБОУ ПСОШ № 2 им. М.Ф. Тихонова">
-				        МБОУ ПСОШ № 2 им. М.Ф. Тихонова
-				    </a>
-				</td>
-          
-        <td class="tac light">Литература</td>
-				<td class="tac nowrap">
-				    <a href="https://schools.school.mosreg.ru/lesson.aspx?school=53268&amp;lesson=1741653581113924998" title="На страницу урока">
-				        <strong>23&nbsp;ноября&nbsp;2020</strong><br>
-        			  7&nbsp;урок
-                
-				    </a>
-				</td>
-				<td class="tac light">&nbsp;</td>
-				<td class="tac bgR">Выдано</td>
-			</tr>
-		
-			<tr>
-			  
-				<td class="breakword">
-				    <a href="https://schools.school.mosreg.ru/homework.aspx?school=53268&amp;work=1746201238515867590">
-                        №137.
-                    </a>
-				    
-				</td>
-
-				<td class="tac">
-				    <a href="https://schools.school.mosreg.ru/school.aspx?school=53268" title="МБОУ ПСОШ № 2 им. М.Ф. Тихонова">
-				        МБОУ ПСОШ № 2 им. М.Ф. Тихонова
-				    </a>
-				</td>
-          
-        <td class="tac light">Геометрия_</td>
-				<td class="tac nowrap">
-				    <a href="https://schools.school.mosreg.ru/lesson.aspx?school=53268&amp;lesson=1741653581113924932" title="На страницу урока">
-				        <strong>Вчера</strong><br>
-        			  0&nbsp;урок
-                
-				    </a>
-				</td>
-				<td class="tac light">&nbsp;</td>
-				<td class="tac bgR">Выдано</td>
-			</tr>
-		
-			<tr>
-			  
-				<td class="breakword">
-				    <a href="https://schools.school.mosreg.ru/homework.aspx?school=53268&amp;work=1748048718698216244">
-                        Контрольная работа , подготовка  стр.34
-                    </a>
-				    
-				</td>
-
-				<td class="tac">
-				    <a href="https://schools.school.mosreg.ru/school.aspx?school=53268" title="МБОУ ПСОШ № 2 им. М.Ф. Тихонова">
-				        МБОУ ПСОШ № 2 им. М.Ф. Тихонова
-				    </a>
-				</td>
-          
-        <td class="tac light">Иностранный язык</td>
-				<td class="tac nowrap">
-				    <a href="https://schools.school.mosreg.ru/lesson.aspx?school=53268&amp;lesson=1741653581113924950" title="На страницу урока">
-				        <strong>Вчера</strong><br>
-        			  1&nbsp;урок
-                
-				    </a>
-				</td>
-				<td class="tac light">&nbsp;</td>
-				<td class="tac bgR">Выдано</td>
-			</tr>
-		
-			</tbody></table>
-		<div class="pager"><h6>Страницы:</h6><ul> <li><b>1</b></li> <li><a href="https://schools.school.mosreg.ru:443/homework.aspx?school=53268&amp;tab=&amp;studyYear=2020&amp;subject=&amp;datefrom=23.11.2020&amp;dateto=29.11.2020&amp;choose=%D0%9F%D0%BE%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C&amp;page=2" title="Страница 2">2</a></li> <li><a href="https://schools.school.mosreg.ru:443/homework.aspx?school=53268&amp;tab=&amp;studyYear=2020&amp;subject=&amp;datefrom=23.11.2020&amp;dateto=29.11.2020&amp;choose=%D0%9F%D0%BE%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C&amp;page=3" title="Страница 3">3</a></li> <li><a href="https://schools.school.mosreg.ru:443/homework.aspx?school=53268&amp;tab=&amp;studyYear=2020&amp;subject=&amp;datefrom=23.11.2020&amp;dateto=29.11.2020&amp;choose=%D0%9F%D0%BE%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C&amp;page=4" title="Страница 4">4</a></li></ul></div>
-
-
+<div id="OfficeOnlineCreateFileSelector" class="b-blue-bordered-popup">
+    <div class="b-blue-bordered-popup__overlay"></div>
+    <div class="office-online-create-file-selector">
+        <div class="office-online-create-file-selector-header">
+            Добавить файлы
+        </div>
+        <div class="office-online-create-file-selector-content">
+            Создать новый документ в папку<br>
+            "Документы Office Online"
+        </div>
+        <div class="office-online-app-container">
+            <a href="https://school.mosreg.ru/office/file/create?folderId=&amp;type=Docx&amp;ownerType=Event&amp;ownerID=182945&amp;OwnerObjectType=SocialEvent" target="_blank" class="office-online-app-word create-document"></a>
+            <a href="https://school.mosreg.ru/office/file/create?folderId=&amp;type=Xlsx&amp;ownerType=Event&amp;ownerID=182945&amp;OwnerObjectType=SocialEvent" target="_blank" class="office-online-app-excel create-document"></a>
+            <a href="https://school.mosreg.ru/office/file/create?folderId=&amp;type=Pptx&amp;ownerType=Event&amp;ownerID=182945&amp;OwnerObjectType=SocialEvent" target="_blank" class="office-online-app-power-point create-document"></a>
+        </div>
+        <a href="" class="office-online-create-file-selector-close" id="office-online-create-file-selector-close"></a>
+    </div>    
+</div>
 
 <script type="text/javascript">
-  $(function () {
-
-    var setGroups = function(source, sub) {
-      sub.empty().attr('disabled', 'disabled').append('<option value="">Загрузка...</option>');
-
-      $.ajax({
-        type: "POST",
-        url: "https://schools.school.mosreg.ru/ajax.ashx?xss=e7088992bd07504d5ccda834b6c08ed11f9a59f4eb25cc1d1998a5f5f57cbf87&a=glsp&sid=53268&pid=1000008589487&active=True",
-
-        dataType: "json",
-        data: {
-          sy: source.val()
-        },
-        success: function (data) {
-          if (data.error) {
-            sub[0].options[0].text = 'Ошибка!';
-            sub.attr('title', data.error);
-          } else {
-            for (var i = 0; i < data.length; i++) {
-              sub.append('<option value="' + data[i].gid + '">' + data[i].pn + '</option>');
-            }
-            sub[0].options[0].text = 'Все';
-            sub.removeAttr('disabled').removeAttr('title');
-          }
-        },
-        error: function (request, status, error) {
-          sub[0].options[0].text = 'Ошибка!';
-        }
-      });
-    }
-
-    var subscribeForYearChange = function (element) {
-      $(element).bind('change', function () {
-        var seletGroupElement = this.parentElement.nextElementSibling.getElementsByTagName('select')[0];
-        setGroups($(this), $(seletGroupElement));
-      });
+    function onClose() {
+        $('#OfficeOnlineCreateFileSelector').hide();
     };
     
-    subscribeForYearChange($("select[name='studyYear']"));
-  });  
+    $('#officeOnlineCreate').click(function () {
+        $('#OfficeOnlineCreateFileSelector').show();
+        return false;
+    });
+
+    $('#office-online-create-file-selector-close').click(function () {
+        onClose();
+        return false;
+    });
+
+    $('.create-document').click(function () {
+        onClose();
+    });
+
+    $(document).keyup(function (e) {
+        if (e.keyCode == 27) {
+            onClose();
+        }
+    });
+
+    $('.b-blue-bordered-popup__overlay').click(function () {
+        onClose();
+    });
 </script>
+	<div id="overlayConfirm" class="shadow" style="left: 4px; top: 35px; display: none;"><a class="close"></a><div>
+Вы собираетесь удалить файл.
+Вы уверены, что хотите сделать это?</div><a id="overlayConfirmY" href="#" class="button">Да, удалить!</a><a id="overlayConfirmN" href="#" class="button">Нет</a></div></div>
+	
 
-
-
-
-
-
-
-
+<script type="text/javascript">
+    require(['files'], function (files) {
+        files.initialize({
+            urlNewFolder: "https://school.mosreg.ru/soc/files/foldernew.aspx?event=182945",
+            urlMoveFiles: "https://school.mosreg.ru/soc/events/ajax.ashx?xss=49a85418c1db76a1da278196dd058bfbe5deaba3a654a90ab6d237633c3ef86b&a=mvf",
+            urlMoveFileFolders: "https://school.mosreg.ru/soc/events/ajax.ashx?xss=49a85418c1db76a1da278196dd058bfbe5deaba3a654a90ab6d237633c3ef86b&a=mvff",
+            filesDragMode: "disable",
+            filesDeleteMode: "thumbnails",
+            filesMovedMessage: "Файл успешно перемещён.",
+            filesDeletedMessage: "Файл успешно удален.",
+            filesNotSelectedMessage: "Не выбрано ни одного файла.",
+            errorMessage: "Ошибка!",
+            ownertype: 'Event',
+            ownerid: 182945
+        });
+    });
+</script>
+			
+	
 
 
 <div class="clear"></div>
@@ -839,7 +542,16 @@
 
     <div class="page-footer page-footer_auth" id="footer">
         <div class="page-footer__banner">
-            
+            <div class="d748761ce1c94bde9bde7aaee2e9bf8e asyncBottom728x90Banner"><!--В head сайта один раз подключите библиотеку-->
+
+
+<!--AdFox START-->
+<!--Dnevnik.ru-->
+<!--Площадка: School.mosreg.ru / * / *-->
+<!--Тип баннера: 728х90-->
+<!--Расположение: <верх страницы>-->
+<div id="adfox_1484145910669155"></div>
+</div><script>$(document).ready(function () {let container=$(".d748761ce1c94bde9bde7aaee2e9bf8e");if(container.css("display")!=="none"){container.html($(".d748761ce1c94bde9bde7aaee2e9bf8e > div").text());} });</script>
             
         </div>
         <div class="page-footer__content">
@@ -933,15 +645,10 @@
 <noscript><div><img src="//mc.yandex.ru/watch/17969140" style="position:absolute; left:-9999px;" alt="" /><img src="//mc.yandex.ru/watch/29822639" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- Yandex.Metrika counter -->
 <span> <script type="text/javascript">
-                    require(['https://static.school.mosreg.ru/assets/scripts/controls/schools/usercontrols/homeworks/homeworknew/homeworknewdetails.js?v=2cf4ca04','https://static.school.mosreg.ru/assets/scripts/controls/schools/usercontrols/schoolselector.js?v=c7720b65','https://static.school.mosreg.ru/assets/scripts/controls/schools/usercontrols/schoolselector.js?v=c7720b65','https://static.school.mosreg.ru/assets/scripts/controls/schools/usercontrols/schoolselector.js?v=c7720b65','https://static.school.mosreg.ru/assets/scripts/controls/schools/usercontrols/schoolselector.js?v=c7720b65','https://static.school.mosreg.ru/assets/scripts/controls/homeworksbrowse.js?v=da4c9c85','https://static.school.mosreg.ru/assets/scripts/controls/framework/controls/datetime/datetimeinterval.js?v=1c2563e8'], function(dep0,dep1,dep2,dep3,dep4,dep5,dep6) {
+                    require(['https://static.school.mosreg.ru/assets/scripts/controls/framework/controls/buttons/abusebutton.js?v=fcbc2d3f','https://static.school.mosreg.ru/assets/scripts/controls/../controls/dnevnik/usercontrols/invites.js'], function(dep0,dep1) {
                         $(function () { 
                             dep0();
-dep1({"isAutoPostBack":true});
-dep2({"isAutoPostBack":true});
-dep3({"isAutoPostBack":true});
-dep4({"isAutoPostBack":true});
-dep5({"getSubjectBaseUrl":"https://schools.school.mosreg.ru/lesson/getsubjectbase-cmd?xss=e7088992bd07504d5ccda834b6c08ed11f9a59f4eb25cc1d1998a5f5f57cbf87&school=53268&student=1000008589487&isAmerican=False","tryAgainMsg":"Ошибка! Попробуйте ещё раз."});
-dep6({"controlClientId":"DateTimeInterval","dateFromId":"datefrom","dateToId":"dateto","allowTypeNumbersOnly":false});
+dep1();
 
                         });
                     });
@@ -950,4 +657,4 @@ dep6({"controlClientId":"DateTimeInterval","dateFromId":"datefrom","dateToId":"d
 </script></span>
 
 
-<div id="calendar" class="" style="display: none"><a href="" class="previous">&lt;</a><div class="current"><a href=""></a></div><a href="" class="next">&gt;</a><div style="height: px; overflow: hidden;"><div class="content"><div class="decade" id="decade_currentscreen" style="display: none;"><ul class="years"><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li></ul></div><div class="year" id="year_currentscreen" style="display: none;"><ul class="months"><li><a href="" rel="1">янв</a></li><li><a href="" rel="2">фев</a></li><li><a href="" rel="3">мар</a></li><li><a href="" rel="4">апр</a></li><li><a href="" rel="5">май</a></li><li><a href="" rel="6">июн</a></li><li><a href="" rel="7">июл</a></li><li><a href="" rel="8">авг</a></li><li><a href="" rel="9">сен</a></li><li><a href="" rel="10">окт</a></li><li><a href="" rel="11">ноя</a></li><li><a href="" rel="12">дек</a></li></ul></div><div class="month" id="month_currentscreen" style="display: block;"><ul class="week"><li>Пн</li><li>Вт</li><li>Ср</li><li>Чт</li><li>Пт</li><li class="weekend">Сб</li><li class="weekend">Вс</li></ul><ul class="days"><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li class="weekend"><a href=""></a></li><li class="weekend"><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li class="weekend"><a href=""></a></li><li class="weekend"><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li class="weekend"><a href=""></a></li><li class="weekend"><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li class="weekend"><a href=""></a></li><li class="weekend"><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li class="weekend"><a href=""></a></li><li class="weekend"><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li class="weekend"><a href=""></a></li><li class="weekend"><a href=""></a></li></ul></div></div><div class="today"><a href=""></a></div></div></div></body></html>
+<div id="fancybox-tmp"></div><div id="fancybox-loading"><div></div></div><div id="fancybox-overlay"></div><div id="fancybox-wrap"><div id="fancybox-outer"><div class="fancybox-bg" id="fancybox-bg-n"></div><div class="fancybox-bg" id="fancybox-bg-ne"></div><div class="fancybox-bg" id="fancybox-bg-e"></div><div class="fancybox-bg" id="fancybox-bg-se"></div><div class="fancybox-bg" id="fancybox-bg-s"></div><div class="fancybox-bg" id="fancybox-bg-sw"></div><div class="fancybox-bg" id="fancybox-bg-w"></div><div class="fancybox-bg" id="fancybox-bg-nw"></div><div id="fancybox-content"></div><a id="fancybox-close"></a><div id="fancybox-title"></div><a href="javascript:;" id="fancybox-left"><span class="fancy-ico" id="fancybox-left-ico"></span></a><a href="javascript:;" id="fancybox-right"><span class="fancy-ico" id="fancybox-right-ico"></span></a></div></div></body></html>
