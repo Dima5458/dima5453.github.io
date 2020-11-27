@@ -1,194 +1,5 @@
-<html lang="ru" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
-<title>Модальное окно на CSS + JS</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {font-family: Arial, Helvetica, sans-serif;}
-
-#myBtn {
-  background-color: #9C27B0;
-  color: white;
-  padding: 12px 16px;
-  font-size: 18px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  width: 180px;
-}
-
-
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-
-.modal-content {
-    position: relative;
-    background-color: #E1BEE7;
-    margin: auto;
-    padding: 0;
-    border: 5px solid #7B1FA2;
-    width: 50%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
-    -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
-}
-
-
-@-webkit-keyframes animatetop {
-    from {top:-300px; opacity:0} 
-    to {top:0; opacity:1}
-}
-
-@keyframes animatetop {
-    from {top:-300px; opacity:0}
-    to {top:0; opacity:1}
-}
-
-
-.close {
-    color: white;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-header {
-    padding: 2px 16px;
-    background-color: #9C27B0;
-    color: white;
-}
-
-.modal-body {padding: 2px 16px;}
-
-.modal-footer {
-    padding: 2px 16px;
-    background-color: #9C27B0;
-    color: white;
-}
-</style>
-<link rel="preconnect" href="https://yastatic.net/"><link rel="preconnect" href="https://avatars.mds.yandex.net/"><link rel="preconnect" href="https://mc.yandex.ru/"><meta id="https://an.yandex.ru/partner-code-bundles/13167/context_static.js"><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13167/2161f1797c396cee8c2b.js" crossorigin="anonymous"></script><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13167/e17f831a282046668064.js" crossorigin="anonymous"></script><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13167/62cb59084782603f3516.js" crossorigin="anonymous"></script><link rel="preload" href="https://yastatic.net/pcode-bundles/0.1944/banners.js" as="script" crossorigin="anonymous"><script type="text/javascript" async="" src="https://yastatic.net/pcode-bundles/0.1944/banners.js" charset="utf-8" crossorigin="anonymous"></script><link rel="preload" href="https://an.yandex.ru/system/context.js" as="script"><link rel="preconnect" href="https://ads.adfox.ru"><link rel="preload" href="https://an.yandex.ru/system/context.js" as="script"><link rel="preconnect" href="https://ads.adfox.ru"><style class="mb-style-tag" type="text/css">.a3w9NbU {
-    width: 100%;
-    height: inherit;
-    min-height: inherit;
-    max-height: inherit;
-}
-</style><style type="text/css" class="mb-style-tag">.aNLP4g6{width:100%;height:inherit;min-height:inherit;max-height:inherit}.a2HoN3S{position:relative;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-moz-box-orient:horizontal;-moz-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center}.a33haaT{position:absolute;width:100%;top:50%;text-align:center;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}.a3ylgQB{margin-left:7px}.a3yEaZV{position:relative}.aUq2MkB{-webkit-transition:stroke-dashoffset .1s linear;-moz-transition:stroke-dashoffset .1s linear;transition:stroke-dashoffset .1s linear}.ahQNVZh{position:relative;height:100%;width:100%}.a23oZjO,.a399WUL{position:absolute;top:0;left:0;width:100%;height:100%}.a2YvqCx{z-index:4;font-weight:300;left:0;width:100%;line-height:50px;background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.4)),to(transparent));background-image:-webkit-linear-gradient(top,rgba(0,0,0,.4),transparent);background-image:-moz-linear-gradient(top,rgba(0,0,0,.4) 0,transparent 100%);background-image:linear-gradient(-180deg,rgba(0,0,0,.4),transparent);color:#fff;font-size:12px;font-family:sans-serif}.a2YvqCx,.aQ8_Cb6{position:absolute;top:0;height:50px;text-align:center}.aQ8_Cb6{right:0;cursor:pointer;width:50px;background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle opacity='.2' cx='20' cy='20' r='13.5'/%3E%3Cpath fill='%23fff' d='M27 13.7l-.7-.7-6.3 6.3-6.3-6.3-.7.7 6.3 6.3-6.3 6.3.7.7 6.3-6.3 6.3 6.3.7-.7-6.3-6.3z'/%3E%3C/svg%3E") no-repeat 50%}.a2g65Ed,.a3nCpxm{display:none}.a3nCpxm{position:absolute;left:0;top:0;cursor:pointer;text-align:center;height:50px;width:50px;background:url("data:image/svg+xml;charset=utf-8,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='13.5' opacity='.2'/%3E%3Cpath d='M24 16.4c1.4.6 2.4 2 2.4 3.5 0 1.6-1 2.9-2.4 3.5v-1.8c.5-.4.8-1 .8-1.7 0-.6-.3-1.2-.8-1.7v-1.8zm-10 1.1h3l5-4v13l-5-4h-3v-5z' fill='%23FFF'/%3E%3C/svg%3E") no-repeat 50%;z-index:2}.a1sF1pV{background:url("data:image/svg+xml;charset=utf-8,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='13.5' opacity='.2'/%3E%3Cpath d='M26.7 20.4l2.3-2.3-1.1-1.1-2.3 2.3-2.3-2.3-1.2 1.1 2.3 2.3-2.3 2.3 1.2 1.2 2.3-2.3 2.3 2.3 1.1-1.2-2.3-2.3zM13 17.5h3l5-4v13l-5-4h-3v-5z' fill='%23FFF'/%3E%3C/svg%3E") no-repeat 50%}.a1CNij8{height:30px;width:30px}.a1CNij8,.a3Zr4hr{display:inline-block;vertical-align:middle}.a3Zr4hr{margin-left:5px}.a3sabH0{z-index:3;position:absolute;text-align:center;cursor:pointer;left:50%;bottom:20px}.a1bEMYV{font-weight:300;text-decoration:none;display:inline-block;background:#fff;padding:9px 25px;min-height:27px;line-height:1.3;-webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,.18);-moz-box-shadow:0 2px 4px 0 rgba(0,0,0,.18);box-shadow:0 2px 4px 0 rgba(0,0,0,.18);font-size:20px;color:#000;font-family:sans-serif;position:relative;left:-50%}.a3Vme3B{display:none}.a1oc4Rf{position:fixed;top:0;left:-100%;width:100%;bottom:0;background-color:#000;background-color:rgba(0,0,0,.7)}.a2gWjHZ{left:0}.a3PsKFE{position:absolute;z-index:2;display:none}.a3PsKFE,.aJfTZFb{width:100%;height:100%}.aJfTZFb{text-align:center;display:block;position:relative;z-index:1}.aJfTZFb:before{content:""}.aJfTZFb:before,.aSuBPcJ{display:inline-block;height:100%;vertical-align:middle}.aSuBPcJ{width:100%;max-width:100%;max-height:100%;background:50% 50% no-repeat;-moz-background-size:contain;background-size:contain}.a2eubvh{display:block;background-repeat:no-repeat;background-position:50%}.a1SqbHU,.a2dytgO,.a2eubvh{height:100%;width:100%}.a2dytgO{max-height:100vh;max-width:100vw}.as3pe3P{position:relative;overflow:hidden;width:100%}.a1Z-vTi,.as3pe3P,.as3pe3P yatag{display:block}.a1Z-vTi{position:relative;overflow:hidden;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.a1SzcLD{position:absolute;z-index:1;top:0;left:0;right:0;bottom:0;overflow:hidden;clip:rect(0,auto,auto,0)}.a2_C0R2{position:fixed;z-index:-1;top:0;left:0;width:100%;height:100%;height:100vh;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);transform:translateZ(0)}.a2_C0R2.a3BrtOL{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center}.aH5YoYc{position:absolute;z-index:1;top:0;will-change:top,left,transform;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden}.a3Tf9Xw{margin:0 auto;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);transform:translateZ(0)}.a2TI5Ok{position:absolute;z-index:1;top:0;left:0;width:100%;height:100%}.adYQemp{position:relative;overflow:hidden}.a3KQvJt{position:relative;margin:0 auto}.apSNGNe{position:absolute;bottom:0;z-index:1;width:100%;line-height:20px;text-align:center;color:#fff;background:#000}.a164RL2 .a1dhZUT{margin:0 0 20px}.ajboYyY .a3KQvJt{padding:0 0 20px}.aT7HFxQ,.aTUfuDC{position:relative;width:100%;height:100%}.aTUfuDC{overflow:hidden}.a3HlA6f{position:relative;left:0;top:0}.a3lwYsN{float:left;background:50% no-repeat;-moz-background-size:contain;background-size:contain}.a2GGguX,.a2I4lnp{position:absolute;z-index:1;background-repeat:no-repeat;background-position:50% 50%;cursor:pointer}.aEIdaQB .a2GGguX,.aEIdaQB .a2I4lnp{height:36px;width:100%}.a1SOfIy .a2GGguX,.a1SOfIy .a2I4lnp{height:100%;width:36px}.a1SOfIy .a2GGguX{right:0}.a1SOfIy:hover .a2GGguX{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='16' viewBox='0 0 9 16' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M1 1l7 7-7 7 7-7-7-7'/%3E%3C/svg%3E")}.aEIdaQB .a2GGguX{bottom:0}.aEIdaQB:hover .a2GGguX{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='9' viewBox='0 0 16 9' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M1 1l7 7 7-7-7 7-7-7'/%3E%3C/svg%3E")}.a1SOfIy:hover .a2I4lnp{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='16' viewBox='0 0 9 16' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M8 1L1 8l7 7-7-7 7-7'/%3E%3C/svg%3E")}.aEIdaQB:hover .a2I4lnp{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='9' viewBox='0 0 16 9' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M1 8l7-7 7 7-7-7-7 7'/%3E%3C/svg%3E")}.a2uCUAU{position:absolute;height:0;bottom:18px;left:0;width:100%;text-align:center}.aEIdaQB .a2uCUAU{right:0;top:0;height:100%;width:18px;bottom:auto;left:auto;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center}.a_Cdy_t{display:inline-block;padding:5px;cursor:pointer}.a_Cdy_t:after{content:"";display:block;width:8px;height:8px;-webkit-border-radius:100%;-moz-border-radius:100%;border-radius:100%;background:#f2f2f2}.a6Q1qRh:after{background:#d2d2d2}</style><style class="mb-style-tag" type="text/css">.a3w9NbU {
-    width: 100%;
-    height: inherit;
-    min-height: inherit;
-    max-height: inherit;
-}
-</style><style type="text/css" class="mb-style-tag">.aNLP4g6{width:100%;height:inherit;min-height:inherit;max-height:inherit}.a2HoN3S{position:relative;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-moz-box-orient:horizontal;-moz-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center}.a33haaT{position:absolute;width:100%;top:50%;text-align:center;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}.a3ylgQB{margin-left:7px}.a3yEaZV{position:relative}.aUq2MkB{-webkit-transition:stroke-dashoffset .1s linear;-moz-transition:stroke-dashoffset .1s linear;transition:stroke-dashoffset .1s linear}.ahQNVZh{position:relative;height:100%;width:100%}.a23oZjO,.a399WUL{position:absolute;top:0;left:0;width:100%;height:100%}.a2YvqCx{z-index:4;font-weight:300;left:0;width:100%;line-height:50px;background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.4)),to(transparent));background-image:-webkit-linear-gradient(top,rgba(0,0,0,.4),transparent);background-image:-moz-linear-gradient(top,rgba(0,0,0,.4) 0,transparent 100%);background-image:linear-gradient(-180deg,rgba(0,0,0,.4),transparent);color:#fff;font-size:12px;font-family:sans-serif}.a2YvqCx,.aQ8_Cb6{position:absolute;top:0;height:50px;text-align:center}.aQ8_Cb6{right:0;cursor:pointer;width:50px;background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle opacity='.2' cx='20' cy='20' r='13.5'/%3E%3Cpath fill='%23fff' d='M27 13.7l-.7-.7-6.3 6.3-6.3-6.3-.7.7 6.3 6.3-6.3 6.3.7.7 6.3-6.3 6.3 6.3.7-.7-6.3-6.3z'/%3E%3C/svg%3E") no-repeat 50%}.a2g65Ed,.a3nCpxm{display:none}.a3nCpxm{position:absolute;left:0;top:0;cursor:pointer;text-align:center;height:50px;width:50px;background:url("data:image/svg+xml;charset=utf-8,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='13.5' opacity='.2'/%3E%3Cpath d='M24 16.4c1.4.6 2.4 2 2.4 3.5 0 1.6-1 2.9-2.4 3.5v-1.8c.5-.4.8-1 .8-1.7 0-.6-.3-1.2-.8-1.7v-1.8zm-10 1.1h3l5-4v13l-5-4h-3v-5z' fill='%23FFF'/%3E%3C/svg%3E") no-repeat 50%;z-index:2}.a1sF1pV{background:url("data:image/svg+xml;charset=utf-8,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='13.5' opacity='.2'/%3E%3Cpath d='M26.7 20.4l2.3-2.3-1.1-1.1-2.3 2.3-2.3-2.3-1.2 1.1 2.3 2.3-2.3 2.3 1.2 1.2 2.3-2.3 2.3 2.3 1.1-1.2-2.3-2.3zM13 17.5h3l5-4v13l-5-4h-3v-5z' fill='%23FFF'/%3E%3C/svg%3E") no-repeat 50%}.a1CNij8{height:30px;width:30px}.a1CNij8,.a3Zr4hr{display:inline-block;vertical-align:middle}.a3Zr4hr{margin-left:5px}.a3sabH0{z-index:3;position:absolute;text-align:center;cursor:pointer;left:50%;bottom:20px}.a1bEMYV{font-weight:300;text-decoration:none;display:inline-block;background:#fff;padding:9px 25px;min-height:27px;line-height:1.3;-webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,.18);-moz-box-shadow:0 2px 4px 0 rgba(0,0,0,.18);box-shadow:0 2px 4px 0 rgba(0,0,0,.18);font-size:20px;color:#000;font-family:sans-serif;position:relative;left:-50%}.a3Vme3B{display:none}.a1oc4Rf{position:fixed;top:0;left:-100%;width:100%;bottom:0;background-color:#000;background-color:rgba(0,0,0,.7)}.a2gWjHZ{left:0}.a3PsKFE{position:absolute;z-index:2;display:none}.a3PsKFE,.aJfTZFb{width:100%;height:100%}.aJfTZFb{text-align:center;display:block;position:relative;z-index:1}.aJfTZFb:before{content:""}.aJfTZFb:before,.aSuBPcJ{display:inline-block;height:100%;vertical-align:middle}.aSuBPcJ{width:100%;max-width:100%;max-height:100%;background:50% 50% no-repeat;-moz-background-size:contain;background-size:contain}.a2eubvh{display:block;background-repeat:no-repeat;background-position:50%}.a1SqbHU,.a2dytgO,.a2eubvh{height:100%;width:100%}.a2dytgO{max-height:100vh;max-width:100vw}.as3pe3P{position:relative;overflow:hidden;width:100%}.a1Z-vTi,.as3pe3P,.as3pe3P yatag{display:block}.a1Z-vTi{position:relative;overflow:hidden;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.a1SzcLD{position:absolute;z-index:1;top:0;left:0;right:0;bottom:0;overflow:hidden;clip:rect(0,auto,auto,0)}.a2_C0R2{position:fixed;z-index:-1;top:0;left:0;width:100%;height:100%;height:100vh;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);transform:translateZ(0)}.a2_C0R2.a3BrtOL{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center}.aH5YoYc{position:absolute;z-index:1;top:0;will-change:top,left,transform;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden}.a3Tf9Xw{margin:0 auto;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);transform:translateZ(0)}.a2TI5Ok{position:absolute;z-index:1;top:0;left:0;width:100%;height:100%}.adYQemp{position:relative;overflow:hidden}.a3KQvJt{position:relative;margin:0 auto}.apSNGNe{position:absolute;bottom:0;z-index:1;width:100%;line-height:20px;text-align:center;color:#fff;background:#000}.a164RL2 .a1dhZUT{margin:0 0 20px}.ajboYyY .a3KQvJt{padding:0 0 20px}.aT7HFxQ,.aTUfuDC{position:relative;width:100%;height:100%}.aTUfuDC{overflow:hidden}.a3HlA6f{position:relative;left:0;top:0}.a3lwYsN{float:left;background:50% no-repeat;-moz-background-size:contain;background-size:contain}.a2GGguX,.a2I4lnp{position:absolute;z-index:1;background-repeat:no-repeat;background-position:50% 50%;cursor:pointer}.aEIdaQB .a2GGguX,.aEIdaQB .a2I4lnp{height:36px;width:100%}.a1SOfIy .a2GGguX,.a1SOfIy .a2I4lnp{height:100%;width:36px}.a1SOfIy .a2GGguX{right:0}.a1SOfIy:hover .a2GGguX{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='16' viewBox='0 0 9 16' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M1 1l7 7-7 7 7-7-7-7'/%3E%3C/svg%3E")}.aEIdaQB .a2GGguX{bottom:0}.aEIdaQB:hover .a2GGguX{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='9' viewBox='0 0 16 9' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M1 1l7 7 7-7-7 7-7-7'/%3E%3C/svg%3E")}.a1SOfIy:hover .a2I4lnp{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='16' viewBox='0 0 9 16' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M8 1L1 8l7 7-7-7 7-7'/%3E%3C/svg%3E")}.aEIdaQB:hover .a2I4lnp{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='9' viewBox='0 0 16 9' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M1 8l7-7 7 7-7-7-7 7'/%3E%3C/svg%3E")}.a2uCUAU{position:absolute;height:0;bottom:18px;left:0;width:100%;text-align:center}.aEIdaQB .a2uCUAU{right:0;top:0;height:100%;width:18px;bottom:auto;left:auto;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center}.a_Cdy_t{display:inline-block;padding:5px;cursor:pointer}.a_Cdy_t:after{content:"";display:block;width:8px;height:8px;-webkit-border-radius:100%;-moz-border-radius:100%;border-radius:100%;background:#f2f2f2}.a6Q1qRh:after{background:#d2d2d2}</style></head>
-<body id="pageAuth">
-
-<h2>Анимированное модальное окно с шапкой и футером</h2>
-
-
-<button id="myBtn">Открыть окно</button>
-
-
-<div id="myModal" class="modal" style="display: none;">
-
- 
-  <div class="modal-content">
-    <div class="modal-header">
-      <span class="close">×</span>
-      <h2>Шапка модального окна</h2>
-    </div>
-    <div class="modal-body">
-      <p>Какой-то текст в теле модального окна</p>
-      <p>Ещё другой текст...</p>
-    </div>
-    <div class="modal-footer">
-      <h3>Футер модального окна</h3>
-    </div>
-  </div>
-
-</div>
-
-<script>
-
-var modal = document.getElementById('myModal');
-
-
-var btn = document.getElementById("myBtn");
-
-
-var span = document.getElementsByClassName("close")[0];
-
-
-btn.onclick = function() {
-    modal.style.display = "block";
-}
-
-
-span.onclick = function() {
-    modal.style.display = "none";
-}
-
-
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
 		<meta name="google" value="notranslate">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -199,47 +10,42 @@ window.onclick = function(event) {
     
 		<link rel="icon" href="https://static.school.mosreg.ru/img/icons/favicon_MosReg.ico" type="image/x-icon">
 		<link rel="shortcut icon" href="https://static.school.mosreg.ru/img/icons/favicon_MosReg.ico" type="image/x-icon">
-		<link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/assets/styles/vendors/emojione/emojione.css?v=f3836152"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/old_sites_blocks.css?v=fcc74a88"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/screen_addition.css?v=024509e0"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/screen.css?v=7169151a"><link rel="stylesheet" type="text/css" media="print" href="https://static.school.mosreg.ru/css/print.css?v=7b825809"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/client/notifications.css?v=6b917fed"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/client/discussions.css?v=22a3f168"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/client/attachments.css?v=dc302309"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/projects/screen.dnevnik.ru.css?v=d14a8dc4"><!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/projects/ie.dnevnik.ru.css?v=b74e0b48" /><![endif]--><script src="https://an.yandex.ru/system/context.js"></script><link rel="preconnect" href="https://yastatic.net/"><link rel="preconnect" href="https://avatars.mds.yandex.net/"><link rel="preconnect" href="https://mc.yandex.ru/"><meta id="https://an.yandex.ru/partner-code-bundles/13083/context_static.js"><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13083/24ee28a6ee8bdfa43834.js" crossorigin="anonymous"></script><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13083/f1e288afc00f17c3fe3b.js" crossorigin="anonymous"></script><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13083/92f27093322eaf341d48.js" crossorigin="anonymous"></script><link rel="preconnect" href="https://yastatic.net/"><link rel="preconnect" href="https://avatars.mds.yandex.net/"><link rel="preconnect" href="https://mc.yandex.ru/"><meta id="https://an.yandex.ru/partner-code-bundles/13083/context_static.js"><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13083/24ee28a6ee8bdfa43834.js" crossorigin="anonymous"></script><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13083/f1e288afc00f17c3fe3b.js" crossorigin="anonymous"></script><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13083/92f27093322eaf341d48.js" crossorigin="anonymous"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script src="https://mc.yandex.ru/metrika/watch.js"></script><script src="https://static.school.mosreg.ru/assets/scripts/vendors/tinymce/tinymce.min.js?v=285ccdd9" type="text/javascript"></script><script type="text/javascript">var dnevnik = {"urls":{"domain":"school.mosreg.ru","taskStateUrl":"https://school.mosreg.ru/user/TaskStateHandler.ashx","moderate":"https://school.mosreg.ru/soc/moderation/abuse.aspx","whiteList":["dnevnik.ru","mosreg.ru","microsoft.com","lego.com","surveymonkey.ru","surveymonkey.com","gosuslugi.ru","adfox.ru","facebook.com","ok.ru","twitter.com","instagram.com","vk.com","apple.com","google.com","dnevnik.ru","youtube.com","youtu.be","research.net","csdnevnik.ru","globallab.org","yaklass.ru","foxford.ru","sberbank.ru","magnit-info.ru","letovo.ru","office.com","sharepoint.com","onenote.com","office365.com","magnitznaniy.ru","magnit.ru","wikipedia.org","vk.com","yandex.ru","mail.ru","google.ru","google.com","ok.ru","avito.ru","instagram.com","facebook.com","aliexpress.com","gismeteo.ru","rambler.ru","2gis.ru","fotostrana.ru","twitter.com","livejournal.com","lenta.ru","hh.ru","kinopoisk.ru","ria.ru","yadi.sk","pikabu.ru","booking.com","rbc.ru","twitch.tv","yandex.com","mosregtest.ru","imumk.ru"],"userCounters":"https://school.mosreg.ru/counters","emailSettings":"https://school.mosreg.ru/user/settings.aspx?view=email","smilesSpriteUrl":"https://static.school.mosreg.ru/images/sprites/emojione.sprites.svg","tinyMceBaseUrl":"https://static.school.mosreg.ru/assets/scripts/vendors/tinymce","gaAutoLinkUrls":null,"adblockDummyUrl":"https://static.school.mosreg.ru/images/banners/adblockDummies/mosregDummy.jpg"},"settings":{"googleAnalytics":{"defaultId":"UA-2883817-3","appsId":"UA-70860859-1","adId":"UA-76476720-2","contactId":"UA-76476720-5","eventsId":"UA-76476720-4","groupsId":"UA-76476720-6","loginId":"UA-76476720-7","messengerId":"UA-76476720-8","networksId":"UA-76476720-9","childrenId":"UA-76476720-3","peopleId":"UA-76476720-10","schoolsId":"UA-76476720-11","wikiId":"UA-76476720-12","mainId":"UA-76476720-1","appSubscriptionId":"UA-70860859-3","limitedCounterId":"UA-106329441-1","limitedCounterSampleRate":1},"yandexMetrikaIds":["17969140","29822639"],"yandexMetrikaСlickmapEnabled":false,"enableAdFoxZeroPixel":true,"yandexMetrikaId":"17969140","environmentPrefix":"MosReg"},"fileUploadSettings":{"stateUrl":"https://content.school.mosreg.ru/gettaskstatus","resultUrl":"https://content.school.mosreg.ru/getresult","deleteFileUrl":"https://content.school.mosreg.ru/delete","deleteFolderUrl":"https://content.school.mosreg.ru/deletefolder","defaultFileSizeLimit":"2147483648"},"user":{"preferableLanguage":null,"suitableCultures":["ru-RU"],"id":"1000005085825","sex":"Male","age":13,"emailHash":"7ac41c8d30c95bd88b1907adfc045f59df98e5c55d788e6cbc4f11a0a58c9635","group":25,"role":"EduStudent","commonRole":"student","schools":[{"id":"53268","regionName":"Московская область"},{"id":"2000001540830","regionName":"Московская область"}],"children":[],"experimentPRTopic":"PRTopic_gr1"},"auth":{"isAuthenticated":true,"updateInterval":600000,"loginUrl":"https://login.school.mosreg.ru/auth"},"visitParams":{"__RedesignAbGroup2":"groupA"},"localizationSchoolType":""};</script><script type="text/javascript" src="https://static.school.mosreg.ru/assets/scripts/modules/libs.min.88f29fce.js?v=88f29fce">
+		<link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/assets/styles/vendors/emojione/emojione.css?v=f3836152"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/old_sites_blocks.css?v=fcc74a88"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/screen_addition.css?v=024509e0"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/screen.css?v=03f0ddc6"><link rel="stylesheet" type="text/css" media="print" href="https://static.school.mosreg.ru/css/print.css?v=7b825809"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/client/notifications.css?v=6b917fed"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/client/discussions.css?v=22a3f168"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/client/attachments.css?v=dc302309"><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/projects/screen.dnevnik.ru.css?v=d14a8dc4"><!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/projects/ie.dnevnik.ru.css?v=b74e0b48" /><![endif]--><script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script src="https://an.yandex.ru/system/context.js"></script><script src="https://static.school.mosreg.ru/assets/scripts/vendors/tinymce/tinymce.min.js?v=285ccdd9" type="text/javascript"></script><script type="text/javascript">var dnevnik = {"urls":{"domain":"school.mosreg.ru","taskStateUrl":"https://school.mosreg.ru/user/TaskStateHandler.ashx","moderate":"https://school.mosreg.ru/soc/moderation/abuse.aspx","whiteList":["dnevnik.ru","mosreg.ru","microsoft.com","lego.com","surveymonkey.ru","surveymonkey.com","gosuslugi.ru","adfox.ru","facebook.com","ok.ru","twitter.com","instagram.com","vk.com","apple.com","google.com","dnevnik.ru","youtube.com","youtu.be","research.net","csdnevnik.ru","globallab.org","yaklass.ru","foxford.ru","sberbank.ru","magnit-info.ru","letovo.ru","office.com","sharepoint.com","onenote.com","office365.com","magnitznaniy.ru","magnit.ru","wikipedia.org","vk.com","yandex.ru","mail.ru","google.ru","google.com","ok.ru","avito.ru","instagram.com","facebook.com","aliexpress.com","gismeteo.ru","rambler.ru","2gis.ru","fotostrana.ru","twitter.com","livejournal.com","lenta.ru","hh.ru","kinopoisk.ru","ria.ru","yadi.sk","pikabu.ru","booking.com","rbc.ru","twitch.tv","yandex.com","mosregtest.ru","imumk.ru"],"userCounters":"https://school.mosreg.ru/counters","emailSettings":"https://school.mosreg.ru/user/settings.aspx?view=email","smilesSpriteUrl":"https://static.school.mosreg.ru/images/sprites/emojione.sprites.svg","tinyMceBaseUrl":"https://static.school.mosreg.ru/assets/scripts/vendors/tinymce","gaAutoLinkUrls":null,"adblockDummyUrl":"https://static.school.mosreg.ru/images/banners/adblockDummies/mosregDummy.jpg"},"settings":{"googleAnalytics":{"defaultId":"UA-2883817-3","appsId":"UA-70860859-1","adId":"UA-76476720-2","contactId":"UA-76476720-5","eventsId":"UA-76476720-4","groupsId":"UA-76476720-6","loginId":"UA-76476720-7","messengerId":"UA-76476720-8","networksId":"UA-76476720-9","childrenId":"UA-76476720-3","peopleId":"UA-76476720-10","schoolsId":"UA-76476720-11","wikiId":"UA-76476720-12","mainId":"UA-76476720-1","appSubscriptionId":"UA-70860859-3","limitedCounterId":"UA-106329441-1","limitedCounterSampleRate":1},"yandexMetrikaIds":["17969140","29822639"],"yandexMetrikaСlickmapEnabled":false,"enableAdFoxZeroPixel":true,"yandexMetrikaId":"17969140","environmentPrefix":"MosReg"},"fileUploadSettings":{"stateUrl":"https://content.school.mosreg.ru/gettaskstatus","resultUrl":"https://content.school.mosreg.ru/getresult","deleteFileUrl":"https://content.school.mosreg.ru/delete","deleteFolderUrl":"https://content.school.mosreg.ru/deletefolder","defaultFileSizeLimit":"2147483648"},"user":{"preferableLanguage":null,"suitableCultures":["ru-RU"],"id":"1000005085825","sex":"Male","age":13,"emailHash":"7ac41c8d30c95bd88b1907adfc045f59df98e5c55d788e6cbc4f11a0a58c9635","group":25,"role":"EduStudent","commonRole":"student","schools":[{"id":"53268","regionName":"Московская область"},{"id":"2000001540830","regionName":"Московская область"}],"children":[],"experimentPRTopic":"PRTopic_gr1"},"auth":{"isAuthenticated":true,"updateInterval":600000,"loginUrl":"https://login.school.mosreg.ru/auth"},"visitParams":{"__RedesignAbGroup2":"groupA"},"localizationSchoolType":"dod"};</script><script type="text/javascript" src="https://static.school.mosreg.ru/assets/scripts/modules/libs.min.05587f0e.js?v=05587f0e">
 
 </script>
                     <script type="text/javascript">
                         function onRequreLoaded() {
                             require.config({
                                 baseUrl: "https://static.school.mosreg.ru/assets/scripts/modules",
-                                urlArgs: "v=752d59e9",
+                                urlArgs: "v=39ad6b7b",
                             });
                         }
                     </script>
-                <script data-main="https://static.school.mosreg.ru/assets/scripts/modules/main.min.217f4fab.js?v=217f4fab" type="text/javascript" src="https://static.school.mosreg.ru/assets/scripts/modules/main.min.217f4fab.js?v=217f4fab">
+                <script data-main="https://static.school.mosreg.ru/assets/scripts/modules/main.min.134df1a7.js?v=134df1a7" type="text/javascript" src="https://static.school.mosreg.ru/assets/scripts/modules/main.min.134df1a7.js?v=134df1a7">
 
 </script><script type="text/javascript" src="https://static.school.mosreg.ru/javascripts/local/ru.js?v=0320e479">
 
 </script>
-        <script src="https://yastatic.net/pcode/adfox/loader.js" crossorigin="anonymous"></script><link rel="preload" href="https://yastatic.net/pcode-bundles/0.1931/banners.js" as="script" crossorigin="anonymous"><script type="text/javascript" async="" src="https://yastatic.net/pcode-bundles/0.1931/banners.js" charset="utf-8" crossorigin="anonymous"></script><link rel="preload" href="https://an.yandex.ru/system/context.js" as="script"><link rel="preconnect" href="https://ads.adfox.ru"><link rel="preload" href="https://yastatic.net/pcode-bundles/0.1925/banners.js" as="script" crossorigin="anonymous"><script type="text/javascript" async="" src="https://yastatic.net/pcode-bundles/0.1925/banners.js" charset="utf-8" crossorigin="anonymous"></script><link rel="preload" href="https://an.yandex.ru/system/context.js" as="script"><link rel="preconnect" href="https://ads.adfox.ru"><link rel="preload" href="https://yastatic.net/pcode-bundles/0.1931/banners.js" as="script" crossorigin="anonymous"><script type="text/javascript" async="" src="https://yastatic.net/pcode-bundles/0.1931/banners.js" charset="utf-8" crossorigin="anonymous"></script><link rel="preload" href="https://an.yandex.ru/system/context.js" as="script"><link rel="preconnect" href="https://ads.adfox.ru">
-        <script src="https://static.school.mosreg.ru/client/localization/mosreg.ru-RU.js?v=a71a6ac3" type="text/javascript"></script>
+        <script src="https://yastatic.net/pcode/adfox/loader.js" crossorigin="anonymous"></script><link rel="preload" href="https://yastatic.net/pcode-bundles/0.1944/banners.js" as="script" crossorigin="anonymous"><script type="text/javascript" async="" src="https://yastatic.net/pcode-bundles/0.1944/banners.js" charset="utf-8" crossorigin="anonymous"></script><link rel="preload" href="https://an.yandex.ru/system/context.js" as="script"><link rel="preconnect" href="https://ads.adfox.ru">
+        <script src="https://static.school.mosreg.ru/client/localization/mosreg.ru-RU.js?v=2559fa2e" type="text/javascript"></script>
 		<script src="https://static.school.mosreg.ru/client/react.vendor.bundle.js?v=301b56bf" type="text/javascript"></script>
-		<script src="https://yastatic.net/pcode/adfox/loader.js" crossorigin="anonymous"></script><link rel="preload" href="https://an.yandex.ru/system/context.js" as="script"><link rel="preconnect" href="https://ads.adfox.ru"><link rel="preload" href="https://an.yandex.ru/system/context.js" as="script"><link rel="preconnect" href="https://ads.adfox.ru"><link rel="preload" href="https://an.yandex.ru/system/context.js" as="script"><link rel="preconnect" href="https://ads.adfox.ru">
+		<script src="https://yastatic.net/pcode/adfox/loader.js" crossorigin="anonymous"></script><link rel="preload" href="https://an.yandex.ru/system/context.js" as="script"><link rel="preconnect" href="https://ads.adfox.ru">
 		
 		<title>
-	Личные настройки - «Школьный портал»
-</title><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/assets/scripts/modules/main.min.217f4fab.js?v=217f4fab" src="https://static.school.mosreg.ru/assets/scripts/modules/main.min.217f4fab.js?v=217f4fab&amp;v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="layoutcontrols/userCounter" src="https://static.school.mosreg.ru/assets/scripts/modules/layoutcontrols/userCounter.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="blocks/headerSearch/headerSearch" src="https://static.school.mosreg.ru/assets/scripts/modules/blocks/headerSearch/headerSearch.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="blocks/dropdownContainer/dropdownContainer" src="https://static.school.mosreg.ru/assets/scripts/modules/blocks/dropdownContainer/dropdownContainer.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics/menuYaMetrika" src="https://static.school.mosreg.ru/assets/scripts/modules/analytics/menuYaMetrika.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="layoutcontrols/menu" src="https://static.school.mosreg.ru/assets/scripts/modules/layoutcontrols/menu.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics/urlTracker" src="https://static.school.mosreg.ru/assets/scripts/modules/analytics/urlTracker.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ab/yandexMetrikaTracker" src="https://static.school.mosreg.ru/assets/scripts/modules/ab/yandexMetrikaTracker.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common/adblockDummyInsert" src="https://static.school.mosreg.ru/assets/scripts/modules/common/adblockDummyInsert.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/scripts/modules/layoutcontrols/menuextention.js" src="https://static.school.mosreg.ru/scripts/modules/layoutcontrols/menuextention.js?v=752d59e9"></script><style type="text/css" class="mb-style-tag">.aNLP4g6{width:100%;height:inherit;min-height:inherit;max-height:inherit}.a2HoN3S{position:relative;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-moz-box-orient:horizontal;-moz-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center}.a33haaT{position:absolute;width:100%;top:50%;text-align:center;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}.a3ylgQB{margin-left:7px}.a3yEaZV{position:relative}.aUq2MkB{-webkit-transition:stroke-dashoffset .1s linear;-moz-transition:stroke-dashoffset .1s linear;transition:stroke-dashoffset .1s linear}.ahQNVZh{position:relative;height:100%;width:100%}.a23oZjO,.a399WUL{position:absolute;top:0;left:0;width:100%;height:100%}.a2YvqCx{z-index:4;font-weight:300;left:0;width:100%;line-height:50px;background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.4)),to(transparent));background-image:-webkit-linear-gradient(top,rgba(0,0,0,.4),transparent);background-image:-moz-linear-gradient(top,rgba(0,0,0,.4) 0,transparent 100%);background-image:linear-gradient(-180deg,rgba(0,0,0,.4),transparent);color:#fff;font-size:12px;font-family:sans-serif}.a2YvqCx,.aQ8_Cb6{position:absolute;top:0;height:50px;text-align:center}.aQ8_Cb6{right:0;cursor:pointer;width:50px;background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle opacity='.2' cx='20' cy='20' r='13.5'/%3E%3Cpath fill='%23fff' d='M27 13.7l-.7-.7-6.3 6.3-6.3-6.3-.7.7 6.3 6.3-6.3 6.3.7.7 6.3-6.3 6.3 6.3.7-.7-6.3-6.3z'/%3E%3C/svg%3E") no-repeat 50%}.a2g65Ed,.a3nCpxm{display:none}.a3nCpxm{position:absolute;left:0;top:0;cursor:pointer;text-align:center;height:50px;width:50px;background:url("data:image/svg+xml;charset=utf-8,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='13.5' opacity='.2'/%3E%3Cpath d='M24 16.4c1.4.6 2.4 2 2.4 3.5 0 1.6-1 2.9-2.4 3.5v-1.8c.5-.4.8-1 .8-1.7 0-.6-.3-1.2-.8-1.7v-1.8zm-10 1.1h3l5-4v13l-5-4h-3v-5z' fill='%23FFF'/%3E%3C/svg%3E") no-repeat 50%;z-index:2}.a1sF1pV{background:url("data:image/svg+xml;charset=utf-8,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='13.5' opacity='.2'/%3E%3Cpath d='M26.7 20.4l2.3-2.3-1.1-1.1-2.3 2.3-2.3-2.3-1.2 1.1 2.3 2.3-2.3 2.3 1.2 1.2 2.3-2.3 2.3 2.3 1.1-1.2-2.3-2.3zM13 17.5h3l5-4v13l-5-4h-3v-5z' fill='%23FFF'/%3E%3C/svg%3E") no-repeat 50%}.a1CNij8{height:30px;width:30px}.a1CNij8,.a3Zr4hr{display:inline-block;vertical-align:middle}.a3Zr4hr{margin-left:5px}.a3sabH0{z-index:3;position:absolute;text-align:center;cursor:pointer;left:50%;bottom:20px}.a1bEMYV{font-weight:300;text-decoration:none;display:inline-block;background:#fff;padding:9px 25px;min-height:27px;line-height:1.3;-webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,.18);-moz-box-shadow:0 2px 4px 0 rgba(0,0,0,.18);box-shadow:0 2px 4px 0 rgba(0,0,0,.18);font-size:20px;color:#000;font-family:sans-serif;position:relative;left:-50%}.a3Vme3B{display:none}.a1oc4Rf{position:fixed;top:0;left:-100%;width:100%;bottom:0;background-color:#000;background-color:rgba(0,0,0,.7)}.a2gWjHZ{left:0}.a3PsKFE{position:absolute;z-index:2;display:none}.a3PsKFE,.aJfTZFb{width:100%;height:100%}.aJfTZFb{text-align:center;display:block;position:relative;z-index:1}.aJfTZFb:before{content:""}.aJfTZFb:before,.aSuBPcJ{display:inline-block;height:100%;vertical-align:middle}.aSuBPcJ{width:100%;max-width:100%;max-height:100%;background:50% 50% no-repeat;-moz-background-size:contain;background-size:contain}.a2eubvh{display:block;background-repeat:no-repeat;background-position:50%}.a1SqbHU,.a2dytgO,.a2eubvh{height:100%;width:100%}.a2dytgO{max-height:100vh;max-width:100vw}.as3pe3P{position:relative;overflow:hidden;width:100%}.a1Z-vTi,.as3pe3P,.as3pe3P yatag{display:block}.a1Z-vTi{position:relative;overflow:hidden;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.a1SzcLD{position:absolute;z-index:1;top:0;left:0;right:0;bottom:0;overflow:hidden;clip:rect(0,auto,auto,0)}.a2_C0R2{position:fixed;z-index:-1;top:0;left:0;width:100%;height:100%;height:100vh;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);transform:translateZ(0)}.a2_C0R2.a3BrtOL{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center}.aH5YoYc{position:absolute;z-index:1;top:0;will-change:top,left,transform;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden}.a3Tf9Xw{margin:0 auto;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);transform:translateZ(0)}.a2TI5Ok{position:absolute;z-index:1;top:0;left:0;width:100%;height:100%}.adYQemp{position:relative;overflow:hidden}.a3KQvJt{position:relative;margin:0 auto}.apSNGNe{position:absolute;bottom:0;z-index:1;width:100%;line-height:20px;text-align:center;color:#fff;background:#000}.a164RL2 .a1dhZUT{margin:0 0 20px}.ajboYyY .a3KQvJt{padding:0 0 20px}.aT7HFxQ,.aTUfuDC{position:relative;width:100%;height:100%}.aTUfuDC{overflow:hidden}.a3HlA6f{position:relative;left:0;top:0}.a3lwYsN{float:left;background:50% no-repeat;-moz-background-size:contain;background-size:contain}.a2GGguX,.a2I4lnp{position:absolute;z-index:1;background-repeat:no-repeat;background-position:50% 50%;cursor:pointer}.aEIdaQB .a2GGguX,.aEIdaQB .a2I4lnp{height:36px;width:100%}.a1SOfIy .a2GGguX,.a1SOfIy .a2I4lnp{height:100%;width:36px}.a1SOfIy .a2GGguX{right:0}.a1SOfIy:hover .a2GGguX{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='16' viewBox='0 0 9 16' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M1 1l7 7-7 7 7-7-7-7'/%3E%3C/svg%3E")}.aEIdaQB .a2GGguX{bottom:0}.aEIdaQB:hover .a2GGguX{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='9' viewBox='0 0 16 9' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M1 1l7 7 7-7-7 7-7-7'/%3E%3C/svg%3E")}.a1SOfIy:hover .a2I4lnp{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='16' viewBox='0 0 9 16' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M8 1L1 8l7 7-7-7 7-7'/%3E%3C/svg%3E")}.aEIdaQB:hover .a2I4lnp{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='9' viewBox='0 0 16 9' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M1 8l7-7 7 7-7-7-7 7'/%3E%3C/svg%3E")}.a2uCUAU{position:absolute;height:0;bottom:18px;left:0;width:100%;text-align:center}.aEIdaQB .a2uCUAU{right:0;top:0;height:100%;width:18px;bottom:auto;left:auto;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center}.a_Cdy_t{display:inline-block;padding:5px;cursor:pointer}.a_Cdy_t:after{content:"";display:block;width:8px;height:8px;-webkit-border-radius:100%;-moz-border-radius:100%;border-radius:100%;background:#f2f2f2}.a6Q1qRh:after{background:#d2d2d2}</style><link rel="preconnect" href="https://yastatic.net/"><link rel="preconnect" href="https://avatars.mds.yandex.net/"><link rel="preconnect" href="https://mc.yandex.ru/"><meta id="https://an.yandex.ru/partner-code-bundles/13083/context_static.js"><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13083/24ee28a6ee8bdfa43834.js" crossorigin="anonymous"></script><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13083/f1e288afc00f17c3fe3b.js" crossorigin="anonymous"></script><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13083/92f27093322eaf341d48.js" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="blocks/footerCopyright/footerCopyright" src="https://static.school.mosreg.ru/assets/scripts/modules/blocks/footerCopyright/footerCopyright.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="yandexMetrika/yandexMetrikaCounter" src="https://static.school.mosreg.ru/assets/scripts/modules/yandexMetrika/yandexMetrikaCounter.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics/commonYaMetrika" src="https://static.school.mosreg.ru/assets/scripts/modules/analytics/commonYaMetrika.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/assets/scripts/controls/dnevnik/usercontrols/choosemailbox.js?v=7e216707" src="https://static.school.mosreg.ru/assets/scripts/controls/dnevnik/usercontrols/choosemailbox.js?v=7e216707&amp;v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="layoutcontrols/menuMore" src="https://static.school.mosreg.ru/assets/scripts/modules/layoutcontrols/menuMore.js?v=752d59e9"></script><link rel="preload" href="https://an.yandex.ru/system/context.js" as="script"><link rel="preconnect" href="https://ads.adfox.ru"><style type="text/css" class="mb-style-tag">.aNLP4g6{width:100%;height:inherit;min-height:inherit;max-height:inherit}.a2HoN3S{position:relative;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-moz-box-orient:horizontal;-moz-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center}.a33haaT{position:absolute;width:100%;top:50%;text-align:center;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}.a3ylgQB{margin-left:7px}.a3yEaZV{position:relative}.aUq2MkB{-webkit-transition:stroke-dashoffset .1s linear;-moz-transition:stroke-dashoffset .1s linear;transition:stroke-dashoffset .1s linear}.ahQNVZh{position:relative;height:100%;width:100%}.a23oZjO,.a399WUL{position:absolute;top:0;left:0;width:100%;height:100%}.a2YvqCx{z-index:4;font-weight:300;left:0;width:100%;line-height:50px;background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.4)),to(transparent));background-image:-webkit-linear-gradient(top,rgba(0,0,0,.4),transparent);background-image:-moz-linear-gradient(top,rgba(0,0,0,.4) 0,transparent 100%);background-image:linear-gradient(-180deg,rgba(0,0,0,.4),transparent);color:#fff;font-size:12px;font-family:sans-serif}.a2YvqCx,.aQ8_Cb6{position:absolute;top:0;height:50px;text-align:center}.aQ8_Cb6{right:0;cursor:pointer;width:50px;background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle opacity='.2' cx='20' cy='20' r='13.5'/%3E%3Cpath fill='%23fff' d='M27 13.7l-.7-.7-6.3 6.3-6.3-6.3-.7.7 6.3 6.3-6.3 6.3.7.7 6.3-6.3 6.3 6.3.7-.7-6.3-6.3z'/%3E%3C/svg%3E") no-repeat 50%}.a2g65Ed,.a3nCpxm{display:none}.a3nCpxm{position:absolute;left:0;top:0;cursor:pointer;text-align:center;height:50px;width:50px;background:url("data:image/svg+xml;charset=utf-8,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='13.5' opacity='.2'/%3E%3Cpath d='M24 16.4c1.4.6 2.4 2 2.4 3.5 0 1.6-1 2.9-2.4 3.5v-1.8c.5-.4.8-1 .8-1.7 0-.6-.3-1.2-.8-1.7v-1.8zm-10 1.1h3l5-4v13l-5-4h-3v-5z' fill='%23FFF'/%3E%3C/svg%3E") no-repeat 50%;z-index:2}.a1sF1pV{background:url("data:image/svg+xml;charset=utf-8,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='13.5' opacity='.2'/%3E%3Cpath d='M26.7 20.4l2.3-2.3-1.1-1.1-2.3 2.3-2.3-2.3-1.2 1.1 2.3 2.3-2.3 2.3 1.2 1.2 2.3-2.3 2.3 2.3 1.1-1.2-2.3-2.3zM13 17.5h3l5-4v13l-5-4h-3v-5z' fill='%23FFF'/%3E%3C/svg%3E") no-repeat 50%}.a1CNij8{height:30px;width:30px}.a1CNij8,.a3Zr4hr{display:inline-block;vertical-align:middle}.a3Zr4hr{margin-left:5px}.a3sabH0{z-index:3;position:absolute;text-align:center;cursor:pointer;left:50%;bottom:20px}.a1bEMYV{font-weight:300;text-decoration:none;display:inline-block;background:#fff;padding:9px 25px;min-height:27px;line-height:1.3;-webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,.18);-moz-box-shadow:0 2px 4px 0 rgba(0,0,0,.18);box-shadow:0 2px 4px 0 rgba(0,0,0,.18);font-size:20px;color:#000;font-family:sans-serif;position:relative;left:-50%}.a3Vme3B{display:none}.a1oc4Rf{position:fixed;top:0;left:-100%;width:100%;bottom:0;background-color:#000;background-color:rgba(0,0,0,.7)}.a2gWjHZ{left:0}.a3PsKFE{position:absolute;z-index:2;display:none}.a3PsKFE,.aJfTZFb{width:100%;height:100%}.aJfTZFb{text-align:center;display:block;position:relative;z-index:1}.aJfTZFb:before{content:""}.aJfTZFb:before,.aSuBPcJ{display:inline-block;height:100%;vertical-align:middle}.aSuBPcJ{width:100%;max-width:100%;max-height:100%;background:50% 50% no-repeat;-moz-background-size:contain;background-size:contain}.a2eubvh{display:block;background-repeat:no-repeat;background-position:50%}.a1SqbHU,.a2dytgO,.a2eubvh{height:100%;width:100%}.a2dytgO{max-height:100vh;max-width:100vw}.as3pe3P{position:relative;overflow:hidden;width:100%}.a1Z-vTi,.as3pe3P,.as3pe3P yatag{display:block}.a1Z-vTi{position:relative;overflow:hidden;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.a1SzcLD{position:absolute;z-index:1;top:0;left:0;right:0;bottom:0;overflow:hidden;clip:rect(0,auto,auto,0)}.a2_C0R2{position:fixed;z-index:-1;top:0;left:0;width:100%;height:100%;height:100vh;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);transform:translateZ(0)}.a2_C0R2.a3BrtOL{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center}.aH5YoYc{position:absolute;z-index:1;top:0;will-change:top,left,transform;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden}.a3Tf9Xw{margin:0 auto;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);transform:translateZ(0)}.a2TI5Ok{position:absolute;z-index:1;top:0;left:0;width:100%;height:100%}.adYQemp{position:relative;overflow:hidden}.a3KQvJt{position:relative;margin:0 auto}.apSNGNe{position:absolute;bottom:0;z-index:1;width:100%;line-height:20px;text-align:center;color:#fff;background:#000}.a164RL2 .a1dhZUT{margin:0 0 20px}.ajboYyY .a3KQvJt{padding:0 0 20px}.aT7HFxQ,.aTUfuDC{position:relative;width:100%;height:100%}.aTUfuDC{overflow:hidden}.a3HlA6f{position:relative;left:0;top:0}.a3lwYsN{float:left;background:50% no-repeat;-moz-background-size:contain;background-size:contain}.a2GGguX,.a2I4lnp{position:absolute;z-index:1;background-repeat:no-repeat;background-position:50% 50%;cursor:pointer}.aEIdaQB .a2GGguX,.aEIdaQB .a2I4lnp{height:36px;width:100%}.a1SOfIy .a2GGguX,.a1SOfIy .a2I4lnp{height:100%;width:36px}.a1SOfIy .a2GGguX{right:0}.a1SOfIy:hover .a2GGguX{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='16' viewBox='0 0 9 16' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M1 1l7 7-7 7 7-7-7-7'/%3E%3C/svg%3E")}.aEIdaQB .a2GGguX{bottom:0}.aEIdaQB:hover .a2GGguX{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='9' viewBox='0 0 16 9' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M1 1l7 7 7-7-7 7-7-7'/%3E%3C/svg%3E")}.a1SOfIy:hover .a2I4lnp{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='16' viewBox='0 0 9 16' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M8 1L1 8l7 7-7-7 7-7'/%3E%3C/svg%3E")}.aEIdaQB:hover .a2I4lnp{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='9' viewBox='0 0 16 9' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M1 8l7-7 7 7-7-7-7 7'/%3E%3C/svg%3E")}.a2uCUAU{position:absolute;height:0;bottom:18px;left:0;width:100%;text-align:center}.aEIdaQB .a2uCUAU{right:0;top:0;height:100%;width:18px;bottom:auto;left:auto;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center}.a_Cdy_t{display:inline-block;padding:5px;cursor:pointer}.a_Cdy_t:after{content:"";display:block;width:8px;height:8px;-webkit-border-radius:100%;-moz-border-radius:100%;border-radius:100%;background:#f2f2f2}.a6Q1qRh:after{background:#d2d2d2}</style><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/assets/scripts/modules/main.min.217f4fab.js?v=217f4fab" src="https://static.school.mosreg.ru/assets/scripts/modules/main.min.217f4fab.js?v=217f4fab&amp;v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="layoutcontrols/userCounter" src="https://static.school.mosreg.ru/assets/scripts/modules/layoutcontrols/userCounter.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="blocks/headerSearch/headerSearch" src="https://static.school.mosreg.ru/assets/scripts/modules/blocks/headerSearch/headerSearch.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="blocks/dropdownContainer/dropdownContainer" src="https://static.school.mosreg.ru/assets/scripts/modules/blocks/dropdownContainer/dropdownContainer.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics/menuYaMetrika" src="https://static.school.mosreg.ru/assets/scripts/modules/analytics/menuYaMetrika.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="layoutcontrols/menu" src="https://static.school.mosreg.ru/assets/scripts/modules/layoutcontrols/menu.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics/urlTracker" src="https://static.school.mosreg.ru/assets/scripts/modules/analytics/urlTracker.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ab/yandexMetrikaTracker" src="https://static.school.mosreg.ru/assets/scripts/modules/ab/yandexMetrikaTracker.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common/adblockDummyInsert" src="https://static.school.mosreg.ru/assets/scripts/modules/common/adblockDummyInsert.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/scripts/modules/layoutcontrols/menuextention.js" src="https://static.school.mosreg.ru/scripts/modules/layoutcontrols/menuextention.js?v=752d59e9"></script><style class="mb-style-tag" type="text/css">.a3w9NbU {
+	Расписание - «Школьный портал»
+</title><style class="mb-style-tag" type="text/css">.a3w9NbU {
     width: 100%;
     height: inherit;
     min-height: inherit;
     max-height: inherit;
 }
-</style><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/assets/scripts/controls/dnevnik/usercontrols/choosemailbox.js?v=7e216707" src="https://static.school.mosreg.ru/assets/scripts/controls/dnevnik/usercontrols/choosemailbox.js?v=7e216707&amp;v=752d59e9"></script><style type="text/css" class="mb-style-tag">.aNLP4g6{width:100%;height:inherit;min-height:inherit;max-height:inherit}.a2HoN3S{position:relative;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-moz-box-orient:horizontal;-moz-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center}.a33haaT{position:absolute;width:100%;top:50%;text-align:center;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}.a3ylgQB{margin-left:7px}.a3yEaZV{position:relative}.aUq2MkB{-webkit-transition:stroke-dashoffset .1s linear;-moz-transition:stroke-dashoffset .1s linear;transition:stroke-dashoffset .1s linear}.ahQNVZh{position:relative;height:100%;width:100%}.a23oZjO,.a399WUL{position:absolute;top:0;left:0;width:100%;height:100%}.a2YvqCx{z-index:4;font-weight:300;left:0;width:100%;line-height:50px;background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.4)),to(transparent));background-image:-webkit-linear-gradient(top,rgba(0,0,0,.4),transparent);background-image:-moz-linear-gradient(top,rgba(0,0,0,.4) 0,transparent 100%);background-image:linear-gradient(-180deg,rgba(0,0,0,.4),transparent);color:#fff;font-size:12px;font-family:sans-serif}.a2YvqCx,.aQ8_Cb6{position:absolute;top:0;height:50px;text-align:center}.aQ8_Cb6{right:0;cursor:pointer;width:50px;background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle opacity='.2' cx='20' cy='20' r='13.5'/%3E%3Cpath fill='%23fff' d='M27 13.7l-.7-.7-6.3 6.3-6.3-6.3-.7.7 6.3 6.3-6.3 6.3.7.7 6.3-6.3 6.3 6.3.7-.7-6.3-6.3z'/%3E%3C/svg%3E") no-repeat 50%}.a2g65Ed,.a3nCpxm{display:none}.a3nCpxm{position:absolute;left:0;top:0;cursor:pointer;text-align:center;height:50px;width:50px;background:url("data:image/svg+xml;charset=utf-8,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='13.5' opacity='.2'/%3E%3Cpath d='M24 16.4c1.4.6 2.4 2 2.4 3.5 0 1.6-1 2.9-2.4 3.5v-1.8c.5-.4.8-1 .8-1.7 0-.6-.3-1.2-.8-1.7v-1.8zm-10 1.1h3l5-4v13l-5-4h-3v-5z' fill='%23FFF'/%3E%3C/svg%3E") no-repeat 50%;z-index:2}.a1sF1pV{background:url("data:image/svg+xml;charset=utf-8,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='13.5' opacity='.2'/%3E%3Cpath d='M26.7 20.4l2.3-2.3-1.1-1.1-2.3 2.3-2.3-2.3-1.2 1.1 2.3 2.3-2.3 2.3 1.2 1.2 2.3-2.3 2.3 2.3 1.1-1.2-2.3-2.3zM13 17.5h3l5-4v13l-5-4h-3v-5z' fill='%23FFF'/%3E%3C/svg%3E") no-repeat 50%}.a1CNij8{height:30px;width:30px}.a1CNij8,.a3Zr4hr{display:inline-block;vertical-align:middle}.a3Zr4hr{margin-left:5px}.a3sabH0{z-index:3;position:absolute;text-align:center;cursor:pointer;left:50%;bottom:20px}.a1bEMYV{font-weight:300;text-decoration:none;display:inline-block;background:#fff;padding:9px 25px;min-height:27px;line-height:1.3;-webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,.18);-moz-box-shadow:0 2px 4px 0 rgba(0,0,0,.18);box-shadow:0 2px 4px 0 rgba(0,0,0,.18);font-size:20px;color:#000;font-family:sans-serif;position:relative;left:-50%}.a3Vme3B{display:none}.a1oc4Rf{position:fixed;top:0;left:-100%;width:100%;bottom:0;background-color:#000;background-color:rgba(0,0,0,.7)}.a2gWjHZ{left:0}.a3PsKFE{position:absolute;z-index:2;display:none}.a3PsKFE,.aJfTZFb{width:100%;height:100%}.aJfTZFb{text-align:center;display:block;position:relative;z-index:1}.aJfTZFb:before{content:""}.aJfTZFb:before,.aSuBPcJ{display:inline-block;height:100%;vertical-align:middle}.aSuBPcJ{width:100%;max-width:100%;max-height:100%;background:50% 50% no-repeat;-moz-background-size:contain;background-size:contain}.a2eubvh{display:block;background-repeat:no-repeat;background-position:50%}.a1SqbHU,.a2dytgO,.a2eubvh{height:100%;width:100%}.a2dytgO{max-height:100vh;max-width:100vw}.as3pe3P{position:relative;overflow:hidden;width:100%}.a1Z-vTi,.as3pe3P,.as3pe3P yatag{display:block}.a1Z-vTi{position:relative;overflow:hidden;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.a1SzcLD{position:absolute;z-index:1;top:0;left:0;right:0;bottom:0;overflow:hidden;clip:rect(0,auto,auto,0)}.a2_C0R2{position:fixed;z-index:-1;top:0;left:0;width:100%;height:100%;height:100vh;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);transform:translateZ(0)}.a2_C0R2.a3BrtOL{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center}.aH5YoYc{position:absolute;z-index:1;top:0;will-change:top,left,transform;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden}.a3Tf9Xw{margin:0 auto;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);transform:translateZ(0)}.a2TI5Ok{position:absolute;z-index:1;top:0;left:0;width:100%;height:100%}.adYQemp{position:relative;overflow:hidden}.a3KQvJt{position:relative;margin:0 auto}.apSNGNe{position:absolute;bottom:0;z-index:1;width:100%;line-height:20px;text-align:center;color:#fff;background:#000}.a164RL2 .a1dhZUT{margin:0 0 20px}.ajboYyY .a3KQvJt{padding:0 0 20px}.aT7HFxQ,.aTUfuDC{position:relative;width:100%;height:100%}.aTUfuDC{overflow:hidden}.a3HlA6f{position:relative;left:0;top:0}.a3lwYsN{float:left;background:50% no-repeat;-moz-background-size:contain;background-size:contain}.a2GGguX,.a2I4lnp{position:absolute;z-index:1;background-repeat:no-repeat;background-position:50% 50%;cursor:pointer}.aEIdaQB .a2GGguX,.aEIdaQB .a2I4lnp{height:36px;width:100%}.a1SOfIy .a2GGguX,.a1SOfIy .a2I4lnp{height:100%;width:36px}.a1SOfIy .a2GGguX{right:0}.a1SOfIy:hover .a2GGguX{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='16' viewBox='0 0 9 16' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M1 1l7 7-7 7 7-7-7-7'/%3E%3C/svg%3E")}.aEIdaQB .a2GGguX{bottom:0}.aEIdaQB:hover .a2GGguX{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='9' viewBox='0 0 16 9' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M1 1l7 7 7-7-7 7-7-7'/%3E%3C/svg%3E")}.a1SOfIy:hover .a2I4lnp{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='16' viewBox='0 0 9 16' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M8 1L1 8l7 7-7-7 7-7'/%3E%3C/svg%3E")}.aEIdaQB:hover .a2I4lnp{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='9' viewBox='0 0 16 9' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M1 8l7-7 7 7-7-7-7 7'/%3E%3C/svg%3E")}.a2uCUAU{position:absolute;height:0;bottom:18px;left:0;width:100%;text-align:center}.aEIdaQB .a2uCUAU{right:0;top:0;height:100%;width:18px;bottom:auto;left:auto;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center}.a_Cdy_t{display:inline-block;padding:5px;cursor:pointer}.a_Cdy_t:after{content:"";display:block;width:8px;height:8px;-webkit-border-radius:100%;-moz-border-radius:100%;border-radius:100%;background:#f2f2f2}.a6Q1qRh:after{background:#d2d2d2}</style><style class="mb-style-tag" type="text/css">.a3w9NbU {
-    width: 100%;
-    height: inherit;
-    min-height: inherit;
-    max-height: inherit;
-}
-</style><style type="text/css" class="mb-style-tag">.aNLP4g6{width:100%;height:inherit;min-height:inherit;max-height:inherit}.a2HoN3S{position:relative;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-moz-box-orient:horizontal;-moz-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center}.a33haaT{position:absolute;width:100%;top:50%;text-align:center;-webkit-transform:translateY(-50%);-moz-transform:translateY(-50%);-ms-transform:translateY(-50%);transform:translateY(-50%)}.a3ylgQB{margin-left:7px}.a3yEaZV{position:relative}.aUq2MkB{-webkit-transition:stroke-dashoffset .1s linear;-moz-transition:stroke-dashoffset .1s linear;transition:stroke-dashoffset .1s linear}.ahQNVZh{position:relative;height:100%;width:100%}.a23oZjO,.a399WUL{position:absolute;top:0;left:0;width:100%;height:100%}.a2YvqCx{z-index:4;font-weight:300;left:0;width:100%;line-height:50px;background-image:-webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,.4)),to(transparent));background-image:-webkit-linear-gradient(top,rgba(0,0,0,.4),transparent);background-image:-moz-linear-gradient(top,rgba(0,0,0,.4) 0,transparent 100%);background-image:linear-gradient(-180deg,rgba(0,0,0,.4),transparent);color:#fff;font-size:12px;font-family:sans-serif}.a2YvqCx,.aQ8_Cb6{position:absolute;top:0;height:50px;text-align:center}.aQ8_Cb6{right:0;cursor:pointer;width:50px;background:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Ccircle opacity='.2' cx='20' cy='20' r='13.5'/%3E%3Cpath fill='%23fff' d='M27 13.7l-.7-.7-6.3 6.3-6.3-6.3-.7.7 6.3 6.3-6.3 6.3.7.7 6.3-6.3 6.3 6.3.7-.7-6.3-6.3z'/%3E%3C/svg%3E") no-repeat 50%}.a2g65Ed,.a3nCpxm{display:none}.a3nCpxm{position:absolute;left:0;top:0;cursor:pointer;text-align:center;height:50px;width:50px;background:url("data:image/svg+xml;charset=utf-8,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='13.5' opacity='.2'/%3E%3Cpath d='M24 16.4c1.4.6 2.4 2 2.4 3.5 0 1.6-1 2.9-2.4 3.5v-1.8c.5-.4.8-1 .8-1.7 0-.6-.3-1.2-.8-1.7v-1.8zm-10 1.1h3l5-4v13l-5-4h-3v-5z' fill='%23FFF'/%3E%3C/svg%3E") no-repeat 50%;z-index:2}.a1sF1pV{background:url("data:image/svg+xml;charset=utf-8,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='20' cy='20' r='13.5' opacity='.2'/%3E%3Cpath d='M26.7 20.4l2.3-2.3-1.1-1.1-2.3 2.3-2.3-2.3-1.2 1.1 2.3 2.3-2.3 2.3 1.2 1.2 2.3-2.3 2.3 2.3 1.1-1.2-2.3-2.3zM13 17.5h3l5-4v13l-5-4h-3v-5z' fill='%23FFF'/%3E%3C/svg%3E") no-repeat 50%}.a1CNij8{height:30px;width:30px}.a1CNij8,.a3Zr4hr{display:inline-block;vertical-align:middle}.a3Zr4hr{margin-left:5px}.a3sabH0{z-index:3;position:absolute;text-align:center;cursor:pointer;left:50%;bottom:20px}.a1bEMYV{font-weight:300;text-decoration:none;display:inline-block;background:#fff;padding:9px 25px;min-height:27px;line-height:1.3;-webkit-box-shadow:0 2px 4px 0 rgba(0,0,0,.18);-moz-box-shadow:0 2px 4px 0 rgba(0,0,0,.18);box-shadow:0 2px 4px 0 rgba(0,0,0,.18);font-size:20px;color:#000;font-family:sans-serif;position:relative;left:-50%}.a3Vme3B{display:none}.a1oc4Rf{position:fixed;top:0;left:-100%;width:100%;bottom:0;background-color:#000;background-color:rgba(0,0,0,.7)}.a2gWjHZ{left:0}.a3PsKFE{position:absolute;z-index:2;display:none}.a3PsKFE,.aJfTZFb{width:100%;height:100%}.aJfTZFb{text-align:center;display:block;position:relative;z-index:1}.aJfTZFb:before{content:""}.aJfTZFb:before,.aSuBPcJ{display:inline-block;height:100%;vertical-align:middle}.aSuBPcJ{width:100%;max-width:100%;max-height:100%;background:50% 50% no-repeat;-moz-background-size:contain;background-size:contain}.a2eubvh{display:block;background-repeat:no-repeat;background-position:50%}.a1SqbHU,.a2dytgO,.a2eubvh{height:100%;width:100%}.a2dytgO{max-height:100vh;max-width:100vw}.as3pe3P{position:relative;overflow:hidden;width:100%}.a1Z-vTi,.as3pe3P,.as3pe3P yatag{display:block}.a1Z-vTi{position:relative;overflow:hidden;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.a1SzcLD{position:absolute;z-index:1;top:0;left:0;right:0;bottom:0;overflow:hidden;clip:rect(0,auto,auto,0)}.a2_C0R2{position:fixed;z-index:-1;top:0;left:0;width:100%;height:100%;height:100vh;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);transform:translateZ(0)}.a2_C0R2.a3BrtOL{display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center;-webkit-box-align:center;-webkit-align-items:center;-moz-box-align:center;-ms-flex-align:center;align-items:center}.aH5YoYc{position:absolute;z-index:1;top:0;will-change:top,left,transform;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;backface-visibility:hidden}.a3Tf9Xw{margin:0 auto;-webkit-transform:translateZ(0);-moz-transform:translateZ(0);transform:translateZ(0)}.a2TI5Ok{position:absolute;z-index:1;top:0;left:0;width:100%;height:100%}.adYQemp{position:relative;overflow:hidden}.a3KQvJt{position:relative;margin:0 auto}.apSNGNe{position:absolute;bottom:0;z-index:1;width:100%;line-height:20px;text-align:center;color:#fff;background:#000}.a164RL2 .a1dhZUT{margin:0 0 20px}.ajboYyY .a3KQvJt{padding:0 0 20px}.aT7HFxQ,.aTUfuDC{position:relative;width:100%;height:100%}.aTUfuDC{overflow:hidden}.a3HlA6f{position:relative;left:0;top:0}.a3lwYsN{float:left;background:50% no-repeat;-moz-background-size:contain;background-size:contain}.a2GGguX,.a2I4lnp{position:absolute;z-index:1;background-repeat:no-repeat;background-position:50% 50%;cursor:pointer}.aEIdaQB .a2GGguX,.aEIdaQB .a2I4lnp{height:36px;width:100%}.a1SOfIy .a2GGguX,.a1SOfIy .a2I4lnp{height:100%;width:36px}.a1SOfIy .a2GGguX{right:0}.a1SOfIy:hover .a2GGguX{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='16' viewBox='0 0 9 16' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M1 1l7 7-7 7 7-7-7-7'/%3E%3C/svg%3E")}.aEIdaQB .a2GGguX{bottom:0}.aEIdaQB:hover .a2GGguX{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='9' viewBox='0 0 16 9' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M1 1l7 7 7-7-7 7-7-7'/%3E%3C/svg%3E")}.a1SOfIy:hover .a2I4lnp{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='9' height='16' viewBox='0 0 9 16' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M8 1L1 8l7 7-7-7 7-7'/%3E%3C/svg%3E")}.aEIdaQB:hover .a2I4lnp{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg width='16' height='9' viewBox='0 0 16 9' xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none'%3E%3Cpath stroke='%23000' stroke-width='1.4' d='M1 8l7-7 7 7-7-7-7 7'/%3E%3C/svg%3E")}.a2uCUAU{position:absolute;height:0;bottom:18px;left:0;width:100%;text-align:center}.aEIdaQB .a2uCUAU{right:0;top:0;height:100%;width:18px;bottom:auto;left:auto;display:-webkit-box;display:-webkit-flex;display:-moz-box;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-moz-box-orient:vertical;-moz-box-direction:normal;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:center;-webkit-justify-content:center;-moz-box-pack:center;-ms-flex-pack:center;justify-content:center}.a_Cdy_t{display:inline-block;padding:5px;cursor:pointer}.a_Cdy_t:after{content:"";display:block;width:8px;height:8px;-webkit-border-radius:100%;-moz-border-radius:100%;border-radius:100%;background:#f2f2f2}.a6Q1qRh:after{background:#d2d2d2}</style><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/assets/scripts/modules/main.min.217f4fab.js?v=217f4fab" src="https://static.school.mosreg.ru/assets/scripts/modules/main.min.217f4fab.js?v=217f4fab&amp;v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="layoutcontrols/userCounter" src="https://static.school.mosreg.ru/assets/scripts/modules/layoutcontrols/userCounter.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="blocks/headerSearch/headerSearch" src="https://static.school.mosreg.ru/assets/scripts/modules/blocks/headerSearch/headerSearch.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="blocks/dropdownContainer/dropdownContainer" src="https://static.school.mosreg.ru/assets/scripts/modules/blocks/dropdownContainer/dropdownContainer.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics/menuYaMetrika" src="https://static.school.mosreg.ru/assets/scripts/modules/analytics/menuYaMetrika.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="layoutcontrols/menu" src="https://static.school.mosreg.ru/assets/scripts/modules/layoutcontrols/menu.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics/urlTracker" src="https://static.school.mosreg.ru/assets/scripts/modules/analytics/urlTracker.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ab/yandexMetrikaTracker" src="https://static.school.mosreg.ru/assets/scripts/modules/ab/yandexMetrikaTracker.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common/adblockDummyInsert" src="https://static.school.mosreg.ru/assets/scripts/modules/common/adblockDummyInsert.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/scripts/modules/layoutcontrols/menuextention.js" src="https://static.school.mosreg.ru/scripts/modules/layoutcontrols/menuextention.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="layoutcontrols/menuMore" src="https://static.school.mosreg.ru/assets/scripts/modules/layoutcontrols/menuMore.js?v=752d59e9"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/assets/scripts/controls/dnevnik/usercontrols/choosemailbox.js?v=7e216707" src="https://static.school.mosreg.ru/assets/scripts/controls/dnevnik/usercontrols/choosemailbox.js?v=7e216707&amp;v=752d59e9"></script>
+</style><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/assets/scripts/modules/main.min.134df1a7.js?v=134df1a7" src="https://static.school.mosreg.ru/assets/scripts/modules/main.min.134df1a7.js?v=134df1a7&amp;v=39ad6b7b"></script><link rel="preconnect" href="https://yastatic.net/"><link rel="preconnect" href="https://avatars.mds.yandex.net/"><link rel="preconnect" href="https://mc.yandex.ru/"><meta id="https://an.yandex.ru/partner-code-bundles/13167/context_static.js"><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13167/2161f1797c396cee8c2b.js" crossorigin="anonymous"></script><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13167/e17f831a282046668064.js" crossorigin="anonymous"></script><script charset="utf-8" src="https://an.yandex.ru/partner-code-bundles/13167/62cb59084782603f3516.js" crossorigin="anonymous"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="layoutcontrols/userCounter" src="https://static.school.mosreg.ru/assets/scripts/modules/layoutcontrols/userCounter.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="blocks/headerSearch/headerSearch" src="https://static.school.mosreg.ru/assets/scripts/modules/blocks/headerSearch/headerSearch.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="blocks/dropdownContainer/dropdownContainer" src="https://static.school.mosreg.ru/assets/scripts/modules/blocks/dropdownContainer/dropdownContainer.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics/menuYaMetrika" src="https://static.school.mosreg.ru/assets/scripts/modules/analytics/menuYaMetrika.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="layoutcontrols/menu" src="https://static.school.mosreg.ru/assets/scripts/modules/layoutcontrols/menu.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics/urlTracker" src="https://static.school.mosreg.ru/assets/scripts/modules/analytics/urlTracker.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ab/yandexMetrikaTracker" src="https://static.school.mosreg.ru/assets/scripts/modules/ab/yandexMetrikaTracker.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common/adblockDummyInsert" src="https://static.school.mosreg.ru/assets/scripts/modules/common/adblockDummyInsert.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/scripts/modules/layoutcontrols/menuextention.js" src="https://static.school.mosreg.ru/scripts/modules/layoutcontrols/menuextention.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="layoutcontrols/menuMore" src="https://static.school.mosreg.ru/assets/scripts/modules/layoutcontrols/menuMore.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="blocks/footerCopyright/footerCopyright" src="https://static.school.mosreg.ru/assets/scripts/modules/blocks/footerCopyright/footerCopyright.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="yandexMetrika/yandexMetrikaCounter" src="https://static.school.mosreg.ru/assets/scripts/modules/yandexMetrika/yandexMetrikaCounter.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics/commonYaMetrika" src="https://static.school.mosreg.ru/assets/scripts/modules/analytics/commonYaMetrika.js?v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/assets/scripts/controls/schools/usercontrols/schoolselector.js?v=c7720b65" src="https://static.school.mosreg.ru/assets/scripts/controls/schools/usercontrols/schoolselector.js?v=c7720b65&amp;v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/assets/scripts/controls/schools/usercontrols/schedules/schedulesbrowseforodo.js?v=1f4b49aa" src="https://static.school.mosreg.ru/assets/scripts/controls/schools/usercontrols/schedules/schedulesbrowseforodo.js?v=1f4b49aa&amp;v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/assets/scripts/controls/schools/ajaxpages/chooseperiod/chooseperiod.js?v=9ca29d2c" src="https://static.school.mosreg.ru/assets/scripts/controls/schools/ajaxpages/chooseperiod/chooseperiod.js?v=9ca29d2c&amp;v=39ad6b7b"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.school.mosreg.ru/assets/scripts/controls/framework/controls/datetime/datetimeinterval.js?v=1c2563e8" src="https://static.school.mosreg.ru/assets/scripts/controls/framework/controls/datetime/datetimeinterval.js?v=1c2563e8&amp;v=39ad6b7b"></script></head>
 
 
 
-
-
+<body id="pageAuth">
+<div class="c98c098557ed4f87b4018e8b11876453 asyncBackgroundBanner"><div class="bannerBackground"><!--User info-->
+<span id="ad_user_info" style="display:none;">{"age":"13","childAge":"N","childS":"N","class":"7K:255K","childClass":"N","daysBeforeBday":"190","daysBeforeChildBday":"N"}</span></div></div><script>$(document).ready(function () {let container=$(".c98c098557ed4f87b4018e8b11876453");if(container.css("display")!=="none"){container.html($(".c98c098557ed4f87b4018e8b11876453 > div").text());} });</script>
 
 
 
@@ -258,24 +64,24 @@ window.onclick = function(event) {
 
 <div class="user-counters ">
 
-        <a class="button-with-counter button-with-counter_message trackable ya-metrika-trackable" data-category="Шапка" data-action="ЛС" data-target="messenger">
+        <a class="button-with-counter button-with-counter_message trackable ya-metrika-trackable" data-category="Шапка" data-action="ЛС" data-target="messenger" title="Нет новых сообщений" href="https://school.mosreg.ru/soc/messenger/">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17">
                 <path fill="#AAB6C2" fill-rule="evenodd" d="M18,10.2304688 L18,11.6015625 C18,11.9062515 17.9414068,12.210936 17.8242188,12.515625 C17.4492169,13.3359416 16.8046921,13.769531 15.890625,13.8164062 L14.9765625,13.8164062 L14.9765625,15.890625 C14.9531249,16.0078131 14.8945317,16.1015621 14.8007812,16.171875 C14.7773436,16.171875 14.7421877,16.1835936 14.6953125,16.2070312 C14.601562,16.1835936 14.5312502,16.1484377 14.484375,16.1015625 L12.1640625,13.8164062 L10.4414062,13.8164062 C10.1367172,13.7929686 9.84375141,13.7109382 9.5625,13.5703125 C8.76562102,13.1484354 8.3671875,12.492192 8.3671875,11.6015625 L8.40234375,10.2304688 C8.40234375,10.1132807 8.42578102,9.90234527 8.47265625,9.59765625 L10.7929688,9.59765625 C12.0820377,9.59765625 13.1601519,9.10547367 14.0273438,8.12109375 L15.890625,8.12109375 C16.1718764,8.12109375 16.4531236,8.16796828 16.734375,8.26171875 C17.5781292,8.61328301 18,9.26952645 18,10.2304688 Z M14.3789062,5.6953125 C14.3789062,6.32812816 14.1679709,6.92577844 13.7460938,7.48828125 C13.0195276,8.49609879 12.0351625,9 10.7929688,9 L7.59375,9 L4.7109375,12.1992188 C4.64062465,12.2695316 4.57031285,12.3046875 4.5,12.3046875 C4.47656238,12.3046875 4.44140648,12.2929689 4.39453125,12.2695313 C4.27734316,12.222656 4.20703137,12.128907 4.18359375,11.9882813 L4.18359375,9 L3.3046875,9 C2.71874707,9 2.16797133,8.88281367 1.65234375,8.6484375 C0.550775742,8.1093723 0,7.23047484 0,6.01171875 L0,3.3046875 C0,2.67187184 0.152342227,2.09765883 0.45703125,1.58203125 C1.08984691,0.527338477 2.03905617,0 3.3046875,0 L10.7929688,0 C11.4960973,0 12.1640593,0.199216758 12.796875,0.59765625 C13.8515678,1.27734715 14.3789062,2.17968188 14.3789062,3.3046875 L14.3789062,5.6953125 Z"></path>
             </svg>
-            <div class="button-with-counter__counter"></div>
+            <div class="button-with-counter__counter" style="display: none;"></div>
         </a>
 
-    <a class="button-with-counter button-with-counter_friend">
+    <a class="button-with-counter button-with-counter_friend" title="Нет новых друзей" href="https://school.mosreg.ru/user/user.aspx?user=1000005085825&amp;view=friends">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
             <path fill="#AAB6C2" fill-rule="evenodd" d="M17.2265625,14.484375 C17.7187525,15.5390678 17.9765624,16.6054634 18,17.6835938 C17.9765624,17.8476571 17.8710947,17.9531248 17.6835938,18 L0.31640625,18 C0.15234293,17.9765624 0.0468752344,17.8710947 0,17.6835938 C0,16.6054634 0.257809922,15.5390678 0.7734375,14.484375 C0.890625586,14.2734364 1.07812371,14.0625011 1.3359375,13.8515625 C1.85156508,13.4062478 3.24608238,12.7500043 5.51953125,11.8828125 C5.61328172,11.8593749 5.97655934,11.7304699 6.609375,11.4960938 L6.609375,9.421875 C6.04687219,8.90624742 5.74218773,8.19141082 5.6953125,7.27734375 C5.50781156,7.11328043 5.3789066,6.86718914 5.30859375,6.5390625 C5.14453043,5.90624684 5.24999812,5.40234563 5.625,5.02734375 L5.625,4.95703125 C5.60156238,4.91015602 5.58984375,4.87500012 5.58984375,4.8515625 C5.12109141,3.28124215 5.08593551,2.20312793 5.484375,1.6171875 C5.76562641,1.31249848 6.10546676,1.13671898 6.50390625,1.08984375 C6.90234574,0.386715234 7.91014816,0.0234376172 9.52734375,0 C9.80859516,0 10.1132796,0.0234372656 10.4414062,0.0703125 C12.0117266,0.257813437 12.8906241,0.80858918 13.078125,1.72265625 C13.2187507,2.42578477 13.0195339,3.45702445 12.4804688,4.81640625 C12.4804688,4.83984387 12.4628908,4.88085908 12.4277344,4.93945312 C12.3925779,4.99804717 12.375,5.03906238 12.375,5.0625 C12.7265643,5.41406426 12.832032,5.90624684 12.6914062,6.5390625 C12.6210934,6.84375152 12.4921884,7.08984281 12.3046875,7.27734375 C12.2578123,8.12109797 11.9531278,8.8828091 11.390625,9.5625 L11.390625,11.4960938 C11.9765654,11.7070323 12.339843,11.8359373 12.4804688,11.8828125 C13.1835973,12.1406263 13.6757798,12.3281244 13.9570312,12.4453125 C15.7851654,13.1718786 16.8749982,13.8515593 17.2265625,14.484375 Z"></path>
         </svg>
-        <div class="button-with-counter__counter"></div>
+        <div class="button-with-counter__counter" style="display: none;"></div>
     </a>
-    <a class="button-with-counter button-with-counter_notification trackable ya-metrika-trackable" data-category="Шапка" data-action="Инвайты" data-target="invites">
+    <a class="button-with-counter button-with-counter_notification trackable ya-metrika-trackable" data-category="Шапка" data-action="Инвайты" data-target="invites" href="https://school.mosreg.ru/invites" title="Новых приглашений: 3">
         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
             <path fill="#AAB6C2" fill-rule="evenodd" d="M17.7890625,14.2734375 C17.9062506,14.3203127 17.9765624,14.4257804 18,14.5898437 C17.9531248,14.7304695 17.8476571,14.8124999 17.6835938,14.8359375 L0.31640625,14.8359375 C0.175780547,14.8124999 0.0703128516,14.7304695 0,14.5898437 C0.0234376172,14.449218 0.0937494141,14.3437504 0.2109375,14.2734375 C0.234375117,14.2734375 0.257812383,14.2617189 0.28125,14.2382812 C1.68750703,13.886717 2.390625,13.2890667 2.390625,12.4453125 L2.390625,8.26171875 C2.390625,7.46483977 2.51952996,6.67969137 2.77734375,5.90625 C3.43359703,4.05467824 4.67577211,2.75391 6.50390625,2.00390625 C6.55078148,1.74609246 6.64453055,1.50000117 6.78515625,1.265625 C7.27734621,0.421870781 8.01562008,0 9,0 C9.28125141,0 9.56249859,0.0468745313 9.84375,0.140625 C10.7578171,0.445314023 11.3085928,1.06640156 11.4960938,2.00390625 C12.0820342,2.26172004 12.6445286,2.58984176 13.1835938,2.98828125 C14.8007893,4.32422543 15.609375,6.08202035 15.609375,8.26171875 L15.609375,12.4453125 C15.6328126,13.2656291 16.3593679,13.874998 17.7890625,14.2734375 Z M10.7929688,15.5390625 C10.9570321,15.5625001 11.0624998,15.6562492 11.109375,15.8203125 C11.109375,17.2265695 10.406257,17.9296875 9,17.9296875 C7.59374297,17.9296875 6.890625,17.2265695 6.890625,15.8203125 C6.91406262,15.6796868 7.01953031,15.5859377 7.20703125,15.5390625 L10.7929688,15.5390625 Z"></path>
         </svg>
-        <div class="button-with-counter__counter"></div>
+        <div class="button-with-counter__counter" style="display: block;">3</div>
     </a>
     <div id="ntf-notifications-root"><div class="_1hcSH"><div class="_3ZNdI" title="Нет новых уведомлений"></div></div></div>
     <div class="ntf-notifications-icon">
@@ -406,7 +212,7 @@ window.onclick = function(event) {
             </div>
         </div> 
         <div class="clear">
-            <ul class="header-menu"><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru/feed" title="Образование">Образование</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/school.aspx" title="Моя школа">Моя школа</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/class.aspx" title="Мой класс">Мой класс</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/marks.aspx" title="Успеваемость">Успеваемость</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/schedules/" title="Расписание">Расписание</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/homework.aspx" title="Домашние задания">Домашние задания</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://dit.mosreg.ru/externallogin?personid=1000008589487" title="Тестирование">Тестирование</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://isko.mosreg.ru/newProf" title="Портфолио">Портфолио</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://dop.mosreg.ru/" title="ЕИС ДОП">ЕИС ДОП</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru/odo/feed" title="ДОД">ДОД</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/school.aspx" title="Моя организация">Моя организация</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/myclasses.aspx" title="Мои группы">Мои группы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/marks.aspx" title="Успеваемость">Успеваемость</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/schedules/" title="Расписание">Расписание</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/homework.aspx" title="Домашние задания">Домашние задания</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru/user/user.aspx" title="Профиль">Профиль</a><ul class="header-submenu" style="z-index: 0; top: 0px;"><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/soc/messenger/" title="Сообщения">Сообщения</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://login.school.mosreg.ru/idp/msonline" title="Почта">Почта</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/calendar.aspx" title="Календарь">Календарь</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/news.aspx" title="Обновления">Обновления</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=friends" title="Друзья">Друзья</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=groups" title="Группы">Группы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=events" title="События">События</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=blog" title="Блог">Блог</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=files" title="Файлы">Файлы</a></li><ul class="header-submenu__item header-submenu__more-item" style="display: none;"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru/soc/contact" title="Общение">Общение</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/people" title="Люди">Люди</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/social/groups" title="Группы">Группы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/social/events" title="События">События</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/contests" title="Конкурсы">Конкурсы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/soc/networks" title="Сети">Сети</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru:443/soc/apps/?utm_source=mosreg&amp;utm_medium=mainnav&amp;utm_campaign=button" title="Приложения">Приложения</a></li><li class="header-menu__item"><a class="header-menu__link" href="" title="Олимпиады">Олимпиады</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://mo.olymponline.ru/" target="_blank" title="Решать">Решать</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://dit.mosreg.ru/participant/olympiads?personid=1000008589487" target="_blank" title="Результаты">Результаты</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li></ul><script type="text/javascript">require(['analytics/menuYaMetrika']);</script>
+            <ul class="header-menu"><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru/feed" title="Образование">Образование</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/school.aspx" title="Моя школа">Моя школа</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/class.aspx" title="Мой класс">Мой класс</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/marks.aspx" title="Успеваемость">Успеваемость</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/schedules/" title="Расписание">Расписание</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/homework.aspx" title="Домашние задания">Домашние задания</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://dit.mosreg.ru/externallogin?personid=1000008589487" title="Тестирование">Тестирование</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://isko.mosreg.ru/newProf" title="Портфолио">Портфолио</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://dop.mosreg.ru/" title="ЕИС ДОП">ЕИС ДОП</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item header-menu__item_active"><a class="header-menu__link" href="https://school.mosreg.ru/odo/feed" target="_self" title="ДОД">ДОД</a><ul class="header-submenu header-submenu_active"><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/school.aspx" title="Моя организация">Моя организация</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/myclasses.aspx" title="Мои группы">Мои группы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/marks.aspx" title="Успеваемость">Успеваемость</a></li><li class="header-submenu__item header-submenu__item_active"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/schedules/" target="_self" title="Расписание">Расписание</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/homework.aspx" title="Домашние задания">Домашние задания</a></li><ul class="header-submenu__item header-submenu__more-item" style="display: none;"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru/user/user.aspx" title="Профиль">Профиль</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/soc/messenger/" title="Сообщения">Сообщения</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://login.school.mosreg.ru/idp/msonline" title="Почта">Почта</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/calendar.aspx" title="Календарь">Календарь</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/news.aspx" title="Обновления">Обновления</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=friends" title="Друзья">Друзья</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=groups" title="Группы">Группы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=events" title="События">События</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=blog" title="Блог">Блог</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=files" title="Файлы">Файлы</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item header-menu__item_current"><a class="header-menu__link" href="https://school.mosreg.ru/soc/contact" title="Общение">Общение</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/people" title="Люди">Люди</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/social/groups" title="Группы">Группы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/social/events" title="События">События</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/contests" title="Конкурсы">Конкурсы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/soc/networks" title="Сети">Сети</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru:443/soc/apps/?utm_source=mosreg&amp;utm_medium=mainnav&amp;utm_campaign=button" title="Приложения">Приложения</a></li><li class="header-menu__item"><a class="header-menu__link" href="" title="Олимпиады">Олимпиады</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://mo.olymponline.ru/" target="_blank" title="Решать">Решать</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://dit.mosreg.ru/participant/olympiads?personid=1000008589487" target="_blank" title="Результаты">Результаты</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li></ul><script type="text/javascript">require(['analytics/menuYaMetrika']);</script>
         </div>
     </div>
 
@@ -445,7 +251,7 @@ window.onclick = function(event) {
     <script type="text/javascript">
         require(['https://static.school.mosreg.ru/scripts/modules/layoutcontrols/menuextention.js'], function () {
             var exetention = arguments[0];
-            exetention({ credUrl: 'https://schools.school.mosreg.ru/authorities/ajax.ashx?xss=15a4ee1534e20bacc57e5d774aaa5330e6f80eb30fe1a3a5e0427de0a1b2c77c&a=saiku', defaultError: 'Произошла ошибка при доступе к статистике.' });
+            exetention({ credUrl: 'https://schools.school.mosreg.ru/authorities/ajax.ashx?xss=e3202fc8244d3dd1a5e493d5296c148cc9362602095b73afbb75c296c859bbfe&a=saiku', defaultError: 'Произошла ошибка при доступе к статистике.' });
         });
     </script>
 
@@ -456,381 +262,98 @@ window.onclick = function(event) {
 
 
 
-<h2>Личные настройки</h2>
 
-
-<div id="errors" class="errors" style="display:none;"><div class="rounded"><div class="c1"><div class="c2"></div></div><div class="cc">
-</div><div class="c3"><div class="c4"></div></div></div></div>
-
-<div class="tabs"><ul><li><div class="tc1"></div><div class="tc2"></div><a id="TabProfile" style="" class="NotSet   " href="https://school.mosreg.ru/user/settings.aspx">Профиль</a></li><li><div class="tc1"></div><div class="tc2"></div><a id="TabPrivacy" style="" class="NotSet   " href="https://school.mosreg.ru/user/settings.aspx?user=1000005085825&amp;view=privacy">Приватность</a></li><li><div class="tc1"></div><div class="tc2"></div><a id="TabSecurity" style="" class="NotSet   " href="https://school.mosreg.ru/user/settings.aspx?user=1000005085825&amp;view=security">Безопасность</a></li><li class="active  "><div class="tc1"></div><div class="tc2"></div><a id="TabPassword" style="" class="NotSet   " href="https://school.mosreg.ru/user/settings.aspx?user=1000005085825&amp;view=password">Логин и пароль</a></li><li><div class="tc1"></div><div class="tc2"></div><a id="TabNotifications" style="" class="NotSet   " href="https://school.mosreg.ru/user/settings.aspx?user=1000005085825&amp;view=notifications">Оповещения</a></li><li><div class="tc1"></div><div class="tc2"></div><a id="TabInterface" style="" class="NotSet   " href="https://school.mosreg.ru/user/settings.aspx?user=1000005085825&amp;view=interface">Интерфейс</a></li><li><div class="tc1"></div><div class="tc2"></div><a id="TabEmail" style="" class="NotSet   " href="https://school.mosreg.ru/user/settings.aspx?user=1000005085825&amp;view=email">Прочее</a></li></ul></div>
+<div class="col24 first">
+    <ul class="crumbs"><li><a href="https://schools.school.mosreg.ru/odo/school.aspx?school=2000001540830" title="Страница организации">МБОУ ПСОШ № 2 им. М.Ф. Тихонов...</a></li><li><em>&gt;</em><a href="https://schools.school.mosreg.ru/odo/schedules/?school=2000001540830" title="Главная страница расписаний">Расписание занятий</a></li></ul>
     
-    
-
-<form action="https://school.mosreg.ru/user/settings.aspx?user=1000005085825&amp;view=password" method="post" class="form" name="settingspassword">
-    <div class="col23 first">
-
-        <div class="panel"><div class="rounded"><div class="c1"><div class="c2"></div></div><div class="cc">
-
-            <div class="row change-container change-login-container_short" style="display: block;">
-                <label for="login" class="f req">Ваш пароль</label>
-                <span id="login" class="strong block">
-                    Didj450
-
-
-                </span>
-                
-                <span class="strong settings-row_right"><a href="#" class="changelogin" id="changelogin">Изменить</a></span>
-                
-            </div>
-
-            <div class="row change-container change-login-container_full" style="display: none;">
-
-                <label for="login" class="f req">Ваш логин</label>
-                <span id="login" class="strong">Didj450
-
-</span>
-
-                <div class="change-container-form">
-                    
-                    <div class="strong orange change-login-container_hint">Вы можете изменить ваш логин только 1 раз.</div>
-                    <div class="change-login-container_password">
-                        <label for="newlogin" class="f req strong">Новый логин</label>
-                        <span id="newlogin">
-                            <input type="text" autocomplete="off" name="newlogin" value="">
-                        </span>
-                    </div>
-                    <div class="change-login-container_password">
-                        <label for="currentpwd" class="f req strong">Текущий пароль</label>
-                        <span id="currentpwd">
-                            <input type="password" name="currentpwd_forlogin" autocomplete="off">
-                        </span>
-                    </div>
-                    <div class="change-login-submit">
-                        <ul class="buttons">
-				
-				<li class="confirm__item"><a href="/доб.ученик.до.перс.html" class="confirm__button">Далее -&gt;</a></li>
-			</ul>
-                        <a href="#" class="save-cancel savelogin-cancel">Отменить</a>
-                    </div>
-                    
-                </div>
-            </div>
-
-            <hr class="settings-row_line">
-
-            <div class="row change-container change-password-container_full" style="display: none;">
-                <label for="pwd" class="f req">Ваш пароль</label>
-                <div id="pwd" class="">
-                    
-                </div>
-                <div class="change-container-form">
-                    <div class="change-container-row">
-                        <label for="password" class="f req">Новый пароль</label>
-                        <input type="password" id="password" name="password" maxlength="30" class="t w1" value="" autocomplete="off">
-                    </div>
-
-                    <div class="change-container-row">
-                        <label for="passwordRepeat" class="f req">Еще раз новый пароль</label>
-                        <input type="password" id="passwordRepeat" name="passwordRepeat" maxlength="30" class="t w1" value="" autocomplete="off">
-                    </div>
-                    <div class="change-container-row">
-                        <label for="oldpassword" class="f req">Текущий пароль</label>
-                        <input type="password" id="oldpassword" name="oldpassword" maxlength="50" class="t w1" autocomplete="off">
-                    </div>
-                    <div class="change-container-row">
-                        <input type="submit" id="save-password" name="savepassword" value="Сохранить" class="button">
-                        <a href="#" class="save-cancel savepwd-cancel">Отменить</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row change-container change-password-container_short" style="display: block;">
-                <label for="pwd" class="f req">Ваш пароль</label>
-                <span id="pwd" class="block">
-                    
-                </span>
-                
-            </div>
-        <div class="clear"></div></div><div class="c3"><div class="c4"></div></div></div></div>
-
-
-    </div>
-    <div class="col13 help hints login_hint" style="visibility: hidden;">
-        <div class="messages"><div class="rounded"><div class="c1"><div class="c2"></div></div><div id="success_message" class="cc">Добрый день, это администратор, я вижу что вы меняете пароль</div><div class="c3"><div class="c4"></div></div></div></div>
-    </div>
-    <div class="col13 help hints password_hint" style="visibility: hidden;">
-        <ul>
-            <li><a href="//helpschool.mosreg.ru/hc/ru/articles/206030598" target="_blank">Каким должен быть пароль?</a></li>
-        </ul>
-    </div>
-
-</form>
-
-<div class="row">
-    <h3>История входов</h3>
-    
-    <div class="col23 first">
-        <table class="grid gridLines vam fixed">
-            <thead>
-            <tr class="head">
-                <th width="40%">Время</th>
-                <th width="30%">Результат</th>
-                <th width="30%">IP адрес</th>
-            </tr>
-            </thead>
-            <tbody>
-            
-                <tr>
-                    <td>19.11.2020 23:12</td>
-                    <td>
-                        Успешный
-                    </td>
-                    <td>185.32.135.59</td>
-                </tr>
-            
-                <tr>
-                    <td>09.11.2020 10:49</td>
-                    <td>
-                        Успешный
-                    </td>
-                    <td>185.32.135.59</td>
-                </tr>
-            
-                <tr>
-                    <td>05.11.2020 22:15</td>
-                    <td>
-                        Успешный
-                    </td>
-                    <td>185.32.135.59</td>
-                </tr>
-            
-                <tr>
-                    <td>30.10.2020 21:45</td>
-                    <button id="myBtn">Открыть окно</button><td>
-                        Успешный
-                    </td>
-                    <td>185.32.135.59</td>
-                </tr>
-            
-                <tr>
-                    <td>29.10.2020 13:25</td>
-                    <td>
-                        Успешный
-                    </td>
-                    <td>185.32.135.59</td>
-                </tr>
-            
-                <tr>
-                    <td>27.10.2020 18:59</td>
-                    <td>
-                        Успешный
-                    </td>
-                    <td>185.32.135.59</td>
-                </tr>
-            
-                <tr>
-                    <td>27.10.2020 12:47</td>
-                    <td>
-                        Успешный
-                    </td>
-                    <td>185.32.135.59</td>
-                </tr>
-            
-                <tr>
-                    <td>25.10.2020 14:37</td>
-                    <td>
-                        Успешный
-                    </td>
-                    <td>185.32.135.59</td>
-                </tr>
-            
-                <tr>
-                    <td>24.10.2020 12:09</td>
-                    <td>
-                        Успешный
-                    </td>
-                    <td>185.32.135.59</td>
-                </tr>
-            
-                <tr>
-                    <td>23.10.2020 12:28</td>
-                    <td>
-                        Успешный
-                    </td>
-                    <td>185.32.135.59</td>
-                </tr>
-            
-                <tr>
-                    <td>22.10.2020 18:16</td>
-                    <td>
-                        Успешный
-                    </td>
-                    <td>185.32.135.59</td>
-                </tr>
-            
-                <tr>
-                    <td>20.10.2020 21:15</td>
-                    <td>
-                        Неуспешный
-                    </td>
-                    <td>89.179.26.94</td>
-                </tr>
-            
-                <tr>
-                    <td>20.10.2020 21:14</td>
-                    <td>
-                        Неуспешный
-                    </td>
-                    <td>89.179.26.94</td>
-                </tr>
-            
-                <tr>
-                    <td>20.10.2020 18:17</td>
-                    <td>
-                        Успешный
-                    </td>
-                    <td>185.32.135.59</td>
-                </tr>
-            
-                <tr>
-                    <td>17.10.2020 22:10</td>
-                    <td>
-                        Успешный
-                    </td>
-                    <td>185.32.135.59</td>
-                </tr>
-            
-                <tr>
-                    <td>17.10.2020 22:09</td>
-                    <td>
-                        Успешный
-                    </td>
-                    <td>185.32.135.59</td>
-                </tr>
-            
-                <tr>
-                    <td>17.10.2020 22:09</td>
-                    <td>
-                        Успешный
-                    </td>
-                    <td>185.32.135.59</td>
-                </tr>
-            
-                <tr>
-                    <td>14.10.2020 23:34</td>
-                    <td>
-                        Успешный
-                    </td>
-                    <td>185.32.135.59</td>
-                </tr>
-            
-                <tr>
-                    <td>13.10.2020 18:37</td>
-                    <td>
-                        Успешный
-                    </td>
-                    <td>185.32.135.59</td>
-                </tr>
-            
-                <tr>
-                    <td>13.10.2020 18:30</td>
-                    <td>
-                        Успешный
-                    </td>
-                    <td>185.32.135.59</td>
-                </tr>
-            
-            </tbody>
-        </table>
-    </div>
-    <div class="col13 help">
-        <p>Здесь отображаются все попытки войти в вашу учетную запись.</p>
-        <p>Если вы заметили, что кто-то другой успешно вошел в вашу учетную запись - незамедлительно смените пароль.</p>
-    </div>
+        <h2>
+            Расписание
+            <strong>
+                <a href="https://schools.school.mosreg.ru/odo/class.aspx?class=1719893220255036352" class="blue">7б</a>
+            </strong>
+            (2020/2021)
+        </h2>
+     
 </div>
 
-<script type="text/javascript">
-    (function() {
-        hints = {
-            'hl_wsbtp': 'Пароль должен содержать от 6 до 30 символов. Можно использовать латинские буквы, цифры и символы !@#$%^&amp;*()_+?|. Пароль не может совпадать с логином.'
-        };
-    })();
-    
-    var pwdSettings = {
-        errorMsg: {
-            sameaslogin: 'Пароль не должен совпадать с логином!',
-            passwordsnotmatch: 'Внимательно введите новый пароль второй раз. Сейчас введенные пароли не совпадают.',
-            passwordtooshort: 'Пароль слишком короткий (необходимо минимум 6 символов).',
-            whatshouldbethepassword: 'Пароль должен содержать от 6 до 30 символов. Можно использовать латинские буквы, цифры и символы !@#$%^&amp;*()_+?|. Пароль не может совпадать с логином.',
-            passwordisempty: 'Вы забыли ввести пароль.',
-            letterssamereg:'Пароль не содержит цифр, специальных символов и букв разных регистров.',
-            onlynumber: 'Пароль не содержит букв и специальных символов.',
-            onlyletters:'Пароль не содержит цифр и специальных символов.',
-            containslogin:'Пароль содержит логин.',
-            lessthen8:'Пароль меньше 8 символов.',
-            passwordRepeated:['Этот пароль совпадает с одним из ваших 5 последних паролей. Придумайте другой пароль.', 'Этот пароль совпадает с одним из ваших 5 последних паролей'],
-            hintsafepsw:'Отличный пароль должен содержать буквы в разных регистрах, цифры и специальные символы.',
-            wrongloginsize: 'Вы ввели некорректный логин.',
-            wrongloginformat: 'Вы ввели некорректный логин.',
-            loginalreadyexists: 'К сожалению, этот логин уже занят.',
-            nulllogin: 'Вы забыли ввести логин.',
-
-            capital: 'Добавьте в новый пароль строчные латинские буквы, цифры, специальные символы (!@#$%^&amp;*()_+?|).',
-            noncapital: 'Добавьте в новый пароль прописные латинские буквы, цифры, специальные символы (!@#$%^&amp;*()_+?|).',
-            capitalAndNoncapital: 'Добавьте в новый пароль цифры и специальные символы (!@#$%^&amp;*()_+?|).',
-            symbolsOnly: 'Добавьте в новый пароль латинские буквы разных регистров и цифры.',
-            numbersOnly: 'Добавьте в новый пароль латинские буквы разных регистров и специальные символы (!@#$%^&amp;*()_+?|).',
-            noncapitalAndNumbers: 'Добавьте в новый пароль прописные латинские буквы и специальные символы (!@#$%^&amp;*()_+?|).',
-            noncapitalAndSymbols: 'Добавьте в новый пароль прописные латинские буквы и цифры.',
-            capitalAndNumbers: 'Добавьте в новый пароль строчные латинские буквы и специальные символы (!@#$%^&amp;*()_+?|).',
-            capitalAndSymbols: 'Добавьте в новый пароль строчные латинские буквы и цифры.',
-            numbersAndSymbols: 'Добавьте в новый пароль латинские буквы разных регистров.',
-            capitalNoncapitalAndSymbols: 'Добавьте в новый пароль цифры.',
-            capitalNoncapitalAndNumbers: 'Добавьте в новый пароль специальные символы (!@#$%^&amp;*()_+?|).',
-            capitalNumbersAndSymbols: 'Добавьте в новый пароль строчные латинские буквы.',
-            noncapitalNumbersAndSymbols: 'Добавьте в новый пароль прописные латинские буквы.',
-
-            recommendationAddSymbol: 'Рекомендуем добавить к вашему паролю еще 1 специальный символ (!@#$%^&amp;*()_+?|).',
-            recommendationAddCapital: 'Рекомендуем добавить к вашему паролю еще 1 прописную латинскую букву.',
-            recommendationAddCapitalAndSymbol: 'Рекомендуем добавить к вашему паролю еще 1 прописную латинскую букву и 1 специальный символ (!@#$%^&amp;*()_+?|).',
-            recommendationAddTwoLetters: 'Рекомендуем добавить к вашему паролю еще 2 любых символа.',
-            recommendationAddOneLetter: 'Рекомендуем добавить к вашему паролю еще 1 любой символ.',
-            recommendationAddSymbolAndOneLetter: 'Рекомендуем добавить к вашему паролю еще 1 специальный символ (!@#$%^&amp;*()_+?|) и 1 любой символ.',
-            recommendationAddCapitalAndOneLetter: 'Рекомендуем добавить к вашему паролю еще 1 прописную латинскую букву и 1 любой символ.'
-        },
-        labels: {
-            strength: ['Ненадежный', 'Хороший', 'Отличный']
-        },
-        pwdpattern: /^[0-9a-zA-Z!@#$%^&*()_\+\?\|]{6,30}$/,
-        minLength: '6',
-        checkPwdRepeat: 'https://school.mosreg.ru/user/ajax.ashx?a=upval',
-        checkLoginAvailability: 'https://school.mosreg.ru/user/ajax.ashx?a=cle',
-        isSystemUser: 0,
-        isStaff: 0,
-        isStrongPasswordValidation: 0,
-        wasFailedAttemptToChangeLogin : false,
-        wasFailedAttemptToChangePwd : false
-    };
-</script>
-<script type="text/javascript" src="https://static.school.mosreg.ru/javascripts/inputhints.js?v=f5abf531"></script>
-<script type="text/javascript" src="https://static.school.mosreg.ru/javascripts/settingscredentials.js?v=0a2082ae"></script>
-<script type="text/javascript" src="https://static.school.mosreg.ru/javascripts/passwordValidator.js?v=8d971127"></script>
 
 
 
-    
 
-<script type="text/javascript">
 
-var myFriendGroups = {'0' : '\u0417\u043d\u0430\u043a\u043e\u043c\u044b\u0435','-1' : '\u0411\u043b\u0438\u0437\u043a\u0438\u0435 \u0434\u0440\u0443\u0437\u044c\u044f','-2' : '\u0420\u043e\u0434\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0438','-3' : '\u041e\u0434\u043d\u043e\u043a\u043b\u0430\u0441\u0441\u043d\u0438\u043a\u0438','0' : '\u0417\u043d\u0430\u043a\u043e\u043c\u044b\u0435','-1' : '\u0411\u043b\u0438\u0437\u043a\u0438\u0435 \u0434\u0440\u0443\u0437\u044c\u044f','-2' : '\u0420\u043e\u0434\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0438','-3' : '\u041e\u0434\u043d\u043e\u043a\u043b\u0430\u0441\u0441\u043d\u0438\u043a\u0438','0' : '\u0417\u043d\u0430\u043a\u043e\u043c\u044b\u0435','-1' : '\u0411\u043b\u0438\u0437\u043a\u0438\u0435 \u0434\u0440\u0443\u0437\u044c\u044f','-2' : '\u0420\u043e\u0434\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0438','-3' : '\u041e\u0434\u043d\u043e\u043a\u043b\u0430\u0441\u0441\u043d\u0438\u043a\u0438','0' : '\u0417\u043d\u0430\u043a\u043e\u043c\u044b\u0435','-1' : '\u0411\u043b\u0438\u0437\u043a\u0438\u0435 \u0434\u0440\u0443\u0437\u044c\u044f','-2' : '\u0420\u043e\u0434\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0438','-3' : '\u041e\u0434\u043d\u043e\u043a\u043b\u0430\u0441\u0441\u043d\u0438\u043a\u0438','0' : '\u0417\u043d\u0430\u043a\u043e\u043c\u044b\u0435','-1' : '\u0411\u043b\u0438\u0437\u043a\u0438\u0435 \u0434\u0440\u0443\u0437\u044c\u044f','-2' : '\u0420\u043e\u0434\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0438','-3' : '\u041e\u0434\u043d\u043e\u043a\u043b\u0430\u0441\u0441\u043d\u0438\u043a\u0438','0' : '\u0417\u043d\u0430\u043a\u043e\u043c\u044b\u0435','-1' : '\u0411\u043b\u0438\u0437\u043a\u0438\u0435 \u0434\u0440\u0443\u0437\u044c\u044f','-2' : '\u0420\u043e\u0434\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0438','-3' : '\u041e\u0434\u043d\u043e\u043a\u043b\u0430\u0441\u0441\u043d\u0438\u043a\u0438','0' : '\u0417\u043d\u0430\u043a\u043e\u043c\u044b\u0435','-1' : '\u0411\u043b\u0438\u0437\u043a\u0438\u0435 \u0434\u0440\u0443\u0437\u044c\u044f','-2' : '\u0420\u043e\u0434\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0438','-3' : '\u041e\u0434\u043d\u043e\u043a\u043b\u0430\u0441\u0441\u043d\u0438\u043a\u0438','0' : '\u0417\u043d\u0430\u043a\u043e\u043c\u044b\u0435','-1' : '\u0411\u043b\u0438\u0437\u043a\u0438\u0435 \u0434\u0440\u0443\u0437\u044c\u044f','-2' : '\u0420\u043e\u0434\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0438','-3' : '\u041e\u0434\u043d\u043e\u043a\u043b\u0430\u0441\u0441\u043d\u0438\u043a\u0438','0' : '\u0417\u043d\u0430\u043a\u043e\u043c\u044b\u0435','-1' : '\u0411\u043b\u0438\u0437\u043a\u0438\u0435 \u0434\u0440\u0443\u0437\u044c\u044f','-2' : '\u0420\u043e\u0434\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0438','-3' : '\u041e\u0434\u043d\u043e\u043a\u043b\u0430\u0441\u0441\u043d\u0438\u043a\u0438','0' : '\u0417\u043d\u0430\u043a\u043e\u043c\u044b\u0435','-1' : '\u0411\u043b\u0438\u0437\u043a\u0438\u0435 \u0434\u0440\u0443\u0437\u044c\u044f','-2' : '\u0420\u043e\u0434\u0441\u0442\u0432\u0435\u043d\u043d\u0438\u043a\u0438','-3' : '\u041e\u0434\u043d\u043e\u043a\u043b\u0430\u0441\u0441\u043d\u0438\u043a\u0438'};
-var myNetworks = {'250504' : '\u041c\u0411\u041e\u0423 \u041f\u0421\u041e\u0428 \u2116 2 \u0438\u043c. \u041c.\u0424. \u0422\u0438\u0445\u043e\u043d\u043e\u0432\u0430','1000000387641' : '7\u0431','1000000611313' : '\u041c\u0411\u041e\u0423 \u041f\u0421\u041e\u0428 \u2116 2 \u0438\u043c. \u041c.\u0424. \u0422\u0438\u0445\u043e\u043d\u043e\u0432\u0430 \x28\u0434\u043e\u043f.\u043e\u0431\u0440\u0430\u0437\u043e\u0432\u0430\u043d\u0438\u0435\x29','1000000623387' : '7\u0431','1000000758372' : '\u041a\u0440\u0443\u0436\u043e\u043a \u0418\u0417\u041e 5-6\u043a\u043b\u0430\u0441\u0441\u044b'};
+
+        
+
+
+		
+                
+                <div class="player" style="height: 100%">
+                    
+                    <div class="inl">
+                        <div id="periodContent" class="light filter"><strong class="s2 light">Расписание за период с 23 по 29&nbsp;ноября&nbsp;2020</strong></div>
+                        
+                            <div class="inl">
+                                <ul class="toolbar">
+                                    <li class="active first">
+                                        <a class="day_calendar" id="periodpopap" title="Выбрать период" href="#">
+                                            <img src="https://static.school.mosreg.ru/images/icons/blue-head-calendar.png" alt="">
+                                            Выбрать период
+                                        </a>
+
+                                    </li>
+                                </ul>
+                            </div>
+                        
+                    </div>
+                    
+                </div>                
+                <table id="editor" class="scheduleWeekEditor"><thead><tr><th class="wDS">&nbsp;</th><th class="wD">Пн</th><th class="wD">Вт</th><th class="wD">Ср</th><th class="wD">Чт</th><th class="wD">Пт</th><th class="wD wE">Сб</th><th class="wD wE">Вс</th></tr></thead><tbody><tr id="week1719891639707059273_20201123" class="wWeek"><td class="wDS"><strong>1</strong><br>н<br>е<br>д<br>е<br>л<br>я</td><td colspan="7"><table><thead><tr><th id="d20201123" class="wD" title="23&nbsp;ноября&nbsp;2020" data-date="23&nbsp;ноября&nbsp;2020">23 ноя</th><th id="d20201124" class="wD" title="24&nbsp;ноября&nbsp;2020" data-date="24&nbsp;ноября&nbsp;2020">24 ноя</th><th id="d20201125" class="wD" title="25&nbsp;ноября&nbsp;2020" data-date="25&nbsp;ноября&nbsp;2020">25 ноя</th><th id="d20201126" class="wD" title="26&nbsp;ноября&nbsp;2020" data-date="26&nbsp;ноября&nbsp;2020">26 ноя</th><th id="d20201127" class="wD" title="27&nbsp;ноября&nbsp;2020" data-date="27&nbsp;ноября&nbsp;2020">27 ноя</th><th id="d20201128" class="wD wE" title="28&nbsp;ноября&nbsp;2020" data-date="28&nbsp;ноября&nbsp;2020">28 ноя</th><th id="d20201129" class="wD wE" title="29&nbsp;ноября&nbsp;2020" data-date="29&nbsp;ноября&nbsp;2020">29 ноя</th></tr></thead><tbody><tr><td id="d20201123_0" class="wD d20201123 wD0">&nbsp;</td><td id="d20201124_0" class="wD d20201124 wD0">&nbsp;</td><td id="d20201125_0" class="wD d20201125 wD0">&nbsp;</td><td id="d20201126_0" class="wD d20201126 wD0">&nbsp;</td><td id="d20201127_0" class="wD d20201127 wD0">&nbsp;</td><td id="d20201128_0" class="wD d20201128 wD0">&nbsp;</td><td id="d20201129_0" class="wD d20201129 wD0">&nbsp;</td></tr><tr><td id="d20201123_1" class="wD d20201123 wD0">&nbsp;</td><td id="d20201124_1" class="wD d20201124 wD0">&nbsp;</td><td id="d20201125_1" class="wD d20201125 wD0">&nbsp;</td><td id="d20201126_1" class="wD d20201126 wD0">&nbsp;</td><td id="d20201127_1" class="wD d20201127 wD0">&nbsp;</td><td id="d20201128_1" class="wD d20201128 wD0">&nbsp;</td><td id="d20201129_1" class="wD d20201129 wD0">&nbsp;</td></tr><tr style="display:none"><td id="d20201123_2" class="wD d20201123 wD0">&nbsp;</td><td id="d20201124_2" class="wD d20201124 wD0">&nbsp;</td><td id="d20201125_2" class="wD d20201125 wD0">&nbsp;</td><td id="d20201126_2" class="wD d20201126 wD0">&nbsp;</td><td id="d20201127_2" class="wD d20201127 wD0">&nbsp;</td><td id="d20201128_2" class="wD d20201128 wD0">&nbsp;</td><td id="d20201129_2" class="wD d20201129 wD0">&nbsp;</td><td class="removeLine" style="display:none"><a href="javascript: void(0)"><img src="https://static.school.mosreg.ru/images/icons/remove.png"></a></td></tr><tr style="display:none"><td id="d20201123_3" class="wD d20201123 wD0">&nbsp;</td><td id="d20201124_3" class="wD d20201124 wD0">&nbsp;</td><td id="d20201125_3" class="wD d20201125 wD0">&nbsp;</td><td id="d20201126_3" class="wD d20201126 wD0">&nbsp;</td><td id="d20201127_3" class="wD d20201127 wD0">&nbsp;</td><td id="d20201128_3" class="wD d20201128 wD0">&nbsp;</td><td id="d20201129_3" class="wD d20201129 wD0">&nbsp;</td><td class="removeLine" style="display:none"><a href="javascript: void(0)"><img src="https://static.school.mosreg.ru/images/icons/remove.png"></a></td></tr><tr style="display:none"><td id="d20201123_4" class="wD d20201123 wD0">&nbsp;</td><td id="d20201124_4" class="wD d20201124 wD0">&nbsp;</td><td id="d20201125_4" class="wD d20201125 wD0">&nbsp;</td><td id="d20201126_4" class="wD d20201126 wD0">&nbsp;</td><td id="d20201127_4" class="wD d20201127 wD0">&nbsp;</td><td id="d20201128_4" class="wD d20201128 wD0">&nbsp;</td><td id="d20201129_4" class="wD d20201129 wD0">&nbsp;</td><td class="removeLine" style="display:none"><a href="javascript: void(0)"><img src="https://static.school.mosreg.ru/images/icons/remove.png"></a></td></tr><tr style="display:none"><td id="d20201123_5" class="wD d20201123 wD0">&nbsp;</td><td id="d20201124_5" class="wD d20201124 wD0">&nbsp;</td><td id="d20201125_5" class="wD d20201125 wD0">&nbsp;</td><td id="d20201126_5" class="wD d20201126 wD0">&nbsp;</td><td id="d20201127_5" class="wD d20201127 wD0">&nbsp;</td><td id="d20201128_5" class="wD d20201128 wD0">&nbsp;</td><td id="d20201129_5" class="wD d20201129 wD0">&nbsp;</td><td class="removeLine" style="display:none"><a href="javascript: void(0)"><img src="https://static.school.mosreg.ru/images/icons/remove.png"></a></td></tr><tr style="display:none"><td id="d20201123_6" class="wD d20201123 wD0">&nbsp;</td><td id="d20201124_6" class="wD d20201124 wD0">&nbsp;</td><td id="d20201125_6" class="wD d20201125 wD0">&nbsp;</td><td id="d20201126_6" class="wD d20201126 wD0">&nbsp;</td><td id="d20201127_6" class="wD d20201127 wD0">&nbsp;</td><td id="d20201128_6" class="wD d20201128 wD0">&nbsp;</td><td id="d20201129_6" class="wD d20201129 wD0">&nbsp;</td><td class="removeLine" style="display:none"><a href="javascript: void(0)"><img src="https://static.school.mosreg.ru/images/icons/remove.png"></a></td></tr><tr style="display:none"><td id="d20201123_7" class="wD d20201123 wD0">&nbsp;</td><td id="d20201124_7" class="wD d20201124 wD0">&nbsp;</td><td id="d20201125_7" class="wD d20201125 wD0">&nbsp;</td><td id="d20201126_7" class="wD d20201126 wD0">&nbsp;</td><td id="d20201127_7" class="wD d20201127 wD0">&nbsp;</td><td id="d20201128_7" class="wD d20201128 wD0">&nbsp;</td><td id="d20201129_7" class="wD d20201129 wD0">&nbsp;</td><td class="removeLine" style="display:none"><a href="javascript: void(0)"><img src="https://static.school.mosreg.ru/images/icons/remove.png"></a></td></tr><tr style="display:none"><td id="d20201123_8" class="wD d20201123 wD0">&nbsp;</td><td id="d20201124_8" class="wD d20201124 wD0">&nbsp;</td><td id="d20201125_8" class="wD d20201125 wD0">&nbsp;</td><td id="d20201126_8" class="wD d20201126 wD0">&nbsp;</td><td id="d20201127_8" class="wD d20201127 wD0">&nbsp;</td><td id="d20201128_8" class="wD d20201128 wD0">&nbsp;</td><td id="d20201129_8" class="wD d20201129 wD0">&nbsp;</td><td class="removeLine" style="display:none"><a href="javascript: void(0)"><img src="https://static.school.mosreg.ru/images/icons/remove.png"></a></td></tr><tr style="display:none"><td id="d20201123_9" class="wD d20201123 wD0">&nbsp;</td><td id="d20201124_9" class="wD d20201124 wD0">&nbsp;</td><td id="d20201125_9" class="wD d20201125 wD0">&nbsp;</td><td id="d20201126_9" class="wD d20201126 wD0">&nbsp;</td><td id="d20201127_9" class="wD d20201127 wD0">&nbsp;</td><td id="d20201128_9" class="wD d20201128 wD0">&nbsp;</td><td id="d20201129_9" class="wD d20201129 wD0">&nbsp;</td><td class="removeLine" style="display:none"><a href="javascript: void(0)"><img src="https://static.school.mosreg.ru/images/icons/remove.png"></a></td></tr><tr style="display:none"><td id="d20201123_10" class="wD d20201123 wD0">&nbsp;</td><td id="d20201124_10" class="wD d20201124 wD0">&nbsp;</td><td id="d20201125_10" class="wD d20201125 wD0">&nbsp;</td><td id="d20201126_10" class="wD d20201126 wD0">&nbsp;</td><td id="d20201127_10" class="wD d20201127 wD0">&nbsp;</td><td id="d20201128_10" class="wD d20201128 wD0">&nbsp;</td><td id="d20201129_10" class="wD d20201129 wD0">&nbsp;</td><td class="removeLine" style="display:none"><a href="javascript: void(0)"><img src="https://static.school.mosreg.ru/images/icons/remove.png"></a></td></tr><tr style="display:none"><td id="d20201123_11" class="wD d20201123 wD0">&nbsp;</td><td id="d20201124_11" class="wD d20201124 wD0">&nbsp;</td><td id="d20201125_11" class="wD d20201125 wD0">&nbsp;</td><td id="d20201126_11" class="wD d20201126 wD0">&nbsp;</td><td id="d20201127_11" class="wD d20201127 wD0">&nbsp;</td><td id="d20201128_11" class="wD d20201128 wD0">&nbsp;</td><td id="d20201129_11" class="wD d20201129 wD0">&nbsp;</td><td class="removeLine" style="display:none"><a href="javascript: void(0)"><img src="https://static.school.mosreg.ru/images/icons/remove.png"></a></td></tr></tbody></table></td></tr></tbody></table>
+                 
+					
+	
+<script>
 
 </script>
-<script type="text/javascript" src="https://static.school.mosreg.ru/javascripts/hints.js?v=a1e8f54f"></script>
+    
 
 
 <div class="clear"></div>
+<div id="overlayModal" class="modal" style="width: 350px; height: 120px; z-index: 9999; top: 197.1px; left: 486.5px; position: fixed; display: none;"><a class="close"></a><div class="wrapper" style="display: block;">
+
+<link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/assets/styles/controls/framework/controls/datetime/datetimeinterval.css?v=b1b72487">
+
+
+
+<table id="tableOverride" class="form vam choosePeriodTable">
+    <tbody><tr>
+        <td class="nowrap tac trans">
+            <div id="DateTimeIntervalCntrl" class="datetimeinterval forpopup">
+	<label for="datefrom">с</label><div>
+		<input type="text" id="datefrom" name="datefrom" value="23.11.2020" size="13" maxlength="13" class="t icon iCal">
+                    
+				
+	</div><label for="dateto">по</label><div>
+		<input type="text" id="dateto" name="dateto" value="29.11.2020" size="13" maxlength="13" class="t icon iCal">
+                    
+				
+	</div>
 </div>
+        </td>
+    </tr>
+    <tr>
+        <td style="padding: 15px 20px;">
+            <a class="button confirmButton" id="modalSubmit" href="#">Применить</a>
+            <a id="modalCanceled" class="cancel" href="#">Отменить</a>
+
+        </td>
+
+    </tr>
+</tbody></table>
+
+
+
+
+</div><div class="modalLoading" style="min-height: 50px; display: none;"><div class="loading"></div></div></div></div>
 
 
 
@@ -846,7 +369,7 @@ var myNetworks = {'250504' : '\u041c\u0411\u041e\u0423 \u041f\u0421\u041e\u0428 
 
     <div class="page-footer page-footer_auth" id="footer">
         <div class="page-footer__banner">
-            <div class="e8c97bd251314a939893bb95d94809e8 asyncBottom728x90Banner"></div><script>$(document).ready(function () {let container=$(".e8c97bd251314a939893bb95d94809e8");if(container.css("display")!=="none"){container.html($(".e8c97bd251314a939893bb95d94809e8 > div").text());} });</script>
+            
             
         </div>
         <div class="page-footer__content">
@@ -940,9 +463,11 @@ var myNetworks = {'250504' : '\u041c\u0411\u041e\u0423 \u041f\u0421\u041e\u0428 
 <noscript><div><img src="//mc.yandex.ru/watch/17969140" style="position:absolute; left:-9999px;" alt="" /><img src="//mc.yandex.ru/watch/29822639" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- Yandex.Metrika counter -->
 <span> <script type="text/javascript">
-                    require(['https://static.school.mosreg.ru/assets/scripts/controls/dnevnik/usercontrols/choosemailbox.js?v=7e216707'], function(dep0) {
+                    require(['https://static.school.mosreg.ru/assets/scripts/controls/schools/usercontrols/schoolselector.js?v=c7720b65','https://static.school.mosreg.ru/assets/scripts/controls/schools/usercontrols/schedules/schedulesbrowseforodo.js?v=1f4b49aa','https://static.school.mosreg.ru/assets/scripts/controls/schools/ajaxpages/chooseperiod/chooseperiod.js?v=9ca29d2c'], function(dep0,dep1,dep2) {
                         $(function () { 
-                            dep0({"serverErrorMessage":"Ошибка на сервере, попробуйте ещё раз","mailboxOtherString":"другой","mailboxDomain":"schoolmail.ru","getTaskStateUrl":"https://school.mosreg.ru/user/TaskStateHandler.ashx","getMailboxNamesUrl":"https://school.mosreg.ru/user/mailbox?&a=buildmailboxnames","getMailboxNamesResultUrl":"https://school.mosreg.ru/user/mailbox?&a=getmailboxnamesresult"});
+                            dep0({"isAutoPostBack":true});
+dep1();
+dep2({"periodUrl":"https://schools.school.mosreg.ru/AjaxPages/changelesson/chooseperiod.aspx?year=2020","submitButtonId":"modalSubmit","deleteButtonId":"modalDelete","filterUrl":"/odo/schedules/view.aspx?&group=1719893220255036352&school=2000001540830","dateFrom":"23.11.2020","dateTo":"29.11.2020","isPopupLeft":true,"isPeriod":false});
 
                         });
                     });
@@ -951,7 +476,4 @@ var myNetworks = {'250504' : '\u041c\u0411\u041e\u0423 \u041f\u0421\u041e\u0428 
 </script></span>
 
 
-
-
-
-</body></html>
+<div id="calendar" class="" style="display: none"><a href="" class="previous">&lt;</a><div class="current"><a href=""></a></div><a href="" class="next">&gt;</a><div style="height: px; overflow: hidden;"><div class="content"><div class="decade" id="decade_currentscreen" style="display: none;"><ul class="years"><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li></ul></div><div class="year" id="year_currentscreen" style="display: none;"><ul class="months"><li><a href="" rel="1">янв</a></li><li><a href="" rel="2">фев</a></li><li><a href="" rel="3">мар</a></li><li><a href="" rel="4">апр</a></li><li><a href="" rel="5">май</a></li><li><a href="" rel="6">июн</a></li><li><a href="" rel="7">июл</a></li><li><a href="" rel="8">авг</a></li><li><a href="" rel="9">сен</a></li><li><a href="" rel="10">окт</a></li><li><a href="" rel="11">ноя</a></li><li><a href="" rel="12">дек</a></li></ul></div><div class="month" id="month_currentscreen" style="display: block;"><ul class="week"><li>Пн</li><li>Вт</li><li>Ср</li><li>Чт</li><li>Пт</li><li class="weekend">Сб</li><li class="weekend">Вс</li></ul><ul class="days"><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li class="weekend"><a href=""></a></li><li class="weekend"><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li class="weekend"><a href=""></a></li><li class="weekend"><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li class="weekend"><a href=""></a></li><li class="weekend"><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li class="weekend"><a href=""></a></li><li class="weekend"><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li class="weekend"><a href=""></a></li><li class="weekend"><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li><a href=""></a></li><li class="weekend"><a href=""></a></li><li class="weekend"><a href=""></a></li></ul></div></div><div class="today"><a href=""></a></div></div></div><div id="exposeMask" style="position: absolute; top: 0px; left: 0px; width: 1343px; height: 901px; display: none; opacity: 0.7; z-index: 9998; background-color: rgb(0, 105, 163);"></div></body></html>
