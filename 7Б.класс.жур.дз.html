@@ -221,6 +221,58 @@
     <script type="text/javascript">
         require(['https://static.school.mosreg.ru/scripts/modules/layoutcontrols/menuextention.js'], function () {
             var exetention = arguments[0];
+            exetention({ credUrl: 'https://schools.school.mosreg.ru/authorities/ajax.ashx?xss=95c1e5c212305190c8e11d3fe36658c8008f18ae752f9aef501c96a78ecc0f62&a=saiku', defaultError: 'Произошла ошибка при доступе к статистике.' });
+        });
+    </script>
+
+
+<div id="content">
+
+
+
+
+
+
+
+
+
+
+
+<script>$(document).ready(function () {let container=$(".99332815c379485d993a33d4592a42a6");container.html(container.text());container.removeAttr("style");});</script><div class="page-wrapper" id="contentWrapper">
+
+
+
+     <script type="text/javascript">
+         require(['layoutcontrols/menu', 'analytics/urlTracker', 'ab/yandexMetrikaTracker'], function (menu, urlTracker, yandexMetrikaTracker) {
+			 var model = {
+                newMessages: 'Новых сообщений',
+                noMessages: 'Нет новых сообщений',
+                newFriendRequests: 'Новых друзей',
+                noFriendRequests: 'Нет новых друзей',
+                newGroups: 'Новых приглашений',
+                noGroups: 'Нет новых приглашений',
+                Account: 'Личный счёт'
+			 };
+			 menu(model);
+
+			 var urlTrackerModel = {
+                elementSelector: 'li#AppCenter>a',
+                urlPrefix: '/virtual/center',
+                trackingConditions: 'click'
+            };
+            urlTracker(urlTrackerModel);
+
+			yandexMetrikaTracker({ action: 'reachGoal' });            
+        });
+        
+        require(['common/adblockDummyInsert'], function (adblockDummyInsert) {
+            adblockDummyInsert();
+        });
+    </script>
+	
+    <script type="text/javascript">
+        require(['https://static.school.mosreg.ru/scripts/modules/layoutcontrols/menuextention.js'], function () {
+            var exetention = arguments[0];
             exetention({ credUrl: 'https://schools.school.mosreg.ru/authorities/ajax.ashx?xss=f9988a81eb9840ad2d7a73bce70dd62cd051c2445bad4dc3b90a66f4bbc95e3f&a=saiku', defaultError: 'Произошла ошибка при доступе к статистике.' });
         });
     </script>
@@ -228,7 +280,7 @@
 
 <a href="https://dima5453.github.io/%D0%A2%D0%90%D0%9A%D0%9E%D0%99.%D0%A8%D0%9A%D0%9E%D0%9B%D0%AB.%D0%9D%D0%95%D0%A2.%E2%84%964.html" title="Страница школы">ТАКОЙ ШКОЛЫ НЕТ №4
 
-</a>&gt;<a> Домашняя работа</a><h2>Д/з</h2><div class="tabs"><ul><li><div class="tc1"></div><div class="tc2"></div><a id="TabAchievements" style="" class="NotSet   " href="/7Б.класс.жур.html">Журналы</a></li><li><div class="tc1"></div><div class="tc2"></div><a id="TabAchievements" style="" class="NotSet   " href="">Поурочное планирование</a></li><li><div class="tc1"></div><div class="tc2"></div><a id="TabAchievements" style="" class="NotSet   " href="">Результать Егэ и ОГЭ</a></li><li class="active  "><div class="tc1"></div><div class="tc2"></div><a id="TabProfile" style="" class="NotSet   " href="/7Б.класс.жур.дз.html">Д/з</a></li></ul></div><div id="content">
+</a>&gt;<a> журнал</a><h2>Д/з</h2><div class="tabs"><ul><li><div class="tc1"></div><div class="tc2"></div><a id="TabAchievements" style="" class="NotSet   " href="/7Б.класс.жур.html">Журналы</a></li><li><div class="tc1"></div><div class="tc2"></div><a id="TabAchievements" style="" class="NotSet   " href="">Поурочное планирование</a></li><li><div class="tc1"></div><div class="tc2"></div><a id="TabAchievements" style="" class="NotSet   " href="">Результать Егэ и ОГЭ</a></li><li class="active  "><div class="tc1"></div><div class="tc2"></div><a id="TabProfile" style="" class="NotSet   " href="/7Б.класс.жур.дз.html">Д/з</a></li></ul></div><div id="content">
 
 
 
@@ -279,9 +331,14 @@
 							<li><strong>4</strong></li>
 							<li><strong>5</strong></li>
 							<li><strong>6</strong></li>
-							<li><strong>7</strong><ul>
+							<li><strong>7</strong><div id="zatemnenie">
+      
+    </div><ul>
+						
+						<ul>
 						
 						<li><a href="https://dima5453.github.io/7.класс.дз.б.html" title="Перейти на страницу класса">7б</a></li>
+							</ul>
 							</ul></li>
 							<li><strong>8</strong></li>
 							<li><strong>9</strong></li>
@@ -290,7 +347,10 @@
 				</ul>
 
   
-<div class="space"></div>
+<ul class="buttons">
+				
+				
+			</ul><div class="space"></div>
 			
 			
 			
@@ -313,7 +373,15 @@
 
 
 
-</div>
+</div></div>
+
+
+
+
+
+
+
+<div class="analytics-app-popup" style="display: none;"></div></div>
 
 
 
