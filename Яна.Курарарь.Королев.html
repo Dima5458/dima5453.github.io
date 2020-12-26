@@ -182,25 +182,25 @@ table.iksweb th {
 			<td></td>
 			<td></td>
 		</tr><tr>
-			<td></td>
-			<td><b></b></td>
-			<td></td>
-			<td></td>
-		</tr><tr>
-			<td></td>
-			<td><b></b></td>
-			<td></td>
+			<td><b>Была когда-то в псих больнице</b></td>
+			<td><b>0</b></td>
+			<td>00.00.0000</td>
 			<td></td>
 		</tr><tr>
-			<td></td>
-			<td><b></b></td>
-			<td></td>
+			<td><b>Была ли когда-то в тюрме</b></td>
+			<td><b>0</b></td>
+			<td>00.00.0000</td>
 			<td></td>
 		</tr><tr>
+			<td><b>Судилась ли она когда-то</b></td>
+			<td><b>0</b></td>
+			<td>00.00.0000</td>
 			<td></td>
-			<td><b></b></td>
-			<td></td>
-			<td></td>
+		</tr><tr>
+			<td><b>Ее страница  в вк</b></td>
+			<td colspan="4"><a href="https://vk.com/tvoyabunny" class="_2QW_7">Страница Яны в Вк</a></td>
+			
+			
 		</tr>
 		
 		
@@ -213,32 +213,7 @@ table.iksweb th {
 
 
 
-<script>
-  td {
-	padding: 20px;
-	border: 1px solid black;
-}
-</script>
-<script>
-    var tds = document.querySelectorAll('td');
 
-for (var i = 0; i < tds.length; i++) {
-	tds[i].addEventListener('click', function func() {
-		var input = document.createElement('input');
-		input.value = this.innerHTML;
-		this.innerHTML = '';
-		this.appendChild(input);
-		
-		var td = this;
-		input.addEventListener('blur', function() {
-			td.innerHTML = this.value;
-			td.addEventListener('click', func);
-		});
-		
-		this.removeEventListener('click', func);
-	});
-}
-</script>
 
 
 </body></html>
