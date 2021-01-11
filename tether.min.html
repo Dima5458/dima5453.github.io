@@ -1,10 +1,13 @@
+
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
 		<meta name="google" value="notranslate"/>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" /><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"705b0fae29","applicationID":"1095843683","transactionName":"ZwdRMhQAChICVBdcXV5NcjU2TgMTDEITRh1VBloSSAAXERs=","queueTime":0,"applicationTime":66,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"705b0fae29",applicationID:"1095843683"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,y=["click","keydown","mousedown","pointerdown","touchstart"];y.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?f(e,c,o):o()}function n(n,r,i,o){if(!p.aborted||o){e&&e(n,r,i);for(var a=t(i),c=v(n),f=c.length,u=0;u<f;u++)c[u].apply(a,r);var d=s[w[n]];return d&&d.push([b,n,r,a]),a}}function l(e,t){h[e]=v(e).concat(t)}function m(e,t){var n=h[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return h[e]||[]}function g(e){return d[e]=d[e]||i(n)}function y(e,t){u(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var h={},w={},b={on:l,addEventListener:l,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:y,abort:a,aborted:!1};return b}function o(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var c="nr@context",f=e("gos"),u=e(6),s={},d={},p=t.exports=i();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1184.min.js"},w=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:w,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0},{}],"wrap-function":[function(e,t,n){function r(e){return!(e&&e instanceof Function&&e.apply&&!e[a])}var i=e("ee"),o=e(7),a="nr@original",c=Object.prototype.hasOwnProperty,f=!1;t.exports=function(e,t){function n(e,t,n,i){function nrWrapper(){var r,a,c,f;try{a=this,r=o(arguments),c="function"==typeof n?n(r,a):n||{}}catch(u){p([u,"",[r,a,i],c])}s(t+"start",[r,a,i],c);try{return f=e.apply(a,r)}catch(d){throw s(t+"err",[r,a,d],c),d}finally{s(t+"end",[r,a,f],c)}}return r(e)?e:(t||(t=""),nrWrapper[a]=e,d(e,nrWrapper),nrWrapper)}function u(e,t,i,o){i||(i="");var a,c,f,u="-"===i.charAt(0);for(f=0;f<t.length;f++)c=t[f],a=e[c],r(a)||(e[c]=n(a,u?c+i:i,o,c))}function s(n,r,i){if(!f||t){var o=f;f=!0;try{e.emit(n,r,i,t)}catch(a){p([a,n,r,i])}f=o}}function d(e,t){if(Object.defineProperty&&Object.keys)try{var n=Object.keys(e);return n.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(r){p([r])}for(var i in e)c.call(e,i)&&(t[i]=e[i]);return t}function p(t){try{e.emit("internal-error",t)}catch(n){}}return e||(e=i),n.inPlace=u,n.flag=a,n}},{}]},{},["loader"]);</script>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="description" content="Удобная и безопасная среда общения школьников, учителей и родителей. Домашние задания, расписание, оценки - всё в одном месте."></meta>
         <meta name="apple-itunes-app" content="app-id=1167943595, affiliate-data=, app-argument=https://redirect.appmetrica.yandex.com/serve/674858945331942675&ct=native&mt=8" />
 
@@ -12,14 +15,14 @@
     
 		<link rel="icon" href="https://static.school.mosreg.ru/img/icons/favicon_MosReg.ico" type="image/x-icon" />
 		<link rel="shortcut icon" href="https://static.school.mosreg.ru/img/icons/favicon_MosReg.ico" type="image/x-icon" />
-		<link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/assets/styles/vendors/emojione/emojione.css?v=f3836152" /><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/old_sites_blocks.css?v=00f9199c" /><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/screen_addition.css?v=03ff7607" /><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/screen.css?v=7a0dad46" /><link rel="stylesheet" type="text/css" media="print" href="https://static.school.mosreg.ru/css/print.css?v=7b825809" /><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/client/notifications.css?v=6b917fed" /><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/client/discussions.css?v=22a3f168" /><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/client/attachments.css?v=dc302309" /><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/projects/screen.dnevnik.ru.css?v=9b72d8ba" /><!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/projects/ie.dnevnik.ru.css?v=b74e0b48" /><![endif]--><script src="https://static.school.mosreg.ru/assets/scripts/vendors/tinymce/tinymce.min.js?v=285ccdd9" type="text/javascript"></script><script type="text/javascript">var dnevnik = {"urls":{"domain":"school.mosreg.ru","taskStateUrl":"https://school.mosreg.ru/user/TaskStateHandler.ashx","moderate":"https://school.mosreg.ru/soc/moderation/abuse.aspx","whiteList":["dnevnik.ru","mosreg.ru","microsoft.com","lego.com","surveymonkey.ru","surveymonkey.com","gosuslugi.ru","adfox.ru","facebook.com","ok.ru","twitter.com","instagram.com","vk.com","apple.com","google.com","dnevnik.ru","youtube.com","youtu.be","research.net","csdnevnik.ru","globallab.org","yaklass.ru","foxford.ru","sberbank.ru","magnit-info.ru","letovo.ru","office.com","sharepoint.com","onenote.com","office365.com","magnitznaniy.ru","magnit.ru","wikipedia.org","vk.com","yandex.ru","mail.ru","google.ru","google.com","ok.ru","avito.ru","instagram.com","facebook.com","aliexpress.com","gismeteo.ru","rambler.ru","2gis.ru","fotostrana.ru","twitter.com","livejournal.com","lenta.ru","hh.ru","kinopoisk.ru","ria.ru","yadi.sk","pikabu.ru","booking.com","rbc.ru","twitch.tv","yandex.com","mosregtest.ru","imumk.ru"],"userCounters":"https://school.mosreg.ru/counters","emailSettings":"https://school.mosreg.ru/user/settings.aspx?view=email","smilesSpriteUrl":"https://static.school.mosreg.ru/images/sprites/emojione.sprites.svg","tinyMceBaseUrl":"https://static.school.mosreg.ru/assets/scripts/vendors/tinymce","gaAutoLinkUrls":null,"adblockDummyUrl":"https://static.school.mosreg.ru/images/banners/adblockDummies/mosregDummy.jpg"},"settings":{"googleAnalytics":{"defaultId":"UA-2883817-3","appsId":"UA-70860859-1","adId":"UA-76476720-2","contactId":"UA-76476720-5","eventsId":"UA-76476720-4","groupsId":"UA-76476720-6","loginId":"UA-76476720-7","messengerId":"UA-76476720-8","networksId":"UA-76476720-9","childrenId":"UA-76476720-3","peopleId":"UA-76476720-10","schoolsId":"UA-76476720-11","wikiId":"UA-76476720-12","mainId":"UA-76476720-1","appSubscriptionId":"UA-70860859-3","limitedCounterId":"UA-106329441-1","limitedCounterSampleRate":1},"yandexMetrikaIds":["17969140","29822639"],"yandexMetrikaСlickmapEnabled":false,"enableAdFoxZeroPixel":true,"yandexMetrikaId":"17969140","environmentPrefix":"MosReg"},"fileUploadSettings":{"stateUrl":"https://content.school.mosreg.ru/gettaskstatus","resultUrl":"https://content.school.mosreg.ru/getresult","deleteFileUrl":"https://content.school.mosreg.ru/delete","deleteFolderUrl":"https://content.school.mosreg.ru/deletefolder","defaultFileSizeLimit":"2147483648"},"user":{"preferableLanguage":"ru-RU","suitableCultures":["ru-RU"],"id":"1000000248797","sex":"Female","age":16,"emailHash":"7ac41c8d30c95bd88b1907adfc045f59df98e5c55d788e6cbc4f11a0a58c9635","group":77,"role":"EduStudent","commonRole":"","schools":[],"children":[],"experimentPRTopic":"None"},"auth":{"isAuthenticated":true,"updateInterval":600000,"loginUrl":"https://login.school.mosreg.ru/auth"},"visitParams":{"__RedesignAbGroup2":"groupA"},"localizationSchoolType":""};</script><script type="text/javascript" src="https://static.school.mosreg.ru/assets/scripts/modules/libs.min.05587f0e.js?v=05587f0e">
+		<link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/assets/styles/vendors/emojione/emojione.css?v=f3836152" /><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/old_sites_blocks.css?v=00f9199c" /><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/screen_addition.css?v=03ff7607" /><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/screen.css?v=7a0dad46" /><link rel="stylesheet" type="text/css" media="print" href="https://static.school.mosreg.ru/css/print.css?v=7b825809" /><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/client/notifications.css?v=6b917fed" /><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/client/discussions.css?v=22a3f168" /><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/client/attachments.css?v=dc302309" /><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/projects/screen.dnevnik.ru.css?v=9b72d8ba" /><!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="https://static.school.mosreg.ru/css/projects/ie.dnevnik.ru.css?v=b74e0b48" /><![endif]--><script src="https://static.school.mosreg.ru/assets/scripts/vendors/tinymce/tinymce.min.js?v=285ccdd9" type="text/javascript"></script><script type="text/javascript">var dnevnik = {"urls":{"domain":"school.mosreg.ru","taskStateUrl":"https://school.mosreg.ru/user/TaskStateHandler.ashx","moderate":"https://school.mosreg.ru/soc/moderation/abuse.aspx","whiteList":["dnevnik.ru","mosreg.ru","microsoft.com","lego.com","surveymonkey.ru","surveymonkey.com","gosuslugi.ru","adfox.ru","facebook.com","ok.ru","twitter.com","instagram.com","vk.com","apple.com","google.com","dnevnik.ru","youtube.com","youtu.be","research.net","csdnevnik.ru","globallab.org","yaklass.ru","foxford.ru","sberbank.ru","magnit-info.ru","letovo.ru","office.com","sharepoint.com","onenote.com","office365.com","magnitznaniy.ru","magnit.ru","wikipedia.org","vk.com","yandex.ru","mail.ru","google.ru","google.com","ok.ru","avito.ru","instagram.com","facebook.com","aliexpress.com","gismeteo.ru","rambler.ru","2gis.ru","fotostrana.ru","twitter.com","livejournal.com","lenta.ru","hh.ru","kinopoisk.ru","ria.ru","yadi.sk","pikabu.ru","booking.com","rbc.ru","twitch.tv","yandex.com","mosregtest.ru","imumk.ru"],"userCounters":"https://school.mosreg.ru/counters","emailSettings":"https://school.mosreg.ru/user/settings.aspx?view=email","smilesSpriteUrl":"https://static.school.mosreg.ru/images/sprites/emojione.sprites.svg","tinyMceBaseUrl":"https://static.school.mosreg.ru/assets/scripts/vendors/tinymce","gaAutoLinkUrls":null,"adblockDummyUrl":"https://static.school.mosreg.ru/images/banners/adblockDummies/mosregDummy.jpg"},"settings":{"googleAnalytics":{"defaultId":"UA-2883817-3","appsId":"UA-70860859-1","adId":"UA-76476720-2","contactId":"UA-76476720-5","eventsId":"UA-76476720-4","groupsId":"UA-76476720-6","loginId":"UA-76476720-7","messengerId":"UA-76476720-8","networksId":"UA-76476720-9","childrenId":"UA-76476720-3","peopleId":"UA-76476720-10","schoolsId":"UA-76476720-11","wikiId":"UA-76476720-12","mainId":"UA-76476720-1","appSubscriptionId":"UA-70860859-3","limitedCounterId":"UA-106329441-1","limitedCounterSampleRate":1},"yandexMetrikaIds":["17969140","29822639"],"yandexMetrikaСlickmapEnabled":false,"enableAdFoxZeroPixel":true,"yandexMetrikaId":"17969140","environmentPrefix":"MosReg"},"fileUploadSettings":{"stateUrl":"https://content.school.mosreg.ru/gettaskstatus","resultUrl":"https://content.school.mosreg.ru/getresult","deleteFileUrl":"https://content.school.mosreg.ru/delete","deleteFolderUrl":"https://content.school.mosreg.ru/deletefolder","defaultFileSizeLimit":"2147483648"},"user":{"preferableLanguage":null,"suitableCultures":["ru-RU"],"id":"1000005085825","sex":"Male","age":13,"emailHash":"7ac41c8d30c95bd88b1907adfc045f59df98e5c55d788e6cbc4f11a0a58c9635","group":25,"role":"EduStudent","commonRole":"student","schools":[{"id":"53268","regionName":"Московская область"},{"id":"2000001540830","regionName":"Московская область"}],"children":[],"experimentPRTopic":"PRTopic_gr1"},"auth":{"isAuthenticated":true,"updateInterval":600000,"loginUrl":"https://login.school.mosreg.ru/auth"},"visitParams":{"__RedesignAbGroup2":"groupA"},"localizationSchoolType":"dod"};</script><script type="text/javascript" src="https://static.school.mosreg.ru/assets/scripts/modules/libs.min.05587f0e.js?v=05587f0e">
 
 </script>
                     <script type="text/javascript">
                         function onRequreLoaded() {
                             require.config({
                                 baseUrl: "https://static.school.mosreg.ru/assets/scripts/modules",
-                                urlArgs: "v=a20200e5",
+                                urlArgs: "v=a5671776",
                             });
                         }
                     </script>
@@ -29,12 +32,12 @@
 
 </script>
         <script src="https://yastatic.net/pcode/adfox/loader.js" crossorigin="anonymous"></script>
-        <script src="https://static.school.mosreg.ru/client/localization/mosreg.ru-RU.js?v=40a27efd" type="text/javascript"></script>
+        <script src="https://static.school.mosreg.ru/client/localization/mosreg.ru-RU.js?v=730d8264" type="text/javascript"></script>
 		<script src="https://static.school.mosreg.ru/client/react.vendor.bundle.js?v=8f887d5e" type="text/javascript"></script>
 		<script src="https://yastatic.net/pcode/adfox/loader.js" crossorigin="anonymous"></script>
 		
 		<title>
-	Настройки группы - «Школьный портал»
+	Создание нового события - «Школьный портал»
 </title></head>
 
 
@@ -48,7 +51,7 @@
         <img src="https://redirect.appmetrica.yandex.com/serve/674858945331942675" height="1" width="1" border ="0" />
 
 
-<div class="7ab9c82c48894a3bb482bcf3c8523171 asyncTop970x200Banner"><div style="display:none;">&lt;div class=&quot;banner970&quot;&gt;&lt;!--В head сайта один раз подключите библиотеку--&gt;
+<div class="ee1698486387475b91daa9d469823804 asyncTop970x200Banner"><div style="display:none;">&lt;div class=&quot;banner970&quot;&gt;&lt;!--В head сайта один раз подключите библиотеку--&gt;
 &lt;script src=&quot;https://yastatic.net/pcode/adfox/loader.js&quot;&gt;&lt;/script&gt;
 
 &lt;!--AdFox START--&gt;
@@ -65,16 +68,16 @@
             pp: &#39;g&#39;,
             ps: &#39;ccua&#39;,
             p2: &#39;ewtg&#39;,
-            puid1: &#39;16&#39;, puid2: &#39;F&#39;, puid3: &#39;STUDENT&#39;, puid4: &#39;177&#39;, puid5: &#39;N&#39;, puid6: &#39;N&#39;, puid7: &#39;N&#39;, puid8: &#39;N&#39;, puid9: &#39;N&#39;, puid10: &#39;N&#39;, puid11: &#39;P&#39;, puid12: &#39;N&#39;, puid13: &#39;N&#39;, puid14: &#39;N&#39;, puid15: &#39;N&#39;,  puid19: &#39;77G&#39;, puid20: &#39;N&#39;, puid21: &#39;N&#39;, puid22: &#39;ru-RU&#39;, puid23: &#39;1000000248797&#39;, puid24: &#39;N&#39;, puid25: &#39;N&#39;
+            puid1: &#39;13&#39;, puid2: &#39;M&#39;, puid3: &#39;STUDENT&#39;, puid4: &#39;145&#39;, puid5: &#39;N&#39;, puid6: &#39;N&#39;, puid7: &#39;50:215352&#39;, puid8: &#39;N&#39;, puid9: &#39;ComprehensiveSchool&#39;, puid10: &#39;N&#39;, puid11: &#39;A&#39;, puid12: &#39;N&#39;, puid13: &#39;Al3:Art5:Bio3:Eng3:Geo3:Geom3:Hi3:In5:Li3:Mu3:Obj4:Phe5:Phy3:Ru3:So3:Tec5&#39;, puid14: &#39;N&#39;, puid15: &#39;N&#39;,  puid19: &#39;25G&#39;, puid20: &#39;7K:255K&#39;, puid21: &#39;N&#39;, puid22: &#39;ru-RU&#39;, puid23: &#39;1000005085825&#39;, puid24: &#39;N&#39;, puid25: &#39;N&#39;
         }
     });
-&lt;/script&gt;&lt;/div&gt;</div></div><script>$(document).ready(function () {let container=$(".7ab9c82c48894a3bb482bcf3c8523171");if(container.css("display")!=="none"){container.html($(".7ab9c82c48894a3bb482bcf3c8523171 > div").text());} });</script>
+&lt;/script&gt;&lt;/div&gt;</div></div><script>$(document).ready(function () {let container=$(".ee1698486387475b91daa9d469823804");if(container.css("display")!=="none"){container.html($(".ee1698486387475b91daa9d469823804 > div").text());} });</script>
 
     <div class="page-header ">
         <div class="page-header__panel-wrapper">
             <div class="page-header__panel">
                 <div class="page-header__panel-container">
-                    <a href="https://school.mosreg.ru/user/user.aspx?user=1000000248797/" title="На главную страницу системы «Школьный портал»" class="header-logotype header-logotype_mosreg"></a>
+                    <a href="https://school.mosreg.ru/feed/" title="На главную страницу системы «Школьный портал»" class="header-logotype header-logotype_mosreg"></a>
                     
 
 <div class="user-counters ">
@@ -117,8 +120,8 @@
         var friendModel = {
             counterSelector: '.button-with-counter_friend',
             counterContentClass: 'button-with-counter__counter',
-            link: 'https://school.mosreg.ru/user/user.aspx?user=1000000248797&view=friends&group=waiting',
-            linkForEmpty: 'https://school.mosreg.ru/user/user.aspx?user=1000000248797&view=friends'
+            link: 'https://school.mosreg.ru/user/user.aspx?user=1000005085825&view=friends&group=waiting',
+            linkForEmpty: 'https://school.mosreg.ru/user/user.aspx?user=1000005085825&view=friends'
         };
 
         var notificationModel = {
@@ -171,18 +174,18 @@
 <div class="user-profile-box">
     <div class="user-profile-box__info">
         <div class="user-profile-box__info_row user-profile-box__avatar">
-            <img src="https://b5.csdnevnik.ru/user-avatar/90e3bf67810c4558ac6b3f1ce1c27325.s.jpg" />
+            <img src="https://static.school.mosreg.ru/images/avatars/user/a.s.jpg" />
         </div>
         <div class="user-profile-box__info_row user-profile-box__info_row-content">
-            <p class="user-profile-box__info_row-content user-profile-box__initials">Черненкова К.И.</p>
-            <p class="user-profile-box__info_row-content user-profile-box__category"></p>
+            <p class="user-profile-box__info_row-content user-profile-box__initials">Черненков Д.И.</p>
+            <p class="user-profile-box__info_row-content user-profile-box__category">Обучающийся</p>
         </div>
         <div class="user-profile-box__info_row user-profile-box__tumbler"></div>
     </div>
 
     <div class="user-profile-box__dropdown dropdown-container">
         
-                <a href="https://school.mosreg.ru/user/settings.aspx?user=1000000248797" title="" class="link link_dropdown-container-link " > Настройки </a>
+                <a href="https://school.mosreg.ru/user/settings.aspx?user=1000005085825" title="" class="link link_dropdown-container-link " > Настройки </a>
          
                 <a href="https://login.school.mosreg.ru/logout" title="" class="link link_dropdown-container-link " Id="profile_logout"> Выйти из Школьного портала </a>
          
@@ -227,7 +230,7 @@
             </div>
         </div> 
         <div class="clear">
-            <ul class="header-menu"><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru/user/user.aspx"  title="Профиль">Профиль</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/soc/messenger/"  title="Сообщения">Сообщения</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://login.school.mosreg.ru/idp/msonline"  title="Почта">Почта</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/calendar.aspx"  title="Календарь">Календарь</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/news.aspx"  title="Обновления">Обновления</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=friends"  title="Друзья">Друзья</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=groups"  title="Группы">Группы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=events"  title="События">События</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=blog"  title="Блог">Блог</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=files"  title="Файлы">Файлы</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item header-menu__item_active"><a class="header-menu__link" href="https://school.mosreg.ru/soc/contact" target="_self" title="Общение">Общение</a><ul class="header-submenu header-submenu_active"><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/people"  title="Люди">Люди</a></li><li class="header-submenu__item header-submenu__item_active"><a class="header-submenu__link" href="https://school.mosreg.ru/social/groups" target="_self" title="Группы">Группы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/social/events"  title="События">События</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/contests"  title="Конкурсы">Конкурсы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/soc/networks"  title="Сети">Сети</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru:443/soc/apps/?utm_source=mosreg&utm_medium=mainnav&utm_campaign=button"  title="Приложения">Приложения</a></li></ul><script type='text/javascript'>require(['analytics/menuYaMetrika']);</script>
+            <ul class="header-menu"><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru/feed"  title="Образование">Образование</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/school.aspx"  title="Моя школа">Моя школа</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/class.aspx"  title="Мой класс">Мой класс</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/marks.aspx"  title="Успеваемость">Успеваемость</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/schedules/"  title="Расписание">Расписание</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/homework.aspx"  title="Домашние задания">Домашние задания</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://dit.mosreg.ru/externallogin?personid=1000008589487"  title="Тестирование">Тестирование</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://isko.mosreg.ru/newProf"  title="Портфолио">Портфолио</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://dop.mosreg.ru/"  title="ЕИС ДОП">ЕИС ДОП</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru/odo/feed"  title="ДОД">ДОД</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/school.aspx"  title="Моя организация">Моя организация</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/myclasses.aspx"  title="Мои группы">Мои группы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/marks.aspx"  title="Успеваемость">Успеваемость</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/schedules/"  title="Расписание">Расписание</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.school.mosreg.ru/odo/homework.aspx"  title="Домашние задания">Домашние задания</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru/user/user.aspx"  title="Профиль">Профиль</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/soc/messenger/"  title="Сообщения">Сообщения</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://login.school.mosreg.ru/idp/msonline"  title="Почта">Почта</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/calendar.aspx"  title="Календарь">Календарь</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/news.aspx"  title="Обновления">Обновления</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=friends"  title="Друзья">Друзья</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=groups"  title="Группы">Группы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=events"  title="События">События</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=blog"  title="Блог">Блог</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/user/user.aspx?view=files"  title="Файлы">Файлы</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item header-menu__item_active"><a class="header-menu__link" href="https://school.mosreg.ru/soc/contact" target="_self" title="Общение">Общение</a><ul class="header-submenu header-submenu_active"><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/people"  title="Люди">Люди</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/social/groups"  title="Группы">Группы</a></li><li class="header-submenu__item header-submenu__item_active"><a class="header-submenu__link" href="https://school.mosreg.ru/social/events" target="_self" title="События">События</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/contests"  title="Конкурсы">Конкурсы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://school.mosreg.ru/soc/networks"  title="Сети">Сети</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item"><a class="header-menu__link" href="https://school.mosreg.ru:443/soc/apps/?utm_source=mosreg&utm_medium=mainnav&utm_campaign=button"  title="Приложения">Приложения</a></li><li class="header-menu__item"><a class="header-menu__link" href=""  title="Олимпиады">Олимпиады</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://mo.olymponline.ru/" target="_blank" title="Решать">Решать</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://dit.mosreg.ru/participant/olympiads?personid=1000008589487" target="_blank" title="Результаты">Результаты</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li></ul><script type='text/javascript'>require(['analytics/menuYaMetrika']);</script>
         </div>
     </div>
 
@@ -266,7 +269,7 @@
     <script type="text/javascript">
         require(['https://static.school.mosreg.ru/scripts/modules/layoutcontrols/menuextention.js'], function () {
             var exetention = arguments[0];
-            exetention({ credUrl: 'https://schools.school.mosreg.ru/authorities/ajax.ashx?xss=16f9b57e59506aece6e961396d0292fd378980151cc2ab19430212e7ccfb63af&a=saiku', defaultError: 'Произошла ошибка при доступе к статистике.' });
+            exetention({ credUrl: 'https://schools.school.mosreg.ru/authorities/ajax.ashx?xss=5e484d4043bc906c082de095d72d98b491f1dade09d673ce7aae79c4d56cfdad&a=saiku', defaultError: 'Произошла ошибка при доступе к статистике.' });
         });
     </script>
 
@@ -275,59 +278,121 @@
 
 
 
-<ul class="crumbs"><li><a href="https://school.mosreg.ru/social/groups" title="Каталог групп">Группы</a></li><li><em>&gt;</em><a href="https://school.mosreg.ru/soc/groups/group.aspx?group=386479" title="Страница группы">нет</a></li></ul>
-<h2>Настройки группы</h2>
+<ul class="crumbs"><li><a href="https://school.mosreg.ru/social/events">События</a></li></ul>
 
-<div class="messages"><div class="rounded"><div class="c1"><div class="c2"></div></div><div id ="success_message" class="cc">
-Логотип успешно удален.</div><div class="c3"><div class="c4"></div></div></div></div>
+<h2>Создание нового события</h2>
+
 <div id="errors" class="errors" style="display:none;"><div class="rounded"><div class="c1"><div class="c2"></div></div><div class="cc">
 </div><div class="c3"><div class="c4"></div></div></div></div>
 
-<div class="tabs"><ul><li><div class="tc1"></div><div class="tc2"></div><a id="TabCommon" style="" class="NotSet   "  href="https://school.mosreg.ru/soc/groups/edit.aspx?group=386479">Основное</a></li><li><div class="tc1"></div><div class="tc2"></div><a id="TabMembers" style="" class="NotSet   "  href="https://school.mosreg.ru/soc/groups/edit.aspx?group=386479&view=members">Участники</a></li><li><div class="tc1"></div><div class="tc2"></div><a id="TabAccess" style="" class="NotSet   "  href="https://school.mosreg.ru/soc/groups/edit.aspx?group=386479&view=access">Доступ</a></li><li><div class="tc1"></div><div class="tc2"></div><a id="TabFunctions" style="" class="NotSet   "  href="https://school.mosreg.ru/soc/groups/edit.aspx?group=386479&view=functions">Функции</a></li><li class="active  "><div class="tc1"></div><div class="tc2"></div><a id="TabAvatar" style="" class="NotSet   "  href="https://school.mosreg.ru/soc/groups/edit.aspx?group=386479&view=avatar">Логотип</a></li></ul></div>
+<div class="wizard"><ul><li class="first active"><strong>1.</strong> Детали</li><li><strong>2.</strong> Доступ</li><li><strong>3.</strong> Функции</li><li><strong>4.</strong> Приглашения</li></ul></div><div class="clear"></div>
 	
 		
+<form id="formReg" action="https://school.mosreg.ru/soc/events/new.aspx" method="post" class="form">
+<input type="hidden" id="event" name="event" value="0" />
+<input type="hidden" id="group" name="group" value="0" />
+<input type="hidden" id="network" name="network" value="0" />
+<input type="hidden" id="owner" name="owner" value="" />
+<input type="hidden" id="step" name="step" value="1" />	
+<input type="hidden" id="type" name="type" value="" />
+<div class="col23 first">
 
-<div class="col14 first">
-	
-	<h3>Текущий логотип </h3>
-	
-	<div class="avatar150x150">	
-		<img src="https://static.school.mosreg.ru/images/avatars/group/a.l.jpg" />		
-	</div>
+	<div class="panel"><div class="rounded"><div class="c1"><div class="c2"></div></div><div class="cc">
 
-</div>		
-
-
-<div class="col24">
-	<form id="form" action="https://content.school.mosreg.ru/uploadst?ownerType=GroupAvatar&ownerID=386479" method="post" enctype="multipart/form-data">
-
-		<h3>Новый логотип</h3>
-			
-		<div class="panel"><div class="rounded"><div class="c1"><div class="c2"></div></div><div class="cc">		
-				
-			<div class="row">
-			    <span id="deleting" style="display:none; font-size:120%;">
-                    <img src="https://static.school.mosreg.ru/images/loadingWhite.gif" />&nbsp;Фотография удаляется...
-                </span>
-				<div id="avatar_file_input_block" class="file_input_block "><div><label for="avatar" class="file_input_label">Выберите файл</label><input type="file" id="avatar" name="avatar" class="file_input" /></div><div class="file_input_preview" id="avatar_preview">Файл не выбран</div></div>
+		<div class="row">
+			<label for="name" class="b req">Название</label>
+			<div>
+				<input type="text" id="name" name="name" value="" class="t w100" />
 			</div>
-			
-			<ul class="bullets"><li>
-      Файл соответствует требованиям <br /><a href="https://school.mosreg.ru/terms">Пользовательского соглашения</a> и <a href="https://school.mosreg.ru/moderation_concept">Положения о модерации</a>;
-    </li><li>размер логотипа в системе «Школьный портал» - 150 на 150 пикселей;</li><li>большие картинки будут автоматически уменьшены.</li><li>допускаются только JPG или PNG файлы;</li><li>максимальный размер загружаемого файла - 4 Мб.</li></ul>
-		
-		<div class="clear"></div></div><div class="c3"><div class="c4"></div></div></div></div>
-		
-		<div>
-			<input type="submit" id="upload" name="upload" value="Загрузить" class="button" />
-			или <a href="https://school.mosreg.ru/soc/groups/group.aspx?group=386479" title="Страница группы">вернуться на страницу группы</a>
 		</div>
-	</form>
+		
+		<div class="row">
+			<label for="description" class="b req">Описание</label>
+           
+
+<textarea id="description" class="visual-textbox " name="description" rows="30" cols="10" style="width: ; height: 400px"> </textarea>
+<div class="emoji-selector description" style="display: none">
 </div>
 
-<div class="col14">
-    
-    <div class="1016e8dd15c84f8c84bfe9fba9e0ba73 asyncRight240x400Banner"><div style="display:none;">&lt;div class=&quot;panel bannerWrapper&quot;&gt;&lt;!--В head сайта один раз подключите библиотеку--&gt;
+<script type="text/javascript">
+    require(['controls/visualtextbox'], function () {
+        var model = {
+            language: 'ru',
+            toolbarType: 'simple',
+            width: '',
+            height: '400px',
+            contentcss: 'https://static.school.mosreg.ru/assets/styles/vendors/emojione/emojione.css?v=f3836152',
+            smilesSpriteUrl: 'https://static.school.mosreg.ru/images/sprites/emojione.sprites.svg',
+            cssClass: '',
+            id: 'description',
+            readonly: 'false',
+            pasteAsText: 'true'
+        };
+        arguments[0](model);
+    });
+
+</script>
+
+		</div>
+
+		<div class="row">
+			<label for="category" class="b req">Категория</label>
+			<br/>
+			<select id="category" name="category" class="w2">
+				<option value=""></option>
+				<option value="2">Вечеринка</option><option value="3">Встреча</option><option value="63">Мероприятие</option><option value="4">Музыка и искусство</option><option value="5">Образование</option><option value="6">Путешествие</option><option value="7">Спорт</option><option value="69">Собрание</option>
+			</select>
+			&rarr;
+			<select id="subcategory" name="subcategory" class="w2" disabled="disabled">
+				<option value=""></option>
+				
+			</select>
+			
+		</div>
+		
+		<div class="row col50">
+			<label for="last" class="b req">Дата и время начала</label><br/>
+			<input type="text" id="startd" name="startd" value="12.01.2021" size="13" maxlength="13" class="t icon iCal" />
+				<div class="taci">
+                        <input type="text" id="startd_h" name="startd_h" value="00" size="2" maxlength="2" class="t wTime" /> :
+						<input type="text" id="startd_m" name="startd_m" value="00" size="2" maxlength="2" class="t wTime" />
+					</div>
+                    <script type="text/javascript">
+                    $(function()
+                    {
+                        $("#startd").calendar({ months: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',''],months_long: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',''],months_short: ['янв','фев','мар','апр','май','июн','июл','авг','сен','окт','ноя','дек',''],isHebrew: false,isArabic: false,weekdays_short: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],showTodayButton: true,todayLabel: 'Сегодня',dateFormat:'dd.mm.yyyy',firstDayOfWeek:1, todayDate:'12 января 2021 г.',
+                        onDateSelected: function() { return false; } });
+	                    
+                    });
+                    </script>
+				
+		</div>
+		
+		<div class="row col50">
+			<label for="last" class="b req">Дата и время окончания</label><br/>
+			<input type="text" id="finishd" name="finishd" value="12.01.2021" size="13" maxlength="13" class="t icon iCal" />
+				<div class="taci">
+                        <input type="text" id="finishd_h" name="finishd_h" value="00" size="2" maxlength="2" class="t wTime" /> :
+						<input type="text" id="finishd_m" name="finishd_m" value="00" size="2" maxlength="2" class="t wTime" />
+					</div>
+                    <script type="text/javascript">
+                    $(function()
+                    {
+                        $("#finishd").calendar({ months: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',''],months_long: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',''],months_short: ['янв','фев','мар','апр','май','июн','июл','авг','сен','окт','ноя','дек',''],isHebrew: false,isArabic: false,weekdays_short: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб'],showTodayButton: true,todayLabel: 'Сегодня',dateFormat:'dd.mm.yyyy',firstDayOfWeek:1, todayDate:'12 января 2021 г.',
+                        onDateSelected: function() { return false; } });
+	                    
+                    });
+                    </script>
+				
+		</div>
+		
+        <div class="clear"></div></div><div class="c3"><div class="c4"></div></div></div></div>
+	
+</div>
+<div class="col13 help">
+    <p>Внимательно заполняйте все поля! Особое внимание уделите категории и подкатегории события.</p>
+      
+    <div class="48a3bbbb6b9a460f8512f8dbdf0dddf1 asyncRight240x400Banner"><div style="display:none;">&lt;div class=&quot;panel bannerWrapper&quot;&gt;&lt;!--В head сайта один раз подключите библиотеку--&gt;
 &lt;script src=&quot;https://yastatic.net/pcode/adfox/loader.js&quot;&gt;&lt;/script&gt;
 
 &lt;!--AdFox START--&gt;
@@ -344,65 +409,50 @@
             pp: &#39;g&#39;,
             ps: &#39;ccua&#39;,
             p2: &#39;ewth&#39;,
-            puid1: &#39;16&#39;, puid2: &#39;F&#39;, puid3: &#39;STUDENT&#39;, puid4: &#39;177&#39;, puid5: &#39;N&#39;, puid6: &#39;N&#39;, puid7: &#39;N&#39;, puid8: &#39;N&#39;, puid9: &#39;N&#39;, puid10: &#39;N&#39;, puid11: &#39;P&#39;, puid12: &#39;N&#39;, puid13: &#39;N&#39;, puid14: &#39;N&#39;, puid15: &#39;N&#39;,  puid19: &#39;77G&#39;, puid20: &#39;N&#39;, puid21: &#39;N&#39;, puid22: &#39;ru-RU&#39;, puid23: &#39;1000000248797&#39;, puid24: &#39;N&#39;, puid25: &#39;N&#39; } }); &lt;/script&gt;&lt;/div&gt;</div></div><script>$(document).ready(function () {let container=$(".1016e8dd15c84f8c84bfe9fba9e0ba73");if(container.css("display")!=="none"){container.html($(".1016e8dd15c84f8c84bfe9fba9e0ba73 > div").text());} });</script>
+            puid1: &#39;13&#39;, puid2: &#39;M&#39;, puid3: &#39;STUDENT&#39;, puid4: &#39;145&#39;, puid5: &#39;N&#39;, puid6: &#39;N&#39;, puid7: &#39;50:215352&#39;, puid8: &#39;N&#39;, puid9: &#39;ComprehensiveSchool&#39;, puid10: &#39;N&#39;, puid11: &#39;A&#39;, puid12: &#39;N&#39;, puid13: &#39;Al3:Art5:Bio3:Eng3:Geo3:Geom3:Hi3:In5:Li3:Mu3:Obj4:Phe5:Phy3:Ru3:So3:Tec5&#39;, puid14: &#39;N&#39;, puid15: &#39;N&#39;,  puid19: &#39;25G&#39;, puid20: &#39;7K:255K&#39;, puid21: &#39;N&#39;, puid22: &#39;ru-RU&#39;, puid23: &#39;1000005085825&#39;, puid24: &#39;N&#39;, puid25: &#39;N&#39; } }); &lt;/script&gt;&lt;/div&gt;</div></div><script>$(document).ready(function () {let container=$(".48a3bbbb6b9a460f8512f8dbdf0dddf1");if(container.css("display")!=="none"){container.html($(".48a3bbbb6b9a460f8512f8dbdf0dddf1 > div").text());} });</script>
+
 </div>
+	
+	<div class="row">
+		
+		<input type="submit" id="save" name="save" value="Создать и настроить" class="button" />
+	</div>
+    <div class="row"><p class="info">
+	    Нажимая "Создать и настроить" Вы подтверждаете, что ознакомлены с <a href="https://school.mosreg.ru/moderation_concept"><strong>Положением о модерации</strong></a> и согласны с ним.</p></div>
+</form>
 
 <script type="text/javascript">
-	$(function()
-	{
-		$("#form").submit(function()
-		{
-			$("#upload").parent().hide().after('<div id="loading" class="loading loadingLabel"><h4>Загрузка...</h4></div><input type="hidden" name="save" value="1" />');
-			return true;
-		});
 
-	    require(['fileupload', 'https://static.school.mosreg.ru/assets/scripts/vendors/jqueryplugins/jquery.forms.js?v=ba63e4e2'], function (fileupload) {
+    var options =
+    {
+        "2":{"15":"%u0414%u0435%u043d%u044c%20%u0440%u043e%u0436%u0434%u0435%u043d%u0438%u044f","16":"%u0414%u043e%u043c%u0430%u0448%u043d%u044f%u044f","21":"%u041f%u0440%u0430%u0437%u0434%u043d%u0438%u0447%u043d%u0430%u044f","22":"%u041f%u0440%u043e%u0449%u0430%u043b%u044c%u043d%u0430%u044f","25":"%u0421%u0443%u043f%u0435%u0440%u0441%u043a%u0430%u044f","72":"%u041f%u0440%u043e%u0447%u0435%u0435"},"3":{"26":"%u0414%u0435%u043b%u043e%u0432%u0430%u044f","30":"%u0421%u044a%u0435%u0437%u0434","31":"%u0424%u043b%u0435%u0448%u043c%u043e%u0431","33":"%u041f%u0440%u043e%u0441%u0442%u043e%20%u0442%u0430%u043a","64":"%u0414%u043b%u044f%20%u0432%u044b%u043f%u0443%u0441%u043a%u043d%u0438%u043a%u043e%u0432","68":"%u0421%u0431%u043e%u0440","76":"%u041f%u0440%u043e%u0447%u0435%u0435"},"63":{"27":"%u0414%u0435%u043c%u043e%u043d%u0441%u0442%u0440%u0430%u0446%u0438%u044f","28":"%u041f%u0440%u0435%u0437%u0435%u043d%u0442%u0430%u0446%u0438%u044f","29":"%u0421%u043e%u0431%u0440%u0430%u043d%u0438%u0435","32":"%u0426%u0435%u0440%u0435%u043c%u043e%u043d%u0438%u044f","60":"%u041a%u043e%u043d%u043a%u0443%u0440%u0441","65":"%u041f%u0440%u0430%u0437%u0434%u043d%u0438%u043a","66":"%u0423%u0442%u0440%u0435%u043d%u043d%u0438%u043a","67":"%u0414%u0438%u0441%u043a%u043e%u0442%u0435%u043a%u0430","77":"%u041f%u0440%u043e%u0447%u0435%u0435"},"4":{"34":"%u0412%u044b%u0441%u0442%u0430%u0432%u043a%u0430","39":"%u041a%u0438%u043d%u043e","40":"%u041a%u043e%u043d%u0446%u0435%u0440%u0442","41":"Open-air","42":"%u041f%u0440%u0435%u043c%u044c%u0435%u0440%u0430","43":"%u041f%u0440%u0435%u0434%u0441%u0442%u0430%u0432%u043b%u0435%u043d%u0438%u0435","45":"%u0420%u0435%u043f%u0435%u0442%u0438%u0446%u0438%u044f","46":"%u0424%u0435%u0441%u0442%u0438%u0432%u0430%u043b%u044c","73":"%u041f%u0440%u043e%u0447%u0435%u0435"},"5":{"47":"%u041b%u0435%u043a%u0446%u0438%u044f","48":"%u0421%u0435%u043c%u0438%u043d%u0430%u0440","49":"%u0422%u0440%u0435%u043d%u0438%u043d%u0433","50":"%u0423%u0440%u043e%u043a","61":"%u041e%u043b%u0438%u043c%u043f%u0438%u0430%u0434%u0430","74":"%u0412%u0438%u0440%u0442%u0443%u0430%u043b%u044c%u043d%u0430%u044f%20%u043a%u043e%u043d%u0444%u0435%u0440%u0435%u043d%u0446%u0438%u044f","75":"%u041f%u0440%u043e%u0447%u0435%u0435"},"6":{"51":"%u0417%u0430%20%u0433%u043e%u0440%u043e%u0434","52":"%u041f%u043e%20%u0433%u043e%u0440%u043e%u0434%u0443","53":"%u0417%u0430%20%u0433%u0440%u0430%u043d%u0438%u0446%u0443"},"7":{"54":"%u041f%u043e%u0438%u0433%u0440%u0430%u0442%u044c","55":"%u041f%u043e%u043a%u0430%u0442%u0430%u0442%u044c%u0441%u044f","56":"%u0421%u043e%u0440%u0435%u0432%u043d%u043e%u0432%u0430%u043d%u0438%u0435","57":"%u0422%u0440%u0435%u043d%u0438%u0440%u043e%u0432%u043a%u0430"},"69":{"70":"%u0420%u043e%u0434%u0438%u0442%u0435%u043b%u044c%u0441%u043a%u043e%u0435%20%u0441%u043e%u0431%u0440%u0430%u043d%u0438%u0435","71":"%u041f%u0435%u0434%u0430%u0433%u043e%u0433%u0438%u0447%u0435%u0441%u043a%u0438%u0439%20%u0441%u043e%u0432%u0435%u0442","78":"%u041f%u0440%u043e%u0447%u0435%u0435"}
+    };
 
-	        $('li.iD a').click(function () {
-	            $('.file_input_block').hide();
-	            $('#deleting').show();
+$(
+	function() {
+	    $("#category").bind('change', function () {
+	        var sub = $("#subcategory");
 
-	            fileupload.executeDelete({
-	                error: function (data) {
-	                    $('.file_input_block').show();
-	                    $('#deleting').hide();
-	                    dnevnik.dialogs.error(data.error);
-	                },
-	                getResultSuccess: function () {
-	                    var moderationReturn = '';
-	                    window.location.href = moderationReturn.length > 0 ? moderationReturn : location.href.replace(/&message=[^&;]*/, '') + '&message=avatardeleted';
+	        if ($(this).val() == "") {
+	            sub.empty().attr('disabled', 'disabled');
+	        } else {
+	            sub.empty().removeAttr('disabled');
+
+	            for (var item in options) {
+	                if (item == $(this).val()) {
+	                    for (var subItem in options[item]) {
+	                        sub.append('<option value="' + subItem + '">' + unescape(options[item][subItem]) + '</option>');
+	                    }
 	                }
-	            },
-                'https://content.school.mosreg.ru/delete',
-                { ownertype: 'GroupAvatar', ownerid: 386479 });
-	            return false;
-	        });
-
-	        fileupload.initialize({
-	            form: '#form',
-	            error: function (data) {
-	                dnevnik.dialogs.error(data.error);
-	                $('#loading').remove();
-	                $('#upload').parent().show();
-	            },
-	            getResultSuccess: function () {
-	                var moderationReturn = '';
-	                window.location.href = moderationReturn.length > 0 ? moderationReturn : location.href.replace(/&message=[^&;]*/, '') + '&message=avataruploaded';
-	            },
-	            errors: {
-	                default: 'Ошибка при загрузке файла. Попробуйте еще раз.',
-	                toolarge: 'Превышен допустимый размер загружаемых файлов',
-	                nofiles: 'Не выбрано ни одного файла для загрузки.',
-	                nopermissions: 'Недостаточно прав для загрузки файлов',
-	                empty: 'Файл пустой или повреждён. Загрузка такого файла невозможна.'
-	            },
-	            maxSize: '4194304'
-	        });
+	            }
+	        }
 	    });
-	});
+	}
+);
 </script>
+
 	
-	
+
 
 
 <div class="clear"></div>
@@ -422,7 +472,7 @@
 
     <div class="page-footer page-footer_auth" id="footer">
         <div class="page-footer__banner">
-            <div class="e9ba9908436e467185c32c6ada07b0df asyncBottom728x90Banner"><div style="display:none;">&lt;!--В head сайта один раз подключите библиотеку--&gt;
+            <div class="5efad229899347ed9916caa1c4cda2e8 asyncBottom728x90Banner"><div style="display:none;">&lt;!--В head сайта один раз подключите библиотеку--&gt;
 &lt;script src=&quot;https://yastatic.net/pcode/adfox/loader.js&quot;&gt;&lt;/script&gt;
 
 &lt;!--AdFox START--&gt;
@@ -439,7 +489,7 @@
             pp: &#39;g&#39;,
             ps: &#39;ccua&#39;,
             p2: &#39;ewtf&#39;,
-            puid1: &#39;16&#39;, puid2: &#39;F&#39;, puid3: &#39;STUDENT&#39;, puid4: &#39;177&#39;, puid5: &#39;N&#39;, puid6: &#39;N&#39;, puid7: &#39;N&#39;, puid8: &#39;N&#39;, puid9: &#39;N&#39;, puid10: &#39;N&#39;, puid11: &#39;P&#39;, puid12: &#39;N&#39;, puid13: &#39;N&#39;, puid14: &#39;N&#39;, puid15: &#39;N&#39;,  puid19: &#39;77G&#39;, puid20: &#39;N&#39;, puid21: &#39;N&#39;, puid22: &#39;ru-RU&#39;, puid23: &#39;1000000248797&#39;, puid24: &#39;N&#39;, puid25: &#39;N&#39; } }); &lt;/script&gt;</div></div><script>$(document).ready(function () {let container=$(".e9ba9908436e467185c32c6ada07b0df");if(container.css("display")!=="none"){container.html($(".e9ba9908436e467185c32c6ada07b0df > div").text());} });</script>
+            puid1: &#39;13&#39;, puid2: &#39;M&#39;, puid3: &#39;STUDENT&#39;, puid4: &#39;145&#39;, puid5: &#39;N&#39;, puid6: &#39;N&#39;, puid7: &#39;50:215352&#39;, puid8: &#39;N&#39;, puid9: &#39;ComprehensiveSchool&#39;, puid10: &#39;N&#39;, puid11: &#39;A&#39;, puid12: &#39;N&#39;, puid13: &#39;Al3:Art5:Bio3:Eng3:Geo3:Geom3:Hi3:In5:Li3:Mu3:Obj4:Phe5:Phy3:Ru3:So3:Tec5&#39;, puid14: &#39;N&#39;, puid15: &#39;N&#39;,  puid19: &#39;25G&#39;, puid20: &#39;7K:255K&#39;, puid21: &#39;N&#39;, puid22: &#39;ru-RU&#39;, puid23: &#39;1000005085825&#39;, puid24: &#39;N&#39;, puid25: &#39;N&#39; } }); &lt;/script&gt;</div></div><script>$(document).ready(function () {let container=$(".5efad229899347ed9916caa1c4cda2e8");if(container.css("display")!=="none"){container.html($(".5efad229899347ed9916caa1c4cda2e8 > div").text());} });</script>
             
         </div>
         <div class="page-footer__content">
@@ -496,7 +546,7 @@
                             </div>
                         </span> 
                     
-                    <p class="page-footer__copyright-layout__terms">© 2015-2020 "Московская область" </p>
+                    <p class="page-footer__copyright-layout__terms">© 2015-2021 "Московская область" </p>
                 </div>
             </div>
         </div>
@@ -532,14 +582,7 @@
 
 <noscript><div><img src="//mc.yandex.ru/watch/17969140" style="position:absolute; left:-9999px;" alt="" /><img src="//mc.yandex.ru/watch/29822639" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- Yandex.Metrika counter -->
-<span> <script type="text/javascript" >
-                    require(['https://static.school.mosreg.ru/assets/scripts/controls/common/fileuploadercontrol.js?v=482a3456'], function(dep0) {
-                        $(function () { 
-                            dep0({"fileId":"avatar","noFileSelected":"Файл не выбран"});
-
-                        });
-                    });
-                </script><script type="text/javascript" src="https://static.school.mosreg.ru/assets/scripts/modules/common/adsbygoogle.js?v=44cf0943">
+<span><script type="text/javascript" src="https://static.school.mosreg.ru/assets/scripts/modules/common/adsbygoogle.js?v=44cf0943">
 
 </script></span>
 </body>
