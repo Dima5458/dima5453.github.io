@@ -1,2 +1,7 @@
-    R::setup( 'mysql:host=localhost;dbname=Вход.регистрация',
-        'root', '123' );
+<?php
+if($GET["password"] == "qwerty123"){
+ print("Добро пожаловать!");
+}else{
+ print("Доступ запрещен!");
+}
+?>
