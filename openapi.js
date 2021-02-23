@@ -1,3 +1,1 @@
-<?php
-echo md5('mypass');
-?>
+<script src="https://vk.com/js/api/openapi.js?168" type="text/javascript"></script>
