@@ -1,1 +1,53 @@
+$client_id = 'XXXXXXX'; // ID приложения
+$client_secret = 'xxxxxxxxxxxxxxxxxxxx'; // Защищённый ключ
+$redirect_uri = 'https://site.ru/social_login_callback/vk.php'; // куда ответ
 
+
+if (isset($_GET['code'])) {
+
+
+ $result = false;
+    $params = array(
+        'client_id' => $client_id,
+        'client_secret' => $client_secret,
+        'code' => $_GET['code'],
+        'redirect_uri' => $redirect_uri,
+    );
+
+    $token = json_decode(file_get_contents('https://oauth.vk.com/access_token' . '?' . urldecode(http_build_query($params))), true);
+
+    if (isset($token['access_token'])) {
+        $params = array(
+            'uids'         => $token['user_id'],
+            'fields'       => 'uid,first_name,last_name,screen_name,sex,bdate,photo_big',
+            'access_token' => $token['access_token'],
+        );
+
+        $userInfo = json_decode(file_get_contents('https://api.vk.com/method/users.get' . '?' . urldecode(http_build_query($params))), true);
+		
+		$email = $token['email']; // почта юзера
+		
+		
+        if (isset($userInfo['response'][0]['uid'])) {
+            $userInfo = $userInfo['response'][0];
+            $result = true;
+        }
+    }
+
+
+
+	
+if ($result) {
+
+echo "Социальный ID пользователя: " . $userInfo['uid'];
+echo "Имя пользователя: " . $userInfo['first_name'];
+echo "Фамилия пользователя: " . $userInfo['last_name'];
+echo "Emai пользователя: " .$email;
+echo "Ссылка на профиль пользователя: " . $userInfo['screen_name'];
+echo "Пол пользователя: " . $userInfo['sex'];
+echo "День Рождения: " . $userInfo['bdate'];
+echo "URL к фото: ".$userInfo['photo_big'];
+
+}
+
+}
