@@ -1,9 +1,28 @@
-<p><a href="index.html">Главная</a> | <a href="contact.html">Контакты</a> | <a href="admin.html">Админка</a></p>
-<hr />
-Это страница авторизации.
-<br />
-<form method="post">
- Username: <input type="text" name="user" /><br />
- Password: <input type="password" name="pass" /><br />
- <input type="submit" name="submit" value="Войти" />
-</form>
+<?php 
+// Start session
+session_start(); 
+
+
+// Username and password
+$ID = "admin";
+$pass = "123456";
+
+
+
+if (isset($_POST["ID"]) && isset($_POST["pass"])) { 
+
+
+
+    if ($_POST["ID"] === $anvandarID && $_POST["pass"] === $pass) { 
+    /
+    $_SESSION["inloggedin"] = true; 
+
+
+
+    header("Location: safe_site.php"); 
+    exit; 
+    } 
+        // Wrong login - message
+        else {$wrong = "Bad ID and password, the system could not log you in";} 
+}
+?> 
