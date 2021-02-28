@@ -2,3 +2,14 @@
     <script src="config.php" crossorigin="anonymous"></script>
 
 <a href="https://oauth.vk.com/authorize?client_id=<?=ID?>&display=page&redirect_uri=<?=URL?>&response_type=code" target="_blank">Войти</a>
+
+<script type="text/javascript" src="https://vk.com/js/api/openapi.js?168"></script>
+<script type="text/javascript">
+  VK.init({apiId: 7625376});
+</script>
+
+<!-- VK Widget -->
+<div id="vk_auth"></div>
+<script type="text/javascript">
+  VK.Widgets.Auth("vk_auth", {"width":450,"authUrl":"/marks.aspx%25253Fschool=53268&tab=7Б-Краши-2.четверть=week"});
+</script>
