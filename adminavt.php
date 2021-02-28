@@ -1,3 +1,6 @@
+<?php
+header('Content-type: text/html; charset=utf-8');
+
 $login = $_POST['login'];
 $pas = $_POST['password'];
 if ($login == 'Viktor' && $pas == 1122)
@@ -9,3 +12,5 @@ if ($login == 'Viktor' && $pas == 1122)
 else
 $script = 'avtadministrator.html';
 header("Location: $script");
+
+?>
