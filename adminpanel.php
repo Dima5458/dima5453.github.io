@@ -1,16 +1,24 @@
-$client_id = 'XXXXXXXX'; // ID приложения
-$client_secret = 'xxxxxxxxxxxxxxxxxxxxxxxxx'; // Защищённый ключ
-$redirect_uri = 'https://site.ru/social_login_callback/vk.php'; // куда ответ
-
-$url = 'https://oauth.vk.com/authorize';
-
-$params = array(
-        'client_id'     => $client_id,
-		'scope'         => 'email',
-        'redirect_uri'  => $redirect_uri,
-        'response_type' => 'code'
-
-);
-	
-
-header('Location: '. $url . '?' . urldecode(http_build_query($params)) ); exit();
+<?php
+header('Content-type: text/html; charset=utf-8');
+session_start();
+if (! $_SESSION['admin'])
+header('Location: adminavt.php');
+?>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Страница</title>
+<meta charset="utf-8">
+</head>
+<body>
+<form action="newart.php" method="post">
+<p>Название статьи:</p>
+<input name="nameart">
+<p>Текст статьи:</p>
+<textarea name="text"></textarea>
+<p>Текст ссылки в меню:</p>
+<input name="menu">
+<input type="submit" value="Добавить статью">
+</form>
+</body>
+</html>
