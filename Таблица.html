@@ -2,1476 +2,1076 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 
 <head>
-    <meta name="google" value="notranslate"/>
-    <title>Суммативные оценки - Kundelik.kz</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"/><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"705b0fae29","applicationID":"257183864","transactionName":"ZwdRMhQAChICVBdcXV5NfjAlTicTCkMGR1tRKFwTFA8FDSBYDUFAXw5fAxROLQ8HUhs=","queueTime":0,"applicationTime":185,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"705b0fae29",applicationID:"257183864"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(6),c=e(7),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(8);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(5),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],4:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],5:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],6:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],7:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],8:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(6),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=b.info=NREUM.info,t=p.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(y,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+b.offset],null,"api"),c("timing",["load",n]);var r=p.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===p.readyState&&o()}function o(){c("mark",["domContent",a()+b.offset],null,"api")}var a=e(2),c=e("handle"),f=e(6),u=e("ee"),s=e(4),d=window,p=d.document,l="addEventListener",m="attachEvent",v=d.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,SI:d.setImmediate,CT:clearTimeout,XHR:v,REQ:d.Request,EV:d.Event,PR:d.Promise,MO:d.MutationObserver};var w=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1198.min.js"},h=v&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),b=t.exports={offset:a.getLastTimestamp(),now:a,origin:w,features:{},xhrWrappable:h,userAgent:s};e(1),e(3),p[l]?(p[l]("DOMContentLoaded",o,!1),d[l]("load",r,!1)):(p[m]("onreadystatechange",i),d[m]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var x=0},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(7),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
-    <meta name="description" content="Удобная и безопасная среда общения школьников, учителей и родителей. Домашние задания, расписание, оценки - всё в одном месте."/>
+		<meta name="google" value="notranslate"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="description" content="Удобная и безопасная среда общения школьников, учителей и родителей. Домашние задания, расписание, оценки - всё в одном месте."></meta>
+		<link rel="icon" href="https://static.kundelik.kz/img/icons/favicon_Kz.ico" type="image/x-icon" />
+		<link rel="shortcut icon" href="https://static.kundelik.kz/img/icons/favicon_Kz.ico" type="image/x-icon" />
+		<link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/assets/styles/vendors/emojione/emojione.css?v=f3836152" /><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/css/old_sites_blocks.css?v=e6de1224" /><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/css/screen_addition.css?v=6c3ba4f1" /><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/css/screen.css?v=923cea00" /><link rel="stylesheet" type="text/css" media="print" href="https://static.kundelik.kz/css/print.css?v=7b825809" /><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/client/notifications.css?v=6b917fed" /><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/client/discussions.css?v=df577d33" /><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/client/attachments.css?v=15b9b419" /><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/assets/styles/controls/schools/usercontrols/journals/journalslessonplanningsearch.css?v=d060f7f5" /><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/assets/styles/controls/framework/controls/datetime/datetimeinterval.css?v=b1b72487" /><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/css/projects/screen.dnevnik.ru.css?v=9b72d8ba" /><!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/css/projects/ie.dnevnik.ru.css?v=b74e0b48" /><![endif]--><script src="https://static.kundelik.kz/assets/scripts/vendors/tinymce/tinymce.min.js?v=285ccdd9" type="text/javascript"></script><script type="text/javascript">var dnevnik = {"urls":{"domain":"kundelik.kz","taskStateUrl":"https://kundelik.kz/user/TaskStateHandler.ashx","moderate":"https://kundelik.kz/soc/moderation/abuse.aspx","whiteList":["dnevnik.ru","mosreg.ru","microsoft.com","lego.com","surveymonkey.ru","surveymonkey.com","gosuslugi.ru","adfox.ru","facebook.com","ok.ru","twitter.com","instagram.com","vk.com","apple.com","google.com","dnevnik.ru","youtube.com","youtu.be","research.net","csdnevnik.ru","globallab.org","yaklass.ru","foxford.ru","sberbank.ru","magnit-info.ru","letovo.ru","office.com","sharepoint.com","onenote.com","office365.com","magnitznaniy.ru","magnit.ru","wikipedia.org","vk.com","yandex.ru","mail.ru","google.ru","google.com","ok.ru","avito.ru","instagram.com","facebook.com","aliexpress.com","gismeteo.ru","rambler.ru","2gis.ru","fotostrana.ru","twitter.com","livejournal.com","lenta.ru","hh.ru","kinopoisk.ru","ria.ru","yadi.sk","pikabu.ru","booking.com","rbc.ru","twitch.tv","mosregtest.ru","imumk.ru"],"userCounters":"https://kundelik.kz/counters","emailSettings":"https://kundelik.kz/user/settings.aspx?view=email","smilesSpriteUrl":"https://static.kundelik.kz/images/sprites/emojione.sprites.svg","tinyMceBaseUrl":"https://static.kundelik.kz/assets/scripts/vendors/tinymce","gaAutoLinkUrls":null,"adblockDummyUrl":"https://static.kundelik.kz/images/banners/adblockDummies/kzDummy.jpg"},"settings":{"googleAnalytics":{"defaultId":"UA-76524281-14","appsId":"UA-76524281-2","adId":"UA-76524281-10","contactId":"UA-76524281-1","eventsId":"UA-76524281-6","groupsId":"UA-76524281-5","loginId":"UA-76524281-11","messengerId":"UA-76524281-3","networksId":"UA-76524281-7","childrenId":"UA-76524281-12","peopleId":"UA-76524281-4","schoolsId":"UA-76524281-8","wikiId":"UA-76524281-9","mainId":"UA-76524281-13","appSubscriptionId":"","limitedCounterId":"UA-106329441-1","limitedCounterSampleRate":1},"yandexMetrikaIds":["36220965"],"yandexMetrikaСlickmapEnabled":false,"enableAdFoxZeroPixel":true,"yandexMetrikaId":"36220965","environmentPrefix":"Kz"},"fileUploadSettings":{"stateUrl":"https://content.kundelik.kz/gettaskstatus","resultUrl":"https://content.kundelik.kz/getresult","deleteFileUrl":"https://content.kundelik.kz/delete","deleteFolderUrl":"https://content.kundelik.kz/deletefolder","defaultFileSizeLimit":"2147483648"},"user":{"preferableLanguage":"ru-RU","suitableCultures":["ru-RU","kk-KZ"],"id":"1000008481877","sex":"Male","age":61,"emailHash":"7708133e748c18a4e9867cd45c84941b63e85291fe1de509df98adcec3743ec9","group":77,"role":"EduStaff","commonRole":"staff","schools":[{"id":"1000006542951","regionName":"Туркестанская область"}],"children":[],"experimentPRTopic":"None"},"auth":{"isAuthenticated":true,"updateInterval":600000,"loginUrl":"https://login.kundelik.kz/auth"},"visitParams":{"__RedesignAbGroup2":"groupA"},"localizationSchoolType":""};</script><script type="text/javascript" src="https://static.kundelik.kz/assets/scripts/modules/libs.min.88f29fce.js?v=88f29fce">
+
+</script>
+                    <script type="text/javascript">
+                        function onRequreLoaded() {
+                            require.config({
+                                baseUrl: "https://static.kundelik.kz/assets/scripts/modules",
+                                urlArgs: "v=034a1b1f",
+                            });
+                        }
+                    </script>
+                <script data-main="https://static.kundelik.kz/assets/scripts/modules/main.min.217f4fab.js?v=217f4fab" type="text/javascript" src="https://static.kundelik.kz/assets/scripts/modules/main.min.217f4fab.js?v=217f4fab">
+
+</script><script type="text/javascript" src="https://static.kundelik.kz/javascripts/local/ru.js?v=0320e479">
+
+</script>
+            <script async src="https://yastatic.net/pcode/adfox/header-bidding.js"></script>
     
-    <link rel="icon" href="https://static.kundelik.kz/img/icons/favicon_Kz.ico" type="image/x-icon"/>
-    <link rel="shortcut icon" href="https://static.kundelik.kz/img/icons/favicon_Kz.ico" type="image/x-icon"/>
-    
-    <link rel="stylesheet" href="https://static.kundelik.kz/styles/main/common.css?v=8e8b0233" media="all" type="text/css"/>
-    <link rel="stylesheet" href="https://static.kundelik.kz/blocks/blocks.css?v=a3c00d18" media="all" type="text/css" />
+        <script src="https://yastatic.net/pcode/adfox/loader.js" crossorigin="anonymous"></script>
+        <script src="https://static.kundelik.kz/client/localization/kz.ru-RU.js?v=f385d64c" type="text/javascript"></script>
+		<script src="https://static.kundelik.kz/client/react.vendor.bundle.js?v=7e730240" type="text/javascript"></script>
+		
+		
+		
+        <script data-ad-client="ca-pub-6887496529548997" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <title>
+	Журналы - Kundelik.kz
+</title></head>
 
 
-<link rel="stylesheet" href="https://static.kundelik.kz/client/notifications.css?v=6b917fed" type="text/css" />
 
-    <script type="text/javascript">var dnevnik = {"urls":{"domain":"kundelik.kz","taskStateUrl":"https://kundelik.kz/user/TaskStateHandler.ashx","moderate":"https://kundelik.kz/soc/moderation/abuse.aspx","whiteList":["dnevnik.ru","mosreg.ru","microsoft.com","lego.com","surveymonkey.ru","surveymonkey.com","gosuslugi.ru","adfox.ru","facebook.com","ok.ru","twitter.com","instagram.com","vk.com","apple.com","google.com","dnevnik.ru","youtube.com","youtu.be","research.net","csdnevnik.ru","globallab.org","yaklass.ru","foxford.ru","sberbank.ru","magnit-info.ru","letovo.ru","office.com","sharepoint.com","onenote.com","office365.com","magnitznaniy.ru","magnit.ru","wikipedia.org","vk.com","yandex.ru","mail.ru","google.ru","google.com","ok.ru","avito.ru","instagram.com","facebook.com","aliexpress.com","gismeteo.ru","rambler.ru","2gis.ru","fotostrana.ru","twitter.com","livejournal.com","lenta.ru","hh.ru","kinopoisk.ru","ria.ru","yadi.sk","pikabu.ru","booking.com","rbc.ru","twitch.tv","mosregtest.ru","imumk.ru"],"userCounters":"https://kundelik.kz/counters","emailSettings":"https://kundelik.kz/user/settings.aspx?view=email","smilesSpriteUrl":"https://static.kundelik.kz/images/sprites/emojione.sprites.svg","tinyMceBaseUrl":"https://static.kundelik.kz/assets/scripts/vendors/tinymce","gaAutoLinkUrls":null,"adblockDummyUrl":"https://static.kundelik.kz/images/banners/adblockDummies/kzDummy.jpg"},"settings":{"googleAnalytics":{"defaultId":"UA-76524281-14","appsId":"UA-76524281-2","adId":"UA-76524281-10","contactId":"UA-76524281-1","eventsId":"UA-76524281-6","groupsId":"UA-76524281-5","loginId":"UA-76524281-11","messengerId":"UA-76524281-3","networksId":"UA-76524281-7","childrenId":"UA-76524281-12","peopleId":"UA-76524281-4","schoolsId":"UA-76524281-8","wikiId":"UA-76524281-9","mainId":"UA-76524281-13","appSubscriptionId":"","limitedCounterId":"UA-106329441-1","limitedCounterSampleRate":1},"yandexMetrikaIds":["36220965"],"yandexMetrikaСlickmapEnabled":false,"enableAdFoxZeroPixel":true,"yandexMetrikaId":"36220965","environmentPrefix":"Kz"},"fileUploadSettings":{"stateUrl":"https://content.kundelik.kz/gettaskstatus","resultUrl":"https://content.kundelik.kz/getresult","deleteFileUrl":"https://content.kundelik.kz/delete","deleteFolderUrl":"https://content.kundelik.kz/deletefolder","defaultFileSizeLimit":"2147483648"},"user":{"preferableLanguage":"ru-RU","suitableCultures":["ru-RU","kk-KZ"],"id":"1000008481877","sex":"Male","age":61,"emailHash":"7708133e748c18a4e9867cd45c84941b63e85291fe1de509df98adcec3743ec9","group":77,"role":"EduStaff","commonRole":"staff","schools":[{"id":"1000006542951","regionName":"Туркестанская область"}],"children":[],"experimentPRTopic":"None"},"auth":{"isAuthenticated":true,"updateInterval":600000,"loginUrl":"https://login.kundelik.kz/auth"},"visitParams":{"__RedesignAbGroup2":"groupA"},"localizationSchoolType":""};</script>
+<body id="pageAuth">
+<div class="e6f58fccc7e947e1aed5e05855480e1e asyncBackgroundBanner"><div style="display:none;">&lt;div class=&quot;bannerBackground&quot;&gt;&lt;!--В head сайта один раз подключите библиотеку--&gt; &lt;script src=&quot;https://yastatic.net/pcode/adfox/loader.js&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt; &lt;!--Площадка: [Site] | Kundelik 2.0 / [Site] | Kundelik 2.0 / [Kundelik 2.0] [Взрослые] [2500x1200] - Брендирование--&gt; &lt;div id=&quot;adfox_156075164725741566&quot;&gt;&lt;/div&gt; &lt;script&gt; window.Ya.adfoxCode.create({ ownerId: 264109, containerId: &#39;adfox_156075164725741566&#39;, params: { p1: &#39;cfgpi&#39;, p2: &#39;glcf&#39;, puid1: &#39;61&#39;, puid2: &#39;M&#39;, puid3: &#39;TEACHER&#39;, puid4: &#39;250&#39;, puid5: &#39;N&#39;, puid6: &#39;N&#39;, puid7: &#39;17:2930&#39;, puid8: &#39;N&#39;, puid9: &#39;ComprehensiveSchool&#39;, puid10: &#39;N&#39;, puid11: &#39;N&#39;, puid12: &#39;N&#39;, puid13: &#39;N&#39;, puid14: &#39;N&#39;, puid15: &#39;&#39;,  puid19: &#39;77G&#39;, puid20: &#39;N&#39;, puid21: &#39;N&#39;, puid22: &#39;ru-RU&#39;, puid23: &#39;1000008481877&#39;, puid24: &#39;N&#39;, puid25: &#39;5K:6K:7K:11K&#39; } }); &lt;/script&gt;&lt;/div&gt;</div></div><script>$(document).ready(function () {let container=$(".e6f58fccc7e947e1aed5e05855480e1e");if(container.css("display")!=="none"){container.html($(".e6f58fccc7e947e1aed5e05855480e1e > div").text());} });</script>
+<div class="60391d38c6ef482588072bdbf71fda93 asyncRichMediaBanner"><div style="display:none;">&lt;!--В head сайта один раз подключите библиотеку--&gt;
+&lt;script src=&quot;https://yastatic.net/pcode/adfox/loader.js&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt;
 
-            <script type="text/javascript" src="https://static.kundelik.kz/assets/scripts/modules/redesign.min.968eca23.js?v=968eca23"></script>
-    <script type="text/javascript" src="https://static.kundelik.kz/assets/scripts/vendors/requirejs/require-2.1.6.js?v=ef8e5d03"></script>
-    <script type="text/javascript">
-        require.config({
-            baseUrl: "https://static.kundelik.kz/assets/scripts/modules",
-            urlArgs: "v=034a1b1f",
-        });
-    </script>
-            <script type="text/javascript" src="https://static.kundelik.kz/assets/scripts/modules/main-redesign.min.87401ae0.js?v=87401ae0"></script>
-    <script type="text/javascript" src="https://static.kundelik.kz/blocks/blocks.js?v=bfbcfab8"></script>
-    <script type="text/javascript" src="https://static.kundelik.kz/javascripts/local/ru.js?v=0320e479"></script>
+&lt;!--AdFox START--&gt;
+&lt;!--tds.media2016--&gt;
+&lt;!--Площадка: [Site] | Kundelik 2.0 / * / *--&gt;
+&lt;!--Тип баннера: [Kundelik 2.0] - Rich Media--&gt;
+&lt;!--Расположение: &lt;верх страницы&gt;--&gt;
+&lt;div id=&quot;adfox_160518490599891552&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    window.Ya.adfoxCode.create({
+        ownerId: 264109,
+        containerId: &#39;adfox_160518490599891552&#39;,
+        params: {
+            pp: &#39;g&#39;,
+            ps: &#39;divs&#39;,
+            p2: &#39;guqz&#39;,
+puid1: &#39;61&#39;, puid2: &#39;M&#39;, puid3: &#39;TEACHER&#39;, puid4: &#39;250&#39;, puid5: &#39;N&#39;, puid6: &#39;N&#39;, puid7: &#39;17:2930&#39;, puid8: &#39;N&#39;, puid9: &#39;ComprehensiveSchool&#39;, puid10: &#39;N&#39;, puid11: &#39;N&#39;, puid12: &#39;N&#39;, puid13: &#39;N&#39;, puid14: &#39;N&#39;, puid15: &#39;&#39;, puid19: &#39;77G&#39;, puid20: &#39;N&#39;, puid21: &#39;N&#39;, puid22: &#39;ru-RU&#39;, puid23: &#39;1000008481877&#39;, puid24: &#39;N&#39;, puid25: &#39;5K:6K:7K:11K&#39;
+        }
+    });
+&lt;/script&gt;</div></div><script>$(document).ready(function () {let container=$(".60391d38c6ef482588072bdbf71fda93");if(container.css("display")!=="none"){container.html($(".60391d38c6ef482588072bdbf71fda93 > div").text());} });</script>
 
-    
-    <script src="https://static.kundelik.kz/client/localization/kz.ru-RU.js?v=f385d64c" type="text/javascript"></script>
-    <script src="https://static.kundelik.kz/client/react.vendor.bundle.js?v=7e730240" type="text/javascript"></script>
-</head>
-
-<body id="pageAuth" class="page-body">
 
 
-<div class="b-journal-layout">
 
-<div id="id-697d3f87146f4d5a9883173f346f28a7" class='journal-header'>
-        <div class="journal-header__crumbs">
-            <svg class="journal-header__crumbs__svg" xmlns="http://www.w3.org/2000/svg" width="14" height="13" viewBox="0 0 14 13">
-                <g><g><path d="M12 12.63c0 .238-.14.37-.434.37h-9.13C2.14 13 2 12.868 2 12.63V7.884l-.087.089a1 1 0 0 1-1.418 0l-.29-.292a1 1 0 0 1 0-1.412L6.239.21A1 1 0 0 1 7-.082a1.002 1.002 0 0 1 .762.292l6.034 6.06a1 1 0 0 1 0 1.41l-.29.293a1 1 0 0 1-1.418 0L12 7.884v4.746zM8 11h2V7H8z" /></g></g>
+
+
+    <div class="page-header ">
+        <div class="page-header__panel-wrapper">
+            <div class="page-header__panel">
+                <div class="page-header__panel-container">
+                    <a href="https://kundelik.kz:443/teacher/" title="На главную страницу Kundelik.kz" class="header-logotype header-logotype_kz"></a>
+                    
+
+<div class="user-counters ">
+
+        <a class="button-with-counter button-with-counter_message trackable ya-metrika-trackable" data-category="Шапка" data-action="ЛС" data-target="messenger">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="17" viewBox="0 0 18 17">
+                <path fill="#AAB6C2" fill-rule="evenodd" d="M18,10.2304688 L18,11.6015625 C18,11.9062515 17.9414068,12.210936 17.8242188,12.515625 C17.4492169,13.3359416 16.8046921,13.769531 15.890625,13.8164062 L14.9765625,13.8164062 L14.9765625,15.890625 C14.9531249,16.0078131 14.8945317,16.1015621 14.8007812,16.171875 C14.7773436,16.171875 14.7421877,16.1835936 14.6953125,16.2070312 C14.601562,16.1835936 14.5312502,16.1484377 14.484375,16.1015625 L12.1640625,13.8164062 L10.4414062,13.8164062 C10.1367172,13.7929686 9.84375141,13.7109382 9.5625,13.5703125 C8.76562102,13.1484354 8.3671875,12.492192 8.3671875,11.6015625 L8.40234375,10.2304688 C8.40234375,10.1132807 8.42578102,9.90234527 8.47265625,9.59765625 L10.7929688,9.59765625 C12.0820377,9.59765625 13.1601519,9.10547367 14.0273438,8.12109375 L15.890625,8.12109375 C16.1718764,8.12109375 16.4531236,8.16796828 16.734375,8.26171875 C17.5781292,8.61328301 18,9.26952645 18,10.2304688 Z M14.3789062,5.6953125 C14.3789062,6.32812816 14.1679709,6.92577844 13.7460938,7.48828125 C13.0195276,8.49609879 12.0351625,9 10.7929688,9 L7.59375,9 L4.7109375,12.1992188 C4.64062465,12.2695316 4.57031285,12.3046875 4.5,12.3046875 C4.47656238,12.3046875 4.44140648,12.2929689 4.39453125,12.2695313 C4.27734316,12.222656 4.20703137,12.128907 4.18359375,11.9882813 L4.18359375,9 L3.3046875,9 C2.71874707,9 2.16797133,8.88281367 1.65234375,8.6484375 C0.550775742,8.1093723 0,7.23047484 0,6.01171875 L0,3.3046875 C0,2.67187184 0.152342227,2.09765883 0.45703125,1.58203125 C1.08984691,0.527338477 2.03905617,0 3.3046875,0 L10.7929688,0 C11.4960973,0 12.1640593,0.199216758 12.796875,0.59765625 C13.8515678,1.27734715 14.3789062,2.17968188 14.3789062,3.3046875 L14.3789062,5.6953125 Z"/>
             </svg>
-            <ul class='old-site-crumbs old-site-crumbs_margin-top-2 '>
-        <li class='old-site-crumbs__item'>
-            <a href='https://schools.kundelik.kz/journals/?school=1000006542951' class='link_blue-with-orange-hover'>Стартовая учителя</a>
-        </li>
-        <li class='old-site-crumbs__item'>
-            <a href='https://schools.kundelik.kz/journals/?school=1000006542951' class='link_blue-with-orange-hover'>Журналы</a>
-        </li>
-        <li class='old-site-crumbs__item'>
-            <a href='https://schools.kundelik.kz/class.aspx?class=1656351496634904317' class='link_blue-with-orange-hover'>5-а</a>
-        </li>
-</ul>
-        </div>
-    
-    <div class="journal-header__panel">
-        <div>
-            <div class="journal-header__title">
-                <h1 class="h1 h1_purple h1_margin-top-5 h1_inline-block h1_margin-right-40">Тарих</h1>
-                <h2 class="h2 h2_bold h2_inline-block h2_grey h2_margin-top-8">2019/2020 учебный год</h2>
-            </div>
-            
-            <div class="journal-header__teachers-row">
-                    <div>
-                        <span class="journal-header__teachers-row__label">Учитель:</span>
-                            <span class="journal-header__display-inline">
-                                <a class="journal-header__teachers-row__link" href="https://kundelik.kz/user/user.aspx?user=1000008481877">Еркебай Сембеиевич Сартбаев</a>
-                            </span>
-                            <span class="journal-header__not-display">Еркебай Сембеиевич Сартбаев</span>
-                            <span class="journal-header__not-display">&#44;</span>
-                    </div>
-            </div>
+            <div class="button-with-counter__counter"></div>
+        </a>
 
-            <div class="journal-header__group-subject-row">
-                <span class="journal-header__group-subject-row__class-label">Класс:</span>
-                <span class="journal-header__group-subject-row__class-name">5-а</span>
-
-                <span class="journal-header__group-subject-row__subject-label">Предмет:</span>
-                
-<div class="universal-select  universal-select_to-data-url universal-select_narrow " id="id-d49d9d6f41df4b5c9dc98ef7eef6263c" >
-    <div class="universal-select__wrapper" tabindex="-1">
-        <span class="universal-select__text">Тарих</span>
-        <select multiple="multiple" size="17" class="select ">
-                <option data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120173/year" ></option>
-                <option data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120174/year" ></option>
-                <option data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120180/year" ></option>
-                <option data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120182/year" ></option>
-                <option data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120183/year" ></option>
-                <option data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120184/year" selected=&#39;selected&#39;></option>
-                <option data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120186/year" ></option>
-                <option data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120188/year" ></option>
-                <option data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120194/year" ></option>
-                <option data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120195/year" ></option>
-                <option data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1658564036152552516/year" ></option>
-                <option data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1658571779978587209/year" ></option>
-                <option data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1658577719918357586/year" ></option>
-                <option data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1658596531875114080/year" ></option>
-                <option data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1658661226967493820/year" ></option>
-                <option data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1658920239265246480/year" ></option>
-                <option data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1658925242902146331/year" ></option>
-        </select>
-        <ul class="universal-select-list ">
-                <li class="universal-select-list__item  "
-                    data-value="" data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120173/year">Қазақ тілі</li>
-                <li class="universal-select-list__item  "
-                    data-value="" data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120174/year">Қазақ әдеб.</li>
-                <li class="universal-select-list__item  "
-                    data-value="" data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120180/year">Математика</li>
-                <li class="universal-select-list__item  "
-                    data-value="" data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120182/year">Информатика</li>
-                <li class="universal-select-list__item  "
-                    data-value="" data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120183/year">Дүниежүзі тарихы</li>
-                <li class="universal-select-list__item  universal-select-list__item_selected "
-                    data-value="" data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120184/year">Тарих</li>
-                <li class="universal-select-list__item  "
-                    data-value="" data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120186/year">Өзін-өзі тану</li>
-                <li class="universal-select-list__item  "
-                    data-value="" data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120188/year">Жаратылыстану</li>
-                <li class="universal-select-list__item  "
-                    data-value="" data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120194/year">Музыка</li>
-                <li class="universal-select-list__item  "
-                    data-value="" data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120195/year">Дене шынықтыру</li>
-                <li class="universal-select-list__item  "
-                    data-value="" data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1658564036152552516/year">Ағылшын тілі</li>
-                <li class="universal-select-list__item  "
-                    data-value="" data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1658571779978587209/year">Көркем еңбек</li>
-                <li class="universal-select-list__item  "
-                    data-value="" data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1658577719918357586/year">Тәрбие сағаты</li>
-                <li class="universal-select-list__item  "
-                    data-value="" data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1658596531875114080/year">Шешендік өнер</li>
-                <li class="universal-select-list__item  "
-                    data-value="" data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1658661226967493820/year">Орыс тілі мен әдеб</li>
-                <li class="universal-select-list__item  "
-                    data-value="" data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1658920239265246480/year">Жас информатик</li>
-                <li class="universal-select-list__item  "
-                    data-value="" data-url="/journals/criteriaMarks/group/1656351496634904317/subject/1658925242902146331/year">Шебер қолдар</li>
-        </ul>
+    <a class="button-with-counter button-with-counter_friend">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+            <path fill="#AAB6C2" fill-rule="evenodd" d="M17.2265625,14.484375 C17.7187525,15.5390678 17.9765624,16.6054634 18,17.6835938 C17.9765624,17.8476571 17.8710947,17.9531248 17.6835938,18 L0.31640625,18 C0.15234293,17.9765624 0.0468752344,17.8710947 0,17.6835938 C0,16.6054634 0.257809922,15.5390678 0.7734375,14.484375 C0.890625586,14.2734364 1.07812371,14.0625011 1.3359375,13.8515625 C1.85156508,13.4062478 3.24608238,12.7500043 5.51953125,11.8828125 C5.61328172,11.8593749 5.97655934,11.7304699 6.609375,11.4960938 L6.609375,9.421875 C6.04687219,8.90624742 5.74218773,8.19141082 5.6953125,7.27734375 C5.50781156,7.11328043 5.3789066,6.86718914 5.30859375,6.5390625 C5.14453043,5.90624684 5.24999812,5.40234563 5.625,5.02734375 L5.625,4.95703125 C5.60156238,4.91015602 5.58984375,4.87500012 5.58984375,4.8515625 C5.12109141,3.28124215 5.08593551,2.20312793 5.484375,1.6171875 C5.76562641,1.31249848 6.10546676,1.13671898 6.50390625,1.08984375 C6.90234574,0.386715234 7.91014816,0.0234376172 9.52734375,0 C9.80859516,0 10.1132796,0.0234372656 10.4414062,0.0703125 C12.0117266,0.257813437 12.8906241,0.80858918 13.078125,1.72265625 C13.2187507,2.42578477 13.0195339,3.45702445 12.4804688,4.81640625 C12.4804688,4.83984387 12.4628908,4.88085908 12.4277344,4.93945312 C12.3925779,4.99804717 12.375,5.03906238 12.375,5.0625 C12.7265643,5.41406426 12.832032,5.90624684 12.6914062,6.5390625 C12.6210934,6.84375152 12.4921884,7.08984281 12.3046875,7.27734375 C12.2578123,8.12109797 11.9531278,8.8828091 11.390625,9.5625 L11.390625,11.4960938 C11.9765654,11.7070323 12.339843,11.8359373 12.4804688,11.8828125 C13.1835973,12.1406263 13.6757798,12.3281244 13.9570312,12.4453125 C15.7851654,13.1718786 16.8749982,13.8515593 17.2265625,14.484375 Z"/>
+        </svg>
+        <div class="button-with-counter__counter"></div>
+    </a>
+    <a class="button-with-counter button-with-counter_notification trackable ya-metrika-trackable" data-category="Шапка" data-action="Инвайты" data-target="invites">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+            <path fill="#AAB6C2" fill-rule="evenodd" d="M17.7890625,14.2734375 C17.9062506,14.3203127 17.9765624,14.4257804 18,14.5898437 C17.9531248,14.7304695 17.8476571,14.8124999 17.6835938,14.8359375 L0.31640625,14.8359375 C0.175780547,14.8124999 0.0703128516,14.7304695 0,14.5898437 C0.0234376172,14.449218 0.0937494141,14.3437504 0.2109375,14.2734375 C0.234375117,14.2734375 0.257812383,14.2617189 0.28125,14.2382812 C1.68750703,13.886717 2.390625,13.2890667 2.390625,12.4453125 L2.390625,8.26171875 C2.390625,7.46483977 2.51952996,6.67969137 2.77734375,5.90625 C3.43359703,4.05467824 4.67577211,2.75391 6.50390625,2.00390625 C6.55078148,1.74609246 6.64453055,1.50000117 6.78515625,1.265625 C7.27734621,0.421870781 8.01562008,0 9,0 C9.28125141,0 9.56249859,0.0468745313 9.84375,0.140625 C10.7578171,0.445314023 11.3085928,1.06640156 11.4960938,2.00390625 C12.0820342,2.26172004 12.6445286,2.58984176 13.1835938,2.98828125 C14.8007893,4.32422543 15.609375,6.08202035 15.609375,8.26171875 L15.609375,12.4453125 C15.6328126,13.2656291 16.3593679,13.874998 17.7890625,14.2734375 Z M10.7929688,15.5390625 C10.9570321,15.5625001 11.0624998,15.6562492 11.109375,15.8203125 C11.109375,17.2265695 10.406257,17.9296875 9,17.9296875 C7.59374297,17.9296875 6.890625,17.2265695 6.890625,15.8203125 C6.91406262,15.6796868 7.01953031,15.5859377 7.20703125,15.5390625 L10.7929688,15.5390625 Z"/>
+        </svg>
+        <div class="button-with-counter__counter"></div>
+    </a>
+    <div id="ntf-notifications-root"></div>
+    <div class="ntf-notifications-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+            <path fill="#aab6c2" d="M15.86 3.16c-.59 1.67-1.32 2.72-2.18 3.17-.12.05-.22.06-.29.03a2.77 2.77 0 0 0-2 .32c.24.33.42.77.56 1.34.12.04.33.01.64-.11.16-.07.3-.05.42.07.63.63.3 1.59-.99 2.88l-.35.39.11.11c.26.25.38.48.38.66.03.21-.07.43-.28.64-.3.3-.64.54-1.02.7-.11 1.34-.98 2-2.6 2-.33 0-.66-.3-1-.91a3.29 3.29 0 0 1-.51-1.34c0-.18.07-.42.21-.7.12-.19.18-.33.18-.42-.07-.24-.3-.52-.67-.85a.38.38 0 0 1-.11-.28c0-.32-.06-.54-.17-.63-.1-.09-.46-.14-1.09-.14-.14.02-.34.04-.6.04-.54 0-.93-.21-1.16-.62a2.55 2.55 0 0 1-.35-1.25c0-.09 0-.22.02-.37.01-.15.05-.4.14-.75a3.08 3.08 0 0 1 .98-1.74 2 2 0 0 1 1.04-.51c.96-.21 1.64-.16 2.04.17.11.1.2.21.24.35.26.22.85.22 1.76 0 .09-.04.28-.09.56-.14.1-.77.11-1.27.04-1.51-.47.21-.9.21-1.3 0-.38-.23-.59-.6-.63-1.09-.05-.49.26-.94.94-1.33.68-.4 1.5-.75 2.47-1.06A9.88 9.88 0 0 0 9 0C6.52 0 4.39.88 2.64 2.64A8.65 8.65 0 0 0 0 9c0 2.48.88 4.61 2.64 6.36A8.65 8.65 0 0 0 9 18c2.48 0 4.61-.88 6.36-2.64A8.65 8.65 0 0 0 18 9c0-2.2-.71-4.15-2.14-5.84z" />
+        </svg>
     </div>
-    <input type="hidden" class="select-value" />
-</div><script>require(['UniversalSelect/UniversalSelect_to-data-url'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('\x7b\x22id\x22\x3a\x22id-d49d9d6f41df4b5c9dc98ef7eef6263c\x22\x7d')); } });</script>
+</div>
+<script>
+    require(['layoutcontrols/userCounter'], function (userCounter) {
+        var messageModel = {
+            counterSelector: '.button-with-counter_message',
+            counterContentClass: 'button-with-counter__counter',
+            link: 'https://kundelik.kz/soc/messenger/',
+            spamLink: 'https://kundelik.kz/soc/messenger/?view=spam'
+        };
+
+        var friendModel = {
+            counterSelector: '.button-with-counter_friend',
+            counterContentClass: 'button-with-counter__counter',
+            link: 'https://kundelik.kz/user/user.aspx?user=1000008481877&view=friends&group=waiting',
+            linkForEmpty: 'https://kundelik.kz/user/user.aspx?user=1000008481877&view=friends'
+        };
+
+        var notificationModel = {
+            counterSelector: '.button-with-counter_notification',
+            counterContentClass: 'button-with-counter__counter',
+            link: 'https://kundelik.kz/invites'
+        };
+
+        userCounter(messageModel);
+        userCounter(friendModel);
+        userCounter(notificationModel);
+    });
+</script>
+<script>
+  window.notificationsAppSettings = {
+     apiUrl: "https://notifications.kundelik.kz/api",
+     rootElementId: "ntf-notifications-root"
+  }
+</script>
+<script defer src="https://static.kundelik.kz/client/notifications.js?v=aeaacfbb"></script>
+
+                    
+                            <a href="https://portal.kundelik.kz/ru/c/419-produkty-microsoft-dlya-ucheby" class="microsoft-logotype"></a>
+                    
+                </div>
+                <div class="page-header__panel-container_items">
+                    
+                            <div class="page-header__panel-container page-header__panel-container_search page-header__panel-container_search_kz">
+                                
+
+<div class="page-header__search">
+    <div class="header-search">
+        <a class="button button_background-search"> </a>
+        <div class="header-search__area header-search__area_disable">
+            <form action="https://kundelik.kz/soc/search">
+                <input type="text" name="search" class="header-search__search-input header-search__search-input header-search__search-input_kz" placeholder="Поиск" maxlength="150" />
+                <a class=" button button_background-close"> </a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    require(['blocks/headerSearch/headerSearch'], function (search) {
+        search();
+    });
+</script>
+                            </div>
+                    
+                            <div class="page-header__panel-container page-header__panel-container_localization-select">
+                                
+
+<div class="header-localization-select header-localization-select_top">
+    <div class="header-localization-select__info">
+        <div class="header-localization-select__info_row header-localization-select__info_row-content">Рус</div>
+        <div class="header-localization-select__info_row header-localization-select__tumbler"></div>
+    </div>
+    
+    <div class="header-localization-select_dropdown dropdown-container dropdown-container_font-weight-bold dropdown-container_left-position-0 dropdown-container_no-specific-last-child">
+        
+                <a href="https://kundelik.kz/api/localization/change?newCulture=ru-RU&currentUrl=http%3a%2f%2fschools.kundelik.kz%2fjournals%2fdefault.aspx%3fschool%3d1000006542951%26tab%3dplanning%26group%3d1715068308071130627%26subject%3d1474514555691120184%26period%3d0%26year%3d2020%26subgroup%3d0" title="" class="link link_dropdown-container-link link_dropdown-container-link_bold link_dropdown-container-link_selected"> Русский </a>
+         
+                <a href="https://kundelik.kz/api/localization/change?newCulture=kk-KZ&currentUrl=http%3a%2f%2fschools.kundelik.kz%2fjournals%2fdefault.aspx%3fschool%3d1000006542951%26tab%3dplanning%26group%3d1715068308071130627%26subject%3d1474514555691120184%26period%3d0%26year%3d2020%26subgroup%3d0" title="" class="link link_dropdown-container-link link_dropdown-container-link_bold "> Қазақ </a>
+         
+                <a href="https://kundelik.kz/api/localization/change?newCulture=en-US&currentUrl=http%3a%2f%2fschools.kundelik.kz%2fjournals%2fdefault.aspx%3fschool%3d1000006542951%26tab%3dplanning%26group%3d1715068308071130627%26subject%3d1474514555691120184%26period%3d0%26year%3d2020%26subgroup%3d0" title="" class="link link_dropdown-container-link link_dropdown-container-link_bold "> English </a>
+         
+    </div>
+</div>
+
+<script type="text/javascript">
+    require(['blocks/dropdownContainer/dropdownContainer'], function (dropdown) {
+        var model = {
+            tumblerClass: "header-localization-select",
+            activationClasses: ["header-localization-select__info", "dropdown-container"]
+        };
+        
+        dropdown(model);
+    });
+</script>
+
+
+
 
                             </div>
-            <div class="journal-header__periods">
-                <div class='item-switch'>
-    <span class="item-switch__caption">Период:</span>
-        <a class="item-switch__link" href="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120184/period/1658348720852051673">1 четверть</a>
-        <a class="item-switch__link" href="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120184/period/1658348720852051674">2 четверть (1п/г)</a>
-        <a class="item-switch__link" href="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120184/period/1658348720852051675">3 четверть</a>
-        <a class="item-switch__link" href="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120184/period/1658348720852051676">4 четверть (2п/г)</a>
-</div>
-                <div class='item-switch'>
-    <span class="item-switch__caption">Год:</span>
-        <a class="item-switch__link item-switch__link_active" href="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120184/year">Итоговые</a>
-</div>
-                
-                    <div class="journal-header__periods__only-criterial-checkbox">
-                        <label id="id-3cf74ddad21b4871a19f3ca58c1e5bf5" class="blue-checkbox">
-    <input type="checkbox" class="blue-checkbox__input" value="/journals/criteriaMarks/group/1656351496634904317/subject/1474514555691120184/year?showOnlyCriterial=True" 
-           disabled
-           name="" />
-    <span class="blue-checkbox__text">Только суммативные оценки</span>
-</label><script>require(['BlueCheckbox/BlueCheckbox'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('\x7b\x22id\x22\x3a\x22id-3cf74ddad21b4871a19f3ca58c1e5bf5\x22,\x22redirectTo\x22\x3a\x22\x2fjournals\x2fcriteriaMarks\x2fgroup\x2f1656351496634904317\x2fsubject\x2f1474514555691120184\x2fyear\x3fshowOnlyCriterial\x3dTrue\x22\x7d')); } });</script>
-                    </div>
-            </div>
-        </div>
-        <div class="journal-header__top-right-menu">
-            
-            <div class="journal-header__iconbar">
-            </div>
+                    
+                    <div class="page-header__panel-container page-header__panel-container_profile">
+                        
 
-            <div class="journal-header__clear"></div>
-            <div class="journal-header__help">
-<a href="https://kundelik.zendesk.com/hc/ru/articles/360010194657" title="Памятка по заполнению журнала" class="link link_blue-with-orange-hover link_text-align-right " target="_blank" >
-    Памятка по заполнению журнала
-    
-</a><a href="https://schools.kundelik.kz/journals/?school=1000006542951&amp;tab=planning&amp;group=1656351496634904317&amp;subject=1474514555691120184&amp;period=0&amp;year=2019&amp;subgroup=0" title="Календарное планирование" class="link link_blue-with-orange-hover link_text-align-right " target="_blank" >
-    Календарное планирование
-    
-</a><a href="https://schools.kundelik.kz/journals/journalclassical.aspx?view=day&amp;school=1000006542951&amp;year=2020&amp;month=7&amp;day=31&amp;group=1656351496634904317&amp;subject=1474514555691120184&amp;period=0" title="Журнал за неделю" class="link link_blue-with-orange-hover link_text-align-right " target="_blank" >
-    Журнал за неделю
-    
-</a>            </div>
+<div class="user-profile-box">
+    <div class="user-profile-box__info">
+        <div class="user-profile-box__info_row user-profile-box__avatar">
+            <img src="https://static.kundelik.kz/images/avatars/user/a.s.jpg" />
         </div>
+        <div class="user-profile-box__info_row user-profile-box__info_row-content">
+            <p class="user-profile-box__info_row-content user-profile-box__initials">Сартбаев Е.С.</p>
+            <p class="user-profile-box__info_row-content user-profile-box__category">Сотрудник</p>
+        </div>
+        <div class="user-profile-box__info_row user-profile-box__tumbler"></div>
     </div>
-</div><script>require(['JournalHeader/JournalHeader'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('\x7b\x22id\x22\x3a\x22id-697d3f87146f4d5a9883173f346f28a7\x22,\x22summativeAssessmentSwitchUrl\x22\x3a\x22\x2fjournals\x2fcriteriaMarks\x2fgroup\x2f1656351496634904317\x2fsubject\x2f1474514555691120184\x2fswitchassessment\x3ftype\x3dHalfYearAssessment\x22,\x22assessmentSwitchPopupId\x22\x3a\x22id-01a418c1c8504982b68d291a692f54d4\x22\x7d')); } });</script>
 
-<div id="id-5fc2ac973c48419d91268414e4bb6755" class="criteria-journal-year-table">
-    <div id="id-2841017d706b4dbc9885e9c27ee2de07" class="scrollable-table">
-    <div class="scrollable-table__column scrollable-table__column_left">
-        <div class="scrollable-table__cell scrollable-table__cell_corner">
-            <div class="criteria-journal-year-table__corner"></div>
-        </div>
-        <div class="scrollable-table__cell scrollable-table__cell_leftColumn">
-            <table class="criteria-journal-year-table__table criteria-journal-year-table__students">
-
-                <tr class="criteria-journal-year-table__students__row">
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_number">1</td>
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_name">
-                        <a class="link link_blue-with-orange-hover" href="https://schools.kundelik.kz/marks.aspx?school=1000006542951&amp;group=1656351496634904317&amp;student=1000009669002&amp;tab=stats" title="Перейти на страницу оценок ученика">Абдижаппар Ерасыл</a>
-                    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__students__row">
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_number">2</td>
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_name">
-                        <a class="link link_blue-with-orange-hover" href="https://schools.kundelik.kz/marks.aspx?school=1000006542951&amp;group=1656351496634904317&amp;student=1000009669005&amp;tab=stats" title="Перейти на страницу оценок ученика">Анарбек Аяжан</a>
-                    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__students__row">
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_number">3</td>
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_name">
-                        <a class="link link_blue-with-orange-hover" href="https://schools.kundelik.kz/marks.aspx?school=1000006542951&amp;group=1656351496634904317&amp;student=1000009669003&amp;tab=stats" title="Перейти на страницу оценок ученика">Анаш Бекзат</a>
-                    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__students__row">
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_number">4</td>
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_name">
-                        <a class="link link_blue-with-orange-hover" href="https://schools.kundelik.kz/marks.aspx?school=1000006542951&amp;group=1656351496634904317&amp;student=1000009669007&amp;tab=stats" title="Перейти на страницу оценок ученика">Батырбай Жеңісхан</a>
-                    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__students__row criteria-journal-year-table__students__row_with-delimiter">
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_number">5</td>
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_name">
-                        <a class="link link_blue-with-orange-hover" href="https://schools.kundelik.kz/marks.aspx?school=1000006542951&amp;group=1656351496634904317&amp;student=1000009669010&amp;tab=stats" title="Перейти на страницу оценок ученика">Бейсеқұл Ғанизат</a>
-                    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__students__row">
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_number">6</td>
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_name">
-                        <a class="link link_blue-with-orange-hover" href="https://schools.kundelik.kz/marks.aspx?school=1000006542951&amp;group=1656351496634904317&amp;student=1000009669008&amp;tab=stats" title="Перейти на страницу оценок ученика">Бекен Ерік</a>
-                    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__students__row">
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_number">7</td>
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_name">
-                        <a class="link link_blue-with-orange-hover" href="https://schools.kundelik.kz/marks.aspx?school=1000006542951&amp;group=1656351496634904317&amp;student=1000009669009&amp;tab=stats" title="Перейти на страницу оценок ученика">Бердібай Мерейлім</a>
-                    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__students__row">
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_number">8</td>
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_name">
-                        <a class="link link_blue-with-orange-hover" href="https://schools.kundelik.kz/marks.aspx?school=1000006542951&amp;group=1656351496634904317&amp;student=1000009669018&amp;tab=stats" title="Перейти на страницу оценок ученика">Әлімберді Ұлжалғас</a>
-                    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__students__row">
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_number">9</td>
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_name">
-                        <a class="link link_blue-with-orange-hover" href="https://schools.kundelik.kz/marks.aspx?school=1000006542951&amp;group=1656351496634904317&amp;student=1000009669006&amp;tab=stats" title="Перейти на страницу оценок ученика">Әмір Аяулым</a>
-                    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__students__row criteria-journal-year-table__students__row_with-delimiter">
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_number">10</td>
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_name">
-                        <a class="link link_blue-with-orange-hover" href="https://schools.kundelik.kz/marks.aspx?school=1000006542951&amp;group=1656351496634904317&amp;student=1000009669011&amp;tab=stats" title="Перейти на страницу оценок ученика">Жақсылық Ғаламат</a>
-                    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__students__row">
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_number">11</td>
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_name">
-                        <a class="link link_blue-with-orange-hover" href="https://schools.kundelik.kz/marks.aspx?school=1000006542951&amp;group=1656351496634904317&amp;student=1000009669012&amp;tab=stats" title="Перейти на страницу оценок ученика">Исах Нұрбек</a>
-                    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__students__row">
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_number">12</td>
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_name">
-                        <a class="link link_blue-with-orange-hover" href="https://schools.kundelik.kz/marks.aspx?school=1000006542951&amp;group=1656351496634904317&amp;student=1000009669013&amp;tab=stats" title="Перейти на страницу оценок ученика">Мәлік Нұргүл</a>
-                    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__students__row">
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_number">13</td>
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_name">
-                        <a class="link link_blue-with-orange-hover" href="https://schools.kundelik.kz/marks.aspx?school=1000006542951&amp;group=1656351496634904317&amp;student=1000009669107&amp;tab=stats" title="Перейти на страницу оценок ученика">Наурызбаева Медина</a>
-                    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__students__row">
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_number">14</td>
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_name">
-                        <a class="link link_blue-with-orange-hover" href="https://schools.kundelik.kz/marks.aspx?school=1000006542951&amp;group=1656351496634904317&amp;student=1000009669014&amp;tab=stats" title="Перейти на страницу оценок ученика">Нұрсұлтан Беркехан</a>
-                    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__students__row criteria-journal-year-table__students__row_with-delimiter">
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_number">15</td>
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_name">
-                        <a class="link link_blue-with-orange-hover" href="https://schools.kundelik.kz/marks.aspx?school=1000006542951&amp;group=1656351496634904317&amp;student=1000009669015&amp;tab=stats" title="Перейти на страницу оценок ученика">Сатыбалды Диас</a>
-                    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__students__row">
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_number">16</td>
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_name">
-                        <a class="link link_blue-with-orange-hover" href="https://schools.kundelik.kz/marks.aspx?school=1000006542951&amp;group=1656351496634904317&amp;student=1000009669016&amp;tab=stats" title="Перейти на страницу оценок ученика">Серікбай Дінмұхаммед</a>
-                    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__students__row">
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_number">17</td>
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_name">
-                        <a class="link link_blue-with-orange-hover" href="https://schools.kundelik.kz/marks.aspx?school=1000006542951&amp;group=1656351496634904317&amp;student=1000009669017&amp;tab=stats" title="Перейти на страницу оценок ученика">Сүннат Ердәулет</a>
-                    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__students__row">
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_number">18</td>
-                    <td class="criteria-journal-year-table__students__cell criteria-journal-year-table__students__cell_name">
-                        <a class="link link_blue-with-orange-hover" href="https://schools.kundelik.kz/marks.aspx?school=1000006542951&amp;group=1656351496634904317&amp;student=1000009669106&amp;tab=stats" title="Перейти на страницу оценок ученика">Үшкен Жасұлан</a>
-                    </td>
-                </tr>
-        </table>
-        </div>
+    <div class="user-profile-box__dropdown dropdown-container">
+        
+                <a href="https://kundelik.kz/user/settings.aspx?user=1000008481877" title="" class="link link_dropdown-container-link " > Настройки </a>
+         
+                <a href="https://login.kundelik.kz/logout" title="" class="link link_dropdown-container-link " Id="profile_logout"> Выйти из Kundelik.kz </a>
+         
     </div>
-    <div class="scrollable-table__column scrollable-table__column_right">
-        <div class="scrollable-table__cell scrollable-table__cell_head">
-            <table class="criteria-journal-year-table__table criteria-journal-year-table__head">
-            <tr class="criteria-journal-year-table__head__row">
-                        <th class="criteria-journal-year-table__head__cell" rowspan="2">
-1 четверть
-                        </th>
-                        <th class="criteria-journal-year-table__head__cell" rowspan="2">
-2 четверть
-                        </th>
-                        <th class="criteria-journal-year-table__head__cell" rowspan="2">
-3 четверть
-                        </th>
-                        <th class="criteria-journal-year-table__head__cell" rowspan="2">
-4 четверть
-                        </th>
-                        <th class="criteria-journal-year-table__head__cell" rowspan="2">
-     <div class="criteria-journal-year-table__head__cell_help-container">
-         <div>Реком. оценка</div>
-         <div class="criteria-journal-year-table__head__cell_question criteria-journal-year-table__head__cell_question_margin-top" title="
-Рекомендуемая оценка рассчитана на основании утверждённых МОН РК формул.
-Для выставления оценки учащемуся - введите оценку в столбце &quot;Год&quot; самостоятельно.
-  ">
-             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 20 20" style="fill: #666;">
-                 <path fillRule="evenodd" d="M198.000698,1041.78125 C198.000698,1042.3125 197.719451,1042.57812 197.156948,1042.57812 C196.938197,1042.57812 196.750699,1042.5 196.594448,1042.34375 C196.438198,1042.1875 196.360073,1042 196.360073,1041.78125 C196.360073,1041.5625 196.438198,1041.375 196.594448,1041.21875 C196.750699,1041.0625 196.938197,1040.98438 197.156948,1040.98438 C197.375699,1040.98438 197.57101,1041.0625 197.742886,1041.21875 C197.914762,1041.375 198.000698,1041.5625 198.000698,1041.78125 Z M197.156948,1027.39062 C199.813212,1027.39062 202.078814,1028.32812 203.953823,1030.20312 C205.828833,1032.07813 206.766323,1034.34374 206.766323,1037 C206.766323,1039.65626 205.828833,1041.92187 203.953823,1043.79688 C202.078814,1045.67188 199.813212,1046.60938 197.156948,1046.60938 C194.531935,1046.60938 192.281958,1045.67188 190.406948,1043.79688 C188.531939,1041.92187 187.594448,1039.65626 187.594448,1037 C187.594448,1034.34374 188.531939,1032.07813 190.406948,1030.20312 C192.281958,1028.32812 194.531935,1027.39062 197.156948,1027.39062 Z M197.156948,1045.8125 C199.594461,1045.8125 201.672565,1044.95313 203.391323,1043.23438 C205.110082,1041.51562 205.969448,1039.43751 205.969448,1037 C205.969448,1034.56249 205.110082,1032.48438 203.391323,1030.76562 C201.672565,1029.04687 199.594461,1028.1875 197.156948,1028.1875 C194.750686,1028.1875 192.688207,1029.04687 190.969448,1030.76562 C189.25069,1032.48438 188.391323,1034.56249 188.391323,1037 C188.391323,1039.43751 189.25069,1041.51562 190.969448,1043.23438 C192.688207,1044.95313 194.750686,1045.8125 197.156948,1045.8125 Z M197.156948,1032.21875 C197.938202,1032.21875 198.602258,1032.48437 199.149136,1033.01562 C199.696014,1033.54688 199.969448,1034.20312 199.969448,1034.98438 C199.969448,1035.67188 199.742888,1036.28125 199.289761,1036.8125 C198.836634,1037.34375 198.266327,1037.65625 197.578823,1037.75 L197.578823,1039.8125 C197.578823,1040.0625 197.4382,1040.1875 197.156948,1040.1875 C196.906947,1040.1875 196.781948,1040.0625 196.781948,1039.8125 L196.781948,1037.42188 C196.781948,1037.14062 196.906947,1037 197.156948,1037 C197.719451,1037 198.196009,1036.80469 198.586636,1036.41406 C198.977263,1036.02344 199.172573,1035.54688 199.172573,1034.98438 C199.172573,1034.45312 198.977263,1033.99219 198.586636,1033.60156 C198.196009,1033.21094 197.719451,1033.01562 197.156948,1033.01562 C196.625696,1033.01562 196.164763,1033.21094 195.774136,1033.60156 C195.383509,1033.99219 195.188198,1034.45312 195.188198,1034.98438 C195.188198,1035.26563 195.047575,1035.40625 194.766323,1035.40625 C194.516322,1035.40625 194.391323,1035.26563 194.391323,1034.98438 C194.391323,1034.20312 194.664758,1033.54688 195.211636,1033.01562 C195.758514,1032.48437 196.406945,1032.21875 197.156948,1032.21875 Z" transform="translate(-187 -1027)"/>
-             </svg>
-         </div>
-     </div>
-
-                        </th>
-                    <th class="criteria-journal-year-table__head__cell" rowspan="2">Год</th>
-                    <th class="criteria-journal-year-table__head__cell">Балл за экзамен</th>
-                    <th class="criteria-journal-year-table__head__cell" rowspan="2">Оценка за экзамен</th>
-                    <th class="criteria-journal-year-table__head__cell" rowspan="2">Итог</th>
-            </tr>
-                 <tr><th class="criteria-journal-year-table__head__cell">    <div class="criteria-journal-year-table__head__max-value-container table__editable-cell" data-type="maxValue" data-section="1671021575909682889">
-        <div class="criteria-journal-year-table__head__max-value-title">
-            Макс.<br />балл
-        </div>
-        <div data-mark="15" class="criteria-journal-year-table__head__max-value">
-            <div class="criteria-journal-year-table__mark">
-                <span>15</span>
-            </div>
-        </div>
-    </div>
-</th></tr>
-        </table>
-        </div>
-        <div class="scrollable-table__cell scrollable-table__cell_body">
-            <div class="scrollable-table__cell scrollable-table__cell_body__container">
-                <table class="criteria-journal-year-table__table criteria-journal-year-table__body">
-
-                <tr class="criteria-journal-year-table__body__row">
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property">4</span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669002" data-work-type="Year" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell"
-        data-type="mark" data-student="1000009669002" data-section="1671021575909682889" data-permission="True">
-        <div data-mark="">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669002" data-work-type="Exam" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669002" data-work-type="Total" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__body__row">
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property">5</span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669005" data-work-type="Year" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell"
-        data-type="mark" data-student="1000009669005" data-section="1671021575909682889" data-permission="True">
-        <div data-mark="">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669005" data-work-type="Exam" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669005" data-work-type="Total" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__body__row">
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property">4</span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669003" data-work-type="Year" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell"
-        data-type="mark" data-student="1000009669003" data-section="1671021575909682889" data-permission="True">
-        <div data-mark="">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669003" data-work-type="Exam" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669003" data-work-type="Total" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__body__row">
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property">4</span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669007" data-work-type="Year" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell"
-        data-type="mark" data-student="1000009669007" data-section="1671021575909682889" data-permission="True">
-        <div data-mark="">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669007" data-work-type="Exam" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669007" data-work-type="Total" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__body__row criteria-journal-year-table__body__row_with-delimiter">
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property">3</span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669010" data-work-type="Year" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell"
-        data-type="mark" data-student="1000009669010" data-section="1671021575909682889" data-permission="True">
-        <div data-mark="">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669010" data-work-type="Exam" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669010" data-work-type="Total" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__body__row">
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property">5</span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669008" data-work-type="Year" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell"
-        data-type="mark" data-student="1000009669008" data-section="1671021575909682889" data-permission="True">
-        <div data-mark="">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669008" data-work-type="Exam" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669008" data-work-type="Total" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__body__row">
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property">5</span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669009" data-work-type="Year" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell"
-        data-type="mark" data-student="1000009669009" data-section="1671021575909682889" data-permission="True">
-        <div data-mark="">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669009" data-work-type="Exam" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669009" data-work-type="Total" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__body__row">
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property">4</span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669018" data-work-type="Year" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell"
-        data-type="mark" data-student="1000009669018" data-section="1671021575909682889" data-permission="True">
-        <div data-mark="">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669018" data-work-type="Exam" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669018" data-work-type="Total" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__body__row">
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property">4</span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669006" data-work-type="Year" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell"
-        data-type="mark" data-student="1000009669006" data-section="1671021575909682889" data-permission="True">
-        <div data-mark="">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669006" data-work-type="Exam" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669006" data-work-type="Total" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__body__row criteria-journal-year-table__body__row_with-delimiter">
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property">3</span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669011" data-work-type="Year" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell"
-        data-type="mark" data-student="1000009669011" data-section="1671021575909682889" data-permission="True">
-        <div data-mark="">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669011" data-work-type="Exam" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669011" data-work-type="Total" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__body__row">
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property">4</span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669012" data-work-type="Year" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell"
-        data-type="mark" data-student="1000009669012" data-section="1671021575909682889" data-permission="True">
-        <div data-mark="">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669012" data-work-type="Exam" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669012" data-work-type="Total" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__body__row">
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property">5</span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669013" data-work-type="Year" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell"
-        data-type="mark" data-student="1000009669013" data-section="1671021575909682889" data-permission="True">
-        <div data-mark="">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669013" data-work-type="Exam" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669013" data-work-type="Total" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__body__row">
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property">5</span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669107" data-work-type="Year" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell"
-        data-type="mark" data-student="1000009669107" data-section="1671021575909682889" data-permission="True">
-        <div data-mark="">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669107" data-work-type="Exam" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669107" data-work-type="Total" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__body__row">
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property">4</span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669014" data-work-type="Year" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell"
-        data-type="mark" data-student="1000009669014" data-section="1671021575909682889" data-permission="True">
-        <div data-mark="">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669014" data-work-type="Exam" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669014" data-work-type="Total" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__body__row criteria-journal-year-table__body__row_with-delimiter">
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property">4</span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669015" data-work-type="Year" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell"
-        data-type="mark" data-student="1000009669015" data-section="1671021575909682889" data-permission="True">
-        <div data-mark="">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669015" data-work-type="Exam" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669015" data-work-type="Total" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__body__row">
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property">5</span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669016" data-work-type="Year" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell"
-        data-type="mark" data-student="1000009669016" data-section="1671021575909682889" data-permission="True">
-        <div data-mark="">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669016" data-work-type="Exam" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669016" data-work-type="Total" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__body__row">
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property">3</span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669017" data-work-type="Year" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell"
-        data-type="mark" data-student="1000009669017" data-section="1671021575909682889" data-permission="True">
-        <div data-mark="">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669017" data-work-type="Exam" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669017" data-work-type="Total" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-                </tr>
-                <tr class="criteria-journal-year-table__body__row">
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property">4</span>
-            </div>
-        </td>
-        <td class="criteria-journal-year-table__body__cell ">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669106" data-work-type="Year" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell"
-        data-type="mark" data-student="1000009669106" data-section="1671021575909682889" data-permission="True">
-        <div data-mark="">
-            <div class="criteria-journal-year-table__mark">
-                <span class="criteria-journal-year-table__mark__property"></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669106" data-work-type="Exam" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-    <td class="criteria-journal-year-table__body__cell table__editable-cell" data-type="finalMark" data-journal="1661748032848050324" data-period="" data-student="1000009669106" data-work-type="Total" data-recommended-mark="">
-        <div data-mark="" class="criteria-journal-year-table__final-mark-container">
-            <div class="criteria-journal-year-table__final-mark ">
-                <span class=""></span>
-            </div>
-        </div>
-    </td>
-                </tr>
-        </table>
-
-            </div>
-        </div>
-    </div>
-</div><script>require(['ScrollableTable/ScrollableTable'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('\x7b\x22id\x22\x3a\x22id-2841017d706b4dbc9885e9c27ee2de07\x22\x7d')); } });</script>
 </div>
 
+<form name="profileLogout" action="https://login.kundelik.kz/logout" method="post">
+</form>
 
-
-
-
-<script>require(['CriteriaJournalYearTable/CriteriaJournalYearTable'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('\x7b\x22id\x22\x3a\x22id-5fc2ac973c48419d91268414e4bb6755\x22,\x22editMarkUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2fmark.json\x22,\x22editMaxValueUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2fmaxvalue.json\x22,\x22editExamScoreMaxValueUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2fexamscoremaxvalue.json\x22,\x22editLessonMarkUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2flessonMark.json\x22,\x22tryAgainError\x22\x3a\x22\u041e\u0448\u0438\u0431\u043a\u0430\x21 \u041f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0435\u0449\u0451 \u0440\u0430\u0437.\x22,\x22isEditEnabled\x22\x3atrue,\x22editFinalMarkUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2ffinalmark.json\x22,\x22calculateFinalMarkUrl\x22\x3a\x22\x22,\x22addSectionUrl\x22\x3anull,\x22deleteSectionUrl\x22\x3anull\x7d')); } });</script>
-</div>
-
-
-
-<!-- ZERO.kz -->
-<span id="_zero_68956" style="display: none">
-    <noscript>
-        <a href="http://zero.kz/?s=68956" target="_blank">
-            <img src="http://c.zero.kz/z.png?u=68956" width="88" height="31" alt="ZERO.kz"/>
-        </a>
-    </noscript>
-</span>
-<script type="text/javascript"><!--
-    var _zero_kz_ = _zero_kz_ || [];
-    _zero_kz_.push(["id", 68956]);
-    _zero_kz_.push(["type", 1]);
-
-    (function () {
-        var a = document.getElementsByTagName("script")[0],
-            s = document.createElement("script");
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = (document.location.protocol == "https:" ? "https:" : "http:")
-            + "//c.zero.kz/z.js";
-        a.parentNode.insertBefore(s, a);
-    })(); //-->
-</script>
-<!-- End ZERO.kz -->
-
-<!-- Yandex.Metrika counter -->
 <script type="text/javascript">
-    (function (d, w, c) {
-        var id = dnevnik.settings.yandexMetrikaId;
-        var user = dnevnik.user;
-        var visitParams = dnevnik.visitParams;
-        var params;
 
-        if (user) {
-            params = {
-                Authenticated: 'true',
-                User: user.id,
-                Sex: user.sex,
-                Age: user.age,
-                Role: user.role
-            };
-        } else {
-            params = {
-                Authenticated: 'false'
-            };
-        }
+    require(['blocks/dropdownContainer/dropdownContainer'], function (dropdown) {
 
-        Object.keys(visitParams).forEach(function (k) {
-            if (visitParams[k]) {
-                params[k] = visitParams[k];
-            }
-        });
+        var model = {
+            tumblerClass: "user-profile-box",
+            activationClasses: ["user-profile-box__info", "dropdown-container"]
+        };
 
-        (w[c] = w[c] || []).push(function () {
-            try {
-                w['yaCounter' + id] = new Ya.Metrika({
-                    id: id,
-                    clickmap: dnevnik.settings.yandexMetrikaСlickmapEnabled,
-                    trackLinks: true,
-                    accurateTrackBounce: true,
-                    params: params || {}
-                });
-            } catch (e) {
-            }
-        });
+        dropdown(model);
+    });
 
-        var n = d.getElementsByTagName('script')[0],
-            s = d.createElement('script'),
-            f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = 'text/javascript';
-        s.async = true;
-        s.src = (d.location.protocol == 'https:' ? 'https:' : 'http:') + '//mc.yandex.ru/metrika/watch.js';
-
-        if (w.opera == '[object Opera]') {
-            d.addEventListener('DOMContentLoaded', f, false);
-        } else {
-            f();
-        }
-    })(document, window, 'yandex_metrika_callbacks');
-    require(['analytics/commonYaMetrika']);
+    $('#profile_logout').click(function () {
+        document.profileLogout.submit();
+        return false;
+    });
 </script>
-<noscript>
-    <div><img src="//mc.yandex.ru/watch/18707305" style="position: absolute; left: -9999px;" alt=""/>
-    </div></noscript>
-<!-- Yandex.Metrika counter -->
+                    </div>
+                    <div class="page-header__panel-container page-header__panel-container_end">
+                        
 
+<div class="header-links">
+    <a class="header-links__link" href="https://kundelik.zendesk.com/hc/ru/" target="_blank">Помощь</a>
+    <form name="logout" action="https://login.kundelik.kz/logout" method="post">
+        <a class="header-links__link" onClick="document.logout.submit();" href="#">
+            Выход
+        </a>
+    </form>
+</div>
+
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <div class="clear">
+            <ul class="header-menu"><li class="header-menu__item header-menu__item_active"><a class="header-menu__link" href="https://kundelik.kz/teacher" target="_self" title="Образование">Образование</a><ul class="header-submenu header-submenu_active"><li class="header-submenu__item"><a class="header-submenu__link" href="https://kundelik.kz/workplace/teacher"  title="Рабочий стол">Рабочий стол</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.kundelik.kz/school.aspx"  title="Моя школа">Моя школа</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.kundelik.kz/myclasses.aspx"  title="Мои классы">Мои классы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.kundelik.kz/reports/default.aspx"  title="Отчеты">Отчеты</a></li><li class="header-submenu__item header-submenu__item_active"><a class="header-submenu__link" href="https://schools.kundelik.kz/journals/?header=True" target="_self" title="Журналы">Журналы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.kundelik.kz/schedules/"  title="Расписание">Расписание</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.kundelik.kz/homework.aspx"  title="Домашние задания">Домашние задания</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://kundelik.kz/ctp/"  title="Календарно-тематическое планирование">КТП</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://schools.kundelik.kz/school.aspx?view=staffposts"  title="Учительская">Учительская</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item"><a class="header-menu__link" href="https://kundelik.kz/user/user.aspx"  title="Профиль">Профиль</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://kundelik.kz/soc/messenger/"  title="Сообщения">Сообщения</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://login.kundelik.kz/idp/msonline"  title="Почта">Почта</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://kundelik.kz/user/calendar.aspx"  title="Календарь">Календарь</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://kundelik.kz/user/news.aspx"  title="Обновления">Обновления</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://kundelik.kz/user/user.aspx?view=friends"  title="Друзья">Друзья</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://kundelik.kz/user/user.aspx?view=groups"  title="Группы">Группы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://kundelik.kz/user/user.aspx?view=events"  title="События">События</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://kundelik.kz/user/user.aspx?view=blog"  title="Блог">Блог</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://kundelik.kz/user/user.aspx?view=files"  title="Файлы">Файлы</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item"><a class="header-menu__link" href="https://kundelik.kz/soc/contact"  title="Общение">Общение</a><ul class="header-submenu"><li class="header-submenu__item"><a class="header-submenu__link" href="https://kundelik.kz/people"  title="Люди">Люди</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://kundelik.kz/social/groups"  title="Группы">Группы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://kundelik.kz/social/events"  title="События">События</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://kundelik.kz/contests"  title="Конкурсы">Конкурсы</a></li><li class="header-submenu__item"><a class="header-submenu__link" href="https://kundelik.kz/soc/networks"  title="Сети">Сети</a></li><ul class="header-submenu__item header-submenu__more-item"><div class="header-submenu__more-item-name">Ещё</div></ul></ul></li><li class="header-menu__item"><a class="header-menu__link" href="https://kundelik.kz:443/soc/apps/?utm_source=kundelik&utm_medium=mainnav&utm_campaign=button"  title="Приложения">Приложения</a></li><li class="header-menu__item header-menu__item_ext"><div class="header-menu__banner-container"><div class="0af18ed54cc14d57909d0570d5415d80 asyncMenuButtonBanner"><div style="display:none;">&lt;!--В head сайта один раз подключите библиотеку--&gt; &lt;script src=&quot;https://yastatic.net/pcode/adfox/loader.js&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt; &lt;!--Площадка: [Site] | Kundelik 2.0 / [Site] | Kundelik 2.0 / [Kundelik 2.0] [150x40] - Кнопка--&gt;
+&lt;div id=&quot;adfox_156706621594232975&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    window.Ya.adfoxCode.create({
+        ownerId: 264109,
+        containerId: &#39;adfox_156706621594232975&#39;,
+        params: {
+            p1: &#39;cgsmw&#39;,
+            p2: &#39;gnim&#39;,
+            puid1: &#39;61&#39;, puid2: &#39;M&#39;, puid3: &#39;TEACHER&#39;, puid4: &#39;250&#39;, puid5: &#39;N&#39;, puid6: &#39;N&#39;, puid7: &#39;17:2930&#39;, puid8: &#39;N&#39;, puid9: &#39;ComprehensiveSchool&#39;, puid10: &#39;N&#39;, puid11: &#39;N&#39;, puid12: &#39;N&#39;, puid13: &#39;N&#39;, puid14: &#39;N&#39;, puid15: &#39;&#39;,  puid19: &#39;77G&#39;, puid20: &#39;N&#39;, puid21: &#39;N&#39;, puid22: &#39;ru-RU&#39;, puid23: &#39;1000008481877&#39;, puid24: &#39;N&#39;, puid25: &#39;5K:6K:7K:11K&#39; } }); &lt;/script&gt;</div></div><script>$(document).ready(function () {let container=$(".0af18ed54cc14d57909d0570d5415d80");if(container.css("display")!=="none"){container.html($(".0af18ed54cc14d57909d0570d5415d80 > div").text());} });</script></div></li></ul><script type='text/javascript'>require(['analytics/menuYaMetrika']);</script>
+        </div>
+    </div>
+
+<div class="page-wrapper" id="contentWrapper">
+
+
+
+     <script type="text/javascript">
+         require(['layoutcontrols/menu', 'analytics/urlTracker', 'ab/yandexMetrikaTracker'], function (menu, urlTracker, yandexMetrikaTracker) {
+			 var model = {
+                newMessages: 'Новых сообщений',
+                noMessages: 'Нет новых сообщений',
+                newFriendRequests: 'Новых друзей',
+                noFriendRequests: 'Нет новых друзей',
+                newGroups: 'Новых приглашений',
+                noGroups: 'Нет новых приглашений',
+                Account: 'Личный счёт'
+			 };
+			 menu(model);
+
+			 var urlTrackerModel = {
+                elementSelector: 'li#AppCenter>a',
+                urlPrefix: '/virtual/center',
+                trackingConditions: 'click'
+            };
+            urlTracker(urlTrackerModel);
+
+			yandexMetrikaTracker({ action: 'reachGoal' });            
+        });
+        
+        require(['common/adblockDummyInsert'], function (adblockDummyInsert) {
+            adblockDummyInsert();
+        });
+    </script>
+	
+
+<div id="content">
+
+
+
+
+
+
+<div id="subheader">
+    <ul class="crumbs"><li><a href="https://schools.kundelik.kz/school.aspx?school=1000006542951" title="Главная страница школы">Абай(Ж-н) ЖОББМ</a></li></ul>
+    <h2>Журналы</h2>
+    <div class="toolbox">
+        <div class="school_select">
+            
+        </div>
+    </div>
+    
+</div>
+
+<div class="tabs"><ul><li><div class="tc1"></div><div class="tc2"></div><a id="TabClasses" style="" class="NotSet   "  href="https://schools.kundelik.kz/journals/">Классы</a></li><li class="active  "><div class="tc1"></div><div class="tc2"></div><a id="TabLessonPlanningSearch" style="" class="NotSet   "  href="https://schools.kundelik.kz/journals/?school=1000006542951&tab=planning">Календарное планирование</a></li><li><div class="tc1"></div><div class="tc2"></div><a id="PhysicalFitnessJournalTab" style="" class="NotSet   "  href="https://kundelik.kz/journals/physicalFitness/school/1000006542951">Физическая подготовленность</a></li></ul></div>
+		<script src="https://static.kundelik.kz/javascripts/JqueryPlugins/jquery.fancybox-1.3.4.pack.js?v=0b714d85" type="text/javascript"></script>
+<script src="https://static.kundelik.kz/javascripts/JqueryPlugins/jquery.easing.1.2.js?v=cc674e02" type="text/javascript"></script>
+<script src="https://static.kundelik.kz/assets/scripts/vendors/jqueryplugins/jquery.forms.js?v=ba63e4e2" type="text/javascript"></script>
+
+
+		<link rel="stylesheet" href="https://static.kundelik.kz/css/fancybox/jquery.fancybox-1.3.4.css?v=d75e36a1" media="all" type="text/css" />
+
+<div id="errors" class="errors" style="display:none;"><div class="rounded"><div class="c1"><div class="c2"></div></div><div class="cc">
+</div><div class="c3"><div class="c4"></div></div></div></div>
+<form id="searchForm" class="formSearch" method="get" action="https://schools.kundelik.kz/journals/?school=1000006542951&tab=planning&group=1715068308071130627&subject=1474514555691120184&period=0&subgroup=0&teacher=1000009573792&year=2020&lessonID=&addHomework=False">
+    <input type="hidden" id="school" value="1000006542951" name="school" />
+    <input type="hidden" id="tab " value="planning" name="tab" />
+    <input type="hidden" id="lessonID" value="" name="lessonID" />
+    <div class="col24 first">
+        <div class="panel gray"><div class="rounded"><div class="c1"><div class="c2"></div></div><div class="cc">
+            <div class="lesson-planner-search-panel">
+                
+                <div>
+                    <label for="year">Учебный год</label>
+                    <select id="year" name="year">
+                        
+                        <option  value="2018">2018/2019</option>
+                        
+                        <option  value="2019">2019/2020</option>
+                        
+                        <option selected="selected" value="2020">2020/2021</option>
+                        
+                        <option  value="2021">2021/2022</option>
+                        
+                        <option  value="2022">2022/2023</option>
+                        
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="teacher">Учитель</label>
+                    <select id="teacher" name="teacher" >
+                        
+                            <option selected="selected" value="1000009573792">Сартбаев Еркебай Сембеиевич</option>
+                            
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="group">Класс</label>
+                    <select id="group" name="group" >
+                        
+                        <option value="0">- выберите -</option>
+                        
+                        <option selected="selected" value="1715068308071130627">5-а</option>
+                        
+                        <option  value="1715068127682504191">6-а</option>
+                        
+                        <option  value="1715744537786990297">7-ә</option>
+                        
+                        <option  value="1715067771200218615">7-а</option>
+                        
+                        <option  value="1713638122616323297">11-ә</option>
+                        
+                        <option  value="1713638835580894456">11-а</option>
+                        
+                    </select>
+                </div>
+                
+                <div>
+                    <label for="subject">Предмет</label>
+                    <select id="subject" name="subject" >
+                        
+                        <option value="0">- выберите -</option>
+                        
+                        <option  value="1474514555691120183">Дүниежүзі тарихы</option>
+                        
+                        <option selected="selected" value="1474514555691120184">Тарих</option>
+                        
+                    </select>
+                </div>
+
+                
+
+                <div>
+                    <input id="search" type="submit" class="button" value="Посмотреть"  />
+                    <input id="export" type="button" class="button" value="Экспортировать"  title="Экспортировать календарное планирование по классам в Excel" />
+                    <input id="print" type="button" class="button" value="Распечатать" disabled="disabled" />
+                </div>
+            </div>
+        <div class="clear"></div></div><div class="c3"><div class="c4"></div></div></div></div>
+    </div>
+    
+
+    
+    <div class="col24">
+        
+<ul class="toolbar">
+   
+   <li class="r">
+        <a href="https://schools.kundelik.kz/journals/planningimport.aspx?period=0&subject=1474514555691120184&group=1715068308071130627&school=1000006542951&year=2020&teacher=1000009573792&subgroup=0" id=""><img src="https://static.kundelik.kz/images/icons/excel.png">Импорт</a>
+    </li>
+      
+   <li class="r">
+        <a href="" id="journal-create-ctp"><img src="https://static.kundelik.kz/images/icons/copy-ctp.png">Скопировать в КТП</a>
+    </li>
+      
+</ul>
+
+    </div>
+    
+        <div class="col24 help help_margintop_20">
+            <p>Экспортируйте в Excel одним архивом все календарные планы школы за выбранный учебный год. Выбрав определенного учителя, вы сможете экспортировать календарные планы только этого учителя.</p><p>Также вы можете импортировать из Excel календарное планирование.</p>
+        </div>
+    
+    <div class="clear"></div>
+
+    
+    <div id="lessonPlannerWaitContainer" class="lesson-planner-wait-container">
+        <img src="https://static.kundelik.kz/images/kz_preloader.gif" alt="Please wait" />
+        <div>Пожалуйста, подождите.</div>
+    </div>
+    <div id="lessonPlanner" class="lesson-planner-container"></div>
+    
+</form>
+<div class="j_modal">
+    <div class="modal" id="exportModal">
+        <div class="wrapper">
+            <form>
+                <img src="https://static.kundelik.kz/images/kz_preloader.gif" alt="Please wait" />
+                <div class="text"></div>
+                <input class="button" type="button" id="cancelButton" value="Отмена" />
+            </form>
+        </div>
+    </div>
+    <div class="exposeMask"></div>
+</div>
+
+
+<div id="ctp-dialog" class="j-ctp-popup">
+  <div class="j-ctp-popup__container">
+    <div class="j-ctp-popup__content-wrapper j-ctp-popup__content-wrapper_width_500">
+      <div class="j-ctp-popup__header">
+        <div class="j-ctp-popup__header-title">Копирование в КТП</div>
+        <a href="#" class="j-ctp-popup__close-button" data-close="ctp-dialog"></a>
+      </div>
+
+      <form name="ctp-postForm" method="POST" action="https://schools.kundelik.kz/lessonsplanning/createctp">
+        <input type="hidden" name="lessonplanningYear" />
+        <input type="hidden" name="lessonplanningGroup" />
+        <input type="hidden" name="lessonplanningSubGroup" />
+        <input type="hidden" name="lessonplanningSubject" />
+        <div class="j-ctp-popup__content">
+          <div class="j-ctp-popup__field-wrapper">
+            <label for="ctp-year" class="j-ctp-popup__field-label">Учебный год</label>
+            <select id="ctp-year" name="year" class="j-ctp-popup__field-input">
+              
+                <option  value="2020">2020/2021</option>
+              
+                <option selected='selected' value="2021">2021/2022</option>
+              
+            </select>
+          </div>
+          <div class="j-ctp-popup__field-wrapper">
+            <label for="ctp-subject" class="j-ctp-popup__field-label">Предмет</label>
+            <select id="ctp-subject" name="subject" class="j-ctp-popup__field-input">
+            </select>
+          </div>
+          <div class="j-ctp-popup__field-wrapper">
+            <label for="ctp-group" class="j-ctp-popup__field-label">Класс</label>
+            <select id="ctp-group" name="group" class="j-ctp-popup__field-input">
+            </select>
+          </div>
+          <div class="j-ctp-popup__field-wrapper">
+            <label for="ctp-subgroup" class="j-ctp-popup__field-label">Учебная группа</label>
+            <select id="ctp-subgroup" name="subgroup" class="j-ctp-popup__field-input">
+            </select>
+          </div>
+          <div class="j-ctp-popup__field-wrapper">
+            <label for="ctp-person" class="j-ctp-popup__field-label">Педагог</label>
+            <select id="ctp-person" name="person" class="j-ctp-popup__field-input">
+              
+                <option selected="selected" value="1000009573792">Сартбаев Е.С.</option>
+              
+            </select>
+          </div>
+        </div>
+
+        <div class="j-ctp-popup__footer">
+          <button type="submit" class="j-ctp-popup__confirm-btn">Копировать</button>
+          <a href="#" class="j-ctp-popup__cancel-btn" data-close="ctp-dialog">Отмена</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div id="ctp-dialog-success" class="j-ctp-popup">
+  <div class="j-ctp-popup__container">
+    <div class="j-ctp-popup__content-wrapper j-ctp-popup__content-wrapper_width_500">
+      <div class="j-ctp-popup__header">
+        <div class="j-ctp-popup__header-title">Копирование в КТП</div>
+        <a href="#" class="j-ctp-popup__close-button" data-close="ctp-dialog-success"></a>
+      </div>
+      <div class="j-ctp-popup__content j-ctp-popup__content_nobackground j-ctp-popup__content_noborder">
+        <div class="j-ctp-popup__info">
+          <div class="j-ctp-popup__success"></div>
+          <span id="ctp-dialog-success-message" class="j-ctp-popup__text">Копирование в КТП прошло успешно</span>
+          <div>
+            <a href="#" class="j-ctp-popup__link" data-close="ctp-dialog-success">Продолжить работу</a>
+            <a id="ctp-goto-link" href="#" class="j-ctp-popup__link j-ctp-popup__link_margin_left65">Перейти в КТП</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  'use strict';
+
+  var groupUrlTemplate = 'https://kundelik.kz/ctp/lookup/groups?schoolId=1000006542951&year={year}',
+      subgroupTemplate = 'https://kundelik.kz/ctp/lookup/subgroups?groupid={groupid}',
+      subjectsTemplate = 'https://kundelik.kz/ctp/lookup/subjects?schoolId=1000006542951',
+      teachersUrl = 'https://kundelik.kz/ctp/lookup/teachers?schoolId=1000006542951';
+
+  function urlTemplateBuilder(template, params) {
+    for (var p in params) {
+      if (params.hasOwnProperty(p)) {
+        template = template.replace('{' + p + '}', params[p]);
+      }
+    }
+    return template;
+  }
+
+  function buildGroupUrl(studyYear) {
+    return urlTemplateBuilder(groupUrlTemplate, { year: studyYear });
+  }
+
+  function buildSubgroupUrl(groupId) {
+    return urlTemplateBuilder(subgroupTemplate, { groupid: groupId });
+  }
+
+  function buildTeachersUrl() {
+    return teachersUrl;
+  }
+
+  function buildSubjectsUrl() {
+    return urlTemplateBuilder(subjectsTemplate);
+  }
+
+  function optionsBuilder(objects, selectedValue, valueField, textField) {
+    valueField = valueField || 'value';
+    textField = textField || 'text';
+
+    var fragment = document.createDocumentFragment();
+
+    _.each(objects, function (item) {
+      var option = document.createElement('option');
+      option.text = item[textField];
+      option.setAttribute('value', item[valueField]);
+      if (item[valueField] == selectedValue) {
+        option.setAttribute('selected', 'selected');
+      }
+
+      fragment.appendChild(option);
+    });
+
+    return fragment;
+  };
+
+  require(['utils/dispatchevent', 'dialogs/dialogs', 'common/pubsub'], function (dispatchEvent) {
+    
+    var popupActiveStyle = 'j-ctp-popup_active';
+
+    var showDialogBtn = document.getElementById('journal-create-ctp'),
+        dialog = dnevnik.dialogs, // available through 'dialogs/dialogs'
+        pubsub = dnevnik.pubsub, // available through 'common/pubsub'
+        ctpDialog = document.getElementById('ctp-dialog'),
+        ctpSuccessDialog = document.getElementById('ctp-dialog-success'),
+        submitForm = ctpDialog.querySelector('[name="ctp-postForm"]'),
+        submitButton = ctpDialog.querySelector('[type="submit"]'),
+        closeBtns = _.union(_.toArray(ctpDialog.querySelectorAll('[data-close]')),
+                            _.toArray(ctpSuccessDialog.querySelectorAll('[data-close]')));
+
+      function LookupBuilder(select, defaultTextFactory, dataAccessor) {
+          this.select = select;
+          this.refresh = function () {
+              if (select.disabled) {
+                  return;
+              }
+
+              var selectedValue = select.value;
+              select.disabled = true;
+              select.innerHTML = '';
+
+              function buildDefaultOption(data) {
+                  var text = defaultTextFactory(data);
+                  if (text) select.appendChild(optionsBuilder([{ value: '', text: text }]));
+              }
+
+              var result = dataAccessor.apply(null, arguments);
+              if (result && typeof result === 'object') {
+                  result.done(function (data) {
+                          buildDefaultOption(data);
+                          select.appendChild(optionsBuilder(data, selectedValue));
+                          select.disabled = false;
+                          dispatchEvent('change', select);
+                      })
+                      .fail(function () {
+                          buildDefaultOption(null);
+                          dialog.error('Что-то пошло не так');
+                          select.disabled = false;
+                      });
+              } else {
+                  buildDefaultOption(null);
+                  select.disabled = false;
+              }
+          }
+      }
+
+      function closeDialog(id) {
+      var dialog = document.getElementById(id);
+      if (dialog && dialog.classList.contains(popupActiveStyle)) {
+        dialog.classList.remove(popupActiveStyle);
+      }
+    }
+
+    function handleCloseDialog() {
+      /*jshint validthis:true */
+      closeDialog(this.dataset.close);
+    }
+
+    function urlDependencyBuilderGuard(cb) {
+      return function () {
+        return _.every(arguments, function (i) { return i; })
+          ? cb.apply(this, arguments)
+          : null;
+      }
+    }
+
+    function validate() {
+        var controlNames = ['subject', 'group', 'person'];
+        var result = true;
+        _.each(controlNames, function (name) {
+            result = validateSelector(name) && result;
+        });
+        switchSubmitButtonState(!result);       
+    }
+
+    function validateSelector(name) {
+        var selector = ctpDialog.querySelector('[name="' + name + '"]');
+        return selector && selector.value && selector.value.length > 0;
+    }
+
+    function switchSubmitButtonState(disabled) {
+        if (disabled) {
+            submitButton.setAttribute('disabled', 'disabled');
+        } else {
+            submitButton.removeAttribute('disabled'); 
+        }
+    }
+
+    function initialize() {
+        function getTextFunctory(noDataText, notSelectedText) {
+            return function (data) {
+                if (!data || data.length === 0) {
+                    return noDataText;
+                } else if (data.length === 1) {
+                    return null;
+                } else {
+                    return notSelectedText;
+                }
+            }
+        }
+
+      var selects = [
+        { name: 'subject', dep: [], urlBuilder: urlDependencyBuilderGuard(buildSubjectsUrl), text: getTextFunctory('Нет предметов', 'Не выбран') },
+        { name: 'group', dep: ['year'], urlBuilder: urlDependencyBuilderGuard(buildGroupUrl), text: getTextFunctory('Нет классов', 'Не выбран') },
+        { name: 'subgroup', dep: ['group', 'year'], urlBuilder: urlDependencyBuilderGuard(buildSubgroupUrl), text: getTextFunctory('Нет учебных групп', null) },
+        { name: 'person', dep: [], urlBuilder: urlDependencyBuilderGuard(buildTeachersUrl), text: getTextFunctory('Нет педагогов', 'Не выбран') }];
+
+      _.each(selects, function (definition) {
+              var select = ctpDialog.querySelector('[name="' + definition.name + '"]');
+              var factory = definition.text || function () { return 'Не выбран'; };
+              var lookupBuilder = new LookupBuilder(select,
+                  factory,
+                  function () {
+                      var url = definition.urlBuilder.apply(null, arguments);
+                      if (url) {
+                          return $.ajax({
+                              url: url,
+                              dataType: 'jsonp'
+                          });
+                      }
+                      return null;
+                  });
+              if (definition.dep && definition.dep.length) {
+                  var deps = _.map(definition.dep,
+                      function (name) {
+                          return ctpDialog.querySelector('[name="' + name + '"]');
+                      });
+
+                  function refresh() {
+                      var values = _.map(deps, function (item) { return item.value });
+                      lookupBuilder.refresh.apply(lookupBuilder, values);
+                  }
+
+                  _.each(deps,
+                      function (element) {
+                          _attachEvent(element, 'change', refresh);
+                      });
+              } else {
+                  select.refresh = function () {
+                      lookupBuilder.refresh.apply(lookupBuilder, null);
+                  };
+
+                  if (definition.urlBuilder) {
+                      select.refresh();
+                  }
+              }
+          _attachEvent(select, 'change', validate);
+      });
+
+      pubsub.subscribe('lesson-available', function (searchParams) {
+        var nameParamMapping = {
+          lessonplanningYear: null,
+          lessonplanningGroup: null,
+          lessonplanningSubGroup: null,
+          lessonplanningSubject: null 
+        }
+
+        if (searchParams) {
+          nameParamMapping = {
+            lessonplanningYear: searchParams.year,
+            lessonplanningGroup: searchParams.group,
+            lessonplanningSubGroup: searchParams.subgroup,
+            lessonplanningSubject: searchParams.subject 
+          }
+        }
+
+        for (var name in nameParamMapping) {
+          if (nameParamMapping.hasOwnProperty(name)) {
+            document.querySelector('[name="' + name + '"]').value = nameParamMapping[name] || '';
+          }
+        }
+      });
+    }
+
+    function showDialog(id) {
+      var dialog = document.getElementById(id);
+      if (dialog && !dialog.classList.contains(popupActiveStyle)) {
+          dialog.classList.add(popupActiveStyle);
+      }
+    }
+
+        function showCtpCopyDialog() {
+            if ($(showDialogBtn).hasClass("link_disabled")) {
+                return;
+            }
+
+          var controlNames = ['subject', 'group', 'subgroup', 'person', 'year'];
+          _.each(controlNames, function (name) {
+              ctpDialog.querySelector('[name="' + name + '"]').selectedIndex = -1;
+          });
+          showDialog('ctp-dialog');
+          dispatchEvent('change', ctpDialog.querySelector('[name="year"]'));
+          ctpDialog.querySelector('[name="subject"]').refresh();
+      }
+
+    function showCtpCopySuccessDialog(message) {
+        if (message) {
+            var messageContainer = document.getElementById('ctp-dialog-success-message');
+            messageContainer.innerHTML = message;
+        }
+
+        showDialog('ctp-dialog-success');
+    }
+
+    function onFormSubmit() {
+      var form = $(this);
+      if (form.data('submitting')) {
+        return;
+      }
+
+      form.data('submitting', true);
+      var data = form.serialize();
+      $.post(form.attr('action'), data).done(function (data) {
+          if (data && data.error) {
+              dialog.error(data.error);
+          } else if (data && data.url) {
+              document.getElementById('ctp-goto-link').setAttribute('href', data.url);
+              closeDialog('ctp-dialog');
+              showCtpCopySuccessDialog(data.message);
+          }
+        
+        form.data('submitting', false);
+      }).fail(function ($xhr) {
+        var errorData = $xhr.responseJSON;
+        if (errorData && errorData.error) {
+          dialog.error(errorData.error);
+        } else {
+          dialog.error('Что-то пошло не так');
+        }
+        form.data('submitting', false);
+      });
+        
+    }
+
+    function _invokeThroughEvent(cb) {
+      return function (evt) {
+        evt.preventDefault();
+        cb.call(this, evt);
+        return false;
+      };
+    }
+
+    function _attachEvent(el, event, cb) {
+      if (el) {
+        el.addEventListener(event, _invokeThroughEvent(cb));
+      }
+    }
+
+    _attachEvent(showDialogBtn, 'click', showCtpCopyDialog);
+    _attachEvent(submitForm, 'submit', onFormSubmit);
+
+    _.each(closeBtns, function (e) {
+      _attachEvent(e, 'click', handleCloseDialog);
+    });
+
+    initialize();
+  });
+</script>
+
+    <script>
+        document.addEventListener('readystatechange', function(){
+          if (document.readyState === 'complete' && window.dnevnik && window.dnevnik.analytics && window.dnevnik.analytics.yandex && window.dnevnik.analytics.yandex.params) {
+           sendMetrika('view');
+         }
+          function sendMetrika(action) {
+            var params = '{"partners_homework_experiment": {"1615409327553": { "1000008481877": {"'+action+'":{}}}}}';
+            window.dnevnik.analytics.yandex.params(JSON.parse(params));
+          }
+    });
+        </script>
+
+	
+
+<script type="text/javascript">
+
+    $(window).load(function () {
+        var dialogs = dnevnik.dialogs;
+        if (getParameterByName("err") != "") {
+            if (getParameterByName("err") == "noarc")
+                dialogs.error('Не найдено предметов для экспорта');
+            if (getParameterByName("err") == "arcexc")
+                dialogs.error('Ошибка во время экспорта');
+        }
+
+        // run code
+        $(".export_all_xls a").click(function () {
+            var schoolId = $("div.choose select#chsc option:selected").val();
+
+            if (schoolId == null) {
+                // try to get from the query_string
+                schoolId = getParameterByName("school");
+            }
+
+            var year = getParameterByName("year");
+            if (year == "") {
+                year = '2020';
+	        }
+
+	        var href = 'https://schools.kundelik.kz/excelasync.ashx?action=expclassesxls' + "&school=" + schoolId + "&year=" + year;
+	        $(this).attr('href', href);
+
+	        dialogs.message('Дождитесь, пожалуйста, завершения архивации');
+	    });
+    });
+
+    function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+        var regexS = "[\\?&]" + name + "=([^&#]*)";
+        var regex = new RegExp(regexS);
+        var results = regex.exec(window.location.href);
+        if (results == null)
+            return "";
+        else
+            return decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+
+</script>
+
+
+
+<div class="clear"></div>
+</div>
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+    <div class="page-footer page-footer_auth" id="footer">
+        <div class="page-footer__banner">
+            <div class="3c8e488eb04e421992241d8f2ba39372 asyncBottom728x90Banner"><div style="display:none;">&lt;!--В head сайта один раз подключите библиотеку--&gt; &lt;script src=&quot;https://yastatic.net/pcode/adfox/loader.js&quot; crossorigin=&quot;anonymous&quot;&gt;&lt;/script&gt; &lt;!--Площадка: [Site] | Kundelik 2.0 / [Site] | Kundelik 2.0 / [Kundelik 2.0] [Взрослые] [970x250] - Footer--&gt;
+&lt;div id=&quot;adfox_156075164913982048&quot;&gt;&lt;/div&gt;
+&lt;script&gt;
+    window.Ya.adfoxCode.create({
+        ownerId: 264109,
+        containerId: &#39;adfox_156075164913982048&#39;,
+        params: {
+            p1: &#39;cfgpt&#39;,
+            p2: &#39;glch&#39;,
+          puid1: &#39;61&#39;, puid2: &#39;M&#39;, puid3: &#39;TEACHER&#39;, puid4: &#39;250&#39;, puid5: &#39;N&#39;, puid6: &#39;N&#39;, puid7: &#39;17:2930&#39;, puid8: &#39;N&#39;, puid9: &#39;ComprehensiveSchool&#39;, puid10: &#39;N&#39;, puid11: &#39;N&#39;, puid12: &#39;N&#39;, puid13: &#39;N&#39;, puid14: &#39;N&#39;, puid15: &#39;&#39;,  puid19: &#39;77G&#39;, puid20: &#39;N&#39;, puid21: &#39;N&#39;, puid22: &#39;ru-RU&#39;, puid23: &#39;1000008481877&#39;, puid24: &#39;N&#39;, puid25: &#39;5K:6K:7K:11K&#39; } }); &lt;/script&gt;</div></div><script>$(document).ready(function () {let container=$(".3c8e488eb04e421992241d8f2ba39372");if(container.css("display")!=="none"){container.html($(".3c8e488eb04e421992241d8f2ba39372 > div").text());} });</script>
+            
+        </div>
+        <div class="page-footer__content">
+                        
+            <div class="page-footer__menu-layout page-footer__menu-layout_sized">
+                    
+                        <ul class="page-footer__menu">
+                            <li class="page-footer__menu-item">
+                                <a href="https://kundelik.kz/about" title="Подробнее о Kundelik.kz" class="page-footer__menu-link">О проекте</a>
+                            </li>
+                            <li class="page-footer__menu-item">
+                                <a href="https://kundelik.kz/news" title="Пресс-центр" class="page-footer__menu-link">Новости</a>
+                            </li>
+                            <li class="page-footer__menu-item">
+                                <a href="https://kundelik.zendesk.com/" target="_blank" title="Служба поддержки" class="page-footer__menu-link page-footer__menu-link_support">Служба поддержки</a>
+                            </li>
+                            <li class="page-footer__menu-item">
+                                <a href="https://kundelik.kz/contacts"title="Служба поддержки" class="page-footer__menu-link">Контакты</a>
+                            </li>
+                        </ul>
+                        
+                            <ul class="page-footer__social">
+                                
+                                    <li class="page-footer__social-item">
+                                        <a href="https://www.facebook.com/kundelik/" title="Kundelik.kz в Facebook"
+                                           class="page-footer__social-link page-footer__social-link_facebook" target="_blank">
+                                        </a>
+                                    </li>
+                                
+                                    <li class="page-footer__social-item">
+                                        <a href="https://www.youtube.com/KundelikKz" title="Kundelik.kz на YouTube"
+                                           class="page-footer__social-link page-footer__social-link_youtube" target="_blank">
+                                        </a>
+                                    </li>
+                                
+                                    <li class="page-footer__social-item">
+                                        <a href="https://www.instagram.com/kundelikkz/" title="Kundelik.kz в Instagram"
+                                           class="page-footer__social-link page-footer__social-link_instagram" target="_blank">
+                                        </a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    <div class="page-footer__statistics">
+                        
+                    </div>
+                </div>
+            
+                
+            
+            <div class="page-footer__copyright-layout">
+                <a href="https://kundelik.kz/terms/" class="page-footer__copyright-layout-agreement">Пользовательское соглашение</a>
+                <div class="page-footer__copyright-layout-details">
+
+                    
+                    <p class="page-footer__copyright-layout__terms">© 2021 ТОО «Kүнделік (Kundelik)» </p>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            require(['blocks/footerCopyright/footerCopyright'], function () {
+            });
+        </script>
+    </div>
+
+
+<div class="clear"></div>
+
+
+
+    <!-- ZERO.kz -->
+    <span id="_zero_68956" style="display: none">
+        <noscript>
+            <a href="http://zero.kz/?s=68956" target="_blank">
+                <img src="http://c.zero.kz/z.png?u=68956" width="88" height="31" alt="ZERO.kz" />
+            </a>
+        </noscript>
+    </span>
+    <script type="text/javascript"><!--
+        var _zero_kz_ = _zero_kz_ || [];
+        _zero_kz_.push(["id", 68956]);
+        _zero_kz_.push(["type", 1]);
+
+        (function () {
+            var a = document.getElementsByTagName("script")[0],
+                s = document.createElement("script");
+            s.type = "text/javascript";
+            s.async = true;
+            s.src = (document.location.protocol == "https:" ? "https:" : "http:")
+                + "//c.zero.kz/z.js";
+            a.parentNode.insertBefore(s, a);
+        })(); //-->
+    </script>
+    <!-- End ZERO.kz -->
+
+
+
+
+<div class="clear"></div>
+
+</div>
+
+
+
+
+<!-- Yandex.Metrika counter-->
+
+<script type="text/javascript">
+    require(['yandexMetrika/yandexMetrikaCounter']);
+	require(['analytics/commonYaMetrika']);
+</script>
+
+<noscript><div><img src="//mc.yandex.ru/watch/36220965" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- Yandex.Metrika counter -->
+<span> <script type="text/javascript" >
+                    require(['https://static.kundelik.kz/assets/scripts/controls/schools/usercontrols/schoolselector.js?v=c7720b65','https://static.kundelik.kz/assets/scripts/controls/schools/usercontrols/journals/journalslessonplanningsearch.js?v=3959c5d6','https://static.kundelik.kz/assets/scripts/controls/framework/controls/datetime/datetimeinterval.js?v=1c2563e8'], function(dep0,dep1,dep2) {
+                        $(function () { 
+                            dep0({"isAutoPostBack":true});
+dep1({"loadingLabel":"Загрузка...","chooseOptionLabel":"- выберите -","noTeacherLabel":"Учителя отсутствуют","noGroupLabel":"У Вас нет классов, в которых Вы преподаете.","noSubjectLabel":"Предметы не найдены","serverErrorMessage":"Ошибка на сервере! Попробуйте ещё раз.","filterUrl":"https://schools.kundelik.kz:443/ajax.ashx?xss=c720fbef0a82acf8e23a5c96fca43642f29967f59799ed296fb06d6d7e94c712&a=lessonPlanningFilter&schoolId=1000006542951","lessonPlannerUrl":"https://schools.kundelik.kz/AjaxPages/Journals/LessonPlanner.aspx","printReportUrl":"https://schools.kundelik.kz/AjaxPages/Journals/LessonPlannerPrint.aspx","loginUrl":"https://login.kundelik.kz","schoolId":"1000006542951","periodId":"0","subgroupId":"0","datefrom":"01.08.2020","dateto":"31.07.2021","exportLoadArgObj":{"reportsHandlerUrl":"https://schools.kundelik.kz/AsyncExportHandler.ashx","taskStateHandlerUrl":"https://schools.kundelik.kz/TaskStateHandler.ashx","modalWindowID":"exportModal","maskSelector":".exposeMask","waitText":"Пожалуйста, подождите.","errorMessage":"Произошла непредвиденная ошибка.","scheduleExportAction":"scheduleLessonPlanning","getFileAction":"getLessonPlanning","getResultAction":"getLessonPlanningExportResult"},"paramNames":{"studyYear":"studyYear","teacherId":"teacherId","groupId":"groupId","subjectId":"subjectId","dateFromValue":"dateFromValue","dateToValue":"dateToValue","json":{"id":"id","text":"text","isSelected":"isSelected"}},"lessonID":null,"addHomework":false,"urlReferrer":"https://kundelik.kz/"});
+dep2({"controlClientId":"DateTimeInterval","dateFromId":"datefrom","dateToId":"dateto","allowTypeNumbersOnly":false});
+
+                        });
+                    });
+                </script><script type="text/javascript" src="https://static.kundelik.kz/assets/scripts/modules/common/adsbygoogle.js?v=44cf0943">
+
+</script></span>
 </body>
 </html>
