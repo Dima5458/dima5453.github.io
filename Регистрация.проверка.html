@@ -1,10 +1,19 @@
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required>
-   
-    <label for="psw"><b>Пароль</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+<form action="/action_page.php">
+  <h2>Register Form</h2>
+  <div class="input-container">
+    <i class="fa fa-user icon"></i>
+    <input class="input-field" type="text" placeholder="Username" name="usrnm">
+  </div>
 
-    <label for="psw-repeat"><b>Повторите Пароль</b></label>
-    <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
-    
-<a href="#">Terms & Privacy</a>
+  <div class="input-container">
+    <i class="fa fa-envelope icon"></i>
+    <input class="input-field" type="text" placeholder="Email" name="email">
+  </div>
+
+  <div class="input-container">
+    <i class="fa fa-key icon"></i>
+    <input class="input-field" type="password" placeholder="Password" name="psw">
+  </div>
+
+  <button type="submit" class="btn">Register</button>
+</form>
