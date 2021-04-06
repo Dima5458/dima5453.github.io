@@ -10,39 +10,11 @@
     
     <link rel="stylesheet" href="https://static.kundelik.kz/styles/main/common.css?v=8e8b0233" media="all" type="text/css">
     <link rel="stylesheet" href="https://static.kundelik.kz/blocks/blocks.css?v=423cd41a" media="all" type="text/css">
-<head>
-        <meta name="google" value="notranslate">
-        <meta name="viewport" content="width=device-width, maximum-scale=1, user-scalable=1">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"><script type="text/javascript" src="https://bam-cell.nr-data.net/1/705b0fae29?a=257183901&amp;v=1208.49599aa&amp;to=ZwdRMhQAChICVBdcXV5NcjU2Tg4OFkUNVF5DTVkJExMKAA9UD1RBQwtQBwpPBRITTw%3D%3D&amp;rst=2653&amp;ck=1&amp;ref=https://schools.kundelik.kz/journals/journalclassical.aspx&amp;ap=239&amp;be=414&amp;fe=2481&amp;dc=2255&amp;perf=%7B%22timing%22:%7B%22of%22:1617738908180,%22n%22:0,%22f%22:12,%22dn%22:12,%22dne%22:12,%22c%22:12,%22ce%22:12,%22rq%22:35,%22rp%22:353,%22rpe%22:368,%22dl%22:362,%22di%22:2206,%22ds%22:2255,%22de%22:2476,%22dc%22:2481,%22l%22:2481,%22le%22:2485%7D,%22navigation%22:%7B%7D%7D&amp;fp=1261&amp;fcp=1261&amp;jsonp=NREUM.setToken"></script><script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script><script src="https://js-agent.newrelic.com/nr-1208.min.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info = {"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"705b0fae29","applicationID":"257183901","transactionName":"ZwdRMhQAChICVBdcXV5NcjU2Tg4OFkUNVF5DTVkJExMKAA9UD1RBQwtQBwpPBRITTw==","queueTime":0,"applicationTime":239,"agent":"","atts":""}</script><script type="text/javascript">(window.NREUM||(NREUM={})).loader_config={licenseKey:"705b0fae29",applicationID:"257183901"};window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var i=t[n]={exports:{}};e[n][0].call(i.exports,function(t){var i=e[n][1][t];return r(i||t)},i,i.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(e,t,n){function r(){}function i(e,t,n){return function(){return o(e,[u.now()].concat(c(arguments)),t?null:this,n),t?void 0:this}}var o=e("handle"),a=e(7),c=e(8),f=e("ee").get("tracer"),u=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(e,t){s[t]=i(p+t,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,i="function"==typeof t;return o(l+"tracer",[u.now(),e,n],r),function(){if(f.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return t.apply(this,arguments)}catch(e){throw f.emit("fn-err",[arguments,this,e],n),e}finally{f.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=i(l+t)}),newrelic.noticeError=function(e,t){"string"==typeof e&&(e=new Error(e)),o("err",[e,u.now(),!1,t])}},{}],2:[function(e,t,n){function r(){return c.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,c=e(9);t.exports=r,t.exports.offset=a,t.exports.getLastTimestamp=i},{}],3:[function(e,t,n){function r(e){return!(!e||!e.protocol||"file:"===e.protocol)}t.exports=r},{}],4:[function(e,t,n){function r(e,t){var n=e.getEntries();n.forEach(function(e){"first-paint"===e.name?d("timing",["fp",Math.floor(e.startTime)]):"first-contentful-paint"===e.name&&d("timing",["fcp",Math.floor(e.startTime)])})}function i(e,t){var n=e.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(e){e.getEntries().forEach(function(e){e.hadRecentInput||d("cls",[e])})}function a(e){if(e instanceof m&&!g){var t=Math.round(e.timeStamp),n={type:e.type};t<=p.now()?n.fid=p.now()-t:t>p.offset&&t<=Date.now()?(t-=p.offset,n.fid=p.now()-t):t=p.now(),g=!0,d("timing",["fi",t,n])}}function c(e){d("pageHide",[p.now(),e])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var f,u,s,d=e("handle"),p=e("loader"),l=e(6),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){f=new PerformanceObserver(r);try{f.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,w=["click","keydown","mousedown","pointerdown","touchstart"];w.forEach(function(e){document.addEventListener(e,a,!1)})}l(c)}},{}],5:[function(e,t,n){function r(e,t){if(!i)return!1;if(e!==i)return!1;if(!t)return!0;if(!o)return!1;for(var n=o.split("."),r=t.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var c=navigator.userAgent,f=c.match(a);f&&c.indexOf("Chrome")===-1&&c.indexOf("Chromium")===-1&&(i="Safari",o=f[1])}t.exports={agent:i,version:o,match:r}},{}],6:[function(e,t,n){function r(e){function t(){e(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,t,!1)}t.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],7:[function(e,t,n){function r(e,t){var n=[],r="",o=0;for(r in e)i.call(e,r)&&(n[o]=t(r,e[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],8:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,i=n-t||0,o=Array(i<0?0:i);++r<i;)o[r]=e[t+r];return o}t.exports=r},{}],9:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function i(e){function t(e){return e&&e instanceof r?e:e?u(e,f,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){e&&a&&e(n,r,i);for(var c=t(i),f=v(n),u=f.length,s=0;s<u;s++)f[s].apply(c,r);var p=d[h[n]];return p&&p.push([b,n,r,c]),c}}function o(e,t){y[e]=v(e).concat(t)}function m(e,t){var n=y[e];if(n)for(var r=0;r<n.length;r++)n[r]===t&&n.splice(r,1)}function v(e){return y[e]||[]}function g(e){return p[e]=p[e]||i(n)}function w(e,t){s(e,function(e,n){t=t||"feature",h[n]=t,t in d||(d[t]=[])})}var y={},h={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:t,buffer:w,abort:c,aborted:!1};return b}function o(e){return u(e,f,a)}function a(){return new r}function c(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var f="nr@context",u=e("gos"),s=e(7),d={},p={},l=t.exports=i();t.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(e,t,n){function r(e,t,n){if(i.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return e[t]=r,r}var i=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){i.buffer([e],r),i.emit(e,t,n)}var i=e("ee").get("handle");t.exports=r,r.ee=i},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,o,function(){return i++})}var i=1,o="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!E++){var e=x.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return u.abort();f(h,function(t,n){e[t]||(e[t]=n)});var n=a();c("mark",["onload",n+x.offset],null,"api"),c("timing",["load",n]);var r=l.createElement("script");r.src="https://"+e.agent,t.parentNode.insertBefore(r,t)}}function i(){"complete"===l.readyState&&o()}function o(){c("mark",["domContent",a()+x.offset],null,"api")}var a=e(2),c=e("handle"),f=e(7),u=e("ee"),s=e(5),d=e(3),p=window,l=p.document,m="addEventListener",v="attachEvent",g=p.XMLHttpRequest,w=g&&g.prototype;if(d(p.location)){NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:g,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var y=""+location,h={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1208.min.js"},b=g&&w&&w[m]&&!/CriOS/.test(navigator.userAgent),x=t.exports={offset:a.getLastTimestamp(),now:a,origin:y,features:{},xhrWrappable:b,userAgent:s};e(1),e(4),l[m]?(l[m]("DOMContentLoaded",o,!1),p[m]("load",r,!1)):(l[v]("onreadystatechange",i),p[v]("onload",r)),c("mark",["firstbyte",a.getLastTimestamp()],null,"api");var E=0}},{}],"wrap-function":[function(e,t,n){function r(e,t){function n(t,n,r,f,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,f],s],e)}c(n+"start",[o,a,f],s,u);try{return p=t.apply(a,o)}catch(m){throw c(n+"err",[o,a,m],s,u),m}finally{c(n+"end",[o,a,p],s,u)}}return a(t)?t:(n||(n=""),nrWrapper[p]=t,o(t,nrWrapper,e),nrWrapper)}function r(e,t,r,i,o){r||(r="");var c,f,u,s="-"===r.charAt(0);for(u=0;u<t.length;u++)f=t[u],c=e[f],a(c)||(e[f]=n(c,s?f+r:r,i,f,o))}function c(n,r,o,a){if(!m||t){var c=m;m=!0;try{e.emit(n,r,o,t,a)}catch(f){i([f,n,r,o],e)}m=c}}return e||(e=s),n.inPlace=r,n.flag=p,n}function i(e,t){t||(t=s);try{t.emit("internal-error",e)}catch(n){}}function o(e,t,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(e);return r.forEach(function(n){Object.defineProperty(t,n,{get:function(){return e[n]},set:function(t){return e[n]=t,t}})}),t}catch(o){i([o],n)}for(var a in e)l.call(e,a)&&(t[a]=e[a]);return t}function a(e){return!(e&&e instanceof Function&&e.apply&&!e[p])}function c(e,t){var n=t(e);return n[p]=e,o(e,n,s),n}function f(e,t,n){var r=e[t];e[t]=c(r,n)}function u(){for(var e=arguments.length,t=new Array(e),n=0;n<e;++n)t[n]=arguments[n];return t}var s=e("ee"),d=e(8),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;t.exports=r,t.exports.wrapFunction=c,t.exports.wrapInPlace=f,t.exports.argsToArray=u},{}]},{},["loader"]);</script>
-		<meta name="description" content="Удобная и безопасная среда общения школьников, учителей и родителей. Домашние задания, расписание, оценки - всё в одном месте.">
-		<link rel="icon" href="https://static.kundelik.kz/img/icons/favicon_Kz.ico" type="image/x-icon">
-		<link rel="shortcut icon" href="https://static.kundelik.kz/img/icons/favicon_Kz.ico" type="image/x-icon">
-		<link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/assets/styles/vendors/emojione/emojione.css?v=f3836152"><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/css/old_sites_blocks.css?v=e6de1224"><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/css/screen_addition.css?v=0bce29af"><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/css/screen.css?v=356fb192"><link rel="stylesheet" type="text/css" media="print" href="https://static.kundelik.kz/css/print.css?v=7b825809"><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/client/notifications.css?v=6b917fed"><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/client/discussions.css?v=df577d33"><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/client/attachments.css?v=15b9b419"><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/assets/styles/controls/schools/markcomment.css?v=e0ae085f"><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/assets/styles/controls/schools/markcomment.css?v=e0ae085f"><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/assets/styles/controls/schools/markcomment.css?v=e0ae085f"><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/assets/styles/controls/schools/markcomment.css?v=e0ae085f"><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/css/projects/screen.dnevnik.ru.css?v=9b72d8ba"><!--[if IE]><link rel="stylesheet" type="text/css" media="all" href="https://static.kundelik.kz/css/projects/ie.dnevnik.ru.css?v=b74e0b48" /><![endif]--><script src="https://static.kundelik.kz/assets/scripts/vendors/tinymce/tinymce.min.js?v=285ccdd9" type="text/javascript"></script><script type="text/javascript">var dnevnik = {"urls":{"domain":"kundelik.kz","taskStateUrl":"https://kundelik.kz/user/TaskStateHandler.ashx","moderate":"https://kundelik.kz/soc/moderation/abuse.aspx","whiteList":["dnevnik.ru","mosreg.ru","microsoft.com","lego.com","surveymonkey.ru","surveymonkey.com","gosuslugi.ru","adfox.ru","facebook.com","ok.ru","twitter.com","instagram.com","vk.com","apple.com","google.com","dnevnik.ru","youtube.com","youtu.be","research.net","csdnevnik.ru","globallab.org","yaklass.ru","foxford.ru","sberbank.ru","magnit-info.ru","letovo.ru","office.com","sharepoint.com","onenote.com","office365.com","magnitznaniy.ru","magnit.ru","wikipedia.org","vk.com","yandex.ru","mail.ru","google.ru","google.com","ok.ru","avito.ru","instagram.com","facebook.com","aliexpress.com","gismeteo.ru","rambler.ru","2gis.ru","fotostrana.ru","twitter.com","livejournal.com","lenta.ru","hh.ru","kinopoisk.ru","ria.ru","yadi.sk","pikabu.ru","booking.com","rbc.ru","twitch.tv","mosregtest.ru","imumk.ru"],"userCounters":"https://kundelik.kz/counters","emailSettings":"https://kundelik.kz/user/settings.aspx?view=email","smilesSpriteUrl":"https://static.kundelik.kz/images/sprites/emojione.sprites.svg","tinyMceBaseUrl":"https://static.kundelik.kz/assets/scripts/vendors/tinymce","gaAutoLinkUrls":null,"adblockDummyUrl":"https://static.kundelik.kz/images/banners/adblockDummies/kzDummy.jpg"},"settings":{"googleAnalytics":{"defaultId":"UA-76524281-14","appsId":"UA-76524281-2","adId":"UA-76524281-10","contactId":"UA-76524281-1","eventsId":"UA-76524281-6","groupsId":"UA-76524281-5","loginId":"UA-76524281-11","messengerId":"UA-76524281-3","networksId":"UA-76524281-7","childrenId":"UA-76524281-12","peopleId":"UA-76524281-4","schoolsId":"UA-76524281-8","wikiId":"UA-76524281-9","mainId":"UA-76524281-13","appSubscriptionId":"","limitedCounterId":"UA-106329441-1","limitedCounterSampleRate":1},"yandexMetrikaIds":["36220965"],"yandexMetrikaСlickmapEnabled":false,"enableAdFoxZeroPixel":true,"yandexMetrikaId":"36220965","environmentPrefix":"Kz"},"fileUploadSettings":{"stateUrl":"https://content.kundelik.kz/gettaskstatus","resultUrl":"https://content.kundelik.kz/getresult","deleteFileUrl":"https://content.kundelik.kz/delete","deleteFolderUrl":"https://content.kundelik.kz/deletefolder","defaultFileSizeLimit":"2147483648"},"user":{"preferableLanguage":"kk-KZ","suitableCultures":["kk-KZ","ru-RU"],"id":"1000008481877","sex":"Male","age":61,"emailHash":"7708133e748c18a4e9867cd45c84941b63e85291fe1de509df98adcec3743ec9","group":77,"role":"EduStaff","commonRole":"staff","schools":[{"id":"1000006542951","regionName":"Туркестанская область"}],"children":[],"experimentPRTopic":"None"},"auth":{"isAuthenticated":true,"updateInterval":600000,"loginUrl":"https://login.kundelik.kz/auth"},"visitParams":{"__RedesignAbGroup2":"groupA"},"localizationSchoolType":""};</script><script type="text/javascript" src="https://static.kundelik.kz/assets/scripts/modules/libs.min.88f29fce.js?v=88f29fce">
 
-</script>
-                    <script type="text/javascript">
-                        function onRequreLoaded() {
-                            require.config({
-                                baseUrl: "https://static.kundelik.kz/assets/scripts/modules",
-                                urlArgs: "v=034a1b1f",
-                            });
-                        }
-                    </script>
-                <script data-main="https://static.kundelik.kz/assets/scripts/modules/main.min.217f4fab.js?v=217f4fab" type="text/javascript" src="https://static.kundelik.kz/assets/scripts/modules/main.min.217f4fab.js?v=217f4fab">
-
-</script><script type="text/javascript" src="https://static.kundelik.kz/javascripts/local/ru.js?v=0320e479">
-
-</script>
-        <script src="https://static.kundelik.kz/client/localization/kz.ru-RU.js?v=9289e387" type="text/javascript"></script>
-		<script src="https://static.kundelik.kz/client/react.vendor.bundle.js?v=4e58dc10" type="text/javascript"></script>
-	<title>
-	Журналы - Kundelik.kz
-</title><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.kundelik.kz/assets/scripts/modules/main.min.217f4fab.js?v=217f4fab" src="https://static.kundelik.kz/assets/scripts/modules/main.min.217f4fab.js?v=217f4fab&amp;v=034a1b1f"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="yandexMetrika/yandexMetrikaCounter" src="https://static.kundelik.kz/assets/scripts/modules/yandexMetrika/yandexMetrikaCounter.js?v=034a1b1f"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics/commonYaMetrika" src="https://static.kundelik.kz/assets/scripts/modules/analytics/commonYaMetrika.js?v=034a1b1f"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.kundelik.kz/assets/scripts/controls/schools/usercontrols/journals/journalRemark.js?v=a0e537de" src="https://static.kundelik.kz/assets/scripts/controls/schools/usercontrols/journals/journalRemark.js?v=a0e537de&amp;v=034a1b1f"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://static.kundelik.kz/assets/scripts/controls/schools/usercontrols/journals/ajaxPageJournalRemark.js?v=7d775a65" src="https://static.kundelik.kz/assets/scripts/controls/schools/usercontrols/journals/ajaxPageJournalRemark.js?v=7d775a65&amp;v=034a1b1f"></script></head>
 
 <link rel="stylesheet" href="https://static.kundelik.kz/client/notifications.css?v=6b917fed" type="text/css">
 
-    <script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script><script type="text/javascript" async="" src="https://c.zero.kz/z.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script><script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script><script type="text/javascript" async="" src="https://c.zero.kz/z.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript">var dnevnik = {"urls":{"domain":"kundelik.kz","taskStateUrl":"https://kundelik.kz/user/TaskStateHandler.ashx","moderate":"https://kundelik.kz/soc/moderation/abuse.aspx","whiteList":["dnevnik.ru","mosreg.ru","microsoft.com","lego.com","surveymonkey.ru","surveymonkey.com","gosuslugi.ru","adfox.ru","facebook.com","ok.ru","twitter.com","instagram.com","vk.com","apple.com","google.com","dnevnik.ru","youtube.com","youtu.be","research.net","csdnevnik.ru","globallab.org","yaklass.ru","foxford.ru","sberbank.ru","magnit-info.ru","letovo.ru","office.com","sharepoint.com","onenote.com","office365.com","magnitznaniy.ru","magnit.ru","wikipedia.org","vk.com","yandex.ru","mail.ru","google.ru","google.com","ok.ru","avito.ru","instagram.com","facebook.com","aliexpress.com","gismeteo.ru","rambler.ru","2gis.ru","fotostrana.ru","twitter.com","livejournal.com","lenta.ru","hh.ru","kinopoisk.ru","ria.ru","yadi.sk","pikabu.ru","booking.com","rbc.ru","twitch.tv","mosregtest.ru","imumk.ru"],"userCounters":"https://kundelik.kz/counters","emailSettings":"https://kundelik.kz/user/settings.aspx?view=email","smilesSpriteUrl":"https://static.kundelik.kz/images/sprites/emojione.sprites.svg","tinyMceBaseUrl":"https://static.kundelik.kz/assets/scripts/vendors/tinymce","gaAutoLinkUrls":null,"adblockDummyUrl":"https://static.kundelik.kz/images/banners/adblockDummies/kzDummy.jpg"},"settings":{"googleAnalytics":{"defaultId":"UA-76524281-14","appsId":"UA-76524281-2","adId":"UA-76524281-10","contactId":"UA-76524281-1","eventsId":"UA-76524281-6","groupsId":"UA-76524281-5","loginId":"UA-76524281-11","messengerId":"UA-76524281-3","networksId":"UA-76524281-7","childrenId":"UA-76524281-12","peopleId":"UA-76524281-4","schoolsId":"UA-76524281-8","wikiId":"UA-76524281-9","mainId":"UA-76524281-13","appSubscriptionId":"","limitedCounterId":"UA-106329441-1","limitedCounterSampleRate":1},"yandexMetrikaIds":["36220965"],"yandexMetrikaСlickmapEnabled":false,"enableAdFoxZeroPixel":true,"yandexMetrikaId":"36220965","environmentPrefix":"Kz"},"fileUploadSettings":{"stateUrl":"https://content.kundelik.kz/gettaskstatus","resultUrl":"https://content.kundelik.kz/getresult","deleteFileUrl":"https://content.kundelik.kz/delete","deleteFolderUrl":"https://content.kundelik.kz/deletefolder","defaultFileSizeLimit":"2147483648"},"user":{"preferableLanguage":"kk-KZ","suitableCultures":["kk-KZ","ru-RU"],"id":"1000008481877","sex":"Male","age":61,"emailHash":"7708133e748c18a4e9867cd45c84941b63e85291fe1de509df98adcec3743ec9","group":77,"role":"EduStaff","commonRole":"staff","schools":[{"id":"1000006542951","regionName":"Туркестанская область"}],"children":[],"experimentPRTopic":"None"},"auth":{"isAuthenticated":true,"updateInterval":600000,"loginUrl":"https://login.kundelik.kz/auth"},"visitParams":{"__RedesignAbGroup2":"groupA"},"localizationSchoolType":""};</script>
+    <script type="text/javascript" async="" src="https://www.google-analytics.com/plugins/ua/ec.js"></script><script type="text/javascript" async="" src="https://mc.yandex.ru/metrika/watch.js"></script><script type="text/javascript" async="" src="https://c.zero.kz/z.js"></script><script async="" src="//www.google-analytics.com/analytics.js"></script><script type="text/javascript">var dnevnik = {"urls":{"domain":"kundelik.kz","taskStateUrl":"https://kundelik.kz/user/TaskStateHandler.ashx","moderate":"https://kundelik.kz/soc/moderation/abuse.aspx","whiteList":["dnevnik.ru","mosreg.ru","microsoft.com","lego.com","surveymonkey.ru","surveymonkey.com","gosuslugi.ru","adfox.ru","facebook.com","ok.ru","twitter.com","instagram.com","vk.com","apple.com","google.com","dnevnik.ru","youtube.com","youtu.be","research.net","csdnevnik.ru","globallab.org","yaklass.ru","foxford.ru","sberbank.ru","magnit-info.ru","letovo.ru","office.com","sharepoint.com","onenote.com","office365.com","magnitznaniy.ru","magnit.ru","wikipedia.org","vk.com","yandex.ru","mail.ru","google.ru","google.com","ok.ru","avito.ru","instagram.com","facebook.com","aliexpress.com","gismeteo.ru","rambler.ru","2gis.ru","fotostrana.ru","twitter.com","livejournal.com","lenta.ru","hh.ru","kinopoisk.ru","ria.ru","yadi.sk","pikabu.ru","booking.com","rbc.ru","twitch.tv","mosregtest.ru","imumk.ru"],"userCounters":"https://kundelik.kz/counters","emailSettings":"https://kundelik.kz/user/settings.aspx?view=email","smilesSpriteUrl":"https://static.kundelik.kz/images/sprites/emojione.sprites.svg","tinyMceBaseUrl":"https://static.kundelik.kz/assets/scripts/vendors/tinymce","gaAutoLinkUrls":null,"adblockDummyUrl":"https://static.kundelik.kz/images/banners/adblockDummies/kzDummy.jpg"},"settings":{"googleAnalytics":{"defaultId":"UA-76524281-14","appsId":"UA-76524281-2","adId":"UA-76524281-10","contactId":"UA-76524281-1","eventsId":"UA-76524281-6","groupsId":"UA-76524281-5","loginId":"UA-76524281-11","messengerId":"UA-76524281-3","networksId":"UA-76524281-7","childrenId":"UA-76524281-12","peopleId":"UA-76524281-4","schoolsId":"UA-76524281-8","wikiId":"UA-76524281-9","mainId":"UA-76524281-13","appSubscriptionId":"","limitedCounterId":"UA-106329441-1","limitedCounterSampleRate":1},"yandexMetrikaIds":["36220965"],"yandexMetrikaСlickmapEnabled":false,"enableAdFoxZeroPixel":true,"yandexMetrikaId":"36220965","environmentPrefix":"Kz"},"fileUploadSettings":{"stateUrl":"https://content.kundelik.kz/gettaskstatus","resultUrl":"https://content.kundelik.kz/getresult","deleteFileUrl":"https://content.kundelik.kz/delete","deleteFolderUrl":"https://content.kundelik.kz/deletefolder","defaultFileSizeLimit":"2147483648"},"user":{"preferableLanguage":"kk-KZ","suitableCultures":["kk-KZ","ru-RU"],"id":"1000008481877","sex":"Male","age":61,"emailHash":"7708133e748c18a4e9867cd45c84941b63e85291fe1de509df98adcec3743ec9","group":77,"role":"EduStaff","commonRole":"staff","schools":[{"id":"1000006542951","regionName":"Туркестанская область"}],"children":[],"experimentPRTopic":"None"},"auth":{"isAuthenticated":true,"updateInterval":600000,"loginUrl":"https://login.kundelik.kz/auth"},"visitParams":{"__RedesignAbGroup2":"groupA"},"localizationSchoolType":""};</script>
 
             <script type="text/javascript" src="https://static.kundelik.kz/assets/scripts/modules/redesign.min.968eca23.js?v=968eca23"></script>
     <script type="text/javascript" src="https://static.kundelik.kz/assets/scripts/vendors/requirejs/require-2.1.6.js?v=ef8e5d03"></script>
@@ -59,14 +31,14 @@
     
     <script src="https://static.kundelik.kz/client/localization/kz.ru-RU.js?v=9289e387" type="text/javascript"></script>
     <script src="https://static.kundelik.kz/client/react.vendor.bundle.js?v=4e58dc10" type="text/javascript"></script>
-<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="dialogs/dialogs" src="https://static.kundelik.kz/assets/scripts/modules/dialogs/dialogs.js?v=034a1b1f"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="journalTable/journalTable" src="https://static.kundelik.kz/assets/scripts/modules/journalTable/journalTable.js?v=034a1b1f"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics/commonYaMetrika" src="https://static.kundelik.kz/assets/scripts/modules/analytics/commonYaMetrika.js?v=034a1b1f"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="dialogs/dialogs" src="https://static.kundelik.kz/assets/scripts/modules/dialogs/dialogs.js?v=034a1b1f"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="journalTable/journalTable" src="https://static.kundelik.kz/assets/scripts/modules/journalTable/journalTable.js?v=034a1b1f"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics/commonYaMetrika" src="https://static.kundelik.kz/assets/scripts/modules/analytics/commonYaMetrika.js?v=034a1b1f"></script></head>
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="dialogs/dialogs" src="https://static.kundelik.kz/assets/scripts/modules/dialogs/dialogs.js?v=034a1b1f"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="journalTable/journalTable" src="https://static.kundelik.kz/assets/scripts/modules/journalTable/journalTable.js?v=034a1b1f"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="analytics/commonYaMetrika" src="https://static.kundelik.kz/assets/scripts/modules/analytics/commonYaMetrika.js?v=034a1b1f"></script></head>
 
 <body id="pageAuth" class="page-body">
 
 
 <div class="b-journal-layout">
 
-<div id="id-f81fa2bf4ebb417084127327c2f5af2f" class="journal-header">
+<div id="id-bf120a4b5b684951a61c85bd9ce943c8" class="journal-header">
         <div class="journal-header__crumbs">
             <svg class="journal-header__crumbs__svg" xmlns="http://www.w3.org/2000/svg" width="14" height="13" viewBox="0 0 14 13">
                 <g><g><path d="M12 12.63c0 .238-.14.37-.434.37h-9.13C2.14 13 2 12.868 2 12.63V7.884l-.087.089a1 1 0 0 1-1.418 0l-.29-.292a1 1 0 0 1 0-1.412L6.239.21A1 1 0 0 1 7-.082a1.002 1.002 0 0 1 .762.292l6.034 6.06a1 1 0 0 1 0 1.41l-.29.293a1 1 0 0 1-1.418 0L12 7.884v4.746zM8 11h2V7H8z"></path></g></g>
@@ -108,7 +80,7 @@
 
                 <span class="journal-header__group-subject-row__subject-label">Предмет:</span>
                 
-<div class="universal-select  universal-select_to-data-url universal-select_narrow " id="id-09f9b5195f934058bf4a69455ff6cc3f">
+<div class="universal-select  universal-select_to-data-url universal-select_narrow " id="id-a31ca938d01d4515b35fef06ce9f743d">
     <div class="universal-select__wrapper" tabindex="-1">
         <span class="universal-select__text">Дүниежүзі тарихы</span>
         <select multiple="multiple" size="17" class="select ">
@@ -151,7 +123,7 @@
         </ul>
     </div>
     <input type="hidden" class="select-value">
-</div><script>require(['UniversalSelect/UniversalSelect_to-data-url'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('\x7b\x22id\x22\x3a\x22id-09f9b5195f934058bf4a69455ff6cc3f\x22\x7d')); } });</script>
+</div><script>require(['UniversalSelect/UniversalSelect_to-data-url'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('\x7b\x22id\x22\x3a\x22id-a31ca938d01d4515b35fef06ce9f743d\x22\x7d')); } });</script>
 
                                     <span class="journal-header__group-subject-row__assessment-label">Оценивание:</span>
 <div class="toggle-switch">
@@ -161,7 +133,7 @@
     <span class="toggle-switch__lever"></span>
   </label>
   <label class="toggle-switch__label_checked">Полугодие</label>
-</div><div class="popup popup_with-header popup_width-500 popup_fixed-top-low popup_overflow-visible " data-popup-id="id-dc1357260ebf40f69a5cceee09031cfa">
+</div><div class="popup popup_with-header popup_width-500 popup_fixed-top-low popup_overflow-visible " data-popup-id="id-6f87a3f22f5c4a00bef4cee65205b3aa">
   <div class="popup__overlay"></div>
   <div class="popup__modal">
       <button type="button" class="popup__exit"></button>
@@ -185,7 +157,7 @@
         <button type="button" class="assessment-switch-popup__continue button button_height-with-gradient button_height-blue button_width-140 button_margin-left-15 button_padding-horizontal-20">Продолжить</button>
         <button type="button" class="assessment-switch-popup__cancel button button_height-with-gradient button_height-grey button_width-140 button_margin-left-15">Отмена</button>
     </div>
-</div><script>require(['AssessmentSwitchPopup/AssessmentSwitchPopup'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('\x7b\x22popupId\x22\x3a\x22id-dc1357260ebf40f69a5cceee09031cfa\x22,\x22popupContinueUrl\x22\x3a\x22\x2fjournals\x2fcriteriaMarks\x2fgroup\x2f1715068308071130627\x2fsubject\x2f1474514555691120183\x2fswitchassessmentwithdeletingmarks\x3ftype\x3dGeneral\x22\x7d')); } });</script>
+</div><script>require(['AssessmentSwitchPopup/AssessmentSwitchPopup'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('\x7b\x22popupId\x22\x3a\x22id-6f87a3f22f5c4a00bef4cee65205b3aa\x22,\x22popupContinueUrl\x22\x3a\x22\x2fjournals\x2fcriteriaMarks\x2fgroup\x2f1715068308071130627\x2fsubject\x2f1474514555691120183\x2fswitchassessmentwithdeletingmarks\x3ftype\x3dGeneral\x22\x7d')); } });</script>
       
     </div>
   </div>
@@ -204,10 +176,10 @@
 </div>
                 
                     <div class="journal-header__periods__only-criterial-checkbox">
-                        <label id="id-bb90274ab7f7430a9d3129d6e27fdf58" class="blue-checkbox">
+                        <label id="id-be83280984e74bfb902421bf648497ef" class="blue-checkbox">
     <input type="checkbox" class="blue-checkbox__input" value="/journals/criteriaMarks/group/1715068308071130627/subject/1474514555691120183/period/1713628763882532274?showOnlyCriterial=True" disabled="" name="">
     <span class="blue-checkbox__text">Только суммативные оценки</span>
-</label><script>require(['BlueCheckbox/BlueCheckbox'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('\x7b\x22id\x22\x3a\x22id-bb90274ab7f7430a9d3129d6e27fdf58\x22,\x22redirectTo\x22\x3a\x22\x2fjournals\x2fcriteriaMarks\x2fgroup\x2f1715068308071130627\x2fsubject\x2f1474514555691120183\x2fperiod\x2f1713628763882532274\x3fshowOnlyCriterial\x3dTrue\x22\x7d')); } });</script>
+</label><script>require(['BlueCheckbox/BlueCheckbox'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('\x7b\x22id\x22\x3a\x22id-be83280984e74bfb902421bf648497ef\x22,\x22redirectTo\x22\x3a\x22\x2fjournals\x2fcriteriaMarks\x2fgroup\x2f1715068308071130627\x2fsubject\x2f1474514555691120183\x2fperiod\x2f1713628763882532274\x3fshowOnlyCriterial\x3dTrue\x22\x7d')); } });</script>
                     </div>
             </div>
         </div>
@@ -242,9 +214,9 @@
 </a>            </div>
         </div>
     </div>
-</div><script>require(['JournalHeader/JournalHeader'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('\x7b\x22id\x22\x3a\x22id-f81fa2bf4ebb417084127327c2f5af2f\x22,\x22summativeAssessmentSwitchUrl\x22\x3a\x22\x2fjournals\x2fcriteriaMarks\x2fgroup\x2f1715068308071130627\x2fsubject\x2f1474514555691120183\x2fswitchassessment\x3ftype\x3dGeneral\x22,\x22assessmentSwitchPopupId\x22\x3a\x22id-dc1357260ebf40f69a5cceee09031cfa\x22\x7d')); } });</script>
+</div><script>require(['JournalHeader/JournalHeader'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('\x7b\x22id\x22\x3a\x22id-bf120a4b5b684951a61c85bd9ce943c8\x22,\x22summativeAssessmentSwitchUrl\x22\x3a\x22\x2fjournals\x2fcriteriaMarks\x2fgroup\x2f1715068308071130627\x2fsubject\x2f1474514555691120183\x2fswitchassessment\x3ftype\x3dGeneral\x22,\x22assessmentSwitchPopupId\x22\x3a\x22id-6f87a3f22f5c4a00bef4cee65205b3aa\x22\x7d')); } });</script>
 
-<div id="id-d58b70b7db5f4e2bbc35606761e43172" class="criteria-journal-period-table">
+<div id="id-b4839e712f8546f18b7b7c5c41b49377" class="criteria-journal-period-table">
 
         <div class="criteria-journal-period-table__so">
             <div class="criteria-journal-period-table__so-button button button_height-blue-with-gradient">
@@ -255,12 +227,12 @@
                 <div class="criteria-journal-period-table__so-items__item" data-section-type="Period">Добавить СОч</div>
             </div>
         </div>
-<div id="id-279599a93c2640d29c708de0e92e32c5" class="scrollable-table">
+<div id="id-5a6daa982af54307a7059026b7f20397" class="scrollable-table">
     <div class="scrollable-table__column scrollable-table__column_left">
-        <div class="scrollable-table__cell scrollable-table__cell_corner" style="height: 109px;">
+        <div class="scrollable-table__cell scrollable-table__cell_corner" style="height: 101px;">
             <div class="criteria-journal-period-table__corner"></div>
         </div>
-        <div class="scrollable-table__cell scrollable-table__cell_leftColumn" style="height: 246px;">
+        <div class="scrollable-table__cell scrollable-table__cell_leftColumn" style="height: 254px;">
             <table class="criteria-journal-period-table__table criteria-journal-period-table__students">
                 <tbody><tr class="criteria-journal-period-table__students__row">
                     <td class="criteria-journal-period-table__students__cell criteria-journal-period-table__students__cell_number">1</td>
@@ -316,7 +288,7 @@
 
             </tr>
             <tr class="criteria-journal-period-table__head__row">
-                            <th class="criteria-journal-period-table__head__cell" colspan="1">
+                            <th class="criteria-journal-period-table__head__cell" colspan="2">
 <a href="https://schools.kundelik.kz/lesson.aspx?school=1000006542951&amp;lesson=1794515633860038261" class="link link_blue-with-orange-hover " target="_blank">
     
     
@@ -443,26 +415,28 @@
             </tr>
         </tbody></table>
         </div>
-        <div class="scrollable-table__cell scrollable-table__cell_body" style="height: 263px; max-width: 455px;">
+        <div class="scrollable-table__cell scrollable-table__cell_body" style="height: 271px; max-width: 455px;">
             <div class="scrollable-table__cell scrollable-table__cell_body__container">
                 <table class="criteria-journal-period-table__table criteria-journal-period-table__body">
 
-                <tbody>
-                <tr class="criteria-journal-period-table__body__row">
-            <td class="criteria-journal-period-table__body__cell table__editable-cell" data-type="lessonMark" data-group="1715068308071130627" data-lesson="1794515633860038261" data-student="1000009592486" data-work="1797849361705340520">
-                    <span class="workitem canedit" id="w_e_1797849361705340520_1000009592486" data-url="https://schools.kundelik.kz/lesson/setmark-cmd?xss=115f7f39f2819d62c69896444abc029f90f99456f41721fc63bd5d5aa22c90f7&amp;school=1000006542951&amp;lesson=1794515633860038261&amp;work=1797849361705340520&amp;person=1000009592486" data-clickablecell="true" data-allowempty="true" data-left="a_e_1000009592486" data-top="w_e_1797849361705340520_1000009592482" data-right="c_e_1000009592486" data-bottom="w_e_1797849361705340520_1000009592484" data-confirm="true" data-wrapper="<span class={cssClass}>{item}</span>">
-                                                
-                                            </span>
-                </td>
-                <td class="criteria-journal-period-table__body__cell table__editable-cell" data-type="lessonMark" data-group="1715068308071130627" data-lesson="1794515633860038261" data-student="1000009592486" data-work="1797849361705340520">
-                    <div data-mark="" class="criteria-journal-period-table__lesson-mark-container" style="">
+                <tbody><tr class="criteria-journal-period-table__body__row">
+            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_disabled" data-type="lessonMark" data-group="1715068308071130627" data-lesson="1794515633860038261" data-student="1000009592482">
+                <div data-mark="" class="criteria-journal-period-table__lesson-mark-container">
+                    <div class="criteria-journal-period-table__log-entry criteria-journal-period-table__log-entry_notset"></div>
+                    <div class="criteria-journal-period-table__lesson-mark">
+                        <div class="criteria-journal-period-table__lesson-mark-value criteria-journal-period-table__lesson-mark-value_"></div>
+                    </div>
+                </div>
+            </td>
+                <td class="criteria-journal-period-table__body__cell table__editable-cell" data-type="lessonMark" data-group="1715068308071130627" data-lesson="1794515633860038261" data-student="1000009592482" data-work="1797849361705340520">
+                    <div data-mark="7" class="criteria-journal-period-table__lesson-mark-container">
                         <div class="criteria-journal-period-table__log-entry criteria-journal-period-table__log-entry_notset"></div>
                         <div class="criteria-journal-period-table__lesson-mark">
-                            <div class="criteria-journal-period-table__lesson-mark-value criteria-journal-period-table__lesson-mark-value_"></div>
+                            <div class="criteria-journal-period-table__lesson-mark-value criteria-journal-period-table__lesson-mark-value_average">7</div>
                         </div>
                     </div>
                 </td>
-            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_disabled" data-type="lessonMark" data-group="1715068308071130627" data-lesson="1794515633860038262" data-student="1000009592486">
+            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_disabled" data-type="lessonMark" data-group="1715068308071130627" data-lesson="1794515633860038262" data-student="1000009592482">
                 <div data-mark="" class="criteria-journal-period-table__lesson-mark-container">
                     <div class="criteria-journal-period-table__log-entry criteria-journal-period-table__log-entry_notset"></div>
                     <div class="criteria-journal-period-table__lesson-mark">
@@ -470,7 +444,7 @@
                     </div>
                 </div>
             </td>
-            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_disabled" data-type="lessonMark" data-group="1715068308071130627" data-lesson="1794515633860038263" data-student="1000009592486">
+            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_disabled" data-type="lessonMark" data-group="1715068308071130627" data-lesson="1794515633860038263" data-student="1000009592482">
                 <div data-mark="" class="criteria-journal-period-table__lesson-mark-container">
                     <div class="criteria-journal-period-table__log-entry criteria-journal-period-table__log-entry_notset"></div>
                     <div class="criteria-journal-period-table__lesson-mark">
@@ -478,7 +452,7 @@
                     </div>
                 </div>
             </td>
-            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_disabled" data-type="lessonMark" data-group="1715068308071130627" data-lesson="1794515633860038264" data-student="1000009592486">
+            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_disabled" data-type="lessonMark" data-group="1715068308071130627" data-lesson="1794515633860038264" data-student="1000009592482">
                 <div data-mark="" class="criteria-journal-period-table__lesson-mark-container">
                     <div class="criteria-journal-period-table__log-entry criteria-journal-period-table__log-entry_notset"></div>
                     <div class="criteria-journal-period-table__lesson-mark">
@@ -486,7 +460,7 @@
                     </div>
                 </div>
             </td>
-            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_disabled" data-type="lessonMark" data-group="1715068308071130627" data-lesson="1794515633860038265" data-student="1000009592486">
+            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_disabled" data-type="lessonMark" data-group="1715068308071130627" data-lesson="1794515633860038265" data-student="1000009592482">
                 <div data-mark="" class="criteria-journal-period-table__lesson-mark-container">
                     <div class="criteria-journal-period-table__log-entry criteria-journal-period-table__log-entry_notset"></div>
                     <div class="criteria-journal-period-table__lesson-mark">
@@ -494,7 +468,7 @@
                     </div>
                 </div>
             </td>
-            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_disabled" data-type="lessonMark" data-group="1715068308071130627" data-lesson="1794515638155005562" data-student="1000009592486">
+            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_disabled" data-type="lessonMark" data-group="1715068308071130627" data-lesson="1794515638155005562" data-student="1000009592482">
                 <div data-mark="" class="criteria-journal-period-table__lesson-mark-container">
                     <div class="criteria-journal-period-table__log-entry criteria-journal-period-table__log-entry_notset"></div>
                     <div class="criteria-journal-period-table__lesson-mark">
@@ -502,7 +476,7 @@
                     </div>
                 </div>
             </td>
-            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_disabled" data-type="lessonMark" data-group="1715068308071130627" data-lesson="1794515638155005563" data-student="1000009592486">
+            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_disabled" data-type="lessonMark" data-group="1715068308071130627" data-lesson="1794515638155005563" data-student="1000009592482">
                 <div data-mark="" class="criteria-journal-period-table__lesson-mark-container">
                     <div class="criteria-journal-period-table__log-entry criteria-journal-period-table__log-entry_notset"></div>
                     <div class="criteria-journal-period-table__lesson-mark">
@@ -510,7 +484,7 @@
                     </div>
                 </div>
             </td>
-            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_disabled" data-type="lessonMark" data-group="1715068308071130627" data-lesson="1794515638155005564" data-student="1000009592486">
+            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_disabled" data-type="lessonMark" data-group="1715068308071130627" data-lesson="1794515638155005564" data-student="1000009592482">
                 <div data-mark="" class="criteria-journal-period-table__lesson-mark-container">
                     <div class="criteria-journal-period-table__log-entry criteria-journal-period-table__log-entry_notset"></div>
                     <div class="criteria-journal-period-table__lesson-mark">
@@ -519,11 +493,11 @@
                 </div>
             </td>
 
-                            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_totals criteria-journal-period-table__body__cell_totals_training" data-student="1000009592486" data-type="trainingSectionsPercent">56,2</td>
-                            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_totals" data-student="1000009592486" data-type="periodSectionsPercent">-</td>
-                            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_totals" data-student="1000009592486" data-type="summaryPercent">56</td>
-                            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_totals" data-student="1000009592486" data-type="recommendedTotalMark">3</td>
-    <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_total-mark table__editable-cell" data-type="finalMark" data-journal="1717207094410364993" data-period="1713628763882532274" data-student="1000009592486" data-work-type="Period" data-recommended-mark="3">
+                            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_totals criteria-journal-period-table__body__cell_totals_training" data-student="1000009592482" data-type="trainingSectionsPercent">57,8</td>
+                            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_totals" data-student="1000009592482" data-type="periodSectionsPercent">-</td>
+                            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_totals" data-student="1000009592482" data-type="summaryPercent">58</td>
+                            <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_totals" data-student="1000009592482" data-type="recommendedTotalMark">3</td>
+    <td class="criteria-journal-period-table__body__cell criteria-journal-period-table__body__cell_total-mark table__editable-cell" data-type="finalMark" data-journal="1717207094410364993" data-period="1713628763882532274" data-student="1000009592482" data-work-type="Period" data-recommended-mark="3">
         <div data-mark="" class="criteria-journal-period-table__final-mark-container">
             <div class="criteria-journal-period-table__final-mark">
                 <span class=""> </span>
@@ -554,13 +528,14 @@
                 
                 
                 
+                
 
         </tbody></table>
 
             </div>
         </div>
     </div>
-</div><script>require(['ScrollableTable/ScrollableTable'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('\x7b\x22id\x22\x3a\x22id-279599a93c2640d29c708de0e92e32c5\x22\x7d')); } });</script></div>
+</div><script>require(['ScrollableTable/ScrollableTable'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('\x7b\x22id\x22\x3a\x22id-5a6daa982af54307a7059026b7f20397\x22\x7d')); } });</script></div>
 
 
 
@@ -568,7 +543,7 @@
 
 
 
-<script>require(['CriteriaJournalPeriodTable/CriteriaJournalPeriodTable'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('\x7b\x22id\x22\x3a\x22id-d58b70b7db5f4e2bbc35606761e43172\x22,\x22editMarkUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2fmark.json\x22,\x22editMaxValueUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2fmaxvalue.json\x22,\x22editExamScoreMaxValueUrl\x22\x3anull,\x22editLessonMarkUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2flessonMark.json\x22,\x22tryAgainError\x22\x3a\x22\u041e\u0448\u0438\u0431\u043a\u0430\x21 \u041f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0435\u0449\u0451 \u0440\u0430\u0437.\x22,\x22isEditEnabled\x22\x3atrue,\x22editFinalMarkUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2ffinalmark.json\x22,\x22calculateFinalMarkUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2f1717207094410364993\x2fperiod\x2f1713628763882532274\x2fcalculatefinalmark\x22,\x22addSectionUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2faddsection.json\x3fgroupId\x3d1715068308071130627\x26periodId\x3d1713628763882532274\x26subjectId\x3d1474514555691120183\x22,\x22deleteSectionUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2fdeletesection.json\x22\x7d')); } });</script>
+<script>require(['CriteriaJournalPeriodTable/CriteriaJournalPeriodTable'], function () { for(var i = 0, l = arguments.length; i < l; i += 1) { arguments[i](JSON.parse('\x7b\x22id\x22\x3a\x22id-b4839e712f8546f18b7b7c5c41b49377\x22,\x22editMarkUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2fmark.json\x22,\x22editMaxValueUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2fmaxvalue.json\x22,\x22editExamScoreMaxValueUrl\x22\x3anull,\x22editLessonMarkUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2flessonMark.json\x22,\x22tryAgainError\x22\x3a\x22\u041e\u0448\u0438\u0431\u043a\u0430\x21 \u041f\u043e\u043f\u0440\u043e\u0431\u0443\u0439\u0442\u0435 \u0435\u0449\u0451 \u0440\u0430\u0437.\x22,\x22isEditEnabled\x22\x3atrue,\x22editFinalMarkUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2ffinalmark.json\x22,\x22calculateFinalMarkUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2f1717207094410364993\x2fperiod\x2f1713628763882532274\x2fcalculatefinalmark\x22,\x22addSectionUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2faddsection.json\x3fgroupId\x3d1715068308071130627\x26periodId\x3d1713628763882532274\x26subjectId\x3d1474514555691120183\x22,\x22deleteSectionUrl\x22\x3a\x22\x2fjournals\x2fcriteriaJournal\x2fdeletesection.json\x22\x7d')); } });</script>
 </div>
 
 
@@ -577,7 +552,7 @@
 <span id="_zero_68956" style="display: none"><a href="https://zero.kz/?s=68956" target="_blank"><img border="0px" width="88" height="31" alt="ZERO.kz" title="ZERO.kz: Слева место в казахстанском рейтинге,
 справа количество казахстанских просмотров в сутки,
 количество казахстанских посетителей в сутки,
-всех посетителей сейчас на сайте" src="https://c.zero.kz/z.png?u=68956&amp;t=1&amp;cc=z604908b0ce7b1&amp;s=606cb9a646c59&amp;sh=10&amp;slt=458&amp;d=0&amp;wd=1360&amp;hg=768&amp;cd=24&amp;w=1360&amp;h=657&amp;ln=ru&amp;je=0&amp;cs=UTF-8&amp;ce=1&amp;du=https%3A%2F%2Fdima5453.github.io%2Favtadministrator.html&amp;tz=-180&amp;dt=%D0%A1%D1%83%D0%BC%D0%BC%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B5%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B8%20-%20Kundelik.kz&amp;11.393193053526765"></a></span>
+всех посетителей сейчас на сайте" src="https://c.zero.kz/z.png?u=68956&amp;t=1&amp;cc=z604907a24e127&amp;s=606cb6c11ced2&amp;sh=21&amp;slt=2134&amp;d=0&amp;wd=1360&amp;hg=768&amp;cd=24&amp;w=1343&amp;h=657&amp;ln=ru&amp;je=0&amp;cs=UTF-8&amp;ce=1&amp;du=https%3A%2F%2Fkundelik.kz%2Fjournals%2FcriteriaMarks%2Fgroup%2F1715068308071130627%2Fsubject%2F1474514555691120183%2Fperiod%2F1713628763882532274%3F&amp;rf=https%3A%2F%2Fschools.kundelik.kz%2F&amp;tz=-180&amp;dt=%D0%A1%D1%83%D0%BC%D0%BC%D0%B0%D1%82%D0%B8%D0%B2%D0%BD%D1%8B%D0%B5%20%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B8%20-%20Kundelik.kz&amp;11.017433021212204"></a></span>
 <script type="text/javascript"><!--
     var _zero_kz_ = _zero_kz_ || [];
     _zero_kz_.push(["id", 68956]);
@@ -655,7 +630,6 @@
     <div><img src="//mc.yandex.ru/watch/18707305" style="position: absolute; left: -9999px;" alt=""/>
     </div></noscript>
 <!-- Yandex.Metrika counter -->
-
 
 
 
