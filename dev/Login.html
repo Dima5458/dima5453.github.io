@@ -1,15 +1,12 @@
+выывыв
 <script>
 if (isset($_POST['login_u'])) {
-  $login_true = mysqli_query($connections, "
-    SELECT * FROM `users` WHERE login='".$_POST['login']."' AND password = MD5('".$_POST['password']."');
-    ");
-  if ($login_true) {
-    $count = mysqli_num_rows($login_true);
-    if ($count > 0) {
-      $_SESSION['login_user'] = $login_true;
-    }else{
-      echo "Не правильно";
-    }
-  }		
-}
+    $login_true = mysqli_query($connections, "SELECT * FROM `users` WHERE login='".$_POST['login']."' AND password = MD5('".$_POST['password']."')");
+    if ($login_true) {
+        $user = mysql_fetch_assoc($login_true);
+        $_SESSION['login_user'] = $login_true;
+        $_SESSION['user_name'] = $user['name']; //или где там имя храниться
+    } else echo "Не правильно";
+  	}	
+echo "Здрасте, ".$_SESSION["user_name"];
   </script>
