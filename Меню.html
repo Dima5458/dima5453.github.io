@@ -36,3 +36,14 @@ function get_url_avatar_user() {
 
 add_shortcode("user-avatar-url", "get_url_avatar_user");
 </script>
+
+
+<script>
+	<?php
+	
+	$avatar = do_shortcode('[user-avatar-url]');
+	
+	echo "Ссылка на ваш аватар: ".$avatar;
+
+?>
+</script>
