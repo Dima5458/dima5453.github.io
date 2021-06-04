@@ -7,43 +7,14 @@
 <!-- VK Widget -->
 <div id="vk_auth"></div>
 <script type="text/javascript">
-  VK.Widgets.Auth("vk_auth", {"width":300,"onAuth":function(data) {alert('user '+data['uid']+' authorized');}});
+  VK.Widgets.Auth("vk_auth", {"width":300,"authUrl":"/dev/Login"});
 </script>
-
-
-
-
-
-
 
 <script>
-function get_url_avatar_user() {
 
-	if(is_user_logged_in()) {
-	
-		global $current_user;
-
-		get_currentuserinfo();
-
-		$avatar = get_avatar($current_user->ID, 270);
-		$avatar_arr = explode('"', $avatar);
-
-		return $avatar_arr[1];
-
-	}
-	
-}
-
-add_shortcode("user-avatar-url", "get_url_avatar_user");
 </script>
-
 
 <script>
-	<?php
-	
-	$avatar = do_shortcode('[user-avatar-url]');
-	
-	echo "Ссылка на ваш аватар: ".$avatar;
 
-?>
 </script>
+
